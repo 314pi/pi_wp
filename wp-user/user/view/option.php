@@ -61,7 +61,7 @@ $wp_user_options_signup_form = array(
         'is_required' => 1,
         'icon' => 'fa-log-in',
         'default_value' => '',
-        'placeholder' => __('Xac nhan MK', 'wpuser'),
+        'placeholder' => __('Xác nhận MK', 'wpuser'),
     ),
 );
 
