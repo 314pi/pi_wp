@@ -1,8 +1,8 @@
 <?php
 
 // Fix Cart Totals Title style
-if(!function_exists('flatsome_woocommerce_before_cart_totals')) {
-  function flatsome_woocommerce_before_cart_totals(){  ?>
+if(!function_exists('magicpi_woocommerce_before_cart_totals')) {
+  function magicpi_woocommerce_before_cart_totals(){  ?>
           <table cellspacing="0">
           <thead>
               <tr>
@@ -12,28 +12,28 @@ if(!function_exists('flatsome_woocommerce_before_cart_totals')) {
           </table>
   <?php }
 }
-add_action( 'woocommerce_before_cart_totals', 'flatsome_woocommerce_before_cart_totals' );
+add_action( 'woocommerce_before_cart_totals', 'magicpi_woocommerce_before_cart_totals' );
 
 
 // Custom Thank You Html
-function flatsome_thank_you_html(){
+function magicpi_thank_you_html(){
     echo get_theme_mod('html_thank_you');
 }
-add_action( 'woocommerce_thankyou', 'flatsome_thank_you_html', 100);
+add_action( 'woocommerce_thankyou', 'magicpi_thank_you_html', 100);
 
 // Add HTML Checkout sidebar
-if(!function_exists('flatsome_html_checkout_sidebar')) {
-  function flatsome_html_checkout_sidebar(){
-     $content = flatsome_option('html_checkout_sidebar');
+if(!function_exists('magicpi_html_checkout_sidebar')) {
+  function magicpi_html_checkout_sidebar(){
+     $content = magicpi_option('html_checkout_sidebar');
      if($content) {
       echo '<div class="html-checkout-sidebar pt-half">'.do_shortcode($content).'</div>';
      }
   }
 }
-add_action('woocommerce_checkout_after_order_review', 'flatsome_html_checkout_sidebar');
+add_action('woocommerce_checkout_after_order_review', 'magicpi_html_checkout_sidebar');
 
 
-function flatsome_override_existing_checkout_fields( $fields ) {
+function magicpi_override_existing_checkout_fields( $fields ) {
 
 	// Make sure address 1 and address 2 is on same line
 	if ( isset( $fields['address_2'] ) ) {
@@ -70,10 +70,10 @@ function flatsome_override_existing_checkout_fields( $fields ) {
 	return $fields;
 }
 
-add_filter( 'woocommerce_default_address_fields', 'flatsome_override_existing_checkout_fields' );
+add_filter( 'woocommerce_default_address_fields', 'magicpi_override_existing_checkout_fields' );
 
 
-function flatsome_move_checkout_fields( $fields ) {
+function magicpi_move_checkout_fields( $fields ) {
 
   // Move email to top
 	if ( get_theme_mod( 'checkout_fields_email_first', 0 ) ) {
@@ -91,14 +91,14 @@ function flatsome_move_checkout_fields( $fields ) {
 	return $fields;
 }
 
-add_filter( 'woocommerce_checkout_fields', 'flatsome_move_checkout_fields' );
+add_filter( 'woocommerce_checkout_fields', 'magicpi_move_checkout_fields' );
 
 
 /* Floating labels option */
 
-function flatsome_checkout_scripts() {
+function magicpi_checkout_scripts() {
   if(is_checkout() && get_theme_mod('checkout_floating_labels', 0)) {
-    wp_enqueue_script( 'flatsome-woocommerce-floating-labels', get_template_directory_uri() .'/assets/libs/float-labels.min.js', array( 'flatsome-theme-woocommerce-js' ), '3.5', true );
+    wp_enqueue_script( 'magicpi-woocommerce-floating-labels', get_template_directory_uri() .'/assets/libs/float-labels.min.js', array( 'magicpi-theme-woocommerce-js' ), '3.5', true );
     wp_dequeue_style( 'selectWoo' );
     wp_deregister_style( 'selectWoo' );
     wp_dequeue_script( 'selectWoo' );
@@ -106,15 +106,15 @@ function flatsome_checkout_scripts() {
   }
 }
 
-add_action( 'wp_enqueue_scripts', 'flatsome_checkout_scripts', 100 );
+add_action( 'wp_enqueue_scripts', 'magicpi_checkout_scripts', 100 );
 
-function flatsome_checkout_body_classes( $classes ) {
+function magicpi_checkout_body_classes( $classes ) {
   if( is_checkout() && get_theme_mod('checkout_floating_labels', 0))  {
     $classes[] = 'fl-labels';
   }
   return $classes;
 }
-add_filter( 'body_class', 'flatsome_checkout_body_classes' );
+add_filter( 'body_class', 'magicpi_checkout_body_classes' );
 
 /**
  * Output terms and conditions checkbox text.
@@ -122,7 +122,7 @@ add_filter( 'body_class', 'flatsome_checkout_body_classes' );
  *
  * @param string $link_style Link opening style: tab, lightbox
  */
-function flatsome_terms_and_conditions_checkbox_text( $link_style ) {
+function magicpi_terms_and_conditions_checkbox_text( $link_style ) {
 	$text          = wc_get_terms_and_conditions_checkbox_text();
 	$terms_page_id = wc_terms_and_conditions_page_id();
 
@@ -147,7 +147,7 @@ function flatsome_terms_and_conditions_checkbox_text( $link_style ) {
 /**
  * Output lightbox shortcode with term and conditions selected page as content.
  */
-function flatsome_terms_and_conditions_lightbox() {
+function magicpi_terms_and_conditions_lightbox() {
 	if ( get_theme_mod( 'checkout_terms_and_conditions' ) !== 'lightbox' ) {
 		return;
 	}
@@ -163,7 +163,7 @@ function flatsome_terms_and_conditions_lightbox() {
 	$shortcode  = '[lightbox id="terms-and-conditions-lightbox" width="800px" padding="20px"]';
 	$shortcode .= wc_format_content( $page->post_content );
 	if ( get_theme_mod( 'terms_and_conditions_lightbox_buttons', 1 ) ) {
-		$text = __( 'I have read and agree', 'flatsome' );
+		$text = __( 'I have read and agree', 'magicpi' );
 
 		$shortcode .= '<div class="terms-and-conditions-lightbox__buttons text-center">';
 		$shortcode .= sprintf( '<button id="terms-and-conditions-accept" class="button primary is-underline" aria-label="%s" onClick="document.getElementById(\'terms\').checked = true; jQuery.magnificPopup.close();">%s</button>',
@@ -177,15 +177,15 @@ function flatsome_terms_and_conditions_lightbox() {
 	echo do_shortcode( $shortcode );
 }
 
-add_action( 'woocommerce_checkout_terms_and_conditions', 'flatsome_terms_and_conditions_lightbox', 30 );
+add_action( 'woocommerce_checkout_terms_and_conditions', 'magicpi_terms_and_conditions_lightbox', 30 );
 
 /**
  * Disable default wc_terms_and_conditions_page_content output.
  */
-function flatsome_terms_and_conditions() {
+function magicpi_terms_and_conditions() {
 	if ( get_theme_mod( 'checkout_terms_and_conditions' ) ) {
 		remove_action( 'woocommerce_checkout_terms_and_conditions', 'wc_terms_and_conditions_page_content', 30 );
 	}
 }
 
-add_action( 'woocommerce_checkout_terms_and_conditions', 'flatsome_terms_and_conditions' );
+add_action( 'woocommerce_checkout_terms_and_conditions', 'magicpi_terms_and_conditions' );

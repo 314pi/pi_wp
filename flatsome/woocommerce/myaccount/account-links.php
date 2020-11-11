@@ -6,7 +6,7 @@
       'container' => false,
       'items_wrap' => '%3$s',
       'depth' => 0,
-      'walker' => new FlatsomeNavSidebar
+      'walker' => new MagicpiNavSidebar
     ));
   ?>
 <?php } else if(!get_theme_mod('wc_account_links', 1)) { ?>
@@ -24,7 +24,7 @@
     <?php } ?>
     </li>
   <?php endforeach; ?>
-  <?php do_action('flatsome_account_links'); ?>
+  <?php do_action('magicpi_account_links'); ?>
   <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout">
     <a href="<?php echo esc_url( wc_get_endpoint_url( 'customer-logout', '', wc_get_page_permalink( 'myaccount' )) ); ?>"><?php _e('Logout','woocommerce'); ?></a>
   </li>

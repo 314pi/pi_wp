@@ -1,7 +1,7 @@
 <?php
 
 // [gap]
-function flatsome_gap_shortcode( $atts, $content = null ) {
+function magicpi_gap_shortcode( $atts, $content = null ) {
 	extract( $atts = shortcode_atts( array(
 		'_id'        => 'gap-' . rand(),
 		'height'     => '30px',
@@ -39,4 +39,4 @@ function flatsome_gap_shortcode( $atts, $content = null ) {
 	return ob_get_clean();
 }
 
-add_shortcode( 'gap', 'flatsome_gap_shortcode' );
+add_shortcode( 'gap', 'magicpi_gap_shortcode' );

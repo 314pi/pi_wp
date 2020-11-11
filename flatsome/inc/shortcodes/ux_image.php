@@ -83,7 +83,7 @@ function ux_image( $atts, $content = null ) {
 				$image_overlay = 'rgba(0,0,0,.2)';
 			}
 		}
-		$link_start = '<a class="' . $link_class . '" href="' . $link . '"' . flatsome_parse_target_rel( $link_atts ) . '>';
+		$link_start = '<a class="' . $link_class . '" href="' . $link . '"' . magicpi_parse_target_rel( $link_atts ) . '>';
 		$link_end   = '</a>';
 	} elseif ( $lightbox ) {
 		$title      = $lightbox_caption ? $image_meta['caption'] : '';
@@ -96,8 +96,8 @@ function ux_image( $atts, $content = null ) {
 		// Do not add positions if builder is active.
 		// They will be set by the onChange handler.
 	} else {
-		$classes[] = flatsome_position_classes( 'x', $position_x, $position_x__sm, $position_x__md );
-		$classes[] = flatsome_position_classes( 'y', $position_y, $position_y__sm, $position_y__md );
+		$classes[] = magicpi_position_classes( 'x', $position_x, $position_x__sm, $position_x__md );
+		$classes[] = magicpi_position_classes( 'y', $position_y, $position_y__sm, $position_y__md );
 	}
 
 	if ( $image_hover ) {
@@ -138,7 +138,7 @@ function ux_image( $atts, $content = null ) {
 		<?php if ( $parallax ) echo '<div ' . $parallax . '>'; ?>
 		<?php if ( $animate ) echo '<div data-animate="' . $animate . '">'; ?>
 		<div class="<?php echo $classes_inner; ?> dark" <?php echo get_shortcode_inline_css( $css_image_height ); ?>>
-			<?php echo flatsome_get_image( $id, $image_size, $caption ); ?>
+			<?php echo magicpi_get_image( $id, $image_size, $caption ); ?>
 			<?php if ( $image_overlay ) { ?>
 				<div class="overlay" style="background-color: <?php echo $image_overlay; ?>"></div>
 			<?php } ?>

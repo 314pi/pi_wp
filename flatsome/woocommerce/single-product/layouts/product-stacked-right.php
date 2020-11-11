@@ -2,7 +2,7 @@
 	<div class="product-main">
 		<div class="row content-row mb-0">
 
-			<div class="product-gallery col large-<?php echo flatsome_option('product_image_width'); ?>">
+			<div class="product-gallery col large-<?php echo magicpi_option('product_image_width'); ?>">
 			<?php
 				/**
 				 * woocommerce_before_single_product_summary hook
@@ -13,12 +13,12 @@
 			?>
 			</div>
 
-			<div class="product-info summary col-fit col entry-summary <?php flatsome_product_summary_classes();?>">
+			<div class="product-info summary col-fit col entry-summary <?php magicpi_product_summary_classes();?>">
 	      <div class="is-sticky-column"><div class="is-sticky-column__inner">
 	        <div class="product-stacked-info">
 	              <?php if(!get_theme_mod('product_header') && get_theme_mod('product_next_prev_nav',1)) { ?>
 	                <div class="product-stacked-next-prev-nav absolute top right hide-for-medium">
-	                  <?php  flatsome_product_next_prev_nav('nav-right'); ?>
+	                  <?php  magicpi_product_next_prev_nav('nav-right'); ?>
 	                </div>
 	              <?php } ?>
 	        			<?php
@@ -43,7 +43,7 @@
 		<div id="product-sidebar" class="mfp-hide">
 			<div class="sidebar-inner">
 				<?php
-				do_action( 'flatsome_before_product_sidebar' );
+				do_action( 'magicpi_before_product_sidebar' );
 				/**
 				 * woocommerce_sidebar hook
 				 *

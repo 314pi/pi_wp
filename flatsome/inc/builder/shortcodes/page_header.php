@@ -4,7 +4,7 @@ add_ux_builder_shortcode( 'page_header', array(
   'name' => __( 'Page Header' ),
   'category' => __( 'Layout' ),
   'wrap' => false,
-  'thumbnail' =>  flatsome_ux_builder_thumbnail( 'page_title' ),
+  'thumbnail' =>  magicpi_ux_builder_thumbnail( 'page_title' ),
   'allow' => array(),
   'presets' => array(),
   'options' => array(

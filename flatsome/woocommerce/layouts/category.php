@@ -1,7 +1,7 @@
 <div class="row category-page-row">
 
-		<div class="col large-3 hide-for-medium <?php flatsome_sidebar_classes(); ?>">
-			<?php flatsome_sticky_column_open( 'category_sticky_sidebar' ); ?>
+		<div class="col large-3 hide-for-medium <?php magicpi_sidebar_classes(); ?>">
+			<?php magicpi_sticky_column_open( 'category_sticky_sidebar' ); ?>
 			<div id="shop-sidebar" class="sidebar-inner col-inner">
 				<?php
 				  if(is_active_sidebar('shop-sidebar')) {
@@ -10,7 +10,7 @@
 				  }
 				?>
 			</div>
-			<?php flatsome_sticky_column_close( 'category_sticky_sidebar' ); ?>
+			<?php magicpi_sticky_column_close( 'category_sticky_sidebar' ); ?>
 		</div>
 
 		<div class="col large-9">
@@ -86,11 +86,11 @@
 
 		<?php
 			/**
-			 * Hook: flatsome_products_after.
+			 * Hook: magicpi_products_after.
 			 *
-			 * @hooked flatsome_products_footer_content - 10
+			 * @hooked magicpi_products_footer_content - 10
 			 */
-			do_action( 'flatsome_products_after' );
+			do_action( 'magicpi_products_after' );
 			/**
 			 * Hook: woocommerce_after_main_content.
 			 *

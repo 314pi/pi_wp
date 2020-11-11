@@ -12,7 +12,7 @@ foreach ($of_pages_obj as $of_page) {
 }
 
 $blocks = array(false => '-- None --');
-$posts = flatsome_get_post_type_items('blocks');
+$posts = magicpi_get_post_type_items('blocks');
 if($posts){
   foreach ($posts as $value) {
     $blocks[$value->post_name] = $value->post_title;
@@ -28,44 +28,44 @@ if ( ! isset( $wp_customize->selective_refresh ) ) {
 $image_url = get_template_directory_uri().'/inc/admin/customizer/img/';
 
 $nav_elements = array(
-  'cart' => __( 'Cart', 'flatsome-admin' ),
-  'account' => __( 'Account', 'flatsome-admin' ),
-  'menu-icon' => __( '☰ Nav Icon', 'flatsome-admin' ),
-  'nav' => __( 'Main Menu', 'flatsome-admin' ),
-  'nav-top' => __( 'Top Bar Menu', 'flatsome-admin' ),
-  'search' => __( 'Search Icon', 'flatsome-admin' ),
-  'search-form' => __( 'Search Form', 'flatsome-admin' ),
-  'social' => __( 'Social Icons', 'flatsome-admin' ),
-  'contact' => __( 'Contact', 'flatsome-admin' ),
-  'button-1' => __( 'Button 1', 'flatsome-admin' ),
-  'button-2' => __( 'Button 2', 'flatsome-admin' ),
-  'checkout' => __( 'Checkout Button', 'flatsome-admin' ),
-  'newsletter' => __( 'Newsletter', 'flatsome-admin' ),
-  'languages' => __( 'Languages', 'flatsome-admin' ),
-  'divider' => __( '|', 'flatsome-admin' ),
-  'divider_2' => __( '|', 'flatsome-admin' ),
-  'divider_3' => __( '|', 'flatsome-admin' ),
-  'divider_4' => __( '|', 'flatsome-admin' ),
-  'divider_5' => __( '|', 'flatsome-admin' ),
-  'block-1' => __( 'Block 1', 'flatsome-admin' ),
-  'block-2' => __( 'Block 2', 'flatsome-admin' ),
-  'html' => __( 'HTML 1', 'flatsome-admin' ),
-  'html-2' => __( 'HTML 2', 'flatsome-admin' ),
-  'html-3' => __( 'HTML 3', 'flatsome-admin' ),
-  'html-4' => __( 'HTML 4', 'flatsome-admin' ),
-  'html-5' => __( 'HTML 5', 'flatsome-admin' ),
+  'cart' => __( 'Cart', 'magicpi-admin' ),
+  'account' => __( 'Account', 'magicpi-admin' ),
+  'menu-icon' => __( '☰ Nav Icon', 'magicpi-admin' ),
+  'nav' => __( 'Main Menu', 'magicpi-admin' ),
+  'nav-top' => __( 'Top Bar Menu', 'magicpi-admin' ),
+  'search' => __( 'Search Icon', 'magicpi-admin' ),
+  'search-form' => __( 'Search Form', 'magicpi-admin' ),
+  'social' => __( 'Social Icons', 'magicpi-admin' ),
+  'contact' => __( 'Contact', 'magicpi-admin' ),
+  'button-1' => __( 'Button 1', 'magicpi-admin' ),
+  'button-2' => __( 'Button 2', 'magicpi-admin' ),
+  'checkout' => __( 'Checkout Button', 'magicpi-admin' ),
+  'newsletter' => __( 'Newsletter', 'magicpi-admin' ),
+  'languages' => __( 'Languages', 'magicpi-admin' ),
+  'divider' => __( '|', 'magicpi-admin' ),
+  'divider_2' => __( '|', 'magicpi-admin' ),
+  'divider_3' => __( '|', 'magicpi-admin' ),
+  'divider_4' => __( '|', 'magicpi-admin' ),
+  'divider_5' => __( '|', 'magicpi-admin' ),
+  'block-1' => __( 'Block 1', 'magicpi-admin' ),
+  'block-2' => __( 'Block 2', 'magicpi-admin' ),
+  'html' => __( 'HTML 1', 'magicpi-admin' ),
+  'html-2' => __( 'HTML 2', 'magicpi-admin' ),
+  'html-3' => __( 'HTML 3', 'magicpi-admin' ),
+  'html-4' => __( 'HTML 4', 'magicpi-admin' ),
+  'html-5' => __( 'HTML 5', 'magicpi-admin' ),
 );
 
 // Add Hooked Header Elements
-$nav_elements = apply_filters( 'flatsome_header_element', $nav_elements);
+$nav_elements = apply_filters( 'magicpi_header_element', $nav_elements);
 
 $visibility= array(
-  '' => __( 'Show for All', 'flatsome-admin' ),
-  'hide-for-small' => __( 'Hide For Mobile', 'flatsome-admin' ),
-  'hide-for-medium' => __( 'Hide For Tablet', 'flatsome-admin' ),
-  'show-for-small' => __( 'Show For Mobile', 'flatsome-admin' ),
-  'show-for-medium' => __( 'Show For Tablet', 'flatsome-admin' ),
-  'show-for-large' => __( 'Show For Desktop', 'flatsome-admin' ),
+  '' => __( 'Show for All', 'magicpi-admin' ),
+  'hide-for-small' => __( 'Hide For Mobile', 'magicpi-admin' ),
+  'hide-for-medium' => __( 'Hide For Tablet', 'magicpi-admin' ),
+  'show-for-small' => __( 'Show For Mobile', 'magicpi-admin' ),
+  'show-for-medium' => __( 'Show For Tablet', 'magicpi-admin' ),
+  'show-for-large' => __( 'Show For Desktop', 'magicpi-admin' ),
 );
 
 $nav_styles_img = array(
@@ -80,43 +80,43 @@ $nav_styles_img = array(
   'tabs' => $image_url . 'nav-tabs.svg'
 );
 
-$smart_links = __( '', 'flatsome-admin' );
+$smart_links = __( '', 'magicpi-admin' );
 
 $sizes = array(
-    'xxlarge' => __( 'XX Large', 'flatsome-admin' ),
-    'xlarge' => __( 'X Large', 'flatsome-admin' ),
-    'larger' => __( 'Larger', 'flatsome-admin' ),
-    'large' => __( 'Large', 'flatsome-admin' ),
-    'medium' => __( 'Medium', 'flatsome-admin' ),
-    'small' => __( 'Small', 'flatsome-admin' ),
-    'smaller' => __( 'Smaller', 'flatsome-admin' ),
-    'xsmall' => __( 'X Small', 'flatsome-admin' ),
+    'xxlarge' => __( 'XX Large', 'magicpi-admin' ),
+    'xlarge' => __( 'X Large', 'magicpi-admin' ),
+    'larger' => __( 'Larger', 'magicpi-admin' ),
+    'large' => __( 'Large', 'magicpi-admin' ),
+    'medium' => __( 'Medium', 'magicpi-admin' ),
+    'small' => __( 'Small', 'magicpi-admin' ),
+    'smaller' => __( 'Smaller', 'magicpi-admin' ),
+    'xsmall' => __( 'X Small', 'magicpi-admin' ),
 );
 
 $button_styles = array(
-    '' => __( 'Normal', 'flatsome-admin' ),
-    'outline' => __( 'Outline', 'flatsome-admin' ),
-    'shade' => __( 'Shade', 'flatsome-admin' ),
-    'underline' => __( 'Underline', 'flatsome-admin' ),
-    'link' => __( 'Link', 'flatsome-admin' ),
+    '' => __( 'Normal', 'magicpi-admin' ),
+    'outline' => __( 'Outline', 'magicpi-admin' ),
+    'shade' => __( 'Shade', 'magicpi-admin' ),
+    'underline' => __( 'Underline', 'magicpi-admin' ),
+    'link' => __( 'Link', 'magicpi-admin' ),
 );
 
 $nav_sizes = array(
-  'xsmall' => __( 'XS', 'flatsome-admin' ),
-  'small' => __( 'S', 'flatsome-admin' ),
-  '' => __( 'Default', 'flatsome-admin' ),
-  'medium' => __( 'M', 'flatsome-admin' ),
-  'large' => __( 'L', 'flatsome-admin' ),
-  'xlarge' => __( 'XL', 'flatsome-admin' ),
+  'xsmall' => __( 'XS', 'magicpi-admin' ),
+  'small' => __( 'S', 'magicpi-admin' ),
+  '' => __( 'Default', 'magicpi-admin' ),
+  'medium' => __( 'M', 'magicpi-admin' ),
+  'large' => __( 'L', 'magicpi-admin' ),
+  'xlarge' => __( 'XL', 'magicpi-admin' ),
 );
 
 $nav_spacing = array(
-  'xsmall' => __( 'XS', 'flatsome-admin' ),
-  'small' => __( 'S', 'flatsome-admin' ),
-  '' => __( 'Default', 'flatsome-admin' ),
-  'medium' => __( 'M', 'flatsome-admin' ),
-  'large' => __( 'L', 'flatsome-admin' ),
-  'xlarge' => __( 'XL', 'flatsome-admin' ),
+  'xsmall' => __( 'XS', 'magicpi-admin' ),
+  'small' => __( 'S', 'magicpi-admin' ),
+  '' => __( 'Default', 'magicpi-admin' ),
+  'medium' => __( 'M', 'magicpi-admin' ),
+  'large' => __( 'L', 'magicpi-admin' ),
+  'xlarge' => __( 'XL', 'magicpi-admin' ),
 );
 
 

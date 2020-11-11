@@ -2,7 +2,7 @@
 /**
  * Advanced Theme Options
  *
- * @package Flatsome/Admin/Options/Advanced
+ * @package Magicpi/Admin/Options/Advanced
  */
 
 add_action( 'init', 'of_options' );
@@ -33,7 +33,7 @@ if ( ! function_exists( 'of_options' ) ) {
 
 		// Access the Blocks via an Array.
 		$of_blocks     = array( false => '-- None --' );
-		$of_blocks_obj = flatsome_get_post_type_items( 'blocks' );
+		$of_blocks_obj = magicpi_get_post_type_items( 'blocks' );
 		if ( $of_blocks_obj ) {
 			foreach ( $of_blocks_obj as $of_block ) {
 				$of_blocks[ $of_block->post_name ] = $of_block->post_title;
@@ -82,9 +82,9 @@ if ( ! function_exists( 'of_options' ) ) {
 		);
 
 		$of_options[] = array(
-			'name' => 'Flatsome 2.0 Content Support',
-			'id'   => 'flatsome_fallback',
-			'desc' => 'Support content made in Flatsome 2.0. Disable to speed up site.',
+			'name' => 'Magicpi 2.0 Content Support',
+			'id'   => 'magicpi_fallback',
+			'desc' => 'Support content made in Magicpi 2.0. Disable to speed up site.',
 			'std'  => 1,
 			'type' => 'checkbox',
 		);
@@ -157,7 +157,7 @@ if ( ! function_exists( 'of_options' ) ) {
 		$of_options[] = array(
 			'name' => 'Disable theme style.css',
 			'type' => 'checkbox',
-			'id'   => 'flatsome_disable_style_css',
+			'id'   => 'magicpi_disable_style_css',
 			'std'  => 0,
 			'desc' => 'Disable loading of theme style.css. This file is only needed if you have added custom CSS to that file.',
 		);
@@ -301,8 +301,8 @@ if ( ! function_exists( 'of_options' ) ) {
 
 		$of_options[] = array(
 			"name" => "Accounts",
-			"std"  => flatsome_facebook_accounts_html(),
-			"desc" => flatsome_facebook_login_button_html(),
+			"std"  => magicpi_facebook_accounts_html(),
+			"desc" => magicpi_facebook_login_button_html(),
 			"type" => "info"
 		);
 
@@ -493,7 +493,7 @@ if ( ! function_exists( 'of_options' ) ) {
 
 			$of_options[] = array(
 				'name' => 'Infinite scroll category/products',
-				'id'   => 'flatsome_infinite_scroll',
+				'id'   => 'magicpi_infinite_scroll',
 				'desc' => 'Enable infinite scroll for WooCommerce category/product archive.',
 				'std'  => 0,
 				'type' => 'checkbox',
@@ -562,9 +562,9 @@ if ( ! function_exists( 'of_options' ) ) {
 		);
 
 		$of_options[] = array(
-			'name' => 'Flatsome Studio',
-			'id'   => 'flatsome_studio',
-			'desc' => 'Enable access to Flatsome Studio in UX Builder',
+			'name' => 'Magicpi Studio',
+			'id'   => 'magicpi_studio',
+			'desc' => 'Enable access to Magicpi Studio in UX Builder',
 			'std'  => 1,
 			'type' => 'checkbox',
 		);
@@ -573,7 +573,7 @@ if ( ! function_exists( 'of_options' ) ) {
 		if ( function_exists( 'ubermenu' ) ) {
 			$of_options[] = array(
 				'name' => 'Ubermenu',
-				'id'   => 'flatsome_uber_menu',
+				'id'   => 'magicpi_uber_menu',
 				'desc' => 'Enable full width UberMenu. You can also insert this elsewhere by using the UberMenu options.',
 				'std'  => 1,
 				'type' => 'checkbox',

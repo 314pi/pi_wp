@@ -1,7 +1,7 @@
 <?php
 
 
-function flatsome_maintenance_mode() {
+function magicpi_maintenance_mode() {
 
 	// Exit if not active.
 	if ( ! get_theme_mod( 'maintenance_mode', 0 ) ) {
@@ -16,7 +16,7 @@ function flatsome_maintenance_mode() {
 
 		// Remove Woocommerce store notice.
 		remove_action( 'wp_footer', 'woocommerce_demo_store' );
-		remove_action( 'wp_footer', 'flatsome_cookie_notice_template' );
+		remove_action( 'wp_footer', 'magicpi_cookie_notice_template' );
 
 		// Clear Cachify Cache.
 		if ( has_action( 'cachify_flush_cache' ) ) {
@@ -45,4 +45,4 @@ function flatsome_maintenance_mode() {
 	}
 }
 
-add_action( 'template_redirect', 'flatsome_maintenance_mode' );
+add_action( 'template_redirect', 'magicpi_maintenance_mode' );

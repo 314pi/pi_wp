@@ -4,30 +4,30 @@
  * - Cart
  *************/
 
-Flatsome_Option::add_section( 'header_cart', array(
-	'title'       => __( 'Cart', 'flatsome-admin' ),
+Magicpi_Option::add_section( 'header_cart', array(
+	'title'       => __( 'Cart', 'magicpi-admin' ),
 	'panel'       => 'header',
-	//'description' => __( 'This is the section description', 'flatsome-admin' ),
+	//'description' => __( 'This is the section description', 'magicpi-admin' ),
 ) );
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'select',
 	'settings'     => 'header_cart_style',
-	'label'       => __( 'Cart Style', 'flatsome-admin' ),
+	'label'       => __( 'Cart Style', 'magicpi-admin' ),
 	'section'     => 'header_cart',
 	'transport' => $transport,
 	'default'     => 'dropdown',
 	'choices'     => array(
-		'dropdown' => __( 'Dropdown', 'flatsome-admin' ),
-		'off-canvas' => __( 'Off-Canvas Sidebar', 'flatsome-admin' ),
-		'link' => __( 'Link Only', 'flatsome-admin' ),
+		'dropdown' => __( 'Dropdown', 'magicpi-admin' ),
+		'off-canvas' => __( 'Off-Canvas Sidebar', 'magicpi-admin' ),
+		'link' => __( 'Link Only', 'magicpi-admin' ),
 	),
 ));
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'        => 'radio-image',
 	'settings'     => 'cart_icon_style',
-	'label'       => __( 'Cart Icon Style', 'flatsome-admin' ),
+	'label'       => __( 'Cart Icon Style', 'magicpi-admin' ),
 	'section'     => 'header_cart',
 	'transport' => $transport,
 	'default'     => '',
@@ -41,10 +41,10 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ));
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'        => 'radio-image',
 	'settings'     => 'cart_icon',
-	'label'       => __( 'Cart Icon', 'flatsome-admin' ),
+	'label'       => __( 'Cart Icon', 'magicpi-admin' ),
 	'section'     => 'header_cart',
 	'transport' => $transport,
 	'default'     => 'basket',
@@ -56,45 +56,45 @@ Flatsome_Option::add_field( 'option', array(
 ));
 
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'image',
 	'settings'     => 'custom_cart_icon',
-	'label'       => __( 'Custom Cart Icon', 'flatsome-admin' ),
+	'label'       => __( 'Custom Cart Icon', 'magicpi-admin' ),
 	'section'     => 'header_cart',
 	'transport' => $transport,
 	'default'     => '',
 ));
 
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'checkbox',
 	'settings'     => 'header_cart_total',
-	'label'       => __( 'Show cart totals', 'flatsome-admin' ),
+	'label'       => __( 'Show cart totals', 'magicpi-admin' ),
 	'section'     => 'header_cart',
 	'transport' => $transport,
 	'default'     => 1,
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'checkbox',
 	'settings'     => 'header_cart_title',
-	'label'       => __( 'Show cart title', 'flatsome-admin' ),
+	'label'       => __( 'Show cart title', 'magicpi-admin' ),
 	'section'     => 'header_cart',
 	'transport' => $transport,
 	'default'     => 1,
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'textarea',
 	'settings'     => 'html_cart_header',
 	'transport' => $transport,
-	'label'       => __( 'Custom Content after Cart', 'flatsome-admin' ),
-	'description' => __( 'Add Any HTML or Shortcode here...', 'flatsome-admin' ),
+	'label'       => __( 'Custom Content after Cart', 'magicpi-admin' ),
+	'description' => __( 'Add Any HTML or Shortcode here...', 'magicpi-admin' ),
 	'section'     => 'header_cart',
-	'sanitize_callback' => 'flatsome_custom_sanitize',
+	'sanitize_callback' => 'magicpi_custom_sanitize',
 ));
 
-function flatsome_refresh_header_cart_partials( WP_Customize_Manager $wp_customize ) {
+function magicpi_refresh_header_cart_partials( WP_Customize_Manager $wp_customize ) {
 
 	if ( ! isset( $wp_customize->selective_refresh ) ) {
 	      return;
@@ -130,4 +130,4 @@ function flatsome_refresh_header_cart_partials( WP_Customize_Manager $wp_customi
 	) );
 
 }
-add_action( 'customize_register', 'flatsome_refresh_header_cart_partials' );
+add_action( 'customize_register', 'magicpi_refresh_header_cart_partials' );

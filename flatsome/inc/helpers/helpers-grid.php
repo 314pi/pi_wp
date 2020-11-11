@@ -1,6 +1,6 @@
 <?php
 
-function flatsome_get_grid_height($height, $id){
+function magicpi_get_grid_height($height, $id){
 
   $height_sm = null;
   $height_md = null;
@@ -53,8 +53,8 @@ function flatsome_get_grid_height($height, $id){
   <?php
 }
 
-if( ! function_exists( 'flatsome_get_grid' ) ) {
-  function flatsome_get_grid($grid = 1){
+if( ! function_exists( 'magicpi_get_grid' ) ) {
+  function magicpi_get_grid($grid = 1){
 
     $g = array();
 

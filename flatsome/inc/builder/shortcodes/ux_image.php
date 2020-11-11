@@ -14,7 +14,7 @@ add_ux_builder_shortcode( 'ux_image', array(
     'name' => __( 'Image', 'ux-builder'),
     'category' => __( 'Content' ),
     'toolbar_thumbnail' => 'id',
-    'thumbnail' =>  flatsome_ux_builder_thumbnail( 'ux_image' ),
+    'thumbnail' =>  magicpi_ux_builder_thumbnail( 'ux_image' ),
     'wrap' => false,
 
     'presets' => array(

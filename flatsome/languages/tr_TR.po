@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Flatsome v2.7\n"
+"Project-Id-Version: Magicpi v2.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-10 11:47+0000\n"
 "PO-Revision-Date: 2017-05-10 12:26+0000\n"
@@ -63,7 +63,7 @@ msgstr "Sayfalar ve gönderiler bulundu"
 msgid "All"
 msgstr "Hepsi"
 
-#: flatsome-live-search.php:129 inc/shortcodes/portfolio.php:129
+#: magicpi-live-search.php:129 inc/shortcodes/portfolio.php:129
 msgid "No matches found"
 msgstr "Eşleşme Bulunamadı"
 
@@ -252,8 +252,8 @@ msgid "Footer 2 (4 column)"
 msgstr "Altbilgi 2 (4 kolon)"
 
 #: functions.php:349
-msgid "Flatsome Theme Options"
-msgstr "Flatsome Tema Seçenekleri"
+msgid "Magicpi Theme Options"
+msgstr "Magicpi Tema Seçenekleri"
 
 #: image.php:36 image.php:109 inc/template-tags.php:77
 #: inc/template-tags.php:106

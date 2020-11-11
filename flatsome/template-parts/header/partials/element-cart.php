@@ -8,7 +8,7 @@
   $icon = get_theme_mod('cart_icon','basket');
   $cart_title = get_theme_mod('header_cart_title', 1);
   $cart_total = get_theme_mod('header_cart_total', 1);
-  $disable_mini_cart = apply_filters( 'flatsome_disable_mini_cart', is_cart() || is_checkout() );
+  $disable_mini_cart = apply_filters( 'magicpi_disable_mini_cart', is_cart() || is_checkout() );
   if ( $disable_mini_cart ) {
     $cart_style = 'link';
   }
@@ -17,10 +17,10 @@
 <?php if($icon_style && $icon_style !== 'plain') { ?><div class="header-button"><?php } ?>
 
 <?php if($cart_style !== 'off-canvas') { ?>
-<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php _e('Cart', 'woocommerce'); ?>" class="header-cart-link <?php echo get_flatsome_icon_class($icon_style, 'small'); ?>">
+<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php _e('Cart', 'woocommerce'); ?>" class="header-cart-link <?php echo get_magicpi_icon_class($icon_style, 'small'); ?>">
 
 <?php } else if($cart_style == 'off-canvas') { ?>
-	<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart-link off-canvas-toggle nav-top-link <?php echo get_flatsome_icon_class($icon_style, 'small'); ?>" data-open="#cart-popup" data-class="off-canvas-cart" title="<?php _e('Cart', 'woocommerce'); ?>" data-pos="right">
+	<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart-link off-canvas-toggle nav-top-link <?php echo get_magicpi_icon_class($icon_style, 'small'); ?>" data-open="#cart-popup" data-class="off-canvas-cart" title="<?php _e('Cart', 'woocommerce'); ?>" data-pos="right">
 <?php } ?>
 
 <?php  if($cart_total || $cart_title) { ?>
@@ -54,7 +54,7 @@ else { ?>
 <?php if($icon_style && $icon_style !== 'plain') { ?></div><?php } ?>
 
 <?php if($cart_style == 'dropdown') { ?>
- <ul class="nav-dropdown <?php flatsome_dropdown_classes(); ?>">
+ <ul class="nav-dropdown <?php magicpi_dropdown_classes(); ?>">
     <li class="html widget_shopping_cart">
       <div class="widget_shopping_cart_content">
         <?php woocommerce_mini_cart(); ?>
@@ -82,7 +82,7 @@ else { ?>
       <?php if($custom_cart_content) {
         echo '<div class="header-cart-content">'.do_shortcode($custom_cart_content).'</div>'; }
       ?>
-      <?php do_action('flatsome_cart_sidebar'); ?>
+      <?php do_action('magicpi_cart_sidebar'); ?>
   </div>
   </div>
 

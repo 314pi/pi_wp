@@ -1,7 +1,7 @@
 <?php
 
 // [featured_items_slider]
-function flatsome_portfolio_shortcode($atts, $content = null, $tag) {
+function magicpi_portfolio_shortcode($atts, $content = null, $tag) {
 
   extract(shortcode_atts(array(
         // meta
@@ -71,7 +71,7 @@ function flatsome_portfolio_shortcode($atts, $content = null, $tag) {
   if($height && !$image_height) $image_height = $height;
 
   // Get Default Theme style
-  if(!$style) $style = flatsome_option('portfolio_style');
+  if(!$style) $style = magicpi_option('portfolio_style');
 
   // Fix old
   if($tag == 'featured_items_slider') $type = 'slider';
@@ -85,9 +85,9 @@ function flatsome_portfolio_shortcode($atts, $content = null, $tag) {
   if($type == 'grid'){
     $columns = 0;
     $current_grid = 0;
-    $grid = flatsome_get_grid($grid);
+    $grid = magicpi_get_grid($grid);
     $grid_total = count($grid);
-    flatsome_get_grid_height($grid_height, $_id);
+    magicpi_get_grid_height($grid_height, $_id);
   }
 
   // Set box style
@@ -136,11 +136,11 @@ function flatsome_portfolio_shortcode($atts, $content = null, $tag) {
  // Add filter
  if($filter && $filter != 'disabled' && empty($cat) && $type !== 'grid' && $type !== 'slider' && $type !== 'full-slider'){
   // TODO: Get categories for filtering.
-  wp_enqueue_script('flatsome-isotope-js');
+  wp_enqueue_script('magicpi-isotope-js');
   ?>
   <div class="container mb-half">
   <ul class="nav nav-<?php echo $filter;?> nav-<?php echo $filter_align ;?> nav-<?php echo $filter_nav;?> nav-uppercase filter-nav">
-    <li class="active"><a href="#" data-filter="[data-id]"><?php echo __('All','flatsome'); ?></a></li>
+    <li class="active"><a href="#" data-filter="[data-id]"><?php echo __('All','magicpi'); ?></a></li>
     <?php
       $tax_terms = get_terms('featured_item_category');
       foreach ($tax_terms as $key => $value) {
@@ -210,7 +210,7 @@ if ( isset( $atts['ids'] ) ) {
 $wp_query = new WP_Query( $args );
 
 // Get repeater structure
-get_flatsome_repeater_start($repeater);
+get_magicpi_repeater_start($repeater);
 
  ?>
   <?php
@@ -276,7 +276,7 @@ get_flatsome_repeater_start($repeater);
           endif;
           wp_reset_query();
 
-  get_flatsome_repeater_end($repeater);
+  get_magicpi_repeater_end($repeater);
   echo '</div>';
 
   $args = array(
@@ -296,6 +296,6 @@ get_flatsome_repeater_start($repeater);
   ob_end_clean();
   return $content;
 }
-add_shortcode("featured_items_slider", "flatsome_portfolio_shortcode");
-add_shortcode("featured_items_grid", "flatsome_portfolio_shortcode");
-add_shortcode("ux_portfolio", "flatsome_portfolio_shortcode");
+add_shortcode("featured_items_slider", "magicpi_portfolio_shortcode");
+add_shortcode("featured_items_grid", "magicpi_portfolio_shortcode");
+add_shortcode("ux_portfolio", "magicpi_portfolio_shortcode");

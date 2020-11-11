@@ -7,10 +7,10 @@
  *
  * @return int|false Block ID or false if none assigned.
  */
-function flatsome_get_cat_product_block( $product ) {
+function magicpi_get_cat_product_block( $product ) {
 
 	// Primary based.
-	$primary_term_id = apply_filters( 'flatsome_product_block_primary_term_id', false, $product );
+	$primary_term_id = apply_filters( 'magicpi_product_block_primary_term_id', false, $product );
 
 	if ( $primary_term_id ) {
 		$cat_meta = get_term_meta( $primary_term_id, 'cat_meta' );
@@ -21,7 +21,7 @@ function flatsome_get_cat_product_block( $product ) {
 
 	// Regular.
 	$terms = wc_get_product_terms( $product->get_Id(), 'product_cat', apply_filters(
-		'flatsome_product_block_product_terms_args',
+		'magicpi_product_block_product_terms_args',
 		array(
 			'orderby' => 'parent',
 			'order'   => 'DESC',
@@ -47,7 +47,7 @@ function flatsome_get_cat_product_block( $product ) {
  *
  * @return int|false Block ID or false if none assigned.
  */
-function flatsome_get_single_product_block( $product ) {
+function magicpi_get_single_product_block( $product ) {
 	global $wc_cpdf;
 
 	$block = $wc_cpdf->get_value( $product->get_Id(), '_product_block' );
@@ -62,7 +62,7 @@ function flatsome_get_single_product_block( $product ) {
  *
  * @return array|false Block data or false if none assigned.
  */
-function flatsome_product_block( $product_id ) {
+function magicpi_product_block( $product_id ) {
 
 	static $cache;
 	if ( ! is_array( $cache ) ) $cache = array();
@@ -86,17 +86,17 @@ function flatsome_product_block( $product_id ) {
 		$scope = 'global';
 	}
 
-	if ( $cat = flatsome_get_cat_product_block( $product ) ) {
+	if ( $cat = magicpi_get_cat_product_block( $product ) ) {
 		$block = $cat;
 		$scope = 'category';
 	}
 
-	if ( $single = flatsome_get_single_product_block( $product ) ) {
+	if ( $single = magicpi_get_single_product_block( $product ) ) {
 		$block = $single;
 		$scope = 'single';
 	}
 
-	$filtered = apply_filters( 'flatsome_product_block', $block, $product );
+	$filtered = apply_filters( 'magicpi_product_block', $block, $product );
 
 	if ( $filtered != $block ) {
 		$scope = 'filter';
@@ -104,7 +104,7 @@ function flatsome_product_block( $product_id ) {
 
 	$block_data = $filtered
 		? array(
-			'id'    => flatsome_get_block_id( $filtered ),
+			'id'    => magicpi_get_block_id( $filtered ),
 			'scope' => $scope,
 		)
 		: false;

@@ -1,6 +1,6 @@
 <?php
 
-function flatsome_team_member($atts, $content = null){
+function magicpi_team_member($atts, $content = null){
   extract( shortcode_atts( array(
       '_id' => null,
       'class' => '',
@@ -72,7 +72,7 @@ function flatsome_team_member($atts, $content = null){
     if($depth) $classes_box[] = 'box-shadow-'.$depth;
     if($depth_hover) $classes_box[] = 'box-shadow-'.$depth_hover.'-hover';
 
-	$link_start = '<a href="' . $link . '"' . flatsome_parse_target_rel( $link_atts ) . '>';
+	$link_start = '<a href="' . $link . '"' . magicpi_parse_target_rel( $link_atts ) . '>';
 	$link_end   = '</a>';
 
     if($style) $classes_box[] = 'box-'.$style;
@@ -115,7 +115,7 @@ function flatsome_team_member($atts, $content = null){
          <?php if($link) echo $link_start; ?>
          <div class="box-image <?php echo implode(' ', $classes_image); ?>" <?php echo get_shortcode_inline_css($css_image); ?>>
            <div class="box-image-inner <?php echo implode(' ', $classes_image_inner); ?>" <?php echo get_shortcode_inline_css($css_image_inner); ?>>
-              <?php echo flatsome_get_image($img, $image_size); ?>
+              <?php echo magicpi_get_image($img, $image_size); ?>
               <?php if($image_overlay) { ?><div class="overlay" style="background-color:<?php echo $image_overlay; ?>"></div><?php } ?>
            </div>
           </div>
@@ -142,4 +142,4 @@ function flatsome_team_member($atts, $content = null){
     ob_end_clean();
     return $content;
 };
-add_shortcode('team_member','flatsome_team_member');
+add_shortcode('team_member','magicpi_team_member');

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Flatsome v2.7\n"
+"Project-Id-Version: Magicpi v2.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-18 21:30+0000\n"
 "PO-Revision-Date: 2016-09-25 17:25+0000\n"
@@ -78,7 +78,7 @@ msgid "Footer 2 (4 column)"
 msgstr ""
 
 #: functions.php:349
-msgid "Flatsome Theme Options"
+msgid "Magicpi Theme Options"
 msgstr ""
 
 #: image.php:25

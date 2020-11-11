@@ -2,7 +2,7 @@
 /**
  * Registers the `ux_text` shortcode.
  *
- * @package flatsome
+ * @package magicpi
  */
 
 /**
@@ -14,7 +14,7 @@
  *
  * @return string
  */
-function flatsome_render_ux_text_shortcode( $atts, $content, $tag ) {
+function magicpi_render_ux_text_shortcode( $atts, $content, $tag ) {
 	$atts = shortcode_atts(
 		array(
 			'visibility' => '',
@@ -31,4 +31,4 @@ function flatsome_render_ux_text_shortcode( $atts, $content, $tag ) {
 
 	return '<div class="' . implode( ' ', $classes ) . '">' . do_shortcode( $content ) . '</div>';
 }
-add_shortcode( 'ux_text', 'flatsome_render_ux_text_shortcode' );
+add_shortcode( 'ux_text', 'magicpi_render_ux_text_shortcode' );

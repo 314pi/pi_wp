@@ -21,7 +21,7 @@
   <app-stack></app-stack>
   <draggable-helper></draggable-helper>
   <context-menu></context-menu>
-  <flatsome-studio></flatsome-studio>
+  <magicpi-studio></magicpi-studio>
 
   <?php wp_print_scripts( $ux_builder_scripts ) ?>
 </body>

@@ -14,11 +14,11 @@ Template name: Page - No Header / No Footer
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php do_action('flatsome_before_page' ); ?>
-<?php do_action('flatsome_after_header'); ?>
+<?php do_action('magicpi_before_page' ); ?>
+<?php do_action('magicpi_after_header'); ?>
 <div id="wrapper">
 
-	<div id="main" class="<?php flatsome_main_classes();  ?>">
+	<div id="main" class="<?php magicpi_main_classes();  ?>">
 
 	<?php while ( have_posts() ) : the_post(); ?>
 		<?php the_content(); ?>
@@ -27,7 +27,7 @@ Template name: Page - No Header / No Footer
 	</div>
 
 </div>
-<?php do_action( 'flatsome_after_page' ); ?>
+<?php do_action( 'magicpi_after_page' ); ?>
 
 <?php wp_footer(); ?>
 </body>

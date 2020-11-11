@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Flatsome v1.9\n"
+"Project-Id-Version: Magicpi v1.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-17 13:16+0000\n"
 "PO-Revision-Date: 2017-04-17 13:16+0000\n"
@@ -204,8 +204,8 @@ msgid "Footer 2 (4 column)"
 msgstr "Footer 2 (4 colonne)"
 
 #: functions.php:349
-msgid "Flatsome Theme Options"
-msgstr "Theme Options Flatsome"
+msgid "Magicpi Theme Options"
+msgstr "Theme Options Magicpi"
 
 #: image.php:25
 #, php-format
@@ -536,7 +536,7 @@ msgstr "Pagine e post trovati"
 msgid "All"
 msgstr "Tutti"
 
-#: flatsome-live-search.php:129 inc/shortcodes/portfolio.php:129
+#: magicpi-live-search.php:129 inc/shortcodes/portfolio.php:129
 msgid "No matches found"
 msgstr "Nessuna corrispondenza trovata"
 

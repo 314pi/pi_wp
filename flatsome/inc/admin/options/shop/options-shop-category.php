@@ -1,48 +1,48 @@
 <?php
 
-Flatsome_Option::add_section( 'woocommerce_product_catalog', array(
+Magicpi_Option::add_section( 'woocommerce_product_catalog', array(
   'title' => __( 'Product Catalog', 'woocommerce' ),
   'panel' => 'woocommerce',
 ) );
 
-Flatsome_Option::add_field( '', array(
+Magicpi_Option::add_field( '', array(
 	'type'     => 'custom',
 	'settings' => 'custom_title_category_homepage',
-	'label'    => __( '', 'flatsome-admin' ),
+	'label'    => __( '', 'magicpi-admin' ),
 	'section'  => 'woocommerce_product_catalog',
 	'default'  => '<div class="options-title-divider">Shop Page</div>',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'        => 'textarea',
 	'settings'    => 'html_shop_page',
-	'label'       => __( 'Shop Page Header', 'flatsome-admin' ),
-	'description' => __( 'Enter HTML that should be placed on top of main shop page. Shortcodes are allowed. This will replace Shop Homepage Header', 'flatsome-admin' ),
+	'label'       => __( 'Shop Page Header', 'magicpi-admin' ),
+	'description' => __( 'Enter HTML that should be placed on top of main shop page. Shortcodes are allowed. This will replace Shop Homepage Header', 'magicpi-admin' ),
 	'section'     => 'woocommerce_product_catalog',
 	'default'     => '',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'        => 'textarea',
 	'settings'    => 'html_shop_page_content',
-	'label'       => __( 'Shop Page Content', 'flatsome-admin' ),
-	'description' => __( 'Enter HTML/Shortcodes that should replace Shop Homepage content.', 'flatsome-admin' ),
+	'label'       => __( 'Shop Page Content', 'magicpi-admin' ),
+	'description' => __( 'Enter HTML/Shortcodes that should replace Shop Homepage content.', 'magicpi-admin' ),
 	'section'     => 'woocommerce_product_catalog',
 	'default'     => '',
 ) );
 
-Flatsome_Option::add_field( '', array(
+Magicpi_Option::add_field( '', array(
 	'type'     => 'custom',
 	'settings' => 'custom_title_category_layout',
-	'label'    => __( '', 'flatsome-admin' ),
+	'label'    => __( '', 'magicpi-admin' ),
 	'section'  => 'woocommerce_product_catalog',
 	'default'  => '<div class="options-title-divider">Catalog Layout</div>',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'     => 'radio-image',
 	'settings' => 'category_sidebar',
-	'label'    => __( 'Layout', 'flatsome-admin' ),
+	'label'    => __( 'Layout', 'magicpi-admin' ),
 	'section'  => 'woocommerce_product_catalog',
 	'default'  => 'left-sidebar',
 	'choices'  => array(
@@ -53,10 +53,10 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'checkbox',
 	'settings'        => 'category_sticky_sidebar',
-	'label'           => __( 'Sticky sidebar', 'flatsome-admin' ) . ' (NEW)',
+	'label'           => __( 'Sticky sidebar', 'magicpi-admin' ) . ' (NEW)',
 	'section'         => 'woocommerce_product_catalog',
 	'active_callback' => array(
 		array(
@@ -73,10 +73,10 @@ Flatsome_Option::add_field( 'option', array(
 	'default'         => 0,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'radio-image',
 	'settings'  => 'category_grid_style',
-	'label'     => __( 'List Style', 'flatsome-admin' ),
+	'label'     => __( 'List Style', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'transport' => $transport,
 	'default'   => 'grid',
@@ -87,20 +87,20 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'        => 'checkbox',
 	'settings'    => 'category_force_image_height',
 	// 'transport' => $transport,
-	'label'       => __( 'EQUAL IMAGE HEIGHTS', 'flatsome-admin' ),
+	'label'       => __( 'EQUAL IMAGE HEIGHTS', 'magicpi-admin' ),
 	'description' => 'Force all images to have the same height',
 	'section'     => 'woocommerce_product_catalog',
 	'default'     => false,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'slider',
 	'settings'        => 'category_image_height',
-	'label'           => __( 'Equal Image height', 'flatsome-admin' ),
+	'label'           => __( 'Equal Image height', 'magicpi-admin' ),
 	'description'     => 'Change the image height in %. (100% = 1:1)',
 	'section'         => 'woocommerce_product_catalog',
 	'active_callback' => array(
@@ -120,28 +120,28 @@ Flatsome_Option::add_field( 'option', array(
 ) );
 
 
-Flatsome_Option::add_field( '', array(
+Magicpi_Option::add_field( '', array(
     'type'        => 'custom',
     'settings' => 'custom_html_woocommerce_image_shortcut_category',
-    'label'       => __( '', 'flatsome-admin' ),
+    'label'       => __( '', 'magicpi-admin' ),
     'section'         => 'woocommerce_product_catalog',
     'default'     => '<button style="margin-top: 15px; margin-bottom:15px" class="button button-primary" data-to-section="woocommerce_product_images">Thumbnail Image Settings →</button>',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'text',
 	'settings'  => 'products_pr_page',
 	'transport' => $transport,
-	'label'     => __( 'Products per Page', 'flatsome-admin' ),
+	'label'     => __( 'Products per Page', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'default'   => 12,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'slider',
 	'settings'  => 'category_row_count',
 	'transport' => $transport,
-	'label'     => __( 'Products per row - Desktop', 'flatsome-admin' ),
+	'label'     => __( 'Products per row - Desktop', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'default'   => 3,
 	'choices'   => array(
@@ -151,10 +151,10 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'slider',
 	'settings'  => 'category_row_count_tablet',
-	'label'     => __( 'Products per row - Tablet', 'flatsome-admin' ),
+	'label'     => __( 'Products per row - Tablet', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'transport' => $transport,
 	'default'   => 3,
@@ -165,10 +165,10 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'slider',
 	'settings'  => 'category_row_count_mobile',
-	'label'     => __( 'Products per row - Mobile', 'flatsome-admin' ),
+	'label'     => __( 'Products per row - Mobile', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'transport' => $transport,
 	'default'   => 2,
@@ -179,18 +179,18 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ) );
 
-Flatsome_Option::add_field( '', array(
+Magicpi_Option::add_field( '', array(
 	'type'     => 'custom',
 	'settings' => 'custom_title_category_header',
-	'label'    => __( '', 'flatsome-admin' ),
+	'label'    => __( '', 'magicpi-admin' ),
 	'section'  => 'woocommerce_product_catalog',
 	'default'  => '<div class="options-title-divider">Header</div>',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'radio-image',
 	'settings'  => 'category_title_style',
-	'label'     => __( 'Title Style', 'flatsome-admin' ),
+	'label'     => __( 'Title Style', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'transport' => $transport,
 	'default'   => '',
@@ -201,20 +201,20 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'checkbox',
 	'settings'  => 'category_show_title',
 	'transport' => $transport,
-	'label'     => __( 'Show title', 'flatsome-admin' ),
+	'label'     => __( 'Show title', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'default'   => '0',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'checkbox',
 	'settings'        => 'breadcrumb_home',
 	'transport'       => $transport,
-	'label'           => __( 'Show home link in breadcrumb', 'flatsome-admin' ),
+	'label'           => __( 'Show home link in breadcrumb', 'magicpi-admin' ),
 	'section'         => 'woocommerce_product_catalog',
 	'active_callback' => function () {
 		$wpseo     = class_exists( 'WPSEO_Frontend' ) && get_theme_mod( 'wpseo_breadcrumb' ) ? true : false;
@@ -225,75 +225,75 @@ Flatsome_Option::add_field( 'option', array(
 	'default'         => 1,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'     => 'checkbox',
 	'settings' => 'category_header_transparent',
-	'label'    => __( 'Transparent Header', 'flatsome-admin' ),
+	'label'    => __( 'Transparent Header', 'magicpi-admin' ),
 	'section'  => 'woocommerce_product_catalog',
 	'default'  => '0',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'checkbox',
 	'settings'  => 'header_shop_bg_featured',
 	'transport' => $transport,
-	'help'      => __( 'Use Featured Images from categories and products as background. Will fallback to default Shop Title background if nothing is set.', 'flatsome-admin' ),
-	'label'     => __( 'Featured Image as Background', 'flatsome-admin' ),
+	'help'      => __( 'Use Featured Images from categories and products as background. Will fallback to default Shop Title background if nothing is set.', 'magicpi-admin' ),
+	'label'     => __( 'Featured Image as Background', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'default'   => 1,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'image',
 	'settings'  => 'header_shop_bg_image',
 	'transport' => $transport,
-	'label'     => __( 'Shop Title Background', 'flatsome-admin' ),
+	'label'     => __( 'Shop Title Background', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'default'   => '',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'color-alpha',
 	'alpha'     => true,
 	'settings'  => 'header_shop_bg_color',
 	'transport' => $transport,
-	'label'     => __( 'Title Background Color', 'flatsome-admin' ),
+	'label'     => __( 'Title Background Color', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'default'   => 'rgba(0,0,0,.3)',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'text',
 	'settings'  => 'category_filter_text',
 	'transport' => $transport,
-	'label'     => __( 'Custom Filter Text', 'flatsome-admin' ),
+	'label'     => __( 'Custom Filter Text', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'default'   => '',
 ) );
 
-Flatsome_Option::add_field( '', array(
+Magicpi_Option::add_field( '', array(
 	'type'     => 'custom',
 	'settings' => 'custom_title_category_breadcrumbs',
-	'label'    => __( '', 'flatsome-admin' ),
+	'label'    => __( '', 'magicpi-admin' ),
 	'section'  => 'woocommerce_product_catalog',
 	'default'  => '<div class="options-title-divider">Breadcrumbs</div>',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'     => 'select',
 	'settings' => 'breadcrumb_size',
-	'label'    => __( 'Breadcrumb Size', 'flatsome-admin' ),
-	'help'     => __( 'Change size of breadcrumb on product categories. Useful if you have long breadcrumbs.', 'flatsome-admin' ),
+	'label'    => __( 'Breadcrumb Size', 'magicpi-admin' ),
+	'help'     => __( 'Change size of breadcrumb on product categories. Useful if you have long breadcrumbs.', 'magicpi-admin' ),
 	'section'  => 'woocommerce_product_catalog',
 	'default'  => 'large',
 	'choices'  => $sizes,
 ) );
 
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'     => 'radio-buttonset',
 	'settings' => 'breadcrumb_case',
-	'label'    => esc_attr__( 'Breadcrumbs Case', 'flatsome-admin' ),
+	'label'    => esc_attr__( 'Breadcrumbs Case', 'magicpi-admin' ),
 	'section'  => 'woocommerce_product_catalog',
 	'default'  => 'uppercase',
 	'choices'  => array(
@@ -302,18 +302,18 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ) );
 
-Flatsome_Option::add_field( '', array(
+Magicpi_Option::add_field( '', array(
 	'type'     => 'custom',
 	'settings' => 'custom_title_category_category_box',
-	'label'    => __( '', 'flatsome-admin' ),
+	'label'    => __( '', 'magicpi-admin' ),
 	'section'  => 'woocommerce_product_catalog',
 	'default'  => '<div class="options-title-divider">Category Box</div>',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'radio-image',
 	'settings'  => 'cat_style',
-	'label'     => __( 'Category Box Style', 'flatsome-admin' ),
+	'label'     => __( 'Category Box Style', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'transport' => $transport,
 	'default'   => 'badge',
@@ -328,27 +328,27 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'checkbox',
 	'settings'  => 'category_show_count',
 	'transport' => $transport,
-	'label'     => __( 'Show product count', 'flatsome-admin' ),
+	'label'     => __( 'Show product count', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'default'   => 1,
 ) );
 
-Flatsome_Option::add_field( '', array(
+Magicpi_Option::add_field( '', array(
 	'type'     => 'custom',
 	'settings' => 'custom_title_category_product_box',
-	'label'    => __( '', 'flatsome-admin' ),
+	'label'    => __( '', 'magicpi-admin' ),
 	'section'  => 'woocommerce_product_catalog',
 	'default'  => '<div class="options-title-divider">Product Box</div>',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'radio-image',
 	'settings'  => 'grid_style',
-	'label'     => __( 'Grid Style', 'flatsome-admin' ),
+	'label'     => __( 'Grid Style', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'transport' => $transport,
 	'default'   => 'grid1',
@@ -359,17 +359,17 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'select',
 	'settings'  => 'product_hover',
 	'transport' => $transport,
-	'label'     => __( 'Product Image Hover style', 'flatsome-admin' ),
+	'label'     => __( 'Product Image Hover style', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'default'   => 'fade_in_back',
 	'choices'   => array(
-		'none'         => __( 'None', 'flatsome-admin' ),
-		'fade_in_back' => __( 'Back Image - Fade In', 'flatsome-admin' ),
-		'zoom_in'      => __( 'Back Image - Zoom In', 'flatsome-admin' ),
+		'none'         => __( 'None', 'magicpi-admin' ),
+		'fade_in_back' => __( 'Back Image - Fade In', 'magicpi-admin' ),
+		'zoom_in'      => __( 'Back Image - Zoom In', 'magicpi-admin' ),
 		'zoom'         => 'Zoom',
 		'zoom-fade'    => 'Zoom Fade',
 		'blur'         => 'Blur',
@@ -381,10 +381,10 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'slider',
 	'settings'  => 'category_shadow',
-	'label'     => __( 'Drop Shadow', 'flatsome-admin' ),
+	'label'     => __( 'Drop Shadow', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'transport' => $transport,
 	'default'   => 0,
@@ -395,10 +395,10 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'slider',
 	'settings'  => 'category_shadow_hover',
-	'label'     => __( 'Drop Shadow:hover', 'flatsome-admin' ),
+	'label'     => __( 'Drop Shadow:hover', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'transport' => $transport,
 	'default'   => 0,
@@ -409,10 +409,10 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'radio-image',
 	'settings'  => 'add_to_cart_icon',
-	'label'     => __( 'Add To Cart Button', 'flatsome-admin' ),
+	'label'     => __( 'Add To Cart Button', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'transport' => $transport,
 	'default'   => 'disable',
@@ -423,72 +423,72 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'select',
 	'settings'  => 'add_to_cart_style',
-	'label'     => __( 'Button Style', 'flatsome-admin' ),
+	'label'     => __( 'Button Style', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'transport' => $transport,
 	'default'   => 'outline',
 	'choices'   => array(
-		'flat'      => __( 'Plain', 'flatsome-admin' ),
-		'outline'   => __( 'Outline', 'flatsome-admin' ),
-		'underline' => __( 'Underline', 'flatsome-admin' ),
-		'shade'     => __( 'Shade', 'flatsome-admin' ),
-		'bevel'     => __( 'Bevel', 'flatsome-admin' ),
-		'gloss'     => __( 'Gloss', 'flatsome-admin' ),
+		'flat'      => __( 'Plain', 'magicpi-admin' ),
+		'outline'   => __( 'Outline', 'magicpi-admin' ),
+		'underline' => __( 'Underline', 'magicpi-admin' ),
+		'shade'     => __( 'Shade', 'magicpi-admin' ),
+		'bevel'     => __( 'Bevel', 'magicpi-admin' ),
+		'gloss'     => __( 'Gloss', 'magicpi-admin' ),
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'checkbox',
 	'settings'  => 'product_box_category',
 	'transport' => $transport,
-	'label'     => __( 'Show Category', 'flatsome-admin' ),
+	'label'     => __( 'Show Category', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'default'   => 1,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'checkbox',
 	'settings'  => 'product_box_rating',
 	'transport' => $transport,
-	'label'     => __( 'Show Ratings', 'flatsome-admin' ),
+	'label'     => __( 'Show Ratings', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'default'   => 1,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'checkbox',
 	'settings'  => 'short_description_in_grid',
 	'transport' => $transport,
-	'label'     => __( 'Show Short Description', 'flatsome-admin' ),
+	'label'     => __( 'Show Short Description', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'default'   => '0',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'checkbox',
 	'settings'  => 'disable_quick_view',
 	'transport' => $transport,
-	'label'     => __( 'Disable Quick View', 'flatsome-admin' ),
+	'label'     => __( 'Disable Quick View', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'default'   => 0,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'        => 'checkbox',
 	'settings'    => 'equalize_product_box',
 	'transport'   => $transport,
-	'label'       => esc_attr__( 'Equalize Items', 'flatsome-admin' ),
+	'label'       => esc_attr__( 'Equalize Items', 'magicpi-admin' ),
 	'section'     => 'woocommerce_product_catalog',
 	'default'     => '0',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'radio-image',
 	'settings'  => 'bubble_style',
-	'label'     => __( 'Sale Bubble Style', 'flatsome-admin' ),
+	'label'     => __( 'Sale Bubble Style', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'transport' => $transport,
 	'default'   => 'style1',
@@ -499,29 +499,29 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'text',
 	'settings'  => 'sale_bubble_text',
 	'transport' => $transport,
-	'label'     => __( 'Custom Sale Bubble Text', 'flatsome-admin' ),
+	'label'     => __( 'Custom Sale Bubble Text', 'magicpi-admin' ),
 	'section'   => 'woocommerce_product_catalog',
 	'default'   => '',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'     => 'checkbox',
 	'settings' => 'sale_bubble_percentage',
-	'label'    => __( 'Enable % instead of "Sale!"', 'flatsome-admin' ),
+	'label'    => __( 'Enable % instead of "Sale!"', 'magicpi-admin' ),
 	'section'  => 'woocommerce_product_catalog',
 	'default'  => '0',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'text',
 	'settings'        => 'sale_bubble_percentage_formatting',
 	'transport'       => $transport,
-	'label'           => __( 'Sale Bubble % Formatting', 'flatsome-admin' ),
-	'description'     => __( 'How the discount should be displayed. e.g. -{value}%', 'flatsome-admin' ),
+	'label'           => __( 'Sale Bubble % Formatting', 'magicpi-admin' ),
+	'description'     => __( 'How the discount should be displayed. e.g. -{value}%', 'magicpi-admin' ),
 	'section'         => 'woocommerce_product_catalog',
 	'active_callback' => array(
 		array(

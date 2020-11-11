@@ -1,6 +1,6 @@
 <?php
 
-// Flatsome Products
+// Magicpi Products
 function ux_products_list($atts, $content = null, $tag) {
   extract( $atts = shortcode_atts( array(
     'title' => '',

@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				$selected_category  = isset( $_REQUEST['product_cat'] ) ? $_REQUEST['product_cat'] : '';
 
 				echo '<select class="search_categories resize-select mb-0" name="product_cat">';
-				echo '<option value=""' . selected( '', $selected_category, false ) . '>' . esc_html__( 'All', 'flatsome' ) . '</option>';
+				echo '<option value=""' . selected( '', $selected_category, false ) . '>' . esc_html__( 'All', 'magicpi' ) . '</option>';
 
 				foreach ( $product_categories as $value ) {
 					if ( $value && ! $value->parent ) {
@@ -62,7 +62,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 		<div class="flex-col">
 			<button type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'woocommerce' ); ?>" class="ux-search-submit submit-button secondary button icon mb-0">
-				<?php echo get_flatsome_icon( 'icon-search' ); ?>
+				<?php echo get_magicpi_icon( 'icon-search' ); ?>
 			</button>
 		</div>
 	</div>

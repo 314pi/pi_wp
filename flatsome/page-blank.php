@@ -4,7 +4,7 @@ Template name: Page - Full Width
 */
 get_header(); ?>
 
-<?php do_action( 'flatsome_before_page' ); ?>
+<?php do_action( 'magicpi_before_page' ); ?>
 
 <div id="content" role="main" class="content-area">
 
@@ -16,6 +16,6 @@ get_header(); ?>
 		
 </div>
 
-<?php do_action( 'flatsome_after_page' ); ?>
+<?php do_action( 'magicpi_after_page' ); ?>
 
 <?php get_footer(); ?>

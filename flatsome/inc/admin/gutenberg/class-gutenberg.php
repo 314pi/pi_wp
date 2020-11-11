@@ -4,18 +4,18 @@
  *
  * @author     UX Themes
  * @category   Gutenberg
- * @package    Flatsome/Gutenberg
+ * @package    Magicpi/Gutenberg
  * @since      3.7.0
  */
 
-namespace Flatsome\Inc\Admin;
+namespace Magicpi\Inc\Admin;
 
 defined( 'ABSPATH' ) || exit;
 
 /**
  * Class Gutenberg
  *
- * @package Flatsome\Inc\Admin
+ * @package Magicpi\Inc\Admin
  */
 class Gutenberg {
 
@@ -82,8 +82,8 @@ class Gutenberg {
 	 * Register and enqueue main styles.
 	 */
 	public function enqueue_styles() {
-		wp_register_style( 'flatsome-gutenberg', $this->assets . '/css/style.css', [], $this->version );
-		wp_enqueue_style( 'flatsome-gutenberg' );
+		wp_register_style( 'magicpi-gutenberg', $this->assets . '/css/style.css', [], $this->version );
+		wp_enqueue_style( 'magicpi-gutenberg' );
 	}
 
 	/**
@@ -94,19 +94,19 @@ class Gutenberg {
 		if ( ! $this->is_post_type_gutenberg( $typenow ) ) {
 			return;
 		}
-		wp_enqueue_script( 'flatsome-gutenberg-edit-button', $this->assets . '/js/edit-button.js', array( 'wp-edit-post' ), $this->version, true );
+		wp_enqueue_script( 'magicpi-gutenberg-edit-button', $this->assets . '/js/edit-button.js', array( 'wp-edit-post' ), $this->version, true );
 
 		$page_id = get_the_ID();
 
 		$params = [
 			'edit_button' => [
 				'enabled' => $this->is_edit_button_visible( $page_id ),
-				'text'    => __( 'Edit with UX Builder', 'flatsome' ),
+				'text'    => __( 'Edit with UX Builder', 'magicpi' ),
 				'url'     => ux_builder_edit_url( $page_id ),
 			],
 		];
 
-		wp_localize_script( 'flatsome-gutenberg-edit-button', 'flatsome_gutenberg', $params );
+		wp_localize_script( 'magicpi-gutenberg-edit-button', 'magicpi_gutenberg', $params );
 	}
 
 	/**

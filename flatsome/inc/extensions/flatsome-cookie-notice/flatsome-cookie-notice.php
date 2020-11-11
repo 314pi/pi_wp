@@ -1,10 +1,10 @@
 <?php
 /**
- * Flatsome Cookie notice extension
+ * Magicpi Cookie notice extension
  *
  * @author     UX Themes
  * @category   Extension
- * @package    Flatsome/Extensions
+ * @package    Magicpi/Extensions
  * @since      3.12.0
  */
 
@@ -13,18 +13,18 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Enqueue extensions scripts.
  */
-function flatsome_cookie_notice_scripts() {
+function magicpi_cookie_notice_scripts() {
 	global $extensions_uri;
 
-	wp_enqueue_script( 'flatsome-cookie-notice', $extensions_uri . '/flatsome-cookie-notice/flatsome-cookie-notice.js', array( 'jquery', 'flatsome-js' ), '3.12.0', true );
+	wp_enqueue_script( 'magicpi-cookie-notice', $extensions_uri . '/magicpi-cookie-notice/magicpi-cookie-notice.js', array( 'jquery', 'magicpi-js' ), '3.12.0', true );
 }
 
-add_action( 'wp_enqueue_scripts', 'flatsome_cookie_notice_scripts' );
+add_action( 'wp_enqueue_scripts', 'magicpi_cookie_notice_scripts' );
 
 /**
  * Html template for cookie notice.
  */
-function flatsome_cookie_notice_template() {
+function magicpi_cookie_notice_template() {
 	if ( ! get_theme_mod( 'cookie_notice' ) ) {
 		return;
 	}
@@ -36,31 +36,31 @@ function flatsome_cookie_notice_template() {
 	$text = get_theme_mod( 'cookie_notice_text' );
 	$id   = get_theme_mod( 'privacy_policy_page' );
 	$page = $id ? get_post( $id ) : false;
-	$text = $text ? $text : __( 'This site uses cookies to improve your browse experience. By browsing this website, you agree to our use of cookies.', 'flatsome' );
+	$text = $text ? $text : __( 'This site uses cookies to improve your browse experience. By browsing this website, you agree to our use of cookies.', 'magicpi' );
 	?>
-	<div class="flatsome-cookies <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
-		<div class="flatsome-cookies__inner">
-			<div class="flatsome-cookies__text">
+	<div class="magicpi-cookies <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
+		<div class="magicpi-cookies__inner">
+			<div class="magicpi-cookies__text">
 				<?php echo do_shortcode( $text ); ?>
 			</div>
-			<div class="flatsome-cookies__buttons">
+			<div class="magicpi-cookies__buttons">
 				<?php
 				if ( $page ) {
-					echo flatsome_apply_shortcode( 'button', array(
-						'text'  => _x( 'More info', 'cookie notice', 'flatsome' ),
+					echo magicpi_apply_shortcode( 'button', array(
+						'text'  => _x( 'More info', 'cookie notice', 'magicpi' ),
 						'style' => get_theme_mod( 'cookie_notice_button_style', '' ),
 						'link'  => get_permalink( $page->ID ),
 						'color' => 'secondary',
-						'class' => 'flatsome-cookies__more-btn',
+						'class' => 'magicpi-cookies__more-btn',
 					) );
 				}
 				?>
 				<?php
-				echo flatsome_apply_shortcode( 'button', array(
-					'text'  => _x( 'Accept', 'cookie notice', 'flatsome' ),
+				echo magicpi_apply_shortcode( 'button', array(
+					'text'  => _x( 'Accept', 'cookie notice', 'magicpi' ),
 					'style' => get_theme_mod( 'cookie_notice_button_style', '' ),
 					'color' => 'primary',
-					'class' => 'flatsome-cookies__accept-btn',
+					'class' => 'magicpi-cookies__accept-btn',
 				) );
 				?>
 			</div>
@@ -69,4 +69,4 @@ function flatsome_cookie_notice_template() {
 	<?php
 }
 
-add_action( 'wp_footer', 'flatsome_cookie_notice_template' );
+add_action( 'wp_footer', 'magicpi_cookie_notice_template' );

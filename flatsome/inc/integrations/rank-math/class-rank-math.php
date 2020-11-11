@@ -3,16 +3,16 @@
  * Rank Math integration
  *
  * @author      UX Themes
- * @package     Flatsome/Integrations
+ * @package     Magicpi/Integrations
  * @since       3.12.0
  */
 
-namespace Flatsome\Inc\Integrations;
+namespace Magicpi\Inc\Integrations;
 
 /**
  * Class Rank_Math
  *
- * @package Flatsome\Inc\Integrations
+ * @package Magicpi\Inc\Integrations
  */
 class Rank_Math {
 
@@ -36,15 +36,15 @@ class Rank_Math {
 	public function integrate() {
 		// Primary term.
 		if ( get_theme_mod( 'rank_math_primary_term' ) ) {
-			add_filter( 'flatsome_woocommerce_shop_loop_category', [ $this, 'get_primary_term' ], 10, 2 );
+			add_filter( 'magicpi_woocommerce_shop_loop_category', [ $this, 'get_primary_term' ], 10, 2 );
 		}
 		if ( get_theme_mod( 'rank_math_manages_product_layout_priority' ) ) {
-			add_filter( 'flatsome_product_block_primary_term_id', [ $this, 'get_primary_term_id' ], 10, 2 );
+			add_filter( 'magicpi_product_block_primary_term_id', [ $this, 'get_primary_term_id' ], 10, 2 );
 		}
 		// Breadcrumb.
 		if ( get_theme_mod( 'rank_math_breadcrumb' ) ) {
-			remove_action( 'flatsome_breadcrumb', 'woocommerce_breadcrumb', 20 );
-			add_action( 'flatsome_breadcrumb', [ $this, 'rank_math_breadcrumb' ], 20 );
+			remove_action( 'magicpi_breadcrumb', 'woocommerce_breadcrumb', 20 );
+			add_action( 'magicpi_breadcrumb', [ $this, 'rank_math_breadcrumb' ], 20 );
 		}
 	}
 

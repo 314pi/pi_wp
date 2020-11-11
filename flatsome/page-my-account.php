@@ -6,7 +6,7 @@ This templates add My account to the sidebar.
 
 get_header(); ?>
 
-<?php do_action( 'flatsome_before_page' ); ?>
+<?php do_action( 'magicpi_before_page' ); ?>
 
 <?php wc_get_template('myaccount/header.php'); ?>
 
@@ -45,6 +45,6 @@ get_header(); ?>
 </div>
 </div>
 
-<?php do_action( 'flatsome_after_page' ); ?>
+<?php do_action( 'magicpi_after_page' ); ?>
 
 <?php get_footer(); ?>

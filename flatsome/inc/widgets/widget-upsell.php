@@ -16,8 +16,8 @@ class Upsell_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 	 		'upsell_widget', // Base ID
-			'Flatsome Upsell Products', // Name
-			array( 'description' => __( 'Add upsell products to product page', 'flatsome' ), ) // Args
+			'Magicpi Upsell Products', // Name
+			array( 'description' => __( 'Add upsell products to product page', 'magicpi' ), ) // Args
 		);
 	}
 
@@ -45,7 +45,7 @@ class Upsell_Widget extends WP_Widget {
 			$title = apply_filters( 'widget_title', $instance['title'] );
 		}
 		else {
-			$title = __( 'Complete the look', 'flatsome' );
+			$title = __( 'Complete the look', 'magicpi' );
 		}
 
 		$meta_query = WC()->query->get_meta_query();
@@ -113,7 +113,7 @@ class Upsell_Widget extends WP_Widget {
 			$title = $instance[ 'title' ];
 		}
 		else {
-			$title = __( 'Complete the look', 'flatsome' );
+			$title = __( 'Complete the look', 'magicpi' );
 		}
 		?>
 		<p>

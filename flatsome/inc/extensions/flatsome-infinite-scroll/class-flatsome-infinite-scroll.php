@@ -1,10 +1,10 @@
 <?php
 /**
- * Flatsome Infinite scroll extension
+ * Magicpi Infinite scroll extension
  *
  * @author     UX Themes
  * @category   Extension
- * @package    Flatsome/Extensions
+ * @package    Magicpi/Extensions
  * @since      3.5.0
  */
 
@@ -13,9 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class Flatsome_Infinite_Scroll
+ * Class Magicpi_Infinite_Scroll
  */
-class Flatsome_Infinite_Scroll {
+class Magicpi_Infinite_Scroll {
 
 	/**
 	 * Version number
@@ -48,7 +48,7 @@ class Flatsome_Infinite_Scroll {
 	private static $instance;
 
 	/**
-	 * Flatsome_Infinite_Scroll constructor.
+	 * Magicpi_Infinite_Scroll constructor.
 	 */
 	private function __construct() {
 		add_action( 'init', array( $this, 'init' ) );
@@ -88,8 +88,8 @@ class Flatsome_Infinite_Scroll {
 	 */
 	public function add_scripts() {
 		global $extensions_uri;
-		wp_enqueue_script( 'flatsome-infinite-scroll-js', get_template_directory_uri() . '/assets/libs/infinite-scroll.pkgd.min.js', array( 'jquery', 'flatsome-js' ), '3.0.4', true );
-		wp_enqueue_script( 'flatsome-infinite-scroll', $extensions_uri . '/flatsome-infinite-scroll/flatsome-infinite-scroll.js', array( 'jquery', 'flatsome-js' ), $this->version, true );
+		wp_enqueue_script( 'magicpi-infinite-scroll-js', get_template_directory_uri() . '/assets/libs/infinite-scroll.pkgd.min.js', array( 'jquery', 'magicpi-js' ), '3.0.4', true );
+		wp_enqueue_script( 'magicpi-infinite-scroll', $extensions_uri . '/magicpi-infinite-scroll/magicpi-infinite-scroll.js', array( 'jquery', 'magicpi-js' ), $this->version, true );
 
 		$params = array(
 			'scroll_threshold' => 400,
@@ -99,7 +99,7 @@ class Flatsome_Infinite_Scroll {
 			'history'          => 'push',
 		);
 
-		wp_localize_script( 'flatsome-infinite-scroll', 'flatsome_infinite_scroll', apply_filters( 'flatsome_infinite_scroll_params', $params ) );
+		wp_localize_script( 'magicpi-infinite-scroll', 'magicpi_infinite_scroll', apply_filters( 'magicpi_infinite_scroll_params', $params ) );
 	}
 
 	/**
@@ -123,7 +123,7 @@ class Flatsome_Infinite_Scroll {
 		</style>
 		<?php
 		$css = ob_get_clean();
-		echo flatsome_minify_css( $css ); // @codingStandardsIgnoreLine
+		echo magicpi_minify_css( $css ); // @codingStandardsIgnoreLine
 	}
 
 	/**
@@ -133,12 +133,12 @@ class Flatsome_Infinite_Scroll {
 	 */
 	private function get_template( $name ) {
 		global $extensions_url;
-		$template = $extensions_url . "/flatsome-infinite-scroll/templates/{$name}.php";
+		$template = $extensions_url . "/magicpi-infinite-scroll/templates/{$name}.php";
 		include $template;
 	}
 }
 
 /**
- * Init Flatsome_Infinite_Scroll
+ * Init Magicpi_Infinite_Scroll
  */
-Flatsome_Infinite_Scroll::get_instance();
+Magicpi_Infinite_Scroll::get_instance();

@@ -1,13 +1,13 @@
 <?php
 
 // Get Mobile Sidebar Menu
-function flatsome_mobile_menu(){
+function magicpi_mobile_menu(){
    get_template_part('template-parts/overlays/overlay','menu');
 }
-add_action('wp_footer', 'flatsome_mobile_menu', 7);
+add_action('wp_footer', 'magicpi_mobile_menu', 7);
 
 
-function flatsome_footer_row_style($footer){
+function magicpi_footer_row_style($footer){
 	$classes = array('row');
 	if($footer == 'footer-1'){
 		$columns = get_theme_mod('footer_1_columns', 4);
@@ -49,7 +49,7 @@ function flatsome_footer_row_style($footer){
 	return implode(' ', $classes);
 }
 
-function flatsome_page_footer(){
+function magicpi_page_footer(){
 	$block = get_theme_mod( 'footer_block' );
 
 	if ( is_page() ) {
@@ -80,48 +80,48 @@ function flatsome_page_footer(){
 	}
 }
 
-add_action( 'flatsome_footer', 'flatsome_page_footer', 10 );
+add_action( 'magicpi_footer', 'magicpi_page_footer', 10 );
 
 
 // Add Top Link
-function flatsome_go_to_top(){
+function magicpi_go_to_top(){
 	if(!get_theme_mod('back_to_top', 1)) return;
 	get_template_part('template-parts/footer/back-to-top');
 }
-add_action( 'flatsome_footer', 'flatsome_go_to_top');
+add_action( 'magicpi_footer', 'magicpi_go_to_top');
 
 
 /* Custom footer scripts */
-function flatsome_footer_scripts(){
+function magicpi_footer_scripts(){
   echo do_shortcode(get_theme_mod('html_scripts_footer'));
 }
-add_action('wp_footer', 'flatsome_footer_scripts');
+add_action('wp_footer', 'magicpi_footer_scripts');
 
 /* Insert custom body bottom script */
-function flatsome_before_body_close() {
+function magicpi_before_body_close() {
 	if ( get_theme_mod( 'html_scripts_before_body' ) && ! is_admin() ) {
 		echo get_theme_mod( 'html_scripts_before_body' ); // WPCS: XSS ok.
 	}
 }
 
-add_action( 'wp_footer', 'flatsome_before_body_close', apply_filters( 'flatsome_before_body_close_priority', 9999 ) );
+add_action( 'wp_footer', 'magicpi_before_body_close', apply_filters( 'magicpi_before_body_close_priority', 9999 ) );
 
 
 // Custom HTML Before footer
-function flatsome_html_before_footer(){
+function magicpi_html_before_footer(){
   $html_before = get_theme_mod('html_before_footer');
   if($html_before){
     echo do_shortcode($html_before);
   }
 }
-add_action('flatsome_before_footer', 'flatsome_html_before_footer');
+add_action('magicpi_before_footer', 'magicpi_html_before_footer');
 
 // Custom HMTL After footer
-function flatsome_html_after_footer(){
+function magicpi_html_after_footer(){
 	$html_after = get_theme_mod('html_after_footer');
 	if($html_after){
 	 echo do_shortcode($html_after);
 	}
 }
-add_action('flatsome_after_footer', 'flatsome_html_after_footer');
+add_action('magicpi_after_footer', 'magicpi_html_after_footer');
 

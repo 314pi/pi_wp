@@ -2,10 +2,10 @@
 
 // Options for resetting Customizer
 
-if ( ! class_exists( 'Flatsome_Customizer_Reset' ) ) {
-  final class Flatsome_Customizer_Reset {
+if ( ! class_exists( 'Magicpi_Customizer_Reset' ) ) {
+  final class Magicpi_Customizer_Reset {
     /**
-     * @var Flatsome_Customizer_Reset
+     * @var Magicpi_Customizer_Reset
      */
     private static $instance = null;
 
@@ -29,10 +29,10 @@ if ( ! class_exists( 'Flatsome_Customizer_Reset' ) ) {
     }
 
     public function customize_controls_print_scripts() {
-      wp_enqueue_script( 'flatsome-customizer-reset',  get_template_directory_uri() . '/inc/admin/customizer/js/customizer-reset.js');
-      wp_localize_script( 'flatsome-customizer-reset', '_FlatsomeCustomizerReset', array(
-        'reset'   => __( 'Reset', 'flatsome-admin' ),
-        'confirm' => __( "Attention! This will remove all customizations ever made via customizer to this theme!\n\nThis action is irreversible!", 'flatsome-admin' ),
+      wp_enqueue_script( 'magicpi-customizer-reset',  get_template_directory_uri() . '/inc/admin/customizer/js/customizer-reset.js');
+      wp_localize_script( 'magicpi-customizer-reset', '_MagicpiCustomizerReset', array(
+        'reset'   => __( 'Reset', 'magicpi-admin' ),
+        'confirm' => __( "Attention! This will remove all customizations ever made via customizer to this theme!\n\nThis action is irreversible!", 'magicpi-admin' ),
         'nonce'   => array(
           'reset' => wp_create_nonce( 'customizer-reset' ),
         )
@@ -75,4 +75,4 @@ if ( ! class_exists( 'Flatsome_Customizer_Reset' ) ) {
   }
 }
 
-Flatsome_Customizer_Reset::get_instance();
+Magicpi_Customizer_Reset::get_instance();

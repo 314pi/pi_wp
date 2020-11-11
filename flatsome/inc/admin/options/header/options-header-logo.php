@@ -4,32 +4,32 @@
  * LOGO
  *************/
 
-function flatsome_logo_name_customizer( $wp_customize ) {
+function magicpi_logo_name_customizer( $wp_customize ) {
 	global $transport;
   $wp_customize->get_setting('blogname')->transport=$transport;
   $wp_customize->get_setting('blogdescription')->transport=$transport;
 }
-add_action( 'customize_register', 'flatsome_logo_name_customizer' );
+add_action( 'customize_register', 'magicpi_logo_name_customizer' );
 
-Flatsome_Option::add_section( 'title_tagline', array(
-	'title'       => __( 'Logo & Site Identity', 'flatsome-admin' ),
+Magicpi_Option::add_section( 'title_tagline', array(
+	'title'       => __( 'Logo & Site Identity', 'magicpi-admin' ),
 	'panel'       => 'header',
-	//'description' => __( 'This is the section description', 'flatsome-admin' ),
+	//'description' => __( 'This is the section description', 'magicpi-admin' ),
 ) );
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'checkbox',
 	'settings'     => 'site_logo_slogan',
-	'label'       => __( 'Display below Logo', 'flatsome-admin' ),
+	'label'       => __( 'Display below Logo', 'magicpi-admin' ),
 	'section'     => 'title_tagline',
 	'transport' => $transport,
 	'default'     => 0,
 ));
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'        => 'radio-image',
 	'settings'     => 'logo_position',
-	'label'       => __( 'Logo position', 'flatsome-admin' ),
+	'label'       => __( 'Logo position', 'magicpi-admin' ),
 	'section'     => 'title_tagline',
 	'transport' => 'postMessage',
 	'default'     => 'left',
@@ -40,31 +40,31 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'image',
 	'settings'     => 'site_logo',
-	'label'       => __( 'Logo image', 'flatsome-admin' ),
+	'label'       => __( 'Logo image', 'magicpi-admin' ),
 	'section'     => 'title_tagline',
 	'transport' => $transport,
 	'default'     => get_template_directory_uri().'/assets/img/logo.png'
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'image',
 	'settings'     => 'site_logo_dark',
-	'label'       => __( 'Logo image - Light Version', 'flatsome-admin' ),
-	'description' => __( 'Upload an alternative light logo that will be used on Dark and Transparent Header templates', 'flatsome-admin' ),
+	'label'       => __( 'Logo image - Light Version', 'magicpi-admin' ),
+	'description' => __( 'Upload an alternative light logo that will be used on Dark and Transparent Header templates', 'magicpi-admin' ),
 	'section'     => 'title_tagline',
 	'transport' => $transport,
 ));
 
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'slider',
 	'settings'     => 'logo_width',
-	'label'       => __( 'Logo container width', 'flatsome-admin' ),
-	//'description' => __( 'This is the control description', 'flatsome-admin' ),
-	//'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users. The main description should go in the "description" of the field, this is only to be used for help tips.', 'flatsome-admin' ),
+	'label'       => __( 'Logo container width', 'magicpi-admin' ),
+	//'description' => __( 'This is the control description', 'magicpi-admin' ),
+	//'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users. The main description should go in the "description" of the field, this is only to be used for help tips.', 'magicpi-admin' ),
 	'section'     => 'title_tagline',
 	'default'     => 200,
 	'choices'     => array(
@@ -75,19 +75,19 @@ Flatsome_Option::add_field( 'option',  array(
 	'transport' => 'postMessage',
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
   'type'        => 'text',
   'settings'     => 'logo_max_width',
-  'label'       => __( 'Logo max width (px)', 'flatsome-admin' ),
+  'label'       => __( 'Logo max width (px)', 'magicpi-admin' ),
   'section'     => 'title_tagline',
-  'description' => __( 'Set the logo max width in pixels. Leave it blank to make it auto fit inside the logo container.', 'flatsome-admin' ),
+  'description' => __( 'Set the logo max width in pixels. Leave it blank to make it auto fit inside the logo container.', 'magicpi-admin' ),
   'transport' => 'postMessage',
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'slider',
 	'settings'     => 'logo_padding',
-	'label'       => __( 'Logo Padding', 'flatsome-admin' ),
+	'label'       => __( 'Logo Padding', 'magicpi-admin' ),
 	'section'     => 'title_tagline',
 	'default'     => 0,
 	'choices'     => array(

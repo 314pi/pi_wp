@@ -124,7 +124,7 @@ function shortcode_ux_slider($atts, $content=null) {
             "friction": <?php echo $friction; ?>
         }'
         >
-        <?php echo flatsome_contentfix($content); ?>
+        <?php echo magicpi_contentfix($content); ?>
      </div>
 
      <div class="loading-spin dark large centered"></div>

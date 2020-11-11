@@ -5,7 +5,7 @@
 <?php while ( have_posts() ) : the_post(); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="article-inner <?php flatsome_blog_article_classes(); ?>">
+	<div class="article-inner <?php magicpi_blog_article_classes(); ?>">
 
 		<header class="entry-header">
 	  	<div class="entry-header-text text-<?php echo get_theme_mod( 'blog_posts_title_align', 'center' );?>">
@@ -26,7 +26,7 @@
 
 <?php endwhile; ?>
 
-<?php flatsome_posts_pagination(); ?>
+<?php magicpi_posts_pagination(); ?>
 
 </div>
 

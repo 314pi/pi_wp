@@ -1,15 +1,15 @@
 <?php 
 
-Flatsome_Option::add_section( 'advanced', array(
-	'title'       => __( 'Reset Options', 'flatsome-admin' ),
+Magicpi_Option::add_section( 'advanced', array(
+	'title'       => __( 'Reset Options', 'magicpi-admin' ),
 	'priority' 	  => 999,
-    'description' => __( 'Click the reset button to reset all options to default values.', 'flatsome-admin' ),
+    'description' => __( 'Click the reset button to reset all options to default values.', 'magicpi-admin' ),
 ) );
 
-Flatsome_Option::add_field( '', array(
+Magicpi_Option::add_field( '', array(
     'type'        => 'custom',
     'settings' => 'custom_title_advanced_reset',
-    'label'       => __( '', 'flatsome-admin' ),
+    'label'       => __( '', 'magicpi-admin' ),
 	'section'     => 'advanced',
-    'default'     => '<div class="reset-options-container"><button name="Reset" id="flatsome-customizer-reset" class="button-primary button" title="Reset Theme Options">Reset Theme Options</button></div>',
+    'default'     => '<div class="reset-options-container"><button name="Reset" id="magicpi-customizer-reset" class="button-primary button" title="Reset Theme Options">Reset Theme Options</button></div>',
 ) );

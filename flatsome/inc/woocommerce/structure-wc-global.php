@@ -1,6 +1,6 @@
 <?php
 
-function flatsome_woocommerce_setup() {
+function magicpi_woocommerce_setup() {
 	// Theme support for default WC gallery.
 	if ( get_theme_mod( 'product_gallery_woocommerce') ) {
 		add_theme_support( 'wc-product-gallery-slider' );
@@ -16,22 +16,22 @@ function flatsome_woocommerce_setup() {
 	// Remove default row and column options.
 	remove_theme_support( 'product_grid' );
 }
-add_action( 'after_setup_theme', 'flatsome_woocommerce_setup', 90 );
+add_action( 'after_setup_theme', 'magicpi_woocommerce_setup', 90 );
 
 
-if ( ! function_exists( 'flatsome_woocommerce_add_notice' ) ) {
+if ( ! function_exists( 'magicpi_woocommerce_add_notice' ) ) {
 	/**
 	 * Add wc notices except for the cart page
 	 */
-	function flatsome_woocommerce_add_notice() {
+	function magicpi_woocommerce_add_notice() {
 		if ( is_woocommerce_activated() && ! is_cart() ) {
 			wc_print_notices();
 		}
 	}
 }
-add_action( 'flatsome_after_header', 'flatsome_woocommerce_add_notice', 100 );
+add_action( 'magicpi_after_header', 'magicpi_woocommerce_add_notice', 100 );
 
-function flatsome_my_account_menu_classes($classes){
+function magicpi_my_account_menu_classes($classes){
 
     // Add Active Class
     if(in_array('is-active', $classes)){
@@ -40,27 +40,27 @@ function flatsome_my_account_menu_classes($classes){
 
     return $classes;
 }
-add_filter('woocommerce_account_menu_item_classes', 'flatsome_my_account_menu_classes');
+add_filter('woocommerce_account_menu_item_classes', 'magicpi_my_account_menu_classes');
 
 /* My Account Dashboard overview */
-function flatsome_my_account_dashboard(){
+function magicpi_my_account_dashboard(){
   wc_get_template( 'myaccount/dashboard-links.php' );
 }
-add_action('woocommerce_account_dashboard','flatsome_my_account_dashboard');
+add_action('woocommerce_account_dashboard','magicpi_my_account_dashboard');
 
 
 // Remove logout from my account menu
-function flatsome_remove_logout_account_item( $items ) {
+function magicpi_remove_logout_account_item( $items ) {
   unset( $items['customer-logout'] );
   return $items;
 }
-add_filter( 'woocommerce_account_menu_items', 'flatsome_remove_logout_account_item' );
+add_filter( 'woocommerce_account_menu_items', 'magicpi_remove_logout_account_item' );
 
 
 /**
  * Conditionally remove WooCommerce styles and/or scripts.
  */
-function flatsome_woocommerce_scripts_styles() {
+function magicpi_woocommerce_scripts_styles() {
 	// Remove default WooCommerce Lightbox.
 	if ( get_theme_mod( 'product_lightbox', 'default' ) !== 'woocommerce' || ! is_product() ) {
 		wp_dequeue_style( 'woocommerce_prettyPhoto_css' );
@@ -80,14 +80,14 @@ function flatsome_woocommerce_scripts_styles() {
 	}
 }
 
-add_action( 'wp_enqueue_scripts', 'flatsome_woocommerce_scripts_styles', 98 );
+add_action( 'wp_enqueue_scripts', 'magicpi_woocommerce_scripts_styles', 98 );
 
 
 // Add Shop  Widgets
-function flatsome_shop_widgets_init() {
+function magicpi_shop_widgets_init() {
 
   register_sidebar( array(
-    'name'          => __( 'Shop Sidebar', 'flatsome' ),
+    'name'          => __( 'Shop Sidebar', 'magicpi' ),
     'id'            => 'shop-sidebar',
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget'  => '</aside>',
@@ -96,7 +96,7 @@ function flatsome_shop_widgets_init() {
   ) );
 
   register_sidebar( array(
-    'name'          => __( 'Product Sidebar', 'flatsome' ),
+    'name'          => __( 'Product Sidebar', 'magicpi' ),
     'id'            => 'product-sidebar',
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget'  => '</aside>',
@@ -106,12 +106,12 @@ function flatsome_shop_widgets_init() {
 
 
 }
-add_action( 'widgets_init', 'flatsome_shop_widgets_init' );
+add_action( 'widgets_init', 'magicpi_shop_widgets_init' );
 
 
 
 /* Modify define(name, value)ault Shop Breadcrumbs */
-function flatsome_woocommerce_breadcrumbs() {
+function magicpi_woocommerce_breadcrumbs() {
 
     $home = (get_theme_mod('breadcrumb_home',1)) ? _x( 'Home', 'breadcrumb', 'woocommerce' ) : false;
 
@@ -125,17 +125,17 @@ function flatsome_woocommerce_breadcrumbs() {
     );
 }
 
-add_filter( 'woocommerce_breadcrumb_defaults', 'flatsome_woocommerce_breadcrumbs' );
+add_filter( 'woocommerce_breadcrumb_defaults', 'magicpi_woocommerce_breadcrumbs' );
 
 /**
  * Add default breadcrumbs.
  *
  * @see woocommerce_breadcrumb()
  */
-add_action( 'flatsome_breadcrumb' , 'woocommerce_breadcrumb', 20 );
+add_action( 'magicpi_breadcrumb' , 'woocommerce_breadcrumb', 20 );
 
 /* Update cart price */
-function flatsome_header_add_to_cart_fragment( $fragments ) {
+function magicpi_header_add_to_cart_fragment( $fragments ) {
   ob_start();
   ?> <span class="cart-price"><?php echo WC()->cart->get_cart_subtotal(); ?></span><?php
   $fragments['.cart-price'] = ob_get_clean();
@@ -143,9 +143,9 @@ function flatsome_header_add_to_cart_fragment( $fragments ) {
   return $fragments;
 
 }
-add_filter('woocommerce_add_to_cart_fragments', 'flatsome_header_add_to_cart_fragment');
+add_filter('woocommerce_add_to_cart_fragments', 'magicpi_header_add_to_cart_fragment');
 
-if ( ! function_exists( 'flatsome_header_add_to_cart_fragment_count' ) ) {
+if ( ! function_exists( 'magicpi_header_add_to_cart_fragment_count' ) ) {
 	/**
 	 * Update cart number when default cart icon is selected
 	 *
@@ -153,7 +153,7 @@ if ( ! function_exists( 'flatsome_header_add_to_cart_fragment_count' ) ) {
 	 *
 	 * @return mixed
 	 */
-	function flatsome_header_add_to_cart_fragment_count( $fragments ) {
+	function magicpi_header_add_to_cart_fragment_count( $fragments ) {
 		ob_start();
 		?>
 		<span class="cart-icon image-icon">
@@ -165,10 +165,10 @@ if ( ! function_exists( 'flatsome_header_add_to_cart_fragment_count' ) ) {
 		return $fragments;
 	}
 }
-add_filter( 'woocommerce_add_to_cart_fragments', 'flatsome_header_add_to_cart_fragment_count' );
+add_filter( 'woocommerce_add_to_cart_fragments', 'magicpi_header_add_to_cart_fragment_count' );
 
 
-if ( ! function_exists( 'flatsome_header_add_to_cart_fragment_count_label' ) ) {
+if ( ! function_exists( 'magicpi_header_add_to_cart_fragment_count_label' ) ) {
 	/**
 	 * Update cart label when a build-in cart icon is selected
 	 *
@@ -176,7 +176,7 @@ if ( ! function_exists( 'flatsome_header_add_to_cart_fragment_count_label' ) ) {
 	 *
 	 * @return mixed
 	 */
-	function flatsome_header_add_to_cart_fragment_count_label( $fragments ) {
+	function magicpi_header_add_to_cart_fragment_count_label( $fragments ) {
 		if ( ! get_theme_mod( 'cart_icon_style' ) ) {
 			return $fragments;
 		}
@@ -191,9 +191,9 @@ if ( ! function_exists( 'flatsome_header_add_to_cart_fragment_count_label' ) ) {
 		return $fragments;
 	}
 }
-add_filter( 'woocommerce_add_to_cart_fragments', 'flatsome_header_add_to_cart_fragment_count_label' );
+add_filter( 'woocommerce_add_to_cart_fragments', 'magicpi_header_add_to_cart_fragment_count_label' );
 
-if ( ! function_exists( 'flatsome_header_add_to_cart_custom_icon_fragment_count_label' ) ) {
+if ( ! function_exists( 'magicpi_header_add_to_cart_custom_icon_fragment_count_label' ) ) {
 	/**
 	 * Update cart label when custom cart icon is selected
 	 *
@@ -201,7 +201,7 @@ if ( ! function_exists( 'flatsome_header_add_to_cart_custom_icon_fragment_count_
 	 *
 	 * @return mixed
 	 */
-	function flatsome_header_add_to_cart_custom_icon_fragment_count_label( $fragments ) {
+	function magicpi_header_add_to_cart_custom_icon_fragment_count_label( $fragments ) {
 		$custom_cart_icon = get_theme_mod( 'custom_cart_icon' );
 		if ( ! $custom_cart_icon ) {
 			return $fragments;
@@ -218,10 +218,10 @@ if ( ! function_exists( 'flatsome_header_add_to_cart_custom_icon_fragment_count_
 		return $fragments;
 	}
 }
-add_filter( 'woocommerce_add_to_cart_fragments', 'flatsome_header_add_to_cart_custom_icon_fragment_count_label' );
+add_filter( 'woocommerce_add_to_cart_fragments', 'magicpi_header_add_to_cart_custom_icon_fragment_count_label' );
 
 // Add Pages and blog posts to top of search results if set.
-function flatsome_pages_in_search_results(){
+function magicpi_pages_in_search_results(){
     if(!is_search() || !get_theme_mod('search_result', 1)) return;
     global $post;
     ?>
@@ -255,8 +255,8 @@ function flatsome_pages_in_search_results(){
       wp_reset_query();
 
 		if ( ! empty( $posts ) ) {
-			echo '<hr/><h4 class="uppercase">' . esc_html__( 'Posts found', 'flatsome' ) . '</h4>';
-			echo flatsome_apply_shortcode( 'blog_posts', array(
+			echo '<hr/><h4 class="uppercase">' . esc_html__( 'Posts found', 'magicpi' ) . '</h4>';
+			echo magicpi_apply_shortcode( 'blog_posts', array(
 				'columns'      => '3',
 				'columns__md'  => '3',
 				'columns__sm'  => '2',
@@ -268,8 +268,8 @@ function flatsome_pages_in_search_results(){
 		}
 
 		if ( ! empty( $pages ) ) {
-			echo '<hr/><h4 class="uppercase">' . esc_html__( 'Pages found', 'flatsome' ) . '</h4>';
-			echo flatsome_apply_shortcode( 'ux_pages', array(
+			echo '<hr/><h4 class="uppercase">' . esc_html__( 'Pages found', 'magicpi' ) . '</h4>';
+			echo magicpi_apply_shortcode( 'ux_pages', array(
 				'columns'      => '3',
 				'columns__md'  => '3',
 				'columns__sm'  => '2',
@@ -283,7 +283,7 @@ function flatsome_pages_in_search_results(){
 
     <?php
 }
-add_action('woocommerce_after_main_content','flatsome_pages_in_search_results', 10);
+add_action('woocommerce_after_main_content','magicpi_pages_in_search_results', 10);
 
 
 
@@ -296,7 +296,7 @@ add_action('woocommerce_after_main_content','flatsome_pages_in_search_results', 
  *
 * @return string
  */
-function flatsome_presentage_bubble( $product ) {
+function magicpi_presentage_bubble( $product ) {
 	$post_id = $product->get_id();
 
 	if ( $product->is_type( 'simple' ) || $product->is_type( 'external' ) ) {
@@ -304,8 +304,8 @@ function flatsome_presentage_bubble( $product ) {
 		$sale_price     = $product->get_sale_price();
 		$bubble_content = round( ( ( floatval( $regular_price ) - floatval( $sale_price ) ) / floatval( $regular_price ) ) * 100 );
 	} elseif ( $product->is_type( 'variable' ) ) {
-		if ( $bubble_content = flatsome_percentage_get_cache( $post_id ) ) {
-			return flatsome_percentage_format( $bubble_content );
+		if ( $bubble_content = magicpi_percentage_get_cache( $post_id ) ) {
+			return magicpi_percentage_format( $bubble_content );
 		}
 
 		$available_variations = $product->get_available_variations();
@@ -328,7 +328,7 @@ function flatsome_presentage_bubble( $product ) {
 		$bubble_content = sprintf( __( '%s', 'woocommerce' ), $maximumper );
 
 		// Cache percentage for variable products to reduce database queries.
-		flatsome_percentage_set_cache( $post_id, $bubble_content );
+		magicpi_percentage_set_cache( $post_id, $bubble_content );
 	} else {
 		// Set default and return if the product type doesn't meet specification.
 		$bubble_content = __( 'Sale!', 'woocommerce' );
@@ -336,20 +336,20 @@ function flatsome_presentage_bubble( $product ) {
 		return $bubble_content;
 	}
 
-	return flatsome_percentage_format( $bubble_content );
+	return magicpi_percentage_format( $bubble_content );
 }
 
-function flatsome_percentage_get_cache( $post_id ) {
-	return get_post_meta( $post_id, '_flatsome_product_percentage', true );
+function magicpi_percentage_get_cache( $post_id ) {
+	return get_post_meta( $post_id, '_magicpi_product_percentage', true );
 }
 
-function flatsome_percentage_set_cache( $post_id, $bubble_content ) {
-	update_post_meta( $post_id, '_flatsome_product_percentage', $bubble_content );
+function magicpi_percentage_set_cache( $post_id, $bubble_content ) {
+	update_post_meta( $post_id, '_magicpi_product_percentage', $bubble_content );
 }
 
 // Process custom formatting. Keep mod value double check
 // to process % for default parameter (See sprintf()).
-function flatsome_percentage_format( $value ) {
+function magicpi_percentage_format( $value ) {
 	$formatting = get_theme_mod( 'sale_bubble_percentage_formatting' );
 	$formatting = $formatting ? $formatting : '-{value}%';
 
@@ -357,29 +357,29 @@ function flatsome_percentage_format( $value ) {
 }
 
 // Clear cached percentage whenever a product or variation is saved.
-function flatsome_percentage_clear( $object ) {
+function magicpi_percentage_clear( $object ) {
 	if ( ! get_theme_mod( 'sale_bubble_percentage' ) ) return;
 
 	$post_id = 'variation' === $object->get_type()
 		? $object->get_parent_id()
 		: $object->get_id();
 
-	delete_post_meta( $post_id, '_flatsome_product_percentage' );
+	delete_post_meta( $post_id, '_magicpi_product_percentage' );
 }
-add_action( 'woocommerce_before_product_object_save', 'flatsome_percentage_clear' );
+add_action( 'woocommerce_before_product_object_save', 'magicpi_percentage_clear' );
 
 // Clear all cached percentages when disabling bubble percentage.
-function flatsome_percentage_clear_all( $value, $old_value ) {
+function magicpi_percentage_clear_all( $value, $old_value ) {
 	if ( ! $value && $old_value ) {
-		delete_metadata( 'post', null, '_flatsome_product_percentage', '', true );
+		delete_metadata( 'post', null, '_magicpi_product_percentage', '', true );
 	}
 
 	return $value;
 }
-add_filter( 'pre_set_theme_mod_sale_bubble_percentage', 'flatsome_percentage_clear_all', 10, 2 );
+add_filter( 'pre_set_theme_mod_sale_bubble_percentage', 'magicpi_percentage_clear_all', 10, 2 );
 
 // Account login style
-function flatsome_account_login_lightbox(){
+function magicpi_account_login_lightbox(){
   // Show Login Lightbox if selected
   if ( !is_user_logged_in() && get_theme_mod('account_login_style','lightbox') == 'lightbox' && !is_checkout() && !is_account_page() ) {
     $is_facebook_login = is_nextend_facebook_login();
@@ -397,15 +397,15 @@ function flatsome_account_login_lightbox(){
     </div>
   <?php }
 }
-add_action('wp_footer', 'flatsome_account_login_lightbox', 10);
+add_action('wp_footer', 'magicpi_account_login_lightbox', 10);
 
 // Payment icons to footer
-function flatsome_footer_payment_icons(){
+function magicpi_footer_payment_icons(){
   $icons = get_theme_mod('payment_icons_placement');
   if(is_array($icons) && !in_array('footer', $icons)) return;
   echo do_shortcode('[ux_payment_icons]');
 }
-add_action('flatsome_absolute_footer_secondary','flatsome_footer_payment_icons', 10);
+add_action('magicpi_absolute_footer_secondary','magicpi_footer_payment_icons', 10);
 
 
 /* Disable reviews globally */
@@ -419,9 +419,9 @@ if(get_theme_mod('disable_reviews')){
     }
 }
 
-if( !function_exists('flatsome_wc_get_gallery_image_html') ) {
+if( !function_exists('magicpi_wc_get_gallery_image_html') ) {
   // Copied and modified from woocommerce plugin and wc_get_gallery_image_html helper function.
-  function flatsome_wc_get_gallery_image_html( $attachment_id, $main_image = false, $size = 'woocommerce_single' ) {
+  function magicpi_wc_get_gallery_image_html( $attachment_id, $main_image = false, $size = 'woocommerce_single' ) {
     $gallery_thumbnail = wc_get_image_size( 'gallery_thumbnail' );
     $thumbnail_size    = apply_filters( 'woocommerce_gallery_thumbnail_size', array( $gallery_thumbnail['width'], $gallery_thumbnail['height'] ) );
     $image_size        = apply_filters( 'woocommerce_gallery_image_size', $size );
@@ -445,13 +445,13 @@ if( !function_exists('flatsome_wc_get_gallery_image_html') ) {
 }
 
 /* Move demo store notice to top. */
-function flatsome_move_store_notice() {
+function magicpi_move_store_notice() {
     if ( get_theme_mod( 'woocommerce_store_notice_top' ) ) {
         remove_action( 'wp_footer', 'woocommerce_demo_store' );
-        add_action ( 'flatsome_after_body_open', 'woocommerce_demo_store', 0 );
+        add_action ( 'magicpi_after_body_open', 'woocommerce_demo_store', 0 );
     }
 }
-add_action( 'wp_loaded', 'flatsome_move_store_notice' );
+add_action( 'wp_loaded', 'magicpi_move_store_notice' );
 
 /**
  * Filter WC Product shortcode attributes,
@@ -460,7 +460,7 @@ add_action( 'wp_loaded', 'flatsome_move_store_notice' );
  *
  * @return array Attributes.
  */
-function flatsome_filter_shortcode_atts_products( $attrs ) {
+function magicpi_filter_shortcode_atts_products( $attrs ) {
 	if ( $attrs['limit'] == '-1' ) {
 		$attrs['limit'] = '12';
 	}
@@ -472,95 +472,95 @@ function flatsome_filter_shortcode_atts_products( $attrs ) {
 	return $attrs;
 }
 
-add_filter( 'shortcode_atts_products', 'flatsome_filter_shortcode_atts_products' );
+add_filter( 'shortcode_atts_products', 'magicpi_filter_shortcode_atts_products' );
 
 /**
- * Flatsome Payment Icons List.
+ * Magicpi Payment Icons List.
  *
- * Returns a list of Flatsome Payment Icons.
+ * Returns a list of Magicpi Payment Icons.
  *
  * @return array Payment Icons list.
  */
-function flatsome_get_payment_icons_list() {
-	return apply_filters( 'flatsome_payment_icons', array(
-		'amazon'          => __( 'Amazon', 'flatsome-admin' ),
-		'americanexpress' => __( 'American Express', 'flatsome-admin' ),
-		'applepay'        => __( 'Apple Pay', 'flatsome-admin' ),
-		'afterpay'        => __( 'AfterPay', 'flatsome-admin' ),
-		'afterpay-2'      => __( 'AfterPay 2', 'flatsome-admin' ),
-		'alipay'          => __( 'Alipay', 'flatsome-admin' ),
-		'atm'             => __( 'Atm', 'flatsome-admin' ),
-		'bancontact'      => __( 'Bancontact', 'flatsome-admin' ),
-		'bankomat'        => __( 'Bankomat', 'flatsome-admin' ),
-		'banktransfer'    => __( 'Bank Transfer', 'flatsome-admin' ),
-		'belfius'         => __( 'Belfius', 'flatsome-admin' ),
-		'bitcoin'         => __( 'BitCoin', 'flatsome-admin' ),
-		'braintree'       => __( 'Braintree', 'flatsome-admin' ),
-		'cartasi'         => __( 'CartaSi', 'flatsome-admin' ),
-		'cashcloud'       => __( 'CashCloud', 'flatsome-admin' ),
-		'cashondelivery'  => __( 'Cash On Delivery', 'flatsome-admin' ),
-		'cashonpickup'    => __( 'Cash on Pickup', 'flatsome-admin' ),
-		'cbc'             => __( 'CBC', 'flatsome-admin' ),
-		'cirrus'          => __( 'Cirrus', 'flatsome-admin' ),
-		'clickandbuy'     => __( 'Click and Buy', 'flatsome-admin' ),
-		'creditcard'      => __( 'Credit Card', 'flatsome-admin' ),
-		'creditcard2'     => __( 'Credit Card 2', 'flatsome-admin' ),
-		'dancard'         => __( 'DanKort', 'flatsome-admin' ),
-		'dinnersclub'     => __( 'Dinners Club', 'flatsome-admin' ),
-		'discover'        => __( 'Discover', 'flatsome-admin' ),
-		'elo'             => __( 'Elo', 'flatsome-admin' ),
-		'eps'             => __( 'Eps', 'flatsome-admin' ),
-		'facture'         => __( 'Facture', 'flatsome-admin' ),
-		'fattura'         => __( 'Fattura', 'flatsome-admin' ),
-		'flattr'          => __( 'Flattr', 'flatsome-admin' ),
-		'giropay'         => __( 'GiroPay', 'flatsome-admin' ),
-		'googlepay'       => __( 'Google Pay', 'flatsome-admin' ),
-		'googlewallet'    => __( 'Google Wallet', 'flatsome-admin' ), // Deprecated, changed to Google Pay.
-		'hiper'           => __( 'Hiper', 'flatsome-admin' ),
-		'ideal'           => __( 'IDeal', 'flatsome-admin' ),
-		'interac'         => __( 'Interac', 'flatsome-admin' ),
-		'invoice'         => __( 'Invoice', 'flatsome-admin' ),
-		'jcb'             => __( 'JCB', 'flatsome-admin' ),
-		'kbc'             => __( 'KBC', 'flatsome-admin' ),
-		'klarna'          => __( 'Klarna', 'flatsome-admin' ),
-		'maestro'         => __( 'Maestro', 'flatsome-admin' ),
-		'mastercard'      => __( 'MasterCard', 'flatsome-admin' ),
-		'mastercard-2'    => __( 'MasterCard 2', 'flatsome-admin' ),
-		'mir'             => __( 'Mir', 'flatsome-admin' ),
-		'moip'            => __( 'Moip', 'flatsome-admin' ),
-		'mollie'          => __( 'Mollie', 'flatsome-admin' ),
-		'ogone'           => __( 'Ogone', 'flatsome-admin' ),
-		'paybox'          => __( 'Paybox', 'flatsome-admin' ),
-		'paylife'         => __( 'Paylife', 'flatsome-admin' ),
-		'paymill'         => __( 'PayMill', 'flatsome-admin' ),
-		'paypal'          => __( 'PayPal', 'flatsome-admin' ),
-		'paypal-2'        => __( 'PayPal 2', 'flatsome-admin' ),
-		'paysafe'         => __( 'PaySafe', 'flatsome-admin' ),
-		'payshop'         => __( 'PayShop', 'flatsome-admin' ),
-		'paytm'           => __( 'Paytm', 'flatsome-admin' ),
-		'payu'            => __( 'PayU', 'flatsome-admin' ),
-		'postepay'        => __( 'Postepay', 'flatsome-admin' ),
-		'quick'           => __( 'Quick', 'flatsome-admin' ),
-		'rechung'         => __( 'Rechung', 'flatsome-admin' ),
-		'ripple'          => __( 'Ripple', 'flatsome-admin' ),
-		'rupay'           => __( 'RuPay', 'flatsome-admin' ),
-		'sage'            => __( 'Sage', 'flatsome-admin' ),
-		'sepa'            => __( 'Sepa', 'flatsome-admin' ),
-		'six'             => __( 'Six', 'flatsome-admin' ),
-		'skrill'          => __( 'Skrill', 'flatsome-admin' ),
-		'sofort'          => __( 'Sofort', 'flatsome-admin' ),
-		'square'          => __( 'Square', 'flatsome-admin' ),
-		'stripe'          => __( 'Stripe', 'flatsome-admin' ),
-		'swish'           => __( 'Swish (SE)', 'flatsome-admin' ),
-		'truste'          => __( 'Truste', 'flatsome-admin' ),
-		'twint'           => __( 'Twint', 'flatsome-admin' ),
-		'unionpay'        => __( 'UnionPay', 'flatsome-admin' ),
-		'verisign'        => __( 'VeriSign', 'flatsome-admin' ),
-		'vipps'           => __( 'Vipps', 'flatsome-admin' ),
-		'visa'            => __( 'Visa', 'flatsome-admin' ),
-		'visa1'           => __( 'Visa 2', 'flatsome-admin' ),
-		'visaelectron'    => __( 'Visa Electron', 'flatsome-admin' ),
-		'westernunion'    => __( 'Western Union', 'flatsome-admin' ),
-		'wirecard'        => __( 'Wirecard', 'flatsome-admin' ),
+function magicpi_get_payment_icons_list() {
+	return apply_filters( 'magicpi_payment_icons', array(
+		'amazon'          => __( 'Amazon', 'magicpi-admin' ),
+		'americanexpress' => __( 'American Express', 'magicpi-admin' ),
+		'applepay'        => __( 'Apple Pay', 'magicpi-admin' ),
+		'afterpay'        => __( 'AfterPay', 'magicpi-admin' ),
+		'afterpay-2'      => __( 'AfterPay 2', 'magicpi-admin' ),
+		'alipay'          => __( 'Alipay', 'magicpi-admin' ),
+		'atm'             => __( 'Atm', 'magicpi-admin' ),
+		'bancontact'      => __( 'Bancontact', 'magicpi-admin' ),
+		'bankomat'        => __( 'Bankomat', 'magicpi-admin' ),
+		'banktransfer'    => __( 'Bank Transfer', 'magicpi-admin' ),
+		'belfius'         => __( 'Belfius', 'magicpi-admin' ),
+		'bitcoin'         => __( 'BitCoin', 'magicpi-admin' ),
+		'braintree'       => __( 'Braintree', 'magicpi-admin' ),
+		'cartasi'         => __( 'CartaSi', 'magicpi-admin' ),
+		'cashcloud'       => __( 'CashCloud', 'magicpi-admin' ),
+		'cashondelivery'  => __( 'Cash On Delivery', 'magicpi-admin' ),
+		'cashonpickup'    => __( 'Cash on Pickup', 'magicpi-admin' ),
+		'cbc'             => __( 'CBC', 'magicpi-admin' ),
+		'cirrus'          => __( 'Cirrus', 'magicpi-admin' ),
+		'clickandbuy'     => __( 'Click and Buy', 'magicpi-admin' ),
+		'creditcard'      => __( 'Credit Card', 'magicpi-admin' ),
+		'creditcard2'     => __( 'Credit Card 2', 'magicpi-admin' ),
+		'dancard'         => __( 'DanKort', 'magicpi-admin' ),
+		'dinnersclub'     => __( 'Dinners Club', 'magicpi-admin' ),
+		'discover'        => __( 'Discover', 'magicpi-admin' ),
+		'elo'             => __( 'Elo', 'magicpi-admin' ),
+		'eps'             => __( 'Eps', 'magicpi-admin' ),
+		'facture'         => __( 'Facture', 'magicpi-admin' ),
+		'fattura'         => __( 'Fattura', 'magicpi-admin' ),
+		'flattr'          => __( 'Flattr', 'magicpi-admin' ),
+		'giropay'         => __( 'GiroPay', 'magicpi-admin' ),
+		'googlepay'       => __( 'Google Pay', 'magicpi-admin' ),
+		'googlewallet'    => __( 'Google Wallet', 'magicpi-admin' ), // Deprecated, changed to Google Pay.
+		'hiper'           => __( 'Hiper', 'magicpi-admin' ),
+		'ideal'           => __( 'IDeal', 'magicpi-admin' ),
+		'interac'         => __( 'Interac', 'magicpi-admin' ),
+		'invoice'         => __( 'Invoice', 'magicpi-admin' ),
+		'jcb'             => __( 'JCB', 'magicpi-admin' ),
+		'kbc'             => __( 'KBC', 'magicpi-admin' ),
+		'klarna'          => __( 'Klarna', 'magicpi-admin' ),
+		'maestro'         => __( 'Maestro', 'magicpi-admin' ),
+		'mastercard'      => __( 'MasterCard', 'magicpi-admin' ),
+		'mastercard-2'    => __( 'MasterCard 2', 'magicpi-admin' ),
+		'mir'             => __( 'Mir', 'magicpi-admin' ),
+		'moip'            => __( 'Moip', 'magicpi-admin' ),
+		'mollie'          => __( 'Mollie', 'magicpi-admin' ),
+		'ogone'           => __( 'Ogone', 'magicpi-admin' ),
+		'paybox'          => __( 'Paybox', 'magicpi-admin' ),
+		'paylife'         => __( 'Paylife', 'magicpi-admin' ),
+		'paymill'         => __( 'PayMill', 'magicpi-admin' ),
+		'paypal'          => __( 'PayPal', 'magicpi-admin' ),
+		'paypal-2'        => __( 'PayPal 2', 'magicpi-admin' ),
+		'paysafe'         => __( 'PaySafe', 'magicpi-admin' ),
+		'payshop'         => __( 'PayShop', 'magicpi-admin' ),
+		'paytm'           => __( 'Paytm', 'magicpi-admin' ),
+		'payu'            => __( 'PayU', 'magicpi-admin' ),
+		'postepay'        => __( 'Postepay', 'magicpi-admin' ),
+		'quick'           => __( 'Quick', 'magicpi-admin' ),
+		'rechung'         => __( 'Rechung', 'magicpi-admin' ),
+		'ripple'          => __( 'Ripple', 'magicpi-admin' ),
+		'rupay'           => __( 'RuPay', 'magicpi-admin' ),
+		'sage'            => __( 'Sage', 'magicpi-admin' ),
+		'sepa'            => __( 'Sepa', 'magicpi-admin' ),
+		'six'             => __( 'Six', 'magicpi-admin' ),
+		'skrill'          => __( 'Skrill', 'magicpi-admin' ),
+		'sofort'          => __( 'Sofort', 'magicpi-admin' ),
+		'square'          => __( 'Square', 'magicpi-admin' ),
+		'stripe'          => __( 'Stripe', 'magicpi-admin' ),
+		'swish'           => __( 'Swish (SE)', 'magicpi-admin' ),
+		'truste'          => __( 'Truste', 'magicpi-admin' ),
+		'twint'           => __( 'Twint', 'magicpi-admin' ),
+		'unionpay'        => __( 'UnionPay', 'magicpi-admin' ),
+		'verisign'        => __( 'VeriSign', 'magicpi-admin' ),
+		'vipps'           => __( 'Vipps', 'magicpi-admin' ),
+		'visa'            => __( 'Visa', 'magicpi-admin' ),
+		'visa1'           => __( 'Visa 2', 'magicpi-admin' ),
+		'visaelectron'    => __( 'Visa Electron', 'magicpi-admin' ),
+		'westernunion'    => __( 'Western Union', 'magicpi-admin' ),
+		'wirecard'        => __( 'Wirecard', 'magicpi-admin' ),
 	) );
 }

@@ -1,7 +1,7 @@
 <?php
 
 
-function flatsome_contact_form_presets($args){
+function magicpi_contact_form_presets($args){
  	?>	
     <style>.metabox-holder .dev-cta{display:none!important;}</style>
 
@@ -54,14 +54,14 @@ function flatsome_contact_form_presets($args){
  	<?php
 }
 
-function flatsome_contact_form_presets_tab( $panels ) {
+function magicpi_contact_form_presets_tab( $panels ) {
   $new_page = array(
-    'Flatsome-Presets' => array(
-      'title' => __( 'Presets', 'flatsome-admin' ),
-      'callback' => 'flatsome_contact_form_presets'
+    'Magicpi-Presets' => array(
+      'title' => __( 'Presets', 'magicpi-admin' ),
+      'callback' => 'magicpi_contact_form_presets'
     )
   );
   $panels = array_merge($new_page,$panels);
   return $panels;
 }
-add_filter( 'wpcf7_editor_panels', 'flatsome_contact_form_presets_tab' ,50);
+add_filter( 'wpcf7_editor_panels', 'magicpi_contact_form_presets_tab' ,50);

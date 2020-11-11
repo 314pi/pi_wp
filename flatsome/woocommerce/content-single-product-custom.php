@@ -22,7 +22,7 @@ global $product;
 	 * @hooked wc_print_notices - 10
 	 */
 	do_action( 'woocommerce_before_single_product' );
-	do_action( 'flatsome_before_single_product_custom' );
+	do_action( 'magicpi_before_single_product_custom' );
 	if ( post_password_required() ) {
 		echo get_the_password_form(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
@@ -34,11 +34,11 @@ global $product;
 
 	<div class="custom-product-page">
 
-		<?php echo flatsome_apply_shortcode( 'block', array( 'id' => flatsome_product_block( get_the_ID() )['id'] ) ); ?>
+		<?php echo magicpi_apply_shortcode( 'block', array( 'id' => magicpi_product_block( get_the_ID() )['id'] ) ); ?>
 			<div id="product-sidebar" class="mfp-hide">
 				<div class="sidebar-inner">
 					<?php
-					do_action( 'flatsome_before_product_sidebar' );
+					do_action( 'magicpi_before_product_sidebar' );
 					/**
 					 * woocommerce_sidebar hook
 					 *

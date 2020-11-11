@@ -4,17 +4,17 @@
  * - Account
  *************/
 
-Flatsome_Option::add_section( 'header_account', array(
-	'title'       => __( 'Account', 'flatsome-admin' ),
+Magicpi_Option::add_section( 'header_account', array(
+	'title'       => __( 'Account', 'magicpi-admin' ),
 	'panel'       => 'header',
-	//'description' => __( 'This is the section description', 'flatsome-admin' ),
+	//'description' => __( 'This is the section description', 'magicpi-admin' ),
 ) );
 
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'        => 'radio-image',
 	'settings'     => 'account_icon_style',
-	'label'       => __( 'Icon Style', 'flatsome-admin' ),
+	'label'       => __( 'Icon Style', 'magicpi-admin' ),
 	'section'     => 'header_account',
 	'transport' => $transport,
 	'default'     => '',
@@ -29,21 +29,21 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'checkbox',
 	'settings'     => 'header_account_title',
-	'label'       => __( 'Show label', 'flatsome-admin' ),
-	'description' => __( 'Display label for logged in users.', 'flatsome-admin' ),
+	'label'       => __( 'Show label', 'magicpi-admin' ),
+	'description' => __( 'Display label for logged in users.', 'magicpi-admin' ),
 	'section'     => 'header_account',
 	'transport' => $transport,
 	'default'     => 1,
 ));
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'checkbox',
 	'settings'        => 'header_account_username',
-	'label'           => __( 'Use username as label', 'flatsome-admin' ),
-	'description'     => __( 'Display username instead of fixed label for logged in users.', 'flatsome-admin' ),
+	'label'           => __( 'Use username as label', 'magicpi-admin' ),
+	'description'     => __( 'Display username instead of fixed label for logged in users.', 'magicpi-admin' ),
 	'section'         => 'header_account',
 	'transport'       => $transport,
 	'active_callback' => array(
@@ -56,25 +56,25 @@ Flatsome_Option::add_field( 'option', array(
 	'default'         => 0,
 ) );
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'checkbox',
 	'settings'     => 'header_account_register',
-	'label'       => __( 'Show "Register" label', 'flatsome-admin' ),
-	'description' => __( 'Display "Register" for non logged in users.', 'flatsome-admin' ),
+	'label'       => __( 'Show "Register" label', 'magicpi-admin' ),
+	'description' => __( 'Display "Register" for non logged in users.', 'magicpi-admin' ),
 	'section'     => 'header_account',
 	'transport' => $transport,
 ));
 
-Flatsome_Option::add_field( '', array(
+Magicpi_Option::add_field( '', array(
   'type'        => 'custom',
   'settings' => 'custom_html_account_shortcut',
-  'label'       => __( '', 'flatsome-admin' ),
+  'label'       => __( '', 'magicpi-admin' ),
   'section'     => 'header_account',
   'default'     => '<button style="margin-top:30px; margin-bottom:15px" class="button button-primary" data-to-section="fl-my-account">Account Page Layout →</button>',
 ) );
 
 
-function flatsome_refresh_header_account_partials( WP_Customize_Manager $wp_customize ) {
+function magicpi_refresh_header_account_partials( WP_Customize_Manager $wp_customize ) {
 
 	if ( ! isset( $wp_customize->selective_refresh ) ) {
 	      return;
@@ -90,4 +90,4 @@ function flatsome_refresh_header_account_partials( WP_Customize_Manager $wp_cust
 	    },
 	) );
 }
-add_action( 'customize_register', 'flatsome_refresh_header_account_partials' );
+add_action( 'customize_register', 'magicpi_refresh_header_account_partials' );

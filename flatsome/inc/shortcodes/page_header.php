@@ -1,7 +1,7 @@
 <?php
 
 // [page_header]
-function flatsome_page_header_shortcode($atts) {
+function magicpi_page_header_shortcode($atts) {
   $atts = shortcode_atts( array(
     '_id' => 'page-header-'.rand(),
     'class' => '',
@@ -108,10 +108,10 @@ function flatsome_page_header_shortcode($atts) {
    // Breadcrumbs
    if ( $type == 'breadcrumbs' ) {
      echo '<div class="title-breadcrumbs pb-half pt-half">';
-     flatsome_breadcrumb( 'page-breadcrumbs' );
+     magicpi_breadcrumb( 'page-breadcrumbs' );
      echo '</div>';
    } else if ( $type == 'subnav' ) {
-     get_flatsome_subnav( $nav_class );
+     get_magicpi_subnav( $nav_class );
    } else if ( $type == 'onpage' ) {
      echo '<ul class="nav '.$nav_class.'"><li class="nav-single-page hidden"></li></ul>';
    } else if ( $type == 'share' ) {
@@ -144,7 +144,7 @@ function flatsome_page_header_shortcode($atts) {
    }
 
    // Sub nav
-   //get_flatsome_subnav($nav_class);
+   //get_magicpi_subnav($nav_class);
 
    $content = ob_get_contents();
    ob_end_clean();
@@ -222,4 +222,4 @@ function flatsome_page_header_shortcode($atts) {
    return $content;
 }
 
-add_shortcode("page_header", "flatsome_page_header_shortcode");
+add_shortcode("page_header", "magicpi_page_header_shortcode");

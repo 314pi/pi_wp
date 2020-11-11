@@ -11,7 +11,7 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 	exit;
 } // Exit if accessed directly
 
-$classes = get_flatsome_icon_class( get_theme_mod( 'social_icons_style', 'outline' ) );
+$classes = get_magicpi_icon_class( get_theme_mod( 'social_icons_style', 'outline' ) );
 $classes = $classes . ' tooltip';
 ?>
 <div class="yith-wcwl-share social-icons share-icons share-row relative">

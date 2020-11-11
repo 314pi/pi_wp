@@ -4,7 +4,7 @@ Template name: Page - Vertical Sub-Nav
 */
 get_header(); ?>
 
-<?php do_action( 'flatsome_before_page' ); ?>
+<?php do_action( 'magicpi_before_page' ); ?>
 
 <div class="page-wrapper page-vertical-nav">
 <div class="row">
@@ -50,6 +50,6 @@ get_header(); ?>
 </div>
 </div>
 
-<?php do_action( 'flatsome_after_page' ); ?>
+<?php do_action( 'magicpi_after_page' ); ?>
 
 <?php get_footer(); ?>

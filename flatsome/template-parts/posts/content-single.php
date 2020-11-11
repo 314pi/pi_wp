@@ -19,17 +19,17 @@
 	<footer class="entry-meta text-<?php echo get_theme_mod( 'blog_posts_title_align', 'center' ); ?>">
 		<?php
 		/* translators: used between list items, there is a space after the comma */
-		$category_list = get_the_category_list( __( ', ', 'flatsome' ) );
+		$category_list = get_the_category_list( __( ', ', 'magicpi' ) );
 
 		/* translators: used between list items, there is a space after the comma */
-		$tag_list = get_the_tag_list( '', __( ', ', 'flatsome' ) );
+		$tag_list = get_the_tag_list( '', __( ', ', 'magicpi' ) );
 
 
 		// But this blog has loads of categories so we should probably display them here.
 		if ( '' != $tag_list ) {
-			$meta_text = __( 'This entry was posted in %1$s and tagged %2$s.', 'flatsome' );
+			$meta_text = __( 'This entry was posted in %1$s and tagged %2$s.', 'magicpi' );
 		} else {
-			$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'flatsome' );
+			$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'magicpi' );
 		}
 
 		printf( $meta_text, $category_list, $tag_list, get_permalink(), the_title_attribute( 'echo=0' ) );
@@ -59,5 +59,5 @@
 <?php endif; ?>
 
 <?php if ( get_theme_mod( 'blog_single_next_prev_nav', 1 ) ) :
-	flatsome_content_nav( 'nav-below' );
+	magicpi_content_nav( 'nav-below' );
 endif; ?>

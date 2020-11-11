@@ -1,4 +1,4 @@
-<div class="page-title <?php flatsome_header_title_classes() ?> ">
+<div class="page-title <?php magicpi_header_title_classes() ?> ">
 
 	<div class="page-title-bg fill"><div class="page-title-bg-overlay"></div></div>
 
@@ -8,7 +8,7 @@
 	 	</div>
 
 	 	<div class="flex-col">
-	 		<?php get_flatsome_subnav(); ?>
+	 		<?php get_magicpi_subnav(); ?>
 	 	</div>
 
 	</div>

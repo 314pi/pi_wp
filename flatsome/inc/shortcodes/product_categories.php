@@ -109,9 +109,9 @@ function ux_product_categories($atts, $content = null, $tag) {
     if($type == 'grid'){
       $columns = 0;
       $current_grid = 0;
-      $grid = flatsome_get_grid($grid);
+      $grid = magicpi_get_grid($grid);
       $grid_total = count($grid);
-      flatsome_get_grid_height($grid_height, $_id);
+      magicpi_get_grid_height($grid_height, $_id);
     }
 
     // Add Animations
@@ -172,7 +172,7 @@ function ux_product_categories($atts, $content = null, $tag) {
     $repater['depth_hover'] = $depth_hover;
 
 
-    get_flatsome_repeater_start($repater);
+    get_magicpi_repeater_start($repater);
 
     if ( $product_categories ) {
       foreach ( $product_categories as $category ) {
@@ -248,7 +248,7 @@ function ux_product_categories($atts, $content = null, $tag) {
     }
     woocommerce_reset_loop();
 
-    get_flatsome_repeater_end($repater);
+    get_magicpi_repeater_end($repater);
 
     $content = ob_get_contents();
     ob_end_clean();

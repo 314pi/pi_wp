@@ -4,14 +4,14 @@
 add_ux_builder_shortcode( 'ux_countdown', array(
     'name' => __( 'Countdown' ),
     'category' => __( 'Content' ),
-    'thumbnail' =>  flatsome_ux_builder_thumbnail( 'countdown' ),
+    'thumbnail' =>  magicpi_ux_builder_thumbnail( 'countdown' ),
     'allow_in' => array('text_box'),
     'scripts' => array(
-        'flatsome-countdown-script' => get_template_directory_uri() . '/inc/shortcodes/ux_countdown/countdown-script-min.js',
-        'flatsome-countdown-theme-js' => get_template_directory_uri() . '/inc/shortcodes/ux_countdown/ux-countdown.js'
+        'magicpi-countdown-script' => get_template_directory_uri() . '/inc/shortcodes/ux_countdown/countdown-script-min.js',
+        'magicpi-countdown-theme-js' => get_template_directory_uri() . '/inc/shortcodes/ux_countdown/ux-countdown.js'
     ),
     'styles' => array(
-        'flatsome-countdown-style' => get_template_directory_uri() . '/inc/shortcodes/ux_countdown/ux-countdown.css',
+        'magicpi-countdown-style' => get_template_directory_uri() . '/inc/shortcodes/ux_countdown/ux-countdown.css',
     ),
     'options' => array(
         'style' => array(

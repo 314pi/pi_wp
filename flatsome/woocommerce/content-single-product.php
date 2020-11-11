@@ -38,7 +38,7 @@ global $product;
 <div id="product-<?php the_ID(); ?>" <?php fl_woocommerce_version_check( '3.4.0' ) ? wc_product_class( '', $product ) : post_class(); ?>>
 	<?php
 	// Get product page layout.
-	wc_get_template_part( 'single-product/layouts/product', flatsome_option( 'product_layout' ) );
+	wc_get_template_part( 'single-product/layouts/product', magicpi_option( 'product_layout' ) );
 
 	do_action( 'woocommerce_after_single_product' );
 	?>

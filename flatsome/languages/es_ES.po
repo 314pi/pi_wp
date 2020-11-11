@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Flatsome v2.7\n"
+"Project-Id-Version: Magicpi v2.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2020-03-14 12:18+0100\n"
@@ -205,8 +205,8 @@ msgid "Footer 2 (4 column)"
 msgstr "Pie de página 2 (4 columnas)"
 
 #: functions.php:349
-msgid "Flatsome Theme Options"
-msgstr "Opciones Tema Flatsome"
+msgid "Magicpi Theme Options"
+msgstr "Opciones Tema Magicpi"
 
 #: image.php:25
 #, php-format
@@ -546,23 +546,23 @@ msgstr "Páginas encontradas"
 msgid "All"
 msgstr "Todo"
 
-#: flatsome-live-search.php:129 inc/shortcodes/portfolio.php:129
+#: magicpi-live-search.php:129 inc/shortcodes/portfolio.php:129
 msgid "No matches found"
 msgstr "No se encontraron coincidencias"
 
 msgid "Video"
 msgstr "Vídeo"
 
-# @ flatsome
+# @ magicpi
 msgid "Contact"
 msgstr "Contactar"
 
-# @ flatsome
+# @ magicpi
 msgid "Location"
 msgstr "Localización"
 
-# @ flatsome
-#: inc/extensions/flatsome-infinite-scroll/templates/button.php:2
+# @ magicpi
+#: inc/extensions/magicpi-infinite-scroll/templates/button.php:2
 msgid "View more"
 msgstr "Ver más"
 

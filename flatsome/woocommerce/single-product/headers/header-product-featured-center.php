@@ -1,4 +1,4 @@
-<div class="shop-page-title product-page-title dark  featured-title page-title <?php flatsome_header_title_classes() ?>">
+<div class="shop-page-title product-page-title dark  featured-title page-title <?php magicpi_header_title_classes() ?>">
 	
 	<div class="page-title-bg fill">
 		<div class="title-bg fill bg-fill" data-parallax-fade="true" data-parallax="-2" data-parallax-background data-parallax-container=".page-title"></div>
@@ -10,10 +10,10 @@
 	 	 &nbsp;
 	  </div>
 	  <div class="flex-col flex-center text-center">
-	  	  	<?php do_action('flatsome_product_title') ;?>
+	  	  	<?php do_action('magicpi_product_title') ;?>
 	  </div>
 	  <div class="flex-col flex-right nav-right text-right medium-text-center">
-	  	  	 <?php do_action('flatsome_product_title_tools') ;?>
+	  	  	 <?php do_action('magicpi_product_title_tools') ;?>
 	  </div>
 	</div>
 </div>

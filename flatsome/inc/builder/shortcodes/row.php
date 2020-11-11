@@ -5,8 +5,8 @@ add_ux_builder_shortcode( 'row', array(
     'name' => __( 'Row' , 'ux-builder' ),
     'image' => '',
     'category' => __( 'Layout' ),
-    'template' => flatsome_ux_builder_template( 'row.html' ),
-    'thumbnail' =>  flatsome_ux_builder_thumbnail( 'row' ),
+    'template' => magicpi_ux_builder_template( 'row.html' ),
+    'thumbnail' =>  magicpi_ux_builder_thumbnail( 'row' ),
     'tools' => 'shortcodes/row-tools.directive.html',
     'info' => '{{ label }}',
     'allow' => array( 'col' ),
@@ -18,72 +18,72 @@ add_ux_builder_shortcode( 'row', array(
         array(
             'name' => __( '3 Columns' ),
             'content' => '[row][col span="4" span__sm="12"][/col][col span="4" span__sm="12"][/col][col span="4" span__sm="12"][/col]][/row]',
-            'thumbnail' =>  flatsome_ux_builder_thumbnail( 'row-3-col' ),
+            'thumbnail' =>  magicpi_ux_builder_thumbnail( 'row-3-col' ),
         ),
         array(
             'name' => __( '2 Columns' ),
             'content' => '[row][col span="6" span__sm="12"][/col][col span="6" span__sm="12"][/col][/row]',
-            'thumbnail' =>  flatsome_ux_builder_thumbnail( 'row-2-col' ),
+            'thumbnail' =>  magicpi_ux_builder_thumbnail( 'row-2-col' ),
         ),
         array(
             'name' => __( '4 Columns' ),
-            'thumbnail' =>  flatsome_ux_builder_thumbnail( 'row-4-col' ),
+            'thumbnail' =>  magicpi_ux_builder_thumbnail( 'row-4-col' ),
             'content' => '[row][col span="3" span__sm="6"][/col][col span="3" span__sm="6"][/col][col span="3" span__sm="6"][/col][col span="3" span__sm="6"][/col][/row]'
         ),
         array(
             'name' => __( 'One Column' ),
             'content' => '[row][col span="12" span__sm="12"][/col][/row]',
-            'thumbnail' =>  flatsome_ux_builder_thumbnail( 'row-1-col' ),
+            'thumbnail' =>  magicpi_ux_builder_thumbnail( 'row-1-col' ),
         ),
         array(
             'name' => __( 'Large Right' ),
             'content' => '[row][col span="4" span__sm="12"][/col][col span="8" span__sm="12"][/col][/row]',
-            'thumbnail' =>  flatsome_ux_builder_thumbnail( 'row-1-3-col' ),
+            'thumbnail' =>  magicpi_ux_builder_thumbnail( 'row-1-3-col' ),
         ),
         array(
             'name' => __( 'Large Left' ),
             'content' => '[row][col span="8" span__sm="12"][/col][col span="4" span__sm="12"][/col][/row]',
-            'thumbnail' =>  flatsome_ux_builder_thumbnail( 'row-2-3-col' ),
+            'thumbnail' =>  magicpi_ux_builder_thumbnail( 'row-2-3-col' ),
         ),
         array(
             'name' => __( '2 Col - Full' ),
             'content' => '[row style="collapse" width="full-width"][col span="6"][/col][col span="6"][/col][/row]',
-            'thumbnail' =>  flatsome_ux_builder_thumbnail( 'row-2-col-full' ),
+            'thumbnail' =>  magicpi_ux_builder_thumbnail( 'row-2-col-full' ),
         ),
         array(
             'name' => __( '3 col - Full' ),
             'content' => '[row style="collapse" width="full-width"][col span="4"][/col][col span="4"][/col][col span="4"][/col][/row]',
-            'thumbnail' =>  flatsome_ux_builder_thumbnail( 'row-3-col-full' ),
+            'thumbnail' =>  magicpi_ux_builder_thumbnail( 'row-3-col-full' ),
         ),
         array(
             'name' => __( 'Media Left' ),
             'content' => '[row  v_align="middle"][col span="6" span__sm="12"][ux_image][/col][col span="6" span__sm="12"][/col][/row]',
-            'thumbnail' =>  flatsome_ux_builder_thumbnail( 'row-image-left' ),
+            'thumbnail' =>  magicpi_ux_builder_thumbnail( 'row-image-left' ),
         ),
         array(
             'name' => __( 'Media Right' ),
             'content' => '[row v_align="middle"][col span="6" span__sm="12"][/col][col span="6" span__sm="12"][ux_image][/col][/row]',
-            'thumbnail' =>  flatsome_ux_builder_thumbnail( 'row-image-right' ),
+            'thumbnail' =>  magicpi_ux_builder_thumbnail( 'row-image-right' ),
         ),
         array(
             'name' => __( 'Large Media Left' ),
             'content' => '[row v_align="middle" style="collapse" width="full-width"][col span="6" span__sm="12"][ux_image][/col][col max_width="520px" padding="5% 5% 5% 5%" span="6" span__sm="12"][/col][/row]',
-            'thumbnail' =>  flatsome_ux_builder_thumbnail( 'row-image-left-large' ),
+            'thumbnail' =>  magicpi_ux_builder_thumbnail( 'row-image-left-large' ),
         ),
         array(
             'name' => __( 'Large Media Right' ),
             'content' => '[row v_align="middle" style="collapse" width="full-width"][col max_width="520px" padding="5% 5% 5% 5%" span="6" span__sm="12" width=""][/col][col span="6" span__sm="12"][ux_image][/col][/row]',
-            'thumbnail' =>  flatsome_ux_builder_thumbnail( 'row-image-right-large' ),
+            'thumbnail' =>  magicpi_ux_builder_thumbnail( 'row-image-right-large' ),
         ),
         array(
             'name' => __( '3 Columns - Drop Shadow' ),
             'content' => '[row depth="3" depth_hover="5"][col span="4" span__sm="12"][/col][col span="4" span__sm="12"][/col][col span="4" span__sm="12"][/col]][/row]',
-            'thumbnail' =>  flatsome_ux_builder_thumbnail( 'row-3-shadow-col' ),
+            'thumbnail' =>  magicpi_ux_builder_thumbnail( 'row-3-shadow-col' ),
         ),
         array(
             'name' => __( '3 Columns - Dashed' ),
             'content' => '[row col_style="dashed"][col span="4" span__sm="12"][/col][col span="4" span__sm="12"][/col][col span="4" span__sm="12"][/col][col span="4" span__sm="12"][/col][col span="4" span__sm="12"][/col][col span="4" span__sm="12"][/col]][/row]',
-            'thumbnail' =>  flatsome_ux_builder_thumbnail( 'row-3-col-dashed' ),
+            'thumbnail' =>  magicpi_ux_builder_thumbnail( 'row-3-col-dashed' ),
         )
     ),
 

@@ -2,100 +2,100 @@
 /*****
  * Contact
  *************/
-Flatsome_Option::add_section( 'header_contact', array(
-	'title'       =>  __( 'Contact', 'flatsome-admin' ),
+Magicpi_Option::add_section( 'header_contact', array(
+	'title'       =>  __( 'Contact', 'magicpi-admin' ),
 	'panel'       => 'header',
 ) );
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'radio-buttonset',
 	'settings'     => 'contact_style',
-	'label'       => __( 'Icon Style', 'flatsome-admin' ),
+	'label'       => __( 'Icon Style', 'magicpi-admin' ),
 	'section'     => 'header_contact',
 	'transport' => $transport,
 	'default'     => 'left',
 	'choices'     => array(
-		'left' => __( 'Icons Left', 'flatsome-admin' ),
-		'icons' => __( 'Icons Only', 'flatsome-admin' ),
+		'left' => __( 'Icons Left', 'magicpi-admin' ),
+		'icons' => __( 'Icons Only', 'magicpi-admin' ),
 	),
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'text',
 	'settings'     => 'contact_icon_size',
-	'label'       => __( 'Icon Size', 'flatsome-admin' ),
+	'label'       => __( 'Icon Size', 'magicpi-admin' ),
 	'section'     => 'header_contact',
 	'transport' => $transport,
 	'default'     => '16px',
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'text',
 	'settings'     => 'contact_phone',
-	'label'       => __( 'Phone', 'flatsome-admin' ),
+	'label'       => __( 'Phone', 'magicpi-admin' ),
 	'section'     => 'header_contact',
 	'transport' => $transport,
 	'default'     => '+47 900 99 000',
 ));
 
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'text',
 	'settings'     => 'contact_email',
-	'label'       => __( 'E-mail', 'flatsome-admin' ),
+	'label'       => __( 'E-mail', 'magicpi-admin' ),
 	'section'     => 'header_contact',
 	'transport' => $transport,
 	'default'     => 'youremail@gmail.com',
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'text',
 	'settings'     => 'contact_email_label',
-	'label'       => __( 'E-mail label', 'flatsome-admin' ),
+	'label'       => __( 'E-mail label', 'magicpi-admin' ),
 	'section'     => 'header_contact',
 	'transport' => $transport,
 	'default'     => '',
 ));
 
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'text',
 	'settings'     => 'contact_location',
-	'label'       => __( 'Location', 'flatsome-admin' ),
-	'help'        => __( 'Type in the location of your place or shop. It will open in a new window on Google Maps', 'flatsome-admin' ),
+	'label'       => __( 'Location', 'magicpi-admin' ),
+	'help'        => __( 'Type in the location of your place or shop. It will open in a new window on Google Maps', 'magicpi-admin' ),
 	'section'     => 'header_contact',
 	'transport' => $transport,
 	'default'     => '',
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'text',
 	'settings'     => 'contact_location_label',
-	'label'       => __( 'Location label', 'flatsome-admin' ),
+	'label'       => __( 'Location label', 'magicpi-admin' ),
 	'section'     => 'header_contact',
 	'transport' => $transport,
 	'default'     => '',
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'text',
 	'settings'     => 'contact_hours',
-	'label'       => __( 'Open Hours', 'flatsome-admin' ),
+	'label'       => __( 'Open Hours', 'magicpi-admin' ),
 	'section'     => 'header_contact',
 	'transport' => $transport,
 	'default'     => '08:00 - 17:00',
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'textarea',
 	'settings'     => 'contact_hours_details',
-	'label'       => __( 'Open Hours - Details', 'flatsome-admin' ),
+	'label'       => __( 'Open Hours - Details', 'magicpi-admin' ),
 	'section'     => 'header_contact',
 	'transport' => $transport,
 	'default'     => '',
 ));
 
-function flatsome_refresh_header_contact_partials( WP_Customize_Manager $wp_customize ) {
+function magicpi_refresh_header_contact_partials( WP_Customize_Manager $wp_customize ) {
 
 	if ( ! isset( $wp_customize->selective_refresh ) ) {
 	      return;
@@ -111,4 +111,4 @@ function flatsome_refresh_header_contact_partials( WP_Customize_Manager $wp_cust
 	) );
 	
 }
-add_action( 'customize_register', 'flatsome_refresh_header_contact_partials' );
+add_action( 'customize_register', 'magicpi_refresh_header_contact_partials' );

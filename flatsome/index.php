@@ -2,7 +2,7 @@
 /**
  * The blog template file.
  *
- * @package flatsome
+ * @package magicpi
  */
 
 get_header();

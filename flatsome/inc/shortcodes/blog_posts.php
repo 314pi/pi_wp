@@ -33,7 +33,7 @@ function shortcode_latest_from_blog($atts, $content = null, $tag) {
 		'posts' => '8',
 		'ids' => false, // Custom IDs
 		'cat' => '',
-		'category' => '', // Added for Flatsome v2 fallback
+		'category' => '', // Added for Magicpi v2 fallback
 		'excerpt' => 'visible',
 		'excerpt_length' => 15,
 		'offset' => '',
@@ -98,9 +98,9 @@ function shortcode_latest_from_blog($atts, $content = null, $tag) {
 	  if(!$text_pos) $text_pos = 'center';
 	  $columns = 0;
 	  $current_grid = 0;
-	  $grid = flatsome_get_grid($grid);
+	  $grid = magicpi_get_grid($grid);
 	  $grid_total = count($grid);
-	  flatsome_get_grid_height($grid_height, $_id);
+	  magicpi_get_grid_height($grid_height, $_id);
 	}
 
 	// Fix overlay
@@ -175,8 +175,8 @@ function shortcode_latest_from_blog($atts, $content = null, $tag) {
 		'order'               => $order,
 	);
 
-	// Added for Flatsome v2 fallback
-	if ( get_theme_mod('flatsome_fallback', 0) && $category ) {
+	// Added for Magicpi v2 fallback
+	if ( get_theme_mod('magicpi_fallback', 0) && $category ) {
 		$args['category_name'] = $category;
 	}
 
@@ -201,7 +201,7 @@ function shortcode_latest_from_blog($atts, $content = null, $tag) {
 $recentPosts = new WP_Query( $args );
 
 // Get repeater HTML.
-get_flatsome_repeater_start($repeater);
+get_magicpi_repeater_start($repeater);
 
 while ( $recentPosts->have_posts() ) : $recentPosts->the_post();
 
@@ -251,7 +251,7 @@ while ( $recentPosts->have_posts() ) : $recentPosts->the_post();
 					<div class="box-text <?php echo $classes_text; ?>" <?php echo get_shortcode_inline_css($css_args); ?>>
 					<div class="box-text-inner blog-post-inner">
 
-					<?php do_action('flatsome_blog_post_before'); ?>
+					<?php do_action('magicpi_blog_post_before'); ?>
 
 					<?php if($show_category !== 'false') { ?>
 						<p class="cat-label <?php if($show_category == 'label') echo 'tag-label'; ?> is-xxsmall op-7 uppercase">
@@ -269,7 +269,7 @@ while ( $recentPosts->have_posts() ) : $recentPosts->the_post();
 					<p class="from_the_blog_excerpt <?php if($show_excerpt !== 'visible'){ echo 'show-on-hover hover-'.$show_excerpt; } ?>"><?php
 					  $the_excerpt  = get_the_excerpt();
 					  $excerpt_more = apply_filters( 'excerpt_more', ' [...]' );
-					  echo flatsome_string_limit_words($the_excerpt, $excerpt_length) . $excerpt_more;
+					  echo magicpi_string_limit_words($the_excerpt, $excerpt_length) . $excerpt_more;
 					?>
 					</p>
 					<?php } ?>
@@ -278,7 +278,7 @@ while ( $recentPosts->have_posts() ) : $recentPosts->the_post();
                             <?php
                                 $comments_number = get_comments_number( get_the_ID() );
                             	/* translators: %s: comment count */
-                                printf( _n( '%s Comment', '%s Comments', $comments_number, 'flatsome' ),
+                                printf( _n( '%s Comment', '%s Comments', $comments_number, 'magicpi' ),
                                     number_format_i18n( $comments_number ) )
                             ?>
                         </p>
@@ -290,7 +290,7 @@ while ( $recentPosts->have_posts() ) : $recentPosts->the_post();
 						</button>
 					<?php } ?>
 
-					<?php do_action('flatsome_blog_post_after'); ?>
+					<?php do_action('magicpi_blog_post_after'); ?>
 
 					</div>
 					</div>
@@ -311,7 +311,7 @@ while ( $recentPosts->have_posts() ) : $recentPosts->the_post();
 wp_reset_query();
 
 // Get repeater end.
-get_flatsome_repeater_end($atts);
+get_magicpi_repeater_end($atts);
 
 $content = ob_get_contents();
 ob_end_clean();

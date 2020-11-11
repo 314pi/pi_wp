@@ -79,7 +79,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$is_rendering = $is_uxbuilder && $_POST['ux_builder_action'] == 'do_shortcode';
 	$is_saving    = isset( $_POST['action'] ) && $_POST['action'] == 'ux_builder_save';
 
-	if ( ( $is_product && flatsome_product_block( $post->ID ) ) || $is_rendering || $is_saving ) {
+	if ( ( $is_product && magicpi_product_block( $post->ID ) ) || $is_rendering || $is_saving ) {
 		require_once __DIR__ . '/shortcodes/custom-product.php';
 	}
 }

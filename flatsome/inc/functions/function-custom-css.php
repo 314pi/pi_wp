@@ -1,11 +1,11 @@
 <?php
 /* CUSTOM CSS */
-function flatsome_custom_css() {
+function magicpi_custom_css() {
 ob_start();
 ?>
 <style id="custom-css" type="text/css">
 :root {
-  --primary-color: <?php echo get_theme_mod('color_primary', Flatsome_Default::COLOR_PRIMARY ); ?>;
+  --primary-color: <?php echo get_theme_mod('color_primary', Magicpi_Default::COLOR_PRIMARY ); ?>;
 }
 <?php
 // Screen sizes
@@ -47,7 +47,7 @@ if($content_bg){ ?>
 <?php
 $cookie_notice_bg_color = get_theme_mod( 'cookie_notice_bg_color' );
 if ( $cookie_notice_bg_color ) { ?>
-	.flatsome-cookies {background-color: <?php echo $cookie_notice_bg_color; ?>}
+	.magicpi-cookies {background-color: <?php echo $cookie_notice_bg_color; ?>}
 <?php } ?>
 
 <?php
@@ -79,8 +79,8 @@ if($header_height_transparent){ ?>
 $height = 0;
 if(!$header_height_transparent) $height = $height + $header_height;
 if($header_height_transparent) $height = $height + $header_height_transparent;
-if(flatsome_has_top_bar()['large_or_mobile']) $height = $height + '30';
-if(flatsome_has_bottom_bar()['large_or_mobile']) $height = $height + '50';
+if(magicpi_has_top_bar()['large_or_mobile']) $height = $height + '30';
+if(magicpi_has_bottom_bar()['large_or_mobile']) $height = $height + '50';
 
 $mob_height = 0;
 ?>
@@ -175,8 +175,8 @@ if($header_height_mobile){ ?>
 
 <?php
 
-$color_primary = get_theme_mod('color_primary', Flatsome_Default::COLOR_PRIMARY );
-if($color_primary && $color_primary !== Flatsome_Default::COLOR_PRIMARY){ ?>
+$color_primary = get_theme_mod('color_primary', Magicpi_Default::COLOR_PRIMARY );
+if($color_primary && $color_primary !== Magicpi_Default::COLOR_PRIMARY){ ?>
 
 /* Color */
 .accordion-title.active, .has-icon-bg .icon .icon-inner,.logo a, .primary.is-underline, .primary.is-link, .badge-outline .badge-inner, .nav-outline > li.active> a,.nav-outline >li.active > a, .cart-icon strong,[data-color='primary'], .is-outline.primary{color: <?php echo $color_primary; ?>;}
@@ -190,7 +190,7 @@ if($color_primary && $color_primary !== Flatsome_Default::COLOR_PRIMARY){ ?>
 /* Background */
 .scroll-to-bullets a,.featured-title, .label-new.menu-item > a:after, .nav-pagination > li > .current,.nav-pagination > li > span:hover,.nav-pagination > li > a:hover,.has-hover:hover .badge-outline .badge-inner,button[type="submit"], .button.wc-forward:not(.checkout):not(.checkout-button), .button.submit-button, .button.primary:not(.is-outline),.featured-table .title,.is-outline:hover, .has-icon:hover .icon-label,.nav-dropdown-bold .nav-column li > a:hover, .nav-dropdown.nav-dropdown-bold > li > a:hover, .nav-dropdown-bold.dark .nav-column li > a:hover, .nav-dropdown.nav-dropdown-bold.dark > li > a:hover, .is-outline:hover, .tagcloud a:hover,.grid-tools a, input[type='submit']:not(.is-form), .box-badge:hover .box-text, input.button.alt,.nav-box > li > a:hover,.nav-box > li.active > a,.nav-pills > li.active > a ,.current-dropdown .cart-icon strong, .cart-icon:hover strong, .nav-line-bottom > li > a:before, .nav-line-grow > li > a:before, .nav-line > li > a:before,.banner, .header-top, .slider-nav-circle .flickity-prev-next-button:hover svg, .slider-nav-circle .flickity-prev-next-button:hover .arrow, .primary.is-outline:hover, .button.primary:not(.is-outline), input[type='submit'].primary, input[type='submit'].primary, input[type='reset'].button, input[type='button'].primary, .badge-inner{background-color: <?php echo $color_primary; ?>;}
 /* Border */
-.nav-vertical.nav-tabs > li.active > a,.scroll-to-bullets a.active,.nav-pagination > li > .current,.nav-pagination > li > span:hover,.nav-pagination > li > a:hover,.has-hover:hover .badge-outline .badge-inner,.accordion-title.active,.featured-table,.is-outline:hover, .tagcloud a:hover,blockquote, .has-border, .cart-icon strong:after,.cart-icon strong,.blockUI:before, .processing:before,.loading-spin, .slider-nav-circle .flickity-prev-next-button:hover svg, .slider-nav-circle .flickity-prev-next-button:hover .arrow, .primary.is-outline:hover{border-color: <?php echo get_theme_mod('color_primary', Flatsome_Default::COLOR_PRIMARY ); ?>}
+.nav-vertical.nav-tabs > li.active > a,.scroll-to-bullets a.active,.nav-pagination > li > .current,.nav-pagination > li > span:hover,.nav-pagination > li > a:hover,.has-hover:hover .badge-outline .badge-inner,.accordion-title.active,.featured-table,.is-outline:hover, .tagcloud a:hover,blockquote, .has-border, .cart-icon strong:after,.cart-icon strong,.blockUI:before, .processing:before,.loading-spin, .slider-nav-circle .flickity-prev-next-button:hover svg, .slider-nav-circle .flickity-prev-next-button:hover .arrow, .primary.is-outline:hover{border-color: <?php echo get_theme_mod('color_primary', Magicpi_Default::COLOR_PRIMARY ); ?>}
 .nav-tabs > li.active > a{border-top-color: <?php echo $color_primary; ?>}
 .widget_shopping_cart_content .blockUI.blockOverlay:before { border-left-color: <?php echo $color_primary; ?> }
 .woocommerce-checkout-review-order .blockUI.blockOverlay:before { border-left-color: <?php echo $color_primary; ?> }
@@ -200,8 +200,8 @@ if($color_primary && $color_primary !== Flatsome_Default::COLOR_PRIMARY){ ?>
 <?php } ?>
 
 <?php
-$color_secondary = get_theme_mod('color_secondary', Flatsome_Default::COLOR_SECONDARY);
-if( $color_secondary && $color_secondary !== Flatsome_Default::COLOR_SECONDARY ){ ?>
+$color_secondary = get_theme_mod('color_secondary', Magicpi_Default::COLOR_SECONDARY);
+if( $color_secondary && $color_secondary !== Magicpi_Default::COLOR_SECONDARY ){ ?>
 	/* Background Color */
 	[data-icon-label]:after, .secondary.is-underline:hover,.secondary.is-outline:hover,.icon-label,.button.secondary:not(.is-outline),.button.alt:not(.is-outline), .badge-inner.on-sale, .button.checkout, .single_add_to_cart_button, .current .breadcrumb-step{ background-color:  <?php echo $color_secondary; ?>; }
 	[data-text-bg="secondary"]{background-color: <?php echo $color_secondary; ?>;}
@@ -217,8 +217,8 @@ if( $color_secondary && $color_secondary !== Flatsome_Default::COLOR_SECONDARY )
 <?php } ?>
 
 <?php
-$color_success = get_theme_mod( 'color_success' , Flatsome_Default::COLOR_SUCCESS );
-if( $color_success && $color_success !== Flatsome_Default::COLOR_SUCCESS ){ ?>
+$color_success = get_theme_mod( 'color_success' , Magicpi_Default::COLOR_SUCCESS );
+if( $color_success && $color_success !== Magicpi_Default::COLOR_SUCCESS ){ ?>
 	.success.is-underline:hover,.success.is-outline:hover,
 	.success{background-color: <?php echo $color_success;?>}
 	.success-color, .success.is-link, .success.is-outline{
@@ -234,8 +234,8 @@ if( $color_success && $color_success !== Flatsome_Default::COLOR_SUCCESS ){ ?>
 <?php } ?>
 
 <?php
-$alert_color = get_theme_mod('color_alert', Flatsome_Default::COLOR_ALERT);
-if($alert_color && $alert_color !== Flatsome_Default::COLOR_ALERT){ ?>
+$alert_color = get_theme_mod('color_alert', Magicpi_Default::COLOR_ALERT);
+if($alert_color && $alert_color !== Magicpi_Default::COLOR_ALERT){ ?>
 	.alert.is-underline:hover,.alert.is-outline:hover,
 	.alert{background-color: <?php echo $alert_color;?>}
 	.alert.is-link, .alert.is-outline, .color-alert{
@@ -479,8 +479,8 @@ ins .woocommerce-Price-amount { color: <?php echo get_theme_mod( 'color_sale_pri
 input[type='submit'], input[type="button"], button:not(.icon), .button:not(.icon){border-radius: <?php echo get_theme_mod('button_radius');?>!important}
 <?php } ?>
 
-<?php if(get_theme_mod('flatsome_lightbox_bg')) { ?>
-  .pswp__bg,.mfp-bg.mfp-ready{background-color: <?php echo get_theme_mod('flatsome_lightbox_bg'); ?>}
+<?php if(get_theme_mod('magicpi_lightbox_bg')) { ?>
+  .pswp__bg,.mfp-bg.mfp-ready{background-color: <?php echo get_theme_mod('magicpi_lightbox_bg'); ?>}
 <?php } ?>
 
 <?php if(is_woocommerce_activated() && get_theme_mod('header_shop_bg_featured', 1)) {  ?>
@@ -652,15 +652,15 @@ background-color: #71cedf;
 	}
 <?php } ?>
 
-.label-new.menu-item > a:after{content:"<?php _e('New','flatsome'); ?>";}
-.label-hot.menu-item > a:after{content:"<?php _e('Hot','flatsome'); ?>";}
-.label-sale.menu-item > a:after{content:"<?php _e('Sale','flatsome'); ?>";}
-.label-popular.menu-item > a:after{content:"<?php _e('Popular','flatsome'); ?>";}
+.label-new.menu-item > a:after{content:"<?php _e('New','magicpi'); ?>";}
+.label-hot.menu-item > a:after{content:"<?php _e('Hot','magicpi'); ?>";}
+.label-sale.menu-item > a:after{content:"<?php _e('Sale','magicpi'); ?>";}
+.label-popular.menu-item > a:after{content:"<?php _e('Popular','magicpi'); ?>";}
 
 </style>
 
 <?php
 $buffer = ob_get_clean();
-echo flatsome_minify_css($buffer);
+echo magicpi_minify_css($buffer);
 }
-add_action( 'wp_head', 'flatsome_custom_css', 100 );
+add_action( 'wp_head', 'magicpi_custom_css', 100 );

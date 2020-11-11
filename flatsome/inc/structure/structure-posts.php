@@ -3,23 +3,23 @@
 /**
  * Remove recent comments style
  */
-function flatsome_remove_recent_comments_style() {
+function magicpi_remove_recent_comments_style() {
 	add_filter( 'show_recent_comments_widget_style', '__return_false' );
 }
 
-add_action( 'widgets_init', 'flatsome_remove_recent_comments_style' );
+add_action( 'widgets_init', 'magicpi_remove_recent_comments_style' );
 
 /**
  * Apply custom post excerpt suffix based on user setting.
  */
-function flatsome_excerpt_suffix() {
+function magicpi_excerpt_suffix() {
 	return get_theme_mod( 'blog_excerpt_suffix', ' [...]' );
 }
-add_filter( 'excerpt_more', 'flatsome_excerpt_suffix' );
+add_filter( 'excerpt_more', 'magicpi_excerpt_suffix' );
 
 
 // Blog Article Classes
-function flatsome_blog_article_classes() {
+function magicpi_blog_article_classes() {
 	$classes = array();
 	if ( get_theme_mod( 'blog_posts_depth', 0 ) ) $classes[]       = 'has-shadow box-shadow-' . get_theme_mod( 'blog_posts_depth', 0 );
 	if ( get_theme_mod( 'blog_posts_depth_hover', 0 ) ) $classes[] = 'box-shadow-' . get_theme_mod( 'blog_posts_depth_hover', 0 ) . '-hover';
@@ -27,15 +27,15 @@ function flatsome_blog_article_classes() {
 }
 
 // Add Custom Blog Header
-function flatsome_custom_blog_header() {
+function magicpi_custom_blog_header() {
 	if ( get_theme_mod( 'blog_header' ) && is_home() ) {
 		echo '<div class="blog-header-wrapper">' . do_shortcode( get_theme_mod( 'blog_header' ) ) . '</div>';
 	}
 }
-add_action( 'flatsome_after_header', 'flatsome_custom_blog_header', 10 );
+add_action( 'magicpi_after_header', 'magicpi_custom_blog_header', 10 );
 
 // Add transparent headers
-function flatsome_blog_header_classes( $classes ) {
+function magicpi_blog_header_classes( $classes ) {
 	// Add transparent header to product page if set.
 	if ( is_singular( 'post' ) && get_theme_mod( 'blog_single_transparent', 0 ) ) {
 		$classes[] = 'transparent has-transparent nav-dark toggle-nav-dark';
@@ -46,45 +46,45 @@ function flatsome_blog_header_classes( $classes ) {
 	return $classes;
 }
 
-add_filter( 'flatsome_header_class', 'flatsome_blog_header_classes', 10 );
+add_filter( 'magicpi_header_class', 'magicpi_blog_header_classes', 10 );
 
 
 // Add Big blog header
-function flatsome_single_page_header(){
+function magicpi_single_page_header(){
   if(is_singular('post') && get_theme_mod('blog_post_style') == 'top'){
 	   get_template_part( 'template-parts/posts/partials/single-featured', get_theme_mod('blog_post_style'));
 	}
 }
-add_action('flatsome_after_header','flatsome_single_page_header', 10);
+add_action('magicpi_after_header','magicpi_single_page_header', 10);
 
 
 // Add Blog Archive title
-function flatsome_archive_title() {
+function magicpi_archive_title() {
 	if ( get_theme_mod( 'blog_archive_title', 1 ) && ( is_archive() || is_search() ) ) {
 		get_template_part( 'template-parts/posts/partials/archive-title' );
 	}
 }
-add_action( 'flatsome_before_blog', 'flatsome_archive_title', 15 );
+add_action( 'magicpi_before_blog', 'magicpi_archive_title', 15 );
 
 
 // Remove the Auto scrolling if a Read more link is clicked
-function flatsome_remove_more_link_scroll( $link ) {
+function magicpi_remove_more_link_scroll( $link ) {
 	$link = preg_replace( '|#more-[0-9]+|', '', $link );
 	return $link;
 }
-add_filter( 'the_content_more_link', 'flatsome_remove_more_link_scroll' );
+add_filter( 'the_content_more_link', 'magicpi_remove_more_link_scroll' );
 
 // Add HTML after blog posts
-function flatsome_before_blog_comments(){
+function magicpi_before_blog_comments(){
     if(get_theme_mod('blog_after_post')){
         echo '<div class="html-before-comments mb">'.do_shortcode(get_theme_mod('blog_after_post')).'</div>';
     }
 }
-add_action('flatsome_before_comments','flatsome_before_blog_comments');
+add_action('magicpi_before_comments','magicpi_before_blog_comments');
 
 // Add button class to read more link
-if( ! function_exists('flatsome_add_morelink_class') ) {
-  function flatsome_add_morelink_class( $link, $text ) {
+if( ! function_exists('magicpi_add_morelink_class') ) {
+  function magicpi_add_morelink_class( $link, $text ) {
       return str_replace(
            'more-link'
           ,'more-link button primary smaller is-outline'
@@ -92,15 +92,15 @@ if( ! function_exists('flatsome_add_morelink_class') ) {
       );
   }
 }
-add_action( 'the_content_more_link', 'flatsome_add_morelink_class', 10, 2 );
+add_action( 'the_content_more_link', 'magicpi_add_morelink_class', 10, 2 );
 
 
 /**
  * Display navigation to next/previous pages when applicable
  */
-if ( ! function_exists( 'flatsome_content_nav' ) ) :
+if ( ! function_exists( 'magicpi_content_nav' ) ) :
 
-function flatsome_content_nav( $nav_id ) {
+function magicpi_content_nav( $nav_id ) {
     global $wp_query, $post;
 
     // Don't print empty markup on single pages if there's nowhere to navigate.
@@ -123,11 +123,11 @@ function flatsome_content_nav( $nav_id ) {
     <nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
 	<div class="flex-row next-prev-nav bt bb">
 		<div class="flex-col flex-grow nav-prev text-left">
-			    <?php previous_post_link( '<div class="nav-previous">%link</div>','<span class="hide-for-small">' .get_flatsome_icon('icon-angle-left') . _x( '', 'Previous post link', 'flatsome' ) . '</span> %title' ); ?>
+			    <?php previous_post_link( '<div class="nav-previous">%link</div>','<span class="hide-for-small">' .get_magicpi_icon('icon-angle-left') . _x( '', 'Previous post link', 'magicpi' ) . '</span> %title' ); ?>
 
 		</div>
 		<div class="flex-col flex-grow nav-next text-right">
-			    <?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="hide-for-small">'. get_flatsome_icon('icon-angle-right') . _x( '', 'Next post link', 'flatsome' ) . '</span>' ); ?>
+			    <?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="hide-for-small">'. get_magicpi_icon('icon-angle-right') . _x( '', 'Next post link', 'magicpi' ) . '</span>' ); ?>
 		</div>
 	</div>
 
@@ -136,12 +136,12 @@ function flatsome_content_nav( $nav_id ) {
 	<div class="flex-row">
 		<div class="flex-col flex-grow">
    <?php if ( get_next_posts_link() ) : ?>
-        <div class="nav-previous"><?php next_posts_link( __( '<span class="icon-angle-left"></span> Older posts', 'flatsome' ) ); ?></div>
+        <div class="nav-previous"><?php next_posts_link( __( '<span class="icon-angle-left"></span> Older posts', 'magicpi' ) ); ?></div>
         <?php endif; ?>
 		</div>
 		<div class="flex-col flex-grow">
 		  <?php if ( get_previous_posts_link() ) : ?>
-		     <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="icon-angle-right"></span>', 'flatsome' ) ); ?></div>
+		     <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="icon-angle-right"></span>', 'magicpi' ) ); ?></div>
 		 <?php endif; ?>		</div>
 	</div>
 	<?php endif; ?>
@@ -149,23 +149,23 @@ function flatsome_content_nav( $nav_id ) {
 
     <?php
 }
-endif; // flatsome_content_nav
+endif; // magicpi_content_nav
 
 
-if ( ! function_exists( 'flatsome_comment' ) ) :
+if ( ! function_exists( 'magicpi_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
  */
-function flatsome_comment( $comment, $args, $depth ) {
+function magicpi_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'flatsome' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'flatsome' ), '<span class="edit-link">', '<span>' ); ?></p>
+		<p><?php _e( 'Pingback:', 'magicpi' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'magicpi' ), '<span class="edit-link">', '<span>' ); ?></p>
 	<?php
 			break;
 		default :
@@ -181,9 +181,9 @@ function flatsome_comment( $comment, $args, $depth ) {
                 </div>
 
                 <div class="flex-col flex-grow">
-                    <?php printf( __( '%s <span class="says">says:</span>', 'flatsome' ), sprintf( '<cite class="strong fn">%s</cite>', get_comment_author_link() ) ); ?>
+                    <?php printf( __( '%s <span class="says">says:</span>', 'magicpi' ), sprintf( '<cite class="strong fn">%s</cite>', get_comment_author_link() ) ); ?>
                     <?php if ( $comment->comment_approved == '0' ) : ?>
-                    <em><?php _e( 'Your comment is awaiting moderation.', 'flatsome' ); ?></em>
+                    <em><?php _e( 'Your comment is awaiting moderation.', 'magicpi' ); ?></em>
                      <br />
                     <?php endif; ?>
 
@@ -192,9 +192,9 @@ function flatsome_comment( $comment, $args, $depth ) {
 
                  <div class="comment-meta commentmetadata uppercase is-xsmall clear">
                     <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time datetime="<?php comment_time( 'c' ); ?>" class="pull-left">
-                    <?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'flatsome' ), get_comment_date(), get_comment_time() ); ?>
+                    <?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'magicpi' ), get_comment_date(), get_comment_time() ); ?>
                     </time></a>
-                    <?php edit_comment_link( __( 'Edit', 'flatsome' ), '<span class="edit-link ml-half strong">', '<span>' ); ?>
+                    <?php edit_comment_link( __( 'Edit', 'magicpi' ), '<span class="edit-link ml-half strong">', '<span>' ); ?>
 
                         <div class="reply pull-right">
                             <?php
@@ -213,12 +213,12 @@ function flatsome_comment( $comment, $args, $depth ) {
 			break;
 	endswitch;
 }
-endif; // ends check for flatsome_comment()
+endif; // ends check for magicpi_comment()
 
-if ( ! function_exists( 'flatsome_posted_on' ) ) :
+if ( ! function_exists( 'magicpi_posted_on' ) ) :
 
 // Prints HTML with meta information for the current post-date/time and author.
-function flatsome_posted_on() {
+function magicpi_posted_on() {
     $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
     if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
         $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -232,12 +232,12 @@ function flatsome_posted_on() {
     );
 
     $posted_on = sprintf(
-        esc_html_x( 'Posted on %s', 'post date', 'flatsome' ),
+        esc_html_x( 'Posted on %s', 'post date', 'magicpi' ),
         '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
     );
 
     $byline = sprintf(
-        esc_html_x( 'by %s', 'post author', 'flatsome' ),
+        esc_html_x( 'by %s', 'post author', 'magicpi' ),
         '<span class="meta-author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
     );
 
@@ -246,17 +246,17 @@ function flatsome_posted_on() {
 }
 endif;
 
-function flatsome_featured_sticky_posts( $query ) {
+function magicpi_featured_sticky_posts( $query ) {
 	if ( get_theme_mod( 'blog_featured', '' ) && $query->is_home() && $query->is_main_query() ) {
 		$query->set( 'ignore_sticky_posts', 1 );
 		if ( get_theme_mod( 'blog_hide_sticky', 0 ) ) $query->set( 'post__not_in', get_option( 'sticky_posts' ) );
 	}
 }
-add_action( 'pre_get_posts', 'flatsome_featured_sticky_posts' );
+add_action( 'pre_get_posts', 'magicpi_featured_sticky_posts' );
 
 
 // Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
-function flatsome_enhanced_image_navigation( $url, $id ) {
+function magicpi_enhanced_image_navigation( $url, $id ) {
   if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
     return $url;
 
@@ -266,16 +266,16 @@ function flatsome_enhanced_image_navigation( $url, $id ) {
 
   return $url;
 }
-add_filter( 'attachment_link', 'flatsome_enhanced_image_navigation', 10, 2 );
+add_filter( 'attachment_link', 'magicpi_enhanced_image_navigation', 10, 2 );
 
 
 // Numbered Pagination
-if ( !function_exists( 'flatsome_posts_pagination' ) ) {
+if ( !function_exists( 'magicpi_posts_pagination' ) ) {
 
-    function  flatsome_posts_pagination() {
+    function  magicpi_posts_pagination() {
 
-        $prev_arrow = is_rtl() ? get_flatsome_icon('icon-angle-right') : get_flatsome_icon('icon-angle-left');
-        $next_arrow = is_rtl() ? get_flatsome_icon('icon-angle-left') : get_flatsome_icon('icon-angle-right');
+        $prev_arrow = is_rtl() ? get_magicpi_icon('icon-angle-right') : get_magicpi_icon('icon-angle-left');
+        $next_arrow = is_rtl() ? get_magicpi_icon('icon-angle-left') : get_magicpi_icon('icon-angle-right');
 
         global $wp_query;
         $total = $wp_query->max_num_pages;

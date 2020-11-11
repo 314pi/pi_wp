@@ -2,7 +2,7 @@
 /**
  * The Template for previewing blocks.
  *
- * @package flatsome
+ * @package magicpi
  */
 
 show_admin_bar(false);
@@ -18,11 +18,11 @@ if ( ! current_user_can( 'edit_posts' ) ) die;
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php do_action('flatsome_before_page' ); ?>
-<?php do_action('flatsome_after_header'); ?>
+<?php do_action('magicpi_before_page' ); ?>
+<?php do_action('magicpi_after_header'); ?>
 <div id="wrapper">
 
-	<div id="main" class="<?php flatsome_main_classes();  ?>">
+	<div id="main" class="<?php magicpi_main_classes();  ?>">
 
 	<?php while ( have_posts() ) : the_post(); ?>
 		<?php the_content(); ?>
@@ -31,7 +31,7 @@ if ( ! current_user_can( 'edit_posts' ) ) die;
 	</div>
 
 </div>
-<?php do_action( 'flatsome_after_page' ); ?>
+<?php do_action( 'magicpi_after_page' ); ?>
 
 <?php wp_footer(); ?>
 <style>.demo_store{display: none!important} html{margin-top: 0px!important}</style>

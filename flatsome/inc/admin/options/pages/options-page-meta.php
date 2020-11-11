@@ -2,9 +2,9 @@
 // PAGE META OPTIONS
 include('meta/meta_box_framework.php');
 
-function flatsome_custom_meta_boxes() {
+function magicpi_custom_meta_boxes() {
     $meta_box = array(
-        'id'         => 'flatsome_page_options2', // Meta box ID
+        'id'         => 'magicpi_page_options2', // Meta box ID
         'title'      => 'Page Layout', // Meta box title
         'pages'      => array('page'), // Post types this meta box should be shown on
         'context'    => 'side', // Meta box context
@@ -28,4 +28,4 @@ function flatsome_custom_meta_boxes() {
     );
     dev7_add_meta_box( $meta_box );
 }
-add_action( 'dev7_meta_boxes', 'flatsome_custom_meta_boxes' );
+add_action( 'dev7_meta_boxes', 'magicpi_custom_meta_boxes' );

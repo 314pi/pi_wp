@@ -4,16 +4,16 @@
  * - Wishlist Options
  *************/
 
-  Flatsome_Option::add_section( 'header_wishlist', array(
-    'title'       => __( 'Wishlist', 'flatsome-admin' ),
+  Magicpi_Option::add_section( 'header_wishlist', array(
+    'title'       => __( 'Wishlist', 'magicpi-admin' ),
     'panel'       => 'header',
     'priority' => 110,
   ) );
 
-  Flatsome_Option::add_field( 'option', array(
+  Magicpi_Option::add_field( 'option', array(
     'type'        => 'select',
     'settings'     => 'wishlist_icon',
-    'label'       => __( 'Wishlist Icon', 'flatsome-admin' ),
+    'label'       => __( 'Wishlist Icon', 'magicpi-admin' ),
     'transport' => $transport,
     'section'     => 'header_wishlist',
     'default'     => 'heart',
@@ -29,10 +29,10 @@
   ));
 
 
-  Flatsome_Option::add_field( 'option', array(
+  Magicpi_Option::add_field( 'option', array(
     'type'        => 'radio-image',
     'settings'     => 'wishlist_icon_style',
-    'label'       => __( 'Wishlist Icon Style', 'flatsome-admin' ),
+    'label'       => __( 'Wishlist Icon Style', 'magicpi-admin' ),
     'section'     => 'header_wishlist',
     'transport' => $transport,
     'default'     => '',
@@ -46,28 +46,28 @@
   ));
 
 
-  Flatsome_Option::add_field( 'option',  array(
+  Magicpi_Option::add_field( 'option',  array(
     'type'        => 'checkbox',
     'settings'     => 'wishlist_title',
-    'label'       => __( 'Show Wishlist Title', 'flatsome-admin' ),
-    //'description' => __( 'This is the control description', 'flatsome-admin' ),
-    //'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users. The main description should go in the "description" of the field, this is only to be used for help tips.', 'flatsome-admin' ),
+    'label'       => __( 'Show Wishlist Title', 'magicpi-admin' ),
+    //'description' => __( 'This is the control description', 'magicpi-admin' ),
+    //'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users. The main description should go in the "description" of the field, this is only to be used for help tips.', 'magicpi-admin' ),
     'section'     => 'header_wishlist',
     'transport' => $transport,
     'default'     => 1,
   ));
 
-  Flatsome_Option::add_field( 'option',  array(
+  Magicpi_Option::add_field( 'option',  array(
     'type'        => 'text',
     'settings'     => 'header_wishlist_label',
-    'label'       => __( 'Custom Title', 'flatsome-admin' ),
+    'label'       => __( 'Custom Title', 'magicpi-admin' ),
     'section'     => 'header_wishlist',
     'transport' => $transport,
     'default'     => '',
   ));
 
 
-  function flatsome_refresh_wishlist_partials( WP_Customize_Manager $wp_customize ) {
+  function magicpi_refresh_wishlist_partials( WP_Customize_Manager $wp_customize ) {
 
     // Abort if selective refresh is not available.
     if ( ! isset( $wp_customize->selective_refresh ) ) {
@@ -84,4 +84,4 @@
     ) );
 
   }
-  add_action( 'customize_register', 'flatsome_refresh_wishlist_partials' );
+  add_action( 'customize_register', 'magicpi_refresh_wishlist_partials' );

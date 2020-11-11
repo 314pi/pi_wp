@@ -5,9 +5,9 @@
  * Header Panel
  *************/
 
-Flatsome_Option::add_panel( 'header', array(
-	'title'       => __( 'Header', 'flatsome-admin' ),
-	'description' => __( 'Change Theme Header Options here.', 'flatsome-admin' ),
+Magicpi_Option::add_panel( 'header', array(
+	'title'       => __( 'Header', 'magicpi-admin' ),
+	'description' => __( 'Change Theme Header Options here.', 'magicpi-admin' ),
 ) );
 
 

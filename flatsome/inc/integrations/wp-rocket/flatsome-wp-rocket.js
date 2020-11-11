@@ -1,4 +1,4 @@
-Flatsome.behavior('wp-rocket-lazy-load-sliders', {
+Magicpi.behavior('wp-rocket-lazy-load-sliders', {
   attach: function (context) {
      jQuery('.slider', context).each(function (index, element) {
         var $element = jQuery(element);
@@ -15,7 +15,7 @@ Flatsome.behavior('wp-rocket-lazy-load-sliders', {
   }
 });
 
-Flatsome.behavior('wp-rocket-lazy-load-packery', {
+Magicpi.behavior('wp-rocket-lazy-load-packery', {
   attach: function (context) {
        jQuery('.has-packery .lazy-load', context).waypoint(function (direction) {
           var $element = jQuery(this.element);

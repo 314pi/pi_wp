@@ -2,12 +2,12 @@
 
 
 // Option links
-function flatsome_admin_bar_helper(){
+function magicpi_admin_bar_helper(){
 
 
 global $wp_admin_bar;
 
-$panel_url = get_admin_url().'admin.php?page=flatsome-panel';
+$panel_url = get_admin_url().'admin.php?page=magicpi-panel';
 $advanced_url = get_admin_url().'admin.php?page=optionsframework&tab=';
 $permalink = get_permalink();
 if(is_admin()) $permalink = get_home_url();
@@ -19,69 +19,69 @@ if(function_exists('is_shop') && is_shop()) {
 $optionUrl_panel = get_admin_url().'customize.php?url='.$permalink.'&autofocus%5Bpanel%5D=';
 $optionUrl_section = get_admin_url().'customize.php?url='.$permalink.'&autofocus%5Bsection%5D=';
 $icon_style = 'font: normal 20px/1 \'dashicons\';-webkit-font-smoothing: antialiased;padding-right: 4px;margin-top:3px;';
-$flatsome_icon = '<svg style="width:20px; margin-top:-4px; height:20px;vertical-align:middle;" width="184px" height="186px" viewBox="0 0 184 186" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <!-- Generator: Sketch 3.8.1 (29687) - http://www.bohemiancoding.com/sketch --> <title>Logo-white</title> <desc>Created with Sketch.</desc> <defs></defs> <g id="Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Logo-white" fill="#FFFFFF"> <g id="Group"> <path d="M92.6963305,153.35517 L69.6726254,130.331465 L92.6963305,107.30776 L92.6963305,66.7055226 L49.3715069,110.030346 L32.472925,93.1317642 L92.6963305,32.9083587 L92.6963305,0.803652143 L0.106126393,93.3938562 L92.6963305,185.98406 L92.6963305,153.35517 Z" id="Combined-Shape"></path> </g> <g id="Group" opacity="0.502623601" transform="translate(136.800003, 93.000000) scale(-1, 1) translate(-136.800003, -93.000000) translate(90.300003, 0.000000)"> <path d="M92.6963305,153.35517 L69.6726254,130.331465 L92.6963305,107.30776 L92.6963305,66.7055226 L49.3715069,110.030346 L32.472925,93.1317642 L92.6963305,32.9083587 L92.6963305,0.803652143 L0.106126393,93.3938562 L92.6963305,185.98406 L92.6963305,153.35517 Z" opacity="0.387068563"></path> </g> </g> </g> </svg>';
+$magicpi_icon = '<svg style="width:20px; margin-top:-4px; height:20px;vertical-align:middle;" width="184px" height="186px" viewBox="0 0 184 186" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <!-- Generator: Sketch 3.8.1 (29687) - http://www.bohemiancoding.com/sketch --> <title>Logo-white</title> <desc>Created with Sketch.</desc> <defs></defs> <g id="Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Logo-white" fill="#FFFFFF"> <g id="Group"> <path d="M92.6963305,153.35517 L69.6726254,130.331465 L92.6963305,107.30776 L92.6963305,66.7055226 L49.3715069,110.030346 L32.472925,93.1317642 L92.6963305,32.9083587 L92.6963305,0.803652143 L0.106126393,93.3938562 L92.6963305,185.98406 L92.6963305,153.35517 Z" id="Combined-Shape"></path> </g> <g id="Group" opacity="0.502623601" transform="translate(136.800003, 93.000000) scale(-1, 1) translate(-136.800003, -93.000000) translate(90.300003, 0.000000)"> <path d="M92.6963305,153.35517 L69.6726254,130.331465 L92.6963305,107.30776 L92.6963305,66.7055226 L49.3715069,110.030346 L32.472925,93.1317642 L92.6963305,32.9083587 L92.6963305,0.803652143 L0.106126393,93.3938562 L92.6963305,185.98406 L92.6963305,153.35517 Z" opacity="0.387068563"></path> </g> </g> </g> </svg>';
 
 $wp_admin_bar->add_menu( array(
- 'id' => 'flatsome_panel',
- 'title' => $flatsome_icon.' Flatsome',
+ 'id' => 'magicpi_panel',
+ 'title' => $magicpi_icon.' Magicpi',
  'href' => $panel_url
 ));
 
 $wp_admin_bar->add_menu( array(
  'id' => 'theme_options',
- 'parent' => 'flatsome_panel',
+ 'parent' => 'magicpi_panel',
  'title' => '<span class="dashicons dashicons-admin-generic" style="'.$icon_style.'"></span> Theme Options',
  'href' => $optionUrl_panel
 ));
 
 $wp_admin_bar->add_menu( array(
- 'parent' => 'flatsome_panel',
+ 'parent' => 'magicpi_panel',
  'id' => 'options_advanced',
  'title' => '<span class="dashicons dashicons-admin-tools" style="'.$icon_style.'"></span> Advanced',
  'href' =>  $advanced_url.''
 ));
 
 $wp_admin_bar->add_menu( array(
- 'parent' => 'flatsome_panel',
- 'id' => 'flatsome_panel_license',
+ 'parent' => 'magicpi_panel',
+ 'id' => 'magicpi_panel_license',
  'title' => 'Theme License',
  'href' => $panel_url
 ));
 
 $wp_admin_bar->add_menu( array(
- 'parent' => 'flatsome_panel',
- 'id' => 'flatsome_panel_support',
+ 'parent' => 'magicpi_panel',
+ 'id' => 'magicpi_panel_support',
  'title' => 'Help & Guides',
  'href' => $panel_url.'-support'
 ));
 
 /*
 $wp_admin_bar->add_menu( array(
- 'parent' => 'flatsome_panel',
- 'id' => 'flatsome_panel_plugins',
+ 'parent' => 'magicpi_panel',
+ 'id' => 'magicpi_panel_plugins',
  'title' => 'Plugins',
  'href' => $panel_url.'-plugins'
 )); */
 
 $wp_admin_bar->add_menu( array(
- 'parent' => 'flatsome_panel',
- 'id' => 'flatsome_panel_changelog',
+ 'parent' => 'magicpi_panel',
+ 'id' => 'magicpi_panel_changelog',
  'title' => 'Change log',
  'href' => $panel_url.'-changelog'
 ));
 
 $wp_admin_bar->add_menu( array(
- 'parent' => 'flatsome_panel',
- 'id' => 'flatsome_panel_setup_wizard',
+ 'parent' => 'magicpi_panel',
+ 'id' => 'magicpi_panel_setup_wizard',
  'title' => 'Setup Wizard',
- 'href' => admin_url().'admin.php?page=flatsome-setup'
+ 'href' => admin_url().'admin.php?page=magicpi-setup'
 ));
 
-if(!flatsome_is_theme_enabled()){
+if(!magicpi_is_theme_enabled()){
   $wp_admin_bar->add_menu( array(
-   'id' => 'flatsome-activate',
+   'id' => 'magicpi-activate',
    'title' => '<span class="dashicons dashicons-unlock" style="'.$icon_style.'"></span>Activate Theme',
-   'href' => admin_url() . 'admin.php?page=flatsome-panel',
+   'href' => admin_url() . 'admin.php?page=magicpi-panel',
   ));
 }
 
@@ -538,7 +538,7 @@ if(is_woocommerce_activated()) {
       if(is_shop() || is_product_category()){
           $wp_admin_bar->add_menu( array(
              'parent' => 'customize',
-             'id' => 'admin_bar_helper_flatsome',
+             'id' => 'admin_bar_helper_magicpi',
              'title' => __('Product Catalog','woocommerce'),
  			'href' =>  $optionUrl_section.'woocommerce_product_catalog'
          ));
@@ -547,4 +547,4 @@ if(is_woocommerce_activated()) {
 }
 
 }
-add_action( 'admin_bar_menu', 'flatsome_admin_bar_helper' , 35);
+add_action( 'admin_bar_menu', 'magicpi_admin_bar_helper' , 35);

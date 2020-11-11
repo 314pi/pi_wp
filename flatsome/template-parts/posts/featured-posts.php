@@ -20,10 +20,10 @@ if ( $the_query->have_posts() ) : ?>
 	// Set ids
 	$ids = implode(',', $ids);
 
-	$readmore = __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'flatsome' );
+	$readmore = __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'magicpi' );
 ?>
 	<?php
-	echo flatsome_apply_shortcode( 'blog_posts', array(
+	echo magicpi_apply_shortcode( 'blog_posts', array(
 		'class'            => 'featured-posts mb',
 		'slider_nav_style' => 'circle',
 		'style'            => 'shade',

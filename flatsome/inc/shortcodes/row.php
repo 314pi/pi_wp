@@ -70,7 +70,7 @@ function ux_row($atts, $content = null) {
 
   $classes =  implode(" ", $classes);
 
-  return '<div class="'.$classes.'" '.$custom_width.' id="'.$_id.'">'.flatsome_contentfix($content).ux_builder_element_style_tag($_id, $args, $atts).'</div>';
+  return '<div class="'.$classes.'" '.$custom_width.' id="'.$_id.'">'.magicpi_contentfix($content).ux_builder_element_style_tag($_id, $args, $atts).'</div>';
 }
 
 
@@ -122,7 +122,7 @@ function ux_col($atts, $content = null) {
   $classes_inner[] = 'col-inner';
 
   // Fix old cols
-  if(strpos($span, '/')) $span = flatsome_fix_span($span);
+  if(strpos($span, '/')) $span = magicpi_fix_span($span);
 
   // add custom class
   if($class) $classes[] = $class;
@@ -205,7 +205,7 @@ function ux_col($atts, $content = null) {
 	<div id="<?php echo $_id; ?>" class="<?php echo esc_attr( $classes ); ?>" <?php echo $attributes; ?>>
 		<div class="<?php echo esc_attr( $classes_inner ); ?>" <?php echo get_shortcode_inline_css( $css_args ); ?> <?php echo $attributes_inner; ?>>
 			<?php require __DIR__ . '/commons/border.php'; ?>
-			<?php echo flatsome_contentfix( $content ); ?>
+			<?php echo magicpi_contentfix( $content ); ?>
 		</div>
 		<?php echo ux_builder_element_style_tag( $_id, $args, $atts ); ?>
 	</div>

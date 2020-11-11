@@ -61,7 +61,7 @@ function ux_builder_admin_bar_link() {
 
 	// Add link for editing custom product layout block.
 	if ( $is_woocommerce && is_product() && array_key_exists( 'blocks', $post_types ) ) {
-		$block = flatsome_product_block( $post->ID );
+		$block = magicpi_product_block( $post->ID );
 		if ( $block ) {
 			$wp_admin_bar->add_menu( array(
 				'parent' => 'edit',

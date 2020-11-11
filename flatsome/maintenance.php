@@ -10,14 +10,14 @@
 </head>
 <body>
 <div id="wrapper">
-	<main id="main" class="<?php flatsome_main_classes(); ?>">
+	<main id="main" class="<?php magicpi_main_classes(); ?>">
 		<?php
-		if ( flatsome_option( 'maintenance_mode_page' ) ) {
-			$post = get_post( flatsome_option( 'maintenance_mode_page' ) );
+		if ( magicpi_option( 'maintenance_mode_page' ) ) {
+			$post = get_post( magicpi_option( 'maintenance_mode_page' ) );
 			echo do_shortcode( $post->post_content );
 		} else {
-			$logo_url = do_shortcode( flatsome_option( 'site_logo' ) );
-			echo do_shortcode( '[ux_banner bg_color="#fff" bg_overlay="rgba(255,255,255,.9)" height="100%"] [text_box animate="fadeInUp" text_color="dark"] [ux_image id="' . $logo_url . '" width="70%"] [divider] <p class="lead">' . flatsome_option( 'maintenance_mode_text' ) . '</p> [/text_box] [/ux_banner]' );
+			$logo_url = do_shortcode( magicpi_option( 'site_logo' ) );
+			echo do_shortcode( '[ux_banner bg_color="#fff" bg_overlay="rgba(255,255,255,.9)" height="100%"] [text_box animate="fadeInUp" text_color="dark"] [ux_image id="' . $logo_url . '" width="70%"] [divider] <p class="lead">' . magicpi_option( 'maintenance_mode_text' ) . '</p> [/text_box] [/ux_banner]' );
 		}
 		?>
 	</main>

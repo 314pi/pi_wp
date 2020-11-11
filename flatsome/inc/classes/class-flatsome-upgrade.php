@@ -1,10 +1,10 @@
 <?php
 /**
- * Handles flatsome option upgrades
+ * Handles magicpi option upgrades
  *
  * @author     UX Themes
  * @category   Class
- * @package    Flatsome/Classes
+ * @package    Magicpi/Classes
  * @since      3.4.0
  */
 
@@ -13,19 +13,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class Flatsome_Upgrade
+ * Class Magicpi_Upgrade
  */
-class Flatsome_Upgrade {
+class Magicpi_Upgrade {
 
 	/**
-	 * Holds flatsome DB version
+	 * Holds magicpi DB version
 	 *
 	 * @var string
 	 */
 	private $db_version;
 
 	/**
-	 * Holds flatsome current running parent theme version
+	 * Holds magicpi current running parent theme version
 	 *
 	 * @var string
 	 */
@@ -56,7 +56,7 @@ class Flatsome_Upgrade {
 	);
 
 	/**
-	 * Flatsome_Upgrade Class constructor
+	 * Magicpi_Upgrade Class constructor
 	 */
 	public function __construct() {
 
@@ -64,12 +64,12 @@ class Flatsome_Upgrade {
 	}
 
 	/**
-	 * Check Flatsome version and run the updater if required.
+	 * Check Magicpi version and run the updater if required.
 	 */
 	public function check_version() {
 
 		$theme = wp_get_theme( get_template() );
-		$this->db_version = get_theme_mod( 'flatsome_db_version', '3.0.0' );
+		$this->db_version = get_theme_mod( 'magicpi_db_version', '3.0.0' );
 		$this->running_version = $theme->version;
 
 		// If current version is new and current version has any update run it.
@@ -103,7 +103,7 @@ class Flatsome_Upgrade {
 	}
 
 	/**
-	 * Performs upgrades to Flatsome 3.4.0
+	 * Performs upgrades to Magicpi 3.4.0
 	 */
 	private function update_340() {
 		$portfolio_archive_filter = get_theme_mod( 'portfolio_archive_filter' );
@@ -113,7 +113,7 @@ class Flatsome_Upgrade {
 	}
 
 	/**
-	 * Performs upgrades to Flatsome 3.6.0
+	 * Performs upgrades to Magicpi 3.6.0
 	 */
 	private function update_360() {
 
@@ -152,7 +152,7 @@ class Flatsome_Upgrade {
 	}
 
 	/**
-	 * Performs upgrades to Flatsome 3.9.0
+	 * Performs upgrades to Magicpi 3.9.0
 	 */
 	private function update_390() {
 		remove_theme_mod( 'follow_google' );
@@ -167,8 +167,8 @@ class Flatsome_Upgrade {
 	 * Should only be called when all upgrades are performed.
 	 */
 	private function update_db_version() {
-		set_theme_mod( 'flatsome_db_version', $this->running_version );
+		set_theme_mod( 'magicpi_db_version', $this->running_version );
 	}
 }
 
-new Flatsome_Upgrade();
+new Magicpi_Upgrade();

@@ -98,7 +98,7 @@ function ux_builder_editor_data() {
   $post_status = $editing_post->post()->post_status;
   $can_edit = current_user_can( 'edit_post', $post_id );
   $can_publish = current_user_can( 'publish_post', $post_id );
-  $has_flatsome_studio = get_theme_mod( 'flatsome_studio', 1 );
+  $has_magicpi_studio = get_theme_mod( 'magicpi_studio', 1 );
 
   // Get the back URL. Redirect to admin page if user came
   // from admin or to the post if user came from some other place.
@@ -127,7 +127,7 @@ function ux_builder_editor_data() {
     'initialized' => false,
     'nonce' => wp_create_nonce( 'ux-builder-' . $editing_post->post()->ID ),
     'ajaxUrl' => admin_url( 'admin-ajax.php' ),
-    'flatsomeStudioUrl' => $has_flatsome_studio
+    'magicpiStudioUrl' => $has_magicpi_studio
       ? ( is_ssl() ? 'https' : 'http' ) . '://demos.uxthemes.com/'
       : null,
     'iframeUrl' => ux_builder_iframe_url(),
@@ -139,7 +139,7 @@ function ux_builder_editor_data() {
     'post' => $editing_post->to_array(),
     'saveButton' => $save_button,
     'showSidebar' => true,
-    'showFlatsomeStudio' => false,
+    'showMagicpiStudio' => false,
     'breakpoints' => array(
       'current' => get_default_ux_builder_breakpoint(),
       'default' => get_default_ux_builder_breakpoint(),

@@ -4,7 +4,7 @@ add_action( 'widgets_init', 'recent_posts_widget' );
 
 function recent_posts_widget() {
 
-	register_widget( 'Flatsome_Recent_Post_Widget' );
+	register_widget( 'Magicpi_Recent_Post_Widget' );
 }
 
 /**
@@ -12,14 +12,14 @@ function recent_posts_widget() {
  *
  * @since 2.8.0
  */
-class Flatsome_Recent_Post_Widget extends WP_Widget {
+class Magicpi_Recent_Post_Widget extends WP_Widget {
 
 	function __construct() {
-		$widget_ops = array( 'classname' => 'flatsome_recent_posts', 'description' => __('A widget that displays recent posts ', 'flatsome'), 'customize_selective_refresh' => true);
+		$widget_ops = array( 'classname' => 'magicpi_recent_posts', 'description' => __('A widget that displays recent posts ', 'magicpi'), 'customize_selective_refresh' => true);
 
-		$control_ops = array( 'id_base' => 'flatsome_recent_posts' );
+		$control_ops = array( 'id_base' => 'magicpi_recent_posts' );
 
-		parent::__construct( 'flatsome_recent_posts', __('Flatsome Recent Posts', 'flatsome'), $widget_ops, $control_ops );
+		parent::__construct( 'magicpi_recent_posts', __('Magicpi Recent Posts', 'magicpi'), $widget_ops, $control_ops );
 	}
 
 	function widget($args, $instance) {
@@ -46,7 +46,7 @@ class Flatsome_Recent_Post_Widget extends WP_Widget {
         if ( empty( $instance['date-stamp'] ) ) $instance['date-stamp'] = false;
 		$is_date_stamp = $instance['date-stamp'] ? 'true' : 'false';
 
-		$title = apply_filters('widget_title', empty($instance['title']) ? __('Recent Posts', 'flatsome') : $instance['title'], $instance, $this->id_base);
+		$title = apply_filters('widget_title', empty($instance['title']) ? __('Recent Posts', 'magicpi') : $instance['title'], $instance, $this->id_base);
 		if ( empty( $instance['number'] ) || ! $number = absint( $instance['number'] ) )
  			$number = 10;
 
@@ -72,7 +72,7 @@ class Flatsome_Recent_Post_Widget extends WP_Widget {
 		<li class="recent-blog-posts-li">
 			<div class="flex-row recent-blog-posts align-top pt-half pb-half">
 				<div class="flex-col mr-half">
-					<div class="badge post-date <?php if($is_image == 'false') echo 'badge-small';?> badge-<?php echo flatsome_option('blog_badge_style'); ?>">
+					<div class="badge post-date <?php if($is_image == 'false') echo 'badge-small';?> badge-<?php echo magicpi_option('blog_badge_style'); ?>">
 							<div class="badge-inner bg-fill" <?php echo $image_style;?>>
                                 <?php if($is_date_stamp == 'true' || !has_post_thumbnail() || $is_image == 'false') { ?>
 								<span class="post-date-day"><?php echo get_the_time('d', get_the_ID()); ?></span><br>
@@ -83,7 +83,7 @@ class Flatsome_Recent_Post_Widget extends WP_Widget {
 				</div>
 				<div class="flex-col flex-grow">
 					  <a href="<?php the_permalink() ?>" title="<?php echo esc_attr( get_the_title() ? get_the_title() : get_the_ID() ); ?>"><?php if ( get_the_title() ) the_title(); else the_ID(); ?></a>
-				   	  <span class="post_comments op-7 block is-xsmall"><?php comments_popup_link( '', __( '<strong>1</strong> Comment', 'flatsome' ), __( '<strong>%</strong> Comments', 'flatsome' ) ); ?></span>
+				   	  <span class="post_comments op-7 block is-xsmall"><?php comments_popup_link( '', __( '<strong>1</strong> Comment', 'magicpi' ), __( '<strong>%</strong> Comments', 'magicpi' ) ); ?></span>
 				</div>
 			</div>
 		</li>
@@ -126,18 +126,18 @@ class Flatsome_Recent_Post_Widget extends WP_Widget {
         $instance['date-stamp'] = isset( $instance['date-stamp'] ) ? $instance['date-stamp'] : false;
 
 ?>
-		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'flatsome' ); ?></label>
+		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'magicpi' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></p>
 
-		<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:', 'flatsome' ); ?></label>
+		<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:', 'magicpi' ); ?></label>
 		<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>
 
  		<p><input class="checkbox" type="checkbox" <?php checked($instance['image'], 'on'); ?> id="<?php echo $this->get_field_id('image'); ?>" name="<?php echo $this->get_field_name('image'); ?>" />
-		<label for="<?php echo $this->get_field_id( 'image' ); ?>"><?php _e( 'Show thumbnail', 'flatsome' ); ?></label></p>
+		<label for="<?php echo $this->get_field_id( 'image' ); ?>"><?php _e( 'Show thumbnail', 'magicpi' ); ?></label></p>
 
         <p><input class="checkbox" type="checkbox" <?php checked($instance['date-stamp'], 'on'); ?> id="<?php echo $this->get_field_id('date-stamp'); ?>" name="<?php echo $this->get_field_name('date-stamp'); ?>" />
-		<label for="<?php echo $this->get_field_id( 'date-stamp' ); ?>"><?php _e( 'Show date stamp on thumbnail', 'flatsome' ); ?></label>
-        <?php echo '<p><small>' . __('* If a featured image is not set or the "Show Thumbnail" option is disabled, the date stamp will always be displayed.', 'flatsome') . '</small></p>'; ?></p>
+		<label for="<?php echo $this->get_field_id( 'date-stamp' ); ?>"><?php _e( 'Show date stamp on thumbnail', 'magicpi' ); ?></label>
+        <?php echo '<p><small>' . __('* If a featured image is not set or the "Show Thumbnail" option is disabled, the date stamp will always be displayed.', 'magicpi') . '</small></p>'; ?></p>
 
 <?php
 	}

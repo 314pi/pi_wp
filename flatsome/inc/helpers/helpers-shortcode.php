@@ -9,7 +9,7 @@
  * @param  string $md
  * @return string
  */
-function flatsome_position_classes ( $axis, $default, $sm, $md ) {
+function magicpi_position_classes ( $axis, $default, $sm, $md ) {
   $classes = array();
 
   if ( $md && ! strlen( $sm ) ) $sm = $md; // Small should inherit from medium if not set
@@ -23,7 +23,7 @@ function flatsome_position_classes ( $axis, $default, $sm, $md ) {
   return implode( ' ', $classes );
 }
 
-function get_flatsome_repeater_start( $atts ) {
+function get_magicpi_repeater_start( $atts ) {
     $atts = wp_parse_args( $atts, array(
       'class' => '',
       'visibility' => '',
@@ -109,12 +109,12 @@ function get_flatsome_repeater_start( $atts ) {
     }
 
     if($atts['type'] == 'masonry'){
-      wp_enqueue_script('flatsome-masonry-js');
+      wp_enqueue_script('magicpi-masonry-js');
       $row_classes[] = 'row-masonry';
     }
 
     if($atts['type'] == 'grid'){
-      wp_enqueue_script('flatsome-masonry-js');
+      wp_enqueue_script('magicpi-masonry-js');
       $row_classes[] = 'row-grid';
     }
 
@@ -177,12 +177,12 @@ function get_flatsome_repeater_start( $atts ) {
   <?php }
 }
 
-function get_flatsome_repeater_end($type){
+function get_magicpi_repeater_end($type){
   echo '</div>';
 }
 
 /* Fix Normal Shortcodes */
-function flatsome_contentfix($content){
+function magicpi_contentfix($content){
     $fix = array (
             '<p>_____</p>' => '<div class="is-divider large"></div>',
             '<p>____</p>' => '<div class="is-divider medium"></div>',
@@ -204,13 +204,13 @@ function flatsome_contentfix($content){
 }
 
 /* Add shortcode fix to content */
-add_filter('the_content', 'flatsome_contentfix');
+add_filter('the_content', 'magicpi_contentfix');
 
 /* Add shortcode to widgets */
-add_filter('widget_text', 'flatsome_contentfix');
+add_filter('widget_text', 'magicpi_contentfix');
 
 /* Add shortcode to excerpt */
-add_filter('the_excerpt', 'flatsome_contentfix');
+add_filter('the_excerpt', 'magicpi_contentfix');
 
 /**
  * Remove whitespace characters \r\n\t\f\v from HTML between > and <
@@ -220,7 +220,7 @@ add_filter('the_excerpt', 'flatsome_contentfix');
  *
  * @return mixed
  */
-function flatsome_sanitize_whitespace_chars( $html ) {
+function magicpi_sanitize_whitespace_chars( $html ) {
 	$html = preg_replace( '/(?<=>)\s+(?=<)/', '', $html );
 	return trim( $html );
 }
@@ -241,7 +241,7 @@ function get_parallax_option($strength){
     return 'data-velocity="0.'.$strength.'"';
 }
 
-function flatsome_get_image_url($id, $size = 'large'){
+function magicpi_get_image_url($id, $size = 'large'){
 
     if(!$id) return get_template_directory_uri().'/assets/img/missing.jpg';
 
@@ -254,7 +254,7 @@ function flatsome_get_image_url($id, $size = 'large'){
     }
 }
 
-function flatsome_get_image($id, $size = 'large', $alt = 'bg_image', $inline = false){
+function magicpi_get_image($id, $size = 'large', $alt = 'bg_image', $inline = false){
 
     if(!$id) return '<img src="'.get_template_directory_uri().'/assets/img/missing.jpg'.'" />';
 
@@ -271,7 +271,7 @@ function flatsome_get_image($id, $size = 'large', $alt = 'bg_image', $inline = f
     }
 }
 
-function flatsome_string_limit_words($string, $word_limit) {
+function magicpi_string_limit_words($string, $word_limit) {
   $words = explode(' ', $string, ($word_limit + 1));
   if(count($words) > $word_limit)
   array_pop($words);
@@ -281,7 +281,7 @@ function flatsome_string_limit_words($string, $word_limit) {
 
 
 /* Create RGBA color of a #HEX color */
-function flatsome_hex2rgba($color, $opacity = false) {
+function magicpi_hex2rgba($color, $opacity = false) {
   $default = 'rgb(0,0,0)';
   //Return default if no color provided
   if(empty($color))
@@ -316,7 +316,7 @@ function flatsome_hex2rgba($color, $opacity = false) {
         return $output;
 }
 
-function flatsome_fix_span($span){
+function magicpi_fix_span($span){
   switch ($span) {
     case "1/1":
         $span = '12'; break;
@@ -369,7 +369,7 @@ function flatsome_fix_span($span){
 }
 
 
-function flatsome_smart_links($link){
+function magicpi_smart_links($link){
     if($link == 'shop' && is_woocommerce_activated()){
       $link = get_permalink( wc_get_page_id( 'shop' ) );
     }
@@ -406,12 +406,12 @@ function flatsome_smart_links($link){
     return esc_url( $link, $protocols );
 }
 
-function flatsome_to_dashed($className) {
+function magicpi_to_dashed($className) {
    return strtolower(preg_replace('/([\S\s])\s/', '$1-', $className));
 }
 
 /*
-function flatsome_get_gradient($primary){ ?>
+function magicpi_get_gradient($primary){ ?>
   <style>
     .target{
       background: <?php echo $primary; ?>
@@ -432,7 +432,7 @@ function flatsome_get_gradient($primary){ ?>
  *
  * @return string Parsed target/rel string.
  */
-function flatsome_parse_target_rel( array $link_atts, $trim = false ) {
+function magicpi_parse_target_rel( array $link_atts, $trim = false ) {
 	$attrs = array();
 
 	if ( $link_atts['target'] == '_blank' ) {
@@ -457,12 +457,12 @@ function flatsome_parse_target_rel( array $link_atts, $trim = false ) {
  *
  * @return array
  */
-function flatsome_ux_product_box_items() {
+function magicpi_ux_product_box_items() {
 
 	return array(
 		'cat'              => array(
 			'tag'      => 'woocommerce_shop_loop_item_title',
-			'function' => 'flatsome_woocommerce_shop_loop_category',
+			'function' => 'magicpi_woocommerce_shop_loop_category',
 		),
 		'title'            => array(
 			'tag'      => 'woocommerce_shop_loop_item_title',
@@ -477,16 +477,16 @@ function flatsome_ux_product_box_items() {
 			'function' => 'woocommerce_template_loop_price',
 		),
 		'add_to_cart'      => array(
-			'tag'      => 'flatsome_product_box_after',
-			'function' => 'flatsome_woocommerce_shop_loop_button',
+			'tag'      => 'magicpi_product_box_after',
+			'function' => 'magicpi_woocommerce_shop_loop_button',
 		),
 		'add_to_cart_icon' => array(
-			'tag'      => 'flatsome_product_box_actions',
-			'function' => 'flatsome_product_box_actions_add_to_cart',
+			'tag'      => 'magicpi_product_box_actions',
+			'function' => 'magicpi_product_box_actions_add_to_cart',
 		),
 		'quick_view'       => array(
-			'tag'      => 'flatsome_product_box_actions',
-			'function' => 'flatsome_lightbox_button',
+			'tag'      => 'magicpi_product_box_actions',
+			'function' => 'magicpi_lightbox_button',
 		),
 	);
 }
@@ -498,7 +498,7 @@ function flatsome_ux_product_box_items() {
  *
  * @return array $items Box items with additional data.
  */
-function flatsome_box_item_toggle_start( $items ) {
+function magicpi_box_item_toggle_start( $items ) {
 
 	foreach ( $items as $key => $data ) {
 		if ( isset( $data['show'] ) && ! $data['show'] ) {
@@ -519,7 +519,7 @@ function flatsome_box_item_toggle_start( $items ) {
  *
  * @param array $items A collection of box items of a specific element.
  */
-function flatsome_box_item_toggle_end( $items ) {
+function magicpi_box_item_toggle_end( $items ) {
 	foreach ( $items as $item ) {
 		if ( isset( $item['re_hook'] ) && $item['re_hook'] == true ) {
 			add_action( $item['tag'], $item['function'], $item['priority'] );

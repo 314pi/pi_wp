@@ -5,7 +5,7 @@
  *
  * @see wc_get_rating_html()
  */
-function flatsome_get_rating_html( $rating, $count = 0 ) {
+function magicpi_get_rating_html( $rating, $count = 0 ) {
 	global $product;
 	$review_count = $product->get_review_count();
 	$label        = sprintf( __( 'Rated %s out of 5', 'woocommerce' ), $rating ); // phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment

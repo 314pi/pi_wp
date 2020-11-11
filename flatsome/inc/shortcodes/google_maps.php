@@ -1,6 +1,6 @@
 <?php
 // [map]
-function flatsome_shortcode_map($atts, $content=null, $code) {
+function magicpi_shortcode_map($atts, $content=null, $code) {
 
 	$atts = shortcode_atts(array(
     '_id' => 'map-'.rand(),
@@ -39,10 +39,10 @@ function flatsome_shortcode_map($atts, $content=null, $code) {
   $classes = implode(' ', $classes);
 
   $content_classes = array( 'map_inner', 'map-inner', 'last-reset absolute' );
-  $content_classes[] = flatsome_position_classes( 'x', $position_x, $position_x__sm, $position_x__md );
-  $content_classes[] = flatsome_position_classes( 'y', $position_y, $position_y__sm, $position_y__md );
+  $content_classes[] = magicpi_position_classes( 'x', $position_x, $position_x__sm, $position_x__md );
+  $content_classes[] = magicpi_position_classes( 'y', $position_y, $position_y__sm, $position_y__md );
 
-  wp_enqueue_script('flatsome-maps');
+  wp_enqueue_script('magicpi-maps');
 
 	ob_start();
 	?>
@@ -51,7 +51,7 @@ function flatsome_shortcode_map($atts, $content=null, $code) {
   jQuery( document ).ready(function() {
     function initialize() {
         var styles = {
-            'flatsome':  [{
+            'magicpi':  [{
             "featureType": "administrative",
             "stylers": [
               { "visibility": "on" }
@@ -79,7 +79,7 @@ function flatsome_shortcode_map($atts, $content=null, $code) {
             center: myLatlng,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             disableDefaultUI: true,
-            mapTypeId: 'flatsome',
+            mapTypeId: 'magicpi',
             draggable: <?php echo $pan; ?>,
             zoomControl: <?php echo $controls == 'true' && $zoom_control == 'true' ? 'true' : 'false'; ?>,
             zoomControlOptions: {
@@ -109,8 +109,8 @@ function flatsome_shortcode_map($atts, $content=null, $code) {
             disableDoubleClickZoom: true
         }
         var map = new google.maps.Map(document.getElementById("<?php echo $_id; ?>-inner"), myOptions);
-        var styledMapType = new google.maps.StyledMapType(styles['flatsome'], {name: 'flatsome'});
-        map.mapTypes.set('flatsome', styledMapType);
+        var styledMapType = new google.maps.StyledMapType(styles['magicpi'], {name: 'magicpi'});
+        map.mapTypes.set('magicpi', styledMapType);
 
         var marker = new google.maps.Marker({
             position: myLatlng,
@@ -135,7 +135,7 @@ function flatsome_shortcode_map($atts, $content=null, $code) {
         <div id="map_overlay_bottom"></div>
          <?php if($content_enable) {?>
          <div class="<?php echo implode( ' ', $content_classes ); ?>">
-              <?php echo flatsome_contentfix($content); ?>
+              <?php echo magicpi_contentfix($content); ?>
          </div>
        <?php }?>
 
@@ -166,4 +166,4 @@ function flatsome_shortcode_map($atts, $content=null, $code) {
 	return $content;
 }
 
-add_shortcode('map', 'flatsome_shortcode_map');
+add_shortcode('map', 'magicpi_shortcode_map');

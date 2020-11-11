@@ -27,12 +27,12 @@ function title_shortcode( $atts, $content = null ){
   $classes = implode(' ', $classes);
 
   $link_output = '';
-  if($link) $link_output = '<a href="'.$link.'" target="'.$target.'">'.$link_text.get_flatsome_icon('icon-angle-right').'</a>';
+  if($link) $link_output = '<a href="'.$link.'" target="'.$target.'">'.$link_text.get_magicpi_icon('icon-angle-right').'</a>';
 
   $small_text = '';
   if($sub_text) $small_text = '<small class="sub-title">'.$atts['sub_text'].'</small>';
 
-  if($icon) $icon = get_flatsome_icon($icon);
+  if($icon) $icon = get_magicpi_icon($icon);
 
   // fix old
   if($style == 'bold_center') $style = 'bold-center';

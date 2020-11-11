@@ -4,7 +4,7 @@ add_ux_builder_shortcode( 'col', array(
     'type' => 'container',
     'name' => __( 'Column', 'ux-builder' ),
     'category' => __( 'Layout' ),
-    'template' => flatsome_ux_builder_template( 'col.html' ),
+    'template' => magicpi_ux_builder_template( 'col.html' ),
     'tools' => 'shortcodes/col/col-tools.directive.html',
     'info' => '{{ span }}/12 {{ label }}',
     'require' => array( 'row' ),

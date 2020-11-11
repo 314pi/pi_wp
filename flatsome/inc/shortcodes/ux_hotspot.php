@@ -33,8 +33,8 @@ function ux_hotspot( $atts, $content = null ) {
 	}
 
 	// Set positions.
-	$classes[] = flatsome_position_classes( 'x', $position_x, $position_x__sm, $position_x__md );
-	$classes[] = flatsome_position_classes( 'y', $position_y, $position_y__sm, $position_y__md );
+	$classes[] = magicpi_position_classes( 'x', $position_x, $position_x__sm, $position_x__md );
+	$classes[] = magicpi_position_classes( 'y', $position_y, $position_y__sm, $position_y__md );
 
 	// Size.
 	if ( $size ) {

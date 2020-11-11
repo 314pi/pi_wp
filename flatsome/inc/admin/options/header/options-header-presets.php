@@ -2,23 +2,23 @@
 
 $preset_url = get_template_directory_uri().'/inc/admin/options/header/img/';
 
-Flatsome_Option::add_section( 'header-presets', array(
-    'title' => __( 'Presets', 'flatsome-admin' ),
+Magicpi_Option::add_section( 'header-presets', array(
+    'title' => __( 'Presets', 'magicpi-admin' ),
     'panel' => 'header',
     'priority' => '1',
-    'description' => __( 'You can quick change between header presets here. This works best on a fresh install or resetted options. You can safely try new layouts without loosing changes. Just remember to NOT save if you do not want to use the selected preset.', 'flatsome-admin' ),
+    'description' => __( 'You can quick change between header presets here. This works best on a fresh install or resetted options. You can safely try new layouts without loosing changes. Just remember to NOT save if you do not want to use the selected preset.', 'magicpi-admin' ),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
     'type'        => 'preset',
     'settings'    => 'preset_demo',
     'label'       => __( 'Preset', 'kirki' ),
     'section'     => 'header-presets',
     'transport' => 'postMessage',
-    'choices'     => get_flatsome_header_presets()
+    'choices'     => get_magicpi_header_presets()
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
     'type'        => 'custom',
     'settings' => 'select_preset',
     'section'     => 'header-presets',

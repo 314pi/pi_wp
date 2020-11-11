@@ -268,7 +268,7 @@ add_shortcode( 'ux_product_breadcrumbs', function ( $atts ) {
 
 	ob_start();
 	echo '<div class="product-breadcrumb-container is-' . $size . '">';
-	flatsome_breadcrumb();
+	magicpi_breadcrumb();
 	echo '</div>';
 
 	return ob_get_clean();
@@ -284,7 +284,7 @@ add_shortcode( 'ux_product_next_prev_nav', function ( $atts ) {
 	}
 
 	ob_start();
-	flatsome_product_next_prev_nav( $atts['class'] );
+	magicpi_product_next_prev_nav( $atts['class'] );
 
 	return ob_get_clean();
 } );

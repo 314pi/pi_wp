@@ -4,21 +4,21 @@
  */
 
 ?>
-<div id="tab-guide" class="col two-col panel flatsome-panel">
+<div id="tab-guide" class="col two-col panel magicpi-panel">
 		
 	<div class="cols">
 		<div class="inner-panel success" style="border-left:4px solid #006799;">
 			<h5 style="color: #006799">STEP 1</h5>
 			<h3>Activate Theme</h3>
-			<p>Install the plugins you want to use that are included with Flatsome.</p>
-			<a href="<?php echo admin_url().'admin.php?page=flatsome-panel-plugins'; ?>" class="button">Add License</a>
+			<p>Install the plugins you want to use that are included with Magicpi.</p>
+			<a href="<?php echo admin_url().'admin.php?page=magicpi-panel-plugins'; ?>" class="button">Add License</a>
 		</div>
 
 		<div class="inner-panel" style="border-left:4px solid #006799;">
 			<h5 style="color: #006799">STEP 1</h5>
 			<h3>Install and setup plugins</h3>
-			<p>Install the plugins you want to use that are included with Flatsome.</p>
-			<a href="<?php echo admin_url().'admin.php?page=flatsome-panel-plugins'; ?>" class="button">Install Plugins</a>
+			<p>Install the plugins you want to use that are included with Magicpi.</p>
+			<a href="<?php echo admin_url().'admin.php?page=magicpi-panel-plugins'; ?>" class="button">Install Plugins</a>
 			<a href="#" class="button" title="Video Guide">&#9658;</a>
 		</div>
 
@@ -26,7 +26,7 @@
 		<div class="inner-panel" style="border-left:4px solid #006799;">
 			<h5 style="color: #006799">STEP 2</h5>
 			<h3>Import Demo Data</h3>
-			<p>Import Demo Data to get started quickly with Flatsome.</p>
+			<p>Import Demo Data to get started quickly with Magicpi.</p>
 			<a href="<?php echo admin_url().'themes.php?page=pt-one-click-demo-import'; ?>" class="button">Import Demo Data</a>
 			<a href="#" class="button" title="Video Guide">&#9658;</a>
 		</div>

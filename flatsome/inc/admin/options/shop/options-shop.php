@@ -5,8 +5,8 @@
  *************/
 
 
-Flatsome_Option::add_panel( 'woocommerce', array(
-  'title'       => __( 'WooCommerce', 'flatsome-admin' ),
+Magicpi_Option::add_panel( 'woocommerce', array(
+  'title'       => __( 'WooCommerce', 'magicpi-admin' ),
 ) );
 
 include_once(dirname( __FILE__ ).'/options-shop-category.php');
@@ -17,7 +17,7 @@ include_once(dirname( __FILE__ ).'/options-shop-payments-icons.php');
 include_once(dirname( __FILE__ ).'/options-shop-store-notice.php');
 //include_once(dirname( __FILE__ ).'/options-shop-catalog-mode.php');
 
-function flatsome_refresh_shop_partials( WP_Customize_Manager $wp_customize ) {
+function magicpi_refresh_shop_partials( WP_Customize_Manager $wp_customize ) {
 
   // Abort if selective refresh is not available.
   if ( ! isset( $wp_customize->selective_refresh ) ) {
@@ -30,7 +30,7 @@ function flatsome_refresh_shop_partials( WP_Customize_Manager $wp_customize ) {
 	    'fallback_refresh' => false,
 	    'container_inclusive' => true,
 	    'render_callback' => function() {
-			wc_get_template_part( 'single-product/layouts/product', get_theme_mod( 'product_layout', flatsome_product_layout() ) );
+			wc_get_template_part( 'single-product/layouts/product', get_theme_mod( 'product_layout', magicpi_product_layout() ) );
 	    },
 	) );
 
@@ -40,7 +40,7 @@ function flatsome_refresh_shop_partials( WP_Customize_Manager $wp_customize ) {
 	    'settings' => array('html_shop_page','category_title_style','category_show_title','breadcrumb_home','category_filter_text'),
 	    'container_inclusive' => true,
 	    'render_callback' => function() {
-	        flatsome_category_header();
+	        magicpi_category_header();
 	    },
 	) );
 
@@ -70,7 +70,7 @@ function flatsome_refresh_shop_partials( WP_Customize_Manager $wp_customize ) {
 	    'settings' => array('html_cart_footer'),
 	    'container_inclusive' => true,
 	    'render_callback' => function() {
-	        flatsome_html_cart_footer();
+	        magicpi_html_cart_footer();
 	    }
 	) );
 
@@ -79,7 +79,7 @@ function flatsome_refresh_shop_partials( WP_Customize_Manager $wp_customize ) {
 	    'settings' => array('html_cart_sidebar'),
 	    'container_inclusive' => true,
 	    'render_callback' => function() {
-	        flatsome_html_cart_sidebar();
+	        magicpi_html_cart_sidebar();
 	     }
 	) );
 
@@ -88,7 +88,7 @@ function flatsome_refresh_shop_partials( WP_Customize_Manager $wp_customize ) {
 	    'settings' => array('html_checkout_sidebar'),
 	    'container_inclusive' => true,
 	    'render_callback' => function() {
-	        flatsome_html_checkout_sidebar();
+	        magicpi_html_checkout_sidebar();
 	     }
 	) );
 
@@ -106,8 +106,8 @@ function flatsome_refresh_shop_partials( WP_Customize_Manager $wp_customize ) {
 	    'container_inclusive' => true,
 	    'settings' => array('category_image_height','color_new_bubble','color_checkout','color_sale','color_review','color_regular_price','color_sale_price'),
 	    'render_callback' => function() {
-	        flatsome_custom_css();
+	        magicpi_custom_css();
 	    },
 	) );
 }
-add_action( 'customize_register', 'flatsome_refresh_shop_partials' );
+add_action( 'customize_register', 'magicpi_refresh_shop_partials' );

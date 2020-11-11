@@ -163,7 +163,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 		public function init_globals() {
 			$current_theme = wp_get_theme();
 			$this->theme_name = strtolower( preg_replace( '#[^a-zA-Z]#','',$current_theme->get( 'Name' ) ) );
-			$this->page_slug = apply_filters( 'flatsome_theme_setup_wizard_page_slug', 'flatsome-setup' );
+			$this->page_slug = apply_filters( 'magicpi_theme_setup_wizard_page_slug', 'magicpi-setup' );
 			$this->parent_slug = apply_filters( $this->theme_name . '_theme_setup_wizard_parent_slug', '' );
 
 			//If we have parent slug - set correct url
@@ -257,8 +257,8 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 				return;
 			}
 			delete_transient( '_'.$this->theme_name.'_activation_redirect' );
-			if(flatsome_is_upgrading()){
-				wp_safe_redirect( admin_url('admin.php?page=flatsome-panel') );
+			if(magicpi_is_upgrading()){
+				wp_safe_redirect( admin_url('admin.php?page=magicpi-panel') );
 			} else {
 				wp_safe_redirect( admin_url( $this->page_url ) );
 			}
@@ -296,7 +296,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 		 * Add admin menus/screens.
 		 */
 		public function admin_menus() {
-			add_submenu_page('flatsome-panel', __( 'Setup Wizard','envato_setup' ), __( 'Setup Wizard','envato_setup' ), 'manage_options', $this->page_slug,  array( $this, $this->page_slug) );
+			add_submenu_page('magicpi-panel', __( 'Setup Wizard','envato_setup' ), __( 'Setup Wizard','envato_setup' ), 'manage_options', $this->page_slug,  array( $this, $this->page_slug) );
 		}
 
 
@@ -716,13 +716,13 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 			} else if( get_option('envato_setup_complete', false) ){
 				?>
 				<h1><?php printf( __( 'Welcome to the setup wizard for %s.' ), wp_get_theme()); ?></h1>
-				<p class="lead success"><?php _e('It looks like you already have setup Flatsome.');?></p>
+				<p class="lead success"><?php _e('It looks like you already have setup Magicpi.');?></p>
 
 				<p class="envato-setup-actions step">
 					<a href="<?php echo esc_url( $this->get_next_step_link() ); ?>"
 						   class="button-primary button button-next button-large"><?php _e( 'Run Setup Wizard Again' ); ?></a>
-					<a href="<?php echo admin_url( 'admin.php?page=flatsome-panel' ); ?>"
-					   class="button button-large"><?php _e( 'Exit to Flatsome Panel' ); ?></a>
+					<a href="<?php echo admin_url( 'admin.php?page=magicpi-panel' ); ?>"
+					   class="button button-large"><?php _e( 'Exit to Magicpi Panel' ); ?></a>
 				</p>
 				<?php
 			} else {
@@ -831,7 +831,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 				$plugins = $this->_get_plugins();
 				if ( count( $plugins['all'] ) ) {
 					?>
-					<p class="lead"><?php _e( 'This will install the default plugins included with Flatsome. You can add and remove plugins later on from within WordPress.', 'envato_setup' ); ?></p>
+					<p class="lead"><?php _e( 'This will install the default plugins included with Magicpi. You can add and remove plugins later on from within WordPress.', 'envato_setup' ); ?></p>
 					<ul class="envato-wizard-plugins">
 						<?php foreach ( $plugins['all'] as $slug => $plugin ) {  ?>
 							<li data-slug="<?php echo esc_attr( $slug );?>"><?php echo esc_html( $plugin['name'] );?>
@@ -989,7 +989,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 				<?php if($this->is_possible_upgrade()){ ?>
 					<p><?php _e('It looks like you already have content installed on this website. If you would like to install the default demo content as well you can select it below. Otherwise just choose the upgrade option to ensure everything is up to date.'); ?></p>
 				<?php }else{ ?>
-					<p class="lead"><?php printf( __( 'It\'s time to insert some default content for your new Flatsome website. Choose what you would like inserted below and click Continue. It is recommended to leave everything selected. Once inserted, this content can be managed from the WordPress admin dashboard. ', 'envato_setup' ), '<a href="' . esc_url( admin_url( 'edit.php?post_type=page' ) ) . '" target="_blank">', '</a>' ); ?></p>
+					<p class="lead"><?php printf( __( 'It\'s time to insert some default content for your new Magicpi website. Choose what you would like inserted below and click Continue. It is recommended to leave everything selected. Once inserted, this content can be managed from the WordPress admin dashboard. ', 'envato_setup' ), '<a href="' . esc_url( admin_url( 'edit.php?post_type=page' ) ) . '" target="_blank">', '</a>' ); ?></p>
 				<?php } ?>
 				<table class="envato-setup-pages" cellspacing="0">
 					<thead>
@@ -1084,8 +1084,8 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 
 		private function _make_child_theme( $new_theme_title ) {
 
-				$parent_theme_title = 'Flatsome';
-				$parent_theme_template = 'flatsome';
+				$parent_theme_title = 'Magicpi';
+				$parent_theme_template = 'magicpi';
 				$parent_theme_name = get_stylesheet();
 				$parent_theme_dir = get_stylesheet_directory();
 
@@ -2026,7 +2026,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 				        echo '<div class="notice-warning notice-alt"><p>' . esc_html__( 'Purchase code not updated. We will keep the existing one.' ) . '</p></div>';
 				      } else {
 				        //this means a valid purchase code is present and no errors were found
-				       echo '<div class="notice-success notice-alt notice-large" style="margin-bottom:15px!important">' . __( 'Your <strong>purchase code is valid</strong>. Thank you! Enjoy Flatsome Theme and automatic updates.' ) . '</div>';
+				       echo '<div class="notice-success notice-alt notice-large" style="margin-bottom:15px!important">' . __( 'Your <strong>purchase code is valid</strong>. Thank you! Enjoy Magicpi Theme and automatic updates.' ) . '</div>';
 				      }
 				    }
 
@@ -2088,7 +2088,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 		public function envato_setup_customize() {
 		?>
 
-			<h1>Setup Flatsome Child Theme (Optional)</h1>
+			<h1>Setup Magicpi Child Theme (Optional)</h1>
 
 			<p>
 				If you are going to make changes to the theme source code please use a <a href="https://codex.wordpress.org/Child_Themes" target="_blank">Child Theme</a> rather than modifying the main theme HTML/CSS/PHP code. This allows the parent theme to receive updates without overwriting your source code changes. Use the form below to create and activate the Child Theme.
@@ -2103,7 +2103,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 				if(isset($_REQUEST['theme_name']) && current_user_can('manage_options')){
 					$this->_make_child_theme(esc_html($_REQUEST['theme_name']));
 				}
-				$theme = get_option('fl_has_child_theme') ? wp_get_theme(get_option('fl_has_child_theme') )->Name : 'Flatsome Child';
+				$theme = get_option('fl_has_child_theme') ? wp_get_theme(get_option('fl_has_child_theme') )->Name : 'Magicpi Child';
 			 ?>
 
 			<?php if(!isset($_REQUEST['theme_name'])){ ?>
@@ -2174,7 +2174,7 @@ if ( ! class_exists( 'Envato_Theme_Setup_Wizard' ) ) {
 					<h2><?php _e( 'Next Steps', 'envato_setup' ); ?></h2>
 					<ul>
 						<?php if(class_exists('woocommerce')) { ?><li class="setup-product"><a class="button  button-primary button-large woocommerce-button" href="<?php echo admin_url().'index.php?page=wc-setup';?>"><?php _e( 'Setup WooCommerce (optional)', 'envato_setup' ); ?></a></li><?php } ?>
-						<li class="setup-product"><a class="button button-primary button-large" href="https://www.facebook.com/groups/flatsome/" target="_blank"><?php _e( 'Join Facebook Group', 'envato_setup' ); ?></a></li>
+						<li class="setup-product"><a class="button button-primary button-large" href="https://www.facebook.com/groups/magicpi/" target="_blank"><?php _e( 'Join Facebook Group', 'envato_setup' ); ?></a></li>
 						<li class="setup-product"><a class="button button-large" href="<?php echo esc_url( home_url() ); ?>"><?php _e( 'View your new website!', 'envato_setup' ); ?></a></li>
 					</ul>
 				</div>

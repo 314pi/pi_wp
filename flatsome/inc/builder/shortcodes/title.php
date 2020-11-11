@@ -3,8 +3,8 @@
 add_ux_builder_shortcode( 'title', array(
 	'name'      => __( 'Title', 'ux-builder' ),
 	'category'  => __( 'Content' ),
-	'thumbnail' => flatsome_ux_builder_thumbnail( 'title' ),
-	'template'  => flatsome_ux_builder_template( 'title.html' ),
+	'thumbnail' => magicpi_ux_builder_thumbnail( 'title' ),
+	'template'  => magicpi_ux_builder_template( 'title.html' ),
 	'info'      => '{{ text }}',
 	'wrap'      => false,
 

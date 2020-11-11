@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' );
 
-do_action( 'flatsome_before_product_page' );
+do_action( 'magicpi_before_product_page' );
 
 ?>
 
@@ -32,7 +32,7 @@ do_action( 'flatsome_before_product_page' );
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php
-			if ( flatsome_product_block( get_the_ID() ) ) {
+			if ( magicpi_product_block( get_the_ID() ) ) {
 				wc_get_template_part( 'content', 'single-product-custom' );
 			} else {
 				wc_get_template_part( 'content', 'single-product' );
@@ -52,7 +52,7 @@ do_action( 'flatsome_before_product_page' );
 
 <?php
 
-do_action( 'flatsome_after_product_page' );
+do_action( 'magicpi_after_product_page' );
 
 get_footer( 'shop' );
 

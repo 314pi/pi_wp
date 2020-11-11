@@ -1,10 +1,10 @@
 <?php
 /**
- * Contains flatsome default values, used throughout the whole theme
+ * Contains magicpi default values, used throughout the whole theme
  *
  * @author     UX Themes
  * @category   Class
- * @package    Flatsome/Classes
+ * @package    Magicpi/Classes
  * @since      3.4.2
  */
 
@@ -13,9 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class Flatsome_Default
+ * Class Magicpi_Default
  */
-class Flatsome_Default {
+class Magicpi_Default {
 
 	/** Primary Color */
 	const COLOR_PRIMARY = '#446084';

@@ -9,7 +9,7 @@
 
 	<div class="page-title-inner container  flex-row  dark">
 	 	<div class="flex-col flex-grow">
-	 		<?php do_action('flatsome_portfolio_title_left'); ?>
+	 		<?php do_action('magicpi_portfolio_title_left'); ?>
 	 	</div>
 	 	<div class="flex-col flex-center text-center" data-parallax="-1" data-parallax-fade="true">
 			<h1 class="entry-title is-xlarge uppercase">
@@ -19,10 +19,10 @@
 					echo $term->name;
 				} else { the_title(); } ?>
 			</h1>
-			<?php do_action('flatsome_portfolio_title_after'); ?>
+			<?php do_action('magicpi_portfolio_title_after'); ?>
 	 	</div>
 	 	<div class="flex-col flex-grow text-right">
-			<?php do_action('flatsome_portfolio_title_right'); ?>
+			<?php do_action('magicpi_portfolio_title_right'); ?>
 	 	</div>
 	</div>
 </div>

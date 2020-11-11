@@ -20,13 +20,13 @@ function ux_lightbox( $atts, $content = null ) {
 	<div id="<?php echo $id; ?>"
 	     class="lightbox-by-id lightbox-content mfp-hide lightbox-white <?php echo $class; ?>"
 	     style="max-width:<?php echo $width ?> ;padding:<?php echo $padding; ?>">
-		<?php echo flatsome_contentfix( $content ); ?>
+		<?php echo magicpi_contentfix( $content ); ?>
 	</div>
 	<?php if ( $auto_open ) : ?>
 		<script>
 			// Auto open lightboxes
 			jQuery(document).ready(function ($) {
-				/* global flatsomeVars */
+				/* global magicpiVars */
 				'use strict'
 				var cookieId = '<?php echo "lightbox_{$id}" ?>'
 				var cookieValue = '<?php echo "opened_{$version}"; ?>'
@@ -50,8 +50,8 @@ function ux_lightbox( $atts, $content = null ) {
 						$.magnificPopup.open({
 							midClick: true,
 							removalDelay: 300,
-							// closeBtnInside: flatsomeVars.lightbox.close_btn_inside,
-							// closeMarkup: flatsomeVars.lightbox.close_markup,
+							// closeBtnInside: magicpiVars.lightbox.close_btn_inside,
+							// closeMarkup: magicpiVars.lightbox.close_markup,
 							items: {
 								src: '#<?php echo $id; ?>',
 								type: 'inline'

@@ -19,7 +19,7 @@ function ux_shortcode_button() {
 }
 
 function ux_shortcode_add_tinymce_plugin($plugin_array) {
-    $plugin_array['ux_shortcode_insert'] = get_template_directory_uri().'/inc/extensions/flatsome-shortcode-insert/shortcode_insert.js';
+    $plugin_array['ux_shortcode_insert'] = get_template_directory_uri().'/inc/extensions/magicpi-shortcode-insert/shortcode_insert.js';
     return $plugin_array;
 }
 
@@ -30,7 +30,7 @@ function ux_shortcode_insert_button($buttons) {
 
 function ux_shortcode_css() {
     // TODO: Only Load on Edit Page
-    wp_enqueue_style('ux_shortcode_insert_css', get_template_directory_uri().'/inc/extensions/flatsome-shortcode-insert/style.css');
+    wp_enqueue_style('ux_shortcode_insert_css', get_template_directory_uri().'/inc/extensions/magicpi-shortcode-insert/style.css');
 }
 
 add_action('admin_enqueue_scripts', 'ux_shortcode_css');

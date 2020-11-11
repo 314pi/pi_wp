@@ -4,19 +4,19 @@
  * Header Mobile
  *************/
 
-Flatsome_Option::add_section( 'header_mobile', array(
-	'title'       => __( 'Header Mobile Menu / Overlay', 'flatsome-admin' ),
+Magicpi_Option::add_section( 'header_mobile', array(
+	'title'       => __( 'Header Mobile Menu / Overlay', 'magicpi-admin' ),
 	'panel'       => 'header',
-	//'description' => __( 'This is the section description', 'flatsome-admin' ),
+	//'description' => __( 'This is the section description', 'magicpi-admin' ),
 ) );
 
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'slider',
 	'settings'     => 'header_height_mobile',
-	'label'       => __( 'Mobile Header Height', 'flatsome-admin' ),
-	//'description' => __( 'This is the control description', 'flatsome-admin' ),
-	//'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users. The main description should go in the "description" of the field, this is only to be used for help tips.', 'flatsome-admin' ),
+	'label'       => __( 'Mobile Header Height', 'magicpi-admin' ),
+	//'description' => __( 'This is the control description', 'magicpi-admin' ),
+	//'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users. The main description should go in the "description" of the field, this is only to be used for help tips.', 'magicpi-admin' ),
 	'section'     => 'header_mobile',
 	'default'     => '70',
 	'choices'     => array(
@@ -27,10 +27,10 @@ Flatsome_Option::add_field( 'option',  array(
 	'transport' => 'postMessage'
 ));
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'        => 'radio-image',
 	'settings'     => 'logo_position_mobile',
-	'label'       => __( 'Logo position', 'flatsome-admin' ),
+	'label'       => __( 'Logo position', 'magicpi-admin' ),
 	'section'     => 'header_mobile',
 	'transport' => $transport,
 	'default'     => 'center',
@@ -40,10 +40,10 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'radio-image',
 	'settings'     => 'menu_icon_style',
-	'label'       => __( 'Menu Icon Style', 'flatsome-admin' ),
+	'label'       => __( 'Menu Icon Style', 'magicpi-admin' ),
 	'section'     => 'header_mobile',
 	'default'     => '',
 	'transport' => $transport,
@@ -56,19 +56,19 @@ Flatsome_Option::add_field( 'option',  array(
 	),
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'checkbox',
 	'settings'     => 'menu_icon_title',
-	'label'       => __( 'Show Menu title', 'flatsome-admin' ),
+	'label'       => __( 'Show Menu title', 'magicpi-admin' ),
 	'section'     => 'header_mobile',
 	'transport' => $transport,
 	'default'     => 0,
 ));
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'        => 'radio-image',
 	'settings'     => 'mobile_overlay',
-	'label'       => __( 'Menu Overlay', 'flatsome-admin' ),
+	'label'       => __( 'Menu Overlay', 'magicpi-admin' ),
 	'section'     => 'header_mobile',
 	'transport'	  => $transport,
 	'default'     => 'left',
@@ -79,30 +79,30 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ));
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'        => 'radio',
 	'settings'    => 'mobile_submenu_parent_behavior',
-	'label'       => __( 'Menu item behavior', 'flatsome' )  . ' (NEW)',
-	'description' => __( 'Click behavior for menu items with a submenu', 'flatsome' ),
+	'label'       => __( 'Menu item behavior', 'magicpi' )  . ' (NEW)',
+	'description' => __( 'Click behavior for menu items with a submenu', 'magicpi' ),
 	'section'     => 'header_mobile',
 	'transport'   => 'refresh',
 	'default'     => '',
 	'choices'     => array(
-		''       => __( 'Open link', 'flatsome' ),
-		'toggle' => __( 'Toggle submenu', 'flatsome' ),
+		''       => __( 'Open link', 'magicpi' ),
+		'toggle' => __( 'Toggle submenu', 'magicpi' ),
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'radio',
 	'settings'        => 'mobile_submenu_effect',
-	'label'           => __( 'Submenu effect', 'flatsome' ) . ' (NEW)',
+	'label'           => __( 'Submenu effect', 'magicpi' ) . ' (NEW)',
 	'section'         => 'header_mobile',
 	'transport'       => 'refresh',
 	'default'         => 'accordion',
 	'choices'         => array(
-		'accordion' => __( 'Accordion', 'flatsome' ),
-		'slide'     => __( 'Slide', 'flatsome' ),
+		'accordion' => __( 'Accordion', 'magicpi' ),
+		'slide'     => __( 'Slide', 'magicpi' ),
 	),
 	'active_callback' => array(
 		array(
@@ -113,16 +113,16 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'select',
 	'settings'        => 'mobile_submenu_levels',
-	'label'           => __( 'Submenu levels', 'flatsome' ) . ' (NEW)',
+	'label'           => __( 'Submenu levels', 'magicpi' ) . ' (NEW)',
 	'section'         => 'header_mobile',
 	'transport'       => 'refresh',
 	'default'         => '1',
 	'choices'         => array(
-		'1' => __( '1 level', 'flatsome' ),
-		'2' => __( '2 levels', 'flatsome' ),
+		'1' => __( '1 level', 'magicpi' ),
+		'2' => __( '2 levels', 'magicpi' ),
 	),
 	'active_callback' => array(
 		array(
@@ -138,21 +138,21 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ) );
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
   'type'        => 'sortable',
   'settings'     => 'mobile_sidebar',
-  'label'       => __( 'Menu Elements', 'flatsome-admin' ),
+  'label'       => __( 'Menu Elements', 'magicpi-admin' ),
   'section'     => 'header_mobile',
   'transport'   => $transport,
   'multiple' => 10,
-  'default'     => flatsome_header_mobile_sidebar(),
+  'default'     => magicpi_header_mobile_sidebar(),
   'choices'     => $nav_elements
 ));
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'        => 'radio-image',
 	'settings'     => 'mobile_overlay_color',
-	'label'       => __( 'Overlay Color', 'flatsome-admin' ),
+	'label'       => __( 'Overlay Color', 'magicpi-admin' ),
 	'section'     => 'header_mobile',
 	'transport'	  => $transport,
 	'default'     => '',
@@ -163,10 +163,10 @@ Flatsome_Option::add_field( 'option', array(
 ));
 
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
     'type'        => 'color-alpha',
     'settings'     => 'mobile_overlay_bg',
-    'label'       => __( 'Background Color', 'flatsome-admin' ),
+    'label'       => __( 'Background Color', 'magicpi-admin' ),
 	'section'     => 'header_mobile',
 	'default'     => '',
 	'transport' => 'postMessage'

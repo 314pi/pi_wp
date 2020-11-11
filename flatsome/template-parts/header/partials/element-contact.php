@@ -1,27 +1,27 @@
 <li class="header-contact-wrapper">
 	<?php
 		$class = '';
-		$icon_size = flatsome_option('contact_icon_size');
+		$icon_size = magicpi_option('contact_icon_size');
 		$class_link = 'tooltip';
 		$nav = 'nav-divided nav-uppercase';
 		$label = true;
 
-		if(flatsome_option('contact_style') == 'icons'){
+		if(magicpi_option('contact_style') == 'icons'){
 			$label = false;
 		}
 	?>
 	<ul id="header-contact" class="nav <?php echo $nav; ?> header-contact">
-		<?php if(flatsome_option('contact_location')){ ?>
+		<?php if(magicpi_option('contact_location')){ ?>
 			<li class="<?php echo $class; ?>">
-			  <a target="_blank" rel="noopener noreferrer" href="https://maps.google.com/?q=<?php echo flatsome_option('contact_location'); ?>" title="<?php echo flatsome_option('contact_location'); ?>" class="<?php echo $class_link;?>">
-			  	 <?php echo get_flatsome_icon('icon-map-pin-fill',$icon_size); ?>
+			  <a target="_blank" rel="noopener noreferrer" href="https://maps.google.com/?q=<?php echo magicpi_option('contact_location'); ?>" title="<?php echo magicpi_option('contact_location'); ?>" class="<?php echo $class_link;?>">
+			  	 <?php echo get_magicpi_icon('icon-map-pin-fill',$icon_size); ?>
 			     <span>
 			     	<?php 
-			     	$location_label = flatsome_option('contact_location_label');
+			     	$location_label = magicpi_option('contact_location_label');
 		       		if($location_label && $label){
 		       			echo $location_label;
 		       		} else if($label){
-		       			_e('Location','flatsome');
+		       			_e('Location','magicpi');
 			    	} ?>
 			     </span>
 			  </a>
@@ -33,14 +33,14 @@
 			 if($contact_email){ ?>
 			<li class="<?php echo $class; ?>">
 			  <a href="mailto:<?php echo $contact_email; ?>" class="<?php echo $class_link;?>" title="<?php echo  $contact_email; ?>">
-				  <?php echo get_flatsome_icon('icon-envelop',$icon_size); ?>
+				  <?php echo get_magicpi_icon('icon-envelop',$icon_size); ?>
 			       <span>
 			       	<?php
 			       	$contact_label = get_theme_mod('contact_email_label');
 		       		if($contact_label && $label) {
 		       			echo $contact_label;
 		       		} else if($label){
-		       			_e('Contact','flatsome');
+		       			_e('Contact','magicpi');
 			    	} ?>
 			       </span>
 			  </a>
@@ -54,17 +54,17 @@
 			?>
 			<li class="<?php echo $class; ?>">
 			  <a class="<?php echo $class_link;?>" title="<?php echo $contact_hours; ?><?php if($contact_hours_details) echo ' | '.$contact_hours_details; ?> ">
-			  	   <?php echo get_flatsome_icon('icon-clock',$icon_size); ?>
+			  	   <?php echo get_magicpi_icon('icon-clock',$icon_size); ?>
 			        <span><?php if($label) echo $contact_hours; ?></span>
 			  </a>
 			 </li>
 			<?php } ?>
 
-			<?php if(flatsome_option('contact_phone')){ ?>
+			<?php if(magicpi_option('contact_phone')){ ?>
 			<li class="<?php echo $class; ?>">
-			  <a href="tel:<?php echo flatsome_option('contact_phone'); ?>" class="<?php echo $class_link;?>" title="<?php echo flatsome_option('contact_phone'); ?>">
-			     <?php echo get_flatsome_icon('icon-phone',$icon_size); ?>
-			      <span><?php if($label) echo flatsome_option('contact_phone'); ?></span>
+			  <a href="tel:<?php echo magicpi_option('contact_phone'); ?>" class="<?php echo $class_link;?>" title="<?php echo magicpi_option('contact_phone'); ?>">
+			     <?php echo get_magicpi_icon('icon-phone',$icon_size); ?>
+			      <span><?php if($label) echo magicpi_option('contact_phone'); ?></span>
 			  </a>
 			</li>
 			<?php } ?>

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Flatsome v2.0\n"
+"Project-Id-Version: Magicpi v2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2018-08-08 03:32+0200\n"
@@ -766,8 +766,8 @@ msgid "All plugins installed and activated successfully. %s"
 msgstr "Alle plug-ins zijn succesvol geïnstalleerd en geactiveerd. %s"
 
 #: functions.php:349
-msgid "Flatsome Theme Options"
-msgstr "Flatsome Thema Opties"
+msgid "Magicpi Theme Options"
+msgstr "Magicpi Thema Opties"
 
 #: inc/class-tgm-plugin-activation.php:180
 #, php-format
@@ -906,8 +906,8 @@ msgid "Next Post"
 msgstr "Volgend bericht"
 
 #: inc/widgets/recent-posts.php:21
-msgid "Flatsome Recent Posts"
-msgstr "Flatsome recente berichten"
+msgid "Magicpi Recent Posts"
+msgstr "Magicpi recente berichten"
 
 #: inc/widgets/recent-posts.php:41
 msgid "Recent Posts"
@@ -1285,7 +1285,7 @@ msgstr "Er is iets misgegaan."
 msgid "Activate"
 msgstr "Activeren"
 
-# @ flatsome
+# @ magicpi
 #: content-product.php:61 woocommerce/content-product.php:61
 msgid "Quick View"
 msgstr ""

@@ -3,7 +3,7 @@
 add_ux_builder_shortcode( 'follow', array(
     'name' => __( 'Follow Icons' ),
     'category' => __( 'Content' ),
-    'thumbnail' =>  flatsome_ux_builder_thumbnail( 'share' ),
+    'thumbnail' =>  magicpi_ux_builder_thumbnail( 'share' ),
     'options' => array(
         'title' => array(
             'type' => 'textfield',

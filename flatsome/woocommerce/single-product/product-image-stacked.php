@@ -48,14 +48,14 @@ if(get_theme_mod('product_lightbox','default') == 'disabled'){
 }
 
 ?>
-<?php do_action('flatsome_before_product_images'); ?>
+<?php do_action('magicpi_before_product_images'); ?>
 
 <div class="product-images relative mb-half has-hover <?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" data-columns="<?php echo esc_attr( $columns ); ?>">
 
-  <?php do_action('flatsome_sale_flash'); ?>
+  <?php do_action('magicpi_sale_flash'); ?>
 
   <div class="image-tools absolute top show-on-hover right z-3">
-    <?php do_action('flatsome_product_image_tools_top'); ?>
+    <?php do_action('magicpi_product_image_tools_top'); ?>
   </div>
 
   <figure class="woocommerce-product-gallery__wrapper <?php echo implode(' ', $slider_classes); ?>"
@@ -74,7 +74,7 @@ if(get_theme_mod('product_lightbox','default') == 'disabled'){
     <?php
 
     if ( $product->get_image_id() ) {
-      $html  = flatsome_wc_get_gallery_image_html( $post_thumbnail_id, true );
+      $html  = magicpi_wc_get_gallery_image_html( $post_thumbnail_id, true );
     } else {
       $html  = '<div class="woocommerce-product-gallery__image--placeholder">';
       $html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ), esc_html__( 'Awaiting product image', 'woocommerce' ) );
@@ -87,7 +87,7 @@ if(get_theme_mod('product_lightbox','default') == 'disabled'){
     ?>
   </figure>
 </div>
-<?php do_action('flatsome_after_product_images'); ?>
+<?php do_action('magicpi_after_product_images'); ?>
 
 <div class="show-for-medium product-gallery-stacked-thumbnails">
   <?php wc_get_template( 'woocommerce/single-product/product-gallery-thumbnails.php' ); ?>

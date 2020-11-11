@@ -1,7 +1,7 @@
 <?php
 
 /* Check if support is expired */
-function flatsome_is_support_expired($slug){
+function magicpi_is_support_expired($slug){
 
   $date = date('m/d/Y h:i:s a', time());
 
@@ -17,14 +17,14 @@ function flatsome_is_support_expired($slug){
  *
  * @return bool True if invalid false otherwise.
  */
-function flatsome_is_invalid_support_time( $support_ends ) {
+function magicpi_is_invalid_support_time( $support_ends ) {
 	$array = array_map( 'trim', explode( ',', $support_ends ) );
 
 	return isset( $array[1] ) && $array[1] == 1970 ? true : false;
 }
 
 /* Check if theme is enabled */
-function flatsome_is_theme_enabled(){
+function magicpi_is_theme_enabled(){
   $slug = basename( get_template_directory() );
   $purchase_code = sanitize_text_field( get_option( $slug . '_wup_purchase_code', '' ) );
   if($purchase_code){
@@ -216,7 +216,7 @@ function wupdates_purchase_code_needed_notice_JQ9eJ() {
   $purchase_code = sanitize_text_field( get_option( strtolower( $slug ) . '_wup_purchase_code', '' ) );
   //if the purchase code doesn't pass the prevalidation, show notice
   if ( in_array( $current_screen->id, array( 'update-core', 'update-core-network') ) && true !== wupdates_prevalidate_purchase_code_JQ9eJ( $purchase_code ) ) {
-    $output .= '<div class="updated"><p>' . sprintf( __( '<a href="%s">Please enter your purchase code</a> to activate Flatsome and get automatic updates.', 'wupdates' ), network_admin_url( 'admin.php?page=flatsome-panel' ) ) . '</p></div>';
+    $output .= '<div class="updated"><p>' . sprintf( __( '<a href="%s">Please enter your purchase code</a> to activate Magicpi and get automatic updates.', 'wupdates' ), network_admin_url( 'admin.php?page=magicpi-panel' ) ) . '</p></div>';
   }
 
   echo $output;

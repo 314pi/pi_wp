@@ -1,8 +1,8 @@
 <?php
 
 // [testimonial]
-function flatsome_testimonial($atts, $content = null) {
-  global $flatsome_opt;
+function magicpi_testimonial($atts, $content = null) {
+  global $magicpi_opt;
   $sliderrandomid = rand();
   extract(shortcode_atts(array(
     'name' => '',
@@ -45,7 +45,7 @@ function flatsome_testimonial($atts, $content = null) {
   <div class="icon-box <?php echo $classes; ?>">
         <?php if($image) { ?>
         <div class="<?php echo $classes_img; ?>" style="<?php if($image_width) echo $image_width; ?>">
-              <?php echo flatsome_get_image($image, $size = 'thumbnail', $alt = $name) ;?>
+              <?php echo magicpi_get_image($image, $size = 'thumbnail', $alt = $name) ;?>
         </div>
         <?php } ?>
         <div class="icon-box-text p-last-0">
@@ -67,5 +67,5 @@ function flatsome_testimonial($atts, $content = null) {
   return $content;
 }
 
-add_shortcode("testimonial", "flatsome_testimonial");
+add_shortcode("testimonial", "magicpi_testimonial");
 

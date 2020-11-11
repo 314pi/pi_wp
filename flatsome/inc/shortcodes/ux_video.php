@@ -1,5 +1,5 @@
 <?php // [ux_video]
-function flatsome_video($atts) {
+function magicpi_video($atts) {
 
     extract( shortcode_atts( array(
         'class' => '',
@@ -28,4 +28,4 @@ function flatsome_video($atts) {
     
     return '<div class="'.$classes.'" '.get_shortcode_inline_css($height).'>'.$video.'</div>';
 }
-add_shortcode("ux_video", "flatsome_video");
+add_shortcode("ux_video", "magicpi_video");

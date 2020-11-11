@@ -1,7 +1,7 @@
 <?php
 
 
-function flatsome_sidebar_shortcode( $atts ){
+function magicpi_sidebar_shortcode( $atts ){
 
   extract( shortcode_atts( array(
     'id' => 'sidebar-main',
@@ -28,4 +28,4 @@ function flatsome_sidebar_shortcode( $atts ){
 	return '<ul class="'.$classes.'">'.$sidebar.'</ul>';
 
 }
-add_shortcode('ux_sidebar', 'flatsome_sidebar_shortcode');
+add_shortcode('ux_sidebar', 'magicpi_sidebar_shortcode');

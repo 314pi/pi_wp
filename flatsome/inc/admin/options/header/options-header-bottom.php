@@ -4,26 +4,26 @@
  * Header Main
  *************/
 
-Flatsome_Option::add_section( 'bottom_bar', array(
-	'title'       => __( 'Header Bottom', 'flatsome-admin' ),
+Magicpi_Option::add_section( 'bottom_bar', array(
+	'title'       => __( 'Header Bottom', 'magicpi-admin' ),
 	'panel'       => 'header',
-	//'description' => __( 'This is the section description', 'flatsome-admin' ),
+	//'description' => __( 'This is the section description', 'magicpi-admin' ),
 ) );
 
 
-Flatsome_Option::add_field( '', array(
+Magicpi_Option::add_field( '', array(
     'type'        => 'custom',
     'settings' => 'custom_title_header_bottom_layout',
-    'label'       => __( '', 'flatsome-admin' ),
+    'label'       => __( '', 'magicpi-admin' ),
 	'section'     => 'bottom_bar',
     'default'     => '<div class="options-title-divider">Layout</div>',
 ) );
 
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'slider',
 	'settings'     => 'header_bottom_height',
-	'label'       => __( 'Height', 'flatsome-admin' ),
+	'label'       => __( 'Height', 'magicpi-admin' ),
 	'section'     => 'bottom_bar',
 	'default' => '',
 	'choices'     => array(
@@ -35,10 +35,10 @@ Flatsome_Option::add_field( 'option',  array(
 ));
 
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
     'type'        => 'color-alpha',
     'settings'     => 'nav_position_bg',
-    'label'       => __( 'Background color', 'flatsome-admin' ),
+    'label'       => __( 'Background color', 'magicpi-admin' ),
     'section'     => 'bottom_bar',
 	'default'     => "#f1f1f1",
 	'transport' => 'postMessage',
@@ -46,18 +46,18 @@ Flatsome_Option::add_field( 'option',  array(
 
 
 
-Flatsome_Option::add_field( '', array(
+Magicpi_Option::add_field( '', array(
     'type'        => 'custom',
     'settings' => 'custom_title_header_bottom_nav',
-    'label'       => __( '', 'flatsome-admin' ),
+    'label'       => __( '', 'magicpi-admin' ),
 	'section'     => 'bottom_bar',
     'default'     => '<div class="options-title-divider">Navigation</div>',
 ) );
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'radio-image',
 	'settings'     => 'nav_style_bottom',
-	'label'       => __( 'Nav Style', 'flatsome-admin' ),
+	'label'       => __( 'Nav Style', 'magicpi-admin' ),
 	'section'     => 'bottom_bar',
 	'default'     => '',
 	'transport' => $transport,
@@ -65,10 +65,10 @@ Flatsome_Option::add_field( 'option',  array(
 ));
 
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'slider',
 	'settings'     => 'nav_height_bottom',
-	'label'       => __( 'Nav Height', 'flatsome-admin' ),
+	'label'       => __( 'Nav Height', 'magicpi-admin' ),
 	'section'     => 'bottom_bar',
 	'default' => 16,
 	'choices'     => array(
@@ -79,39 +79,39 @@ Flatsome_Option::add_field( 'option',  array(
 	'transport' => 'postMessage',
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'radio-buttonset',
 	'settings'     => 'nav_size_bottom',
-	'label'       => __( 'Nav Size', 'flatsome-admin' ),
+	'label'       => __( 'Nav Size', 'magicpi-admin' ),
 	'section'     => 'bottom_bar',
 	'transport' => $transport,
 	'default'     => '',
 	'choices'     => $nav_sizes
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'radio-buttonset',
 	'settings'     => 'nav_spacing_bottom',
-	'label'       => __( 'Nav Spacing', 'flatsome-admin' ),
+	'label'       => __( 'Nav Spacing', 'magicpi-admin' ),
 	'section'     => 'bottom_bar',
 	'transport' => $transport,
 	'default'     => '',
 	'choices'     => $nav_sizes
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 		'type'        => 'checkbox',
 		'settings'     => 'nav_uppercase_bottom',
-		'label'       => __( 'Uppercase', 'flatsome-admin' ),
+		'label'       => __( 'Uppercase', 'magicpi-admin' ),
 		'section'     => 'bottom_bar',
 	    'transport' => $transport,
 		'default'     => 1,
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'radio-image',
 	'settings'     => 'nav_position_color',
-	'label'       => __( 'Nav Base Color', 'flatsome-admin' ),
+	'label'       => __( 'Nav Base Color', 'magicpi-admin' ),
 	'section'     => 'bottom_bar',
 	'default'     => 'light',
 	'transport' => 'postMessage',
@@ -121,18 +121,18 @@ Flatsome_Option::add_field( 'option',  array(
 	),
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
     'type'        => 'color',
     'settings'     => 'type_nav_bottom_color',
-    'label'       => __( 'Nav Color', 'flatsome-admin' ),
+    'label'       => __( 'Nav Color', 'magicpi-admin' ),
 	'section'     => 'bottom_bar',
     'transport' => $transport
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
     'type'        => 'color',
     'settings'     => 'type_nav_bottom_color_hover',
-    'label'       => __( 'Nav Color :hover', 'flatsome-admin' ),
+    'label'       => __( 'Nav Color :hover', 'magicpi-admin' ),
 	'section'     => 'bottom_bar',
     'transport' => $transport
 ));

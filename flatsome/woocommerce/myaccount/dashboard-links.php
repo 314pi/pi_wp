@@ -12,12 +12,12 @@
     <li>Define your My Account dropdown menu in <b>Appearance > Menus</b></li>
 <?php } ?>
 
-<?php if(function_exists('wc_get_account_menu_items') && flatsome_option('wc_account_links')){ ?>
+<?php if(function_exists('wc_get_account_menu_items') && magicpi_option('wc_account_links')){ ?>
   <?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
     <li class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?>">
       <a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><?php echo esc_html( $label ); ?></a>
     </li>
   <?php endforeach; ?>
-  <?php do_action('flatsome_account_links'); ?>
+  <?php do_action('magicpi_account_links'); ?>
 <?php } ?>
 </ul>

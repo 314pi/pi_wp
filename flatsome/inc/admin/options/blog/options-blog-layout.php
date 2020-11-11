@@ -1,33 +1,33 @@
 <?php
 
-Flatsome_Option::add_section( 'blog-layout', array(
-	'title'       => __( 'Blog Layout', 'flatsome-admin' ),
+Magicpi_Option::add_section( 'blog-layout', array(
+	'title'       => __( 'Blog Layout', 'magicpi-admin' ),
 	'panel' => 'blog',
 ) );
 
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'textarea',
 	'settings'     => 'blog_header',
 	//'transport' => $transport,
-	'label'       => __( 'Blog Homepage Header', 'flatsome-admin' ),
-	'description' => __( 'Enter HTML for blog header here. Will be placed above content and sidebar. Shortcodes are allowed. F.ex [block id="blog-header"]', 'flatsome-admin' ),
+	'label'       => __( 'Blog Homepage Header', 'magicpi-admin' ),
+	'description' => __( 'Enter HTML for blog header here. Will be placed above content and sidebar. Shortcodes are allowed. F.ex [block id="blog-header"]', 'magicpi-admin' ),
 	'section'     => 'blog-layout',
-	'sanitize_callback' => 'flatsome_custom_sanitize',
+	'sanitize_callback' => 'magicpi_custom_sanitize',
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'checkbox',
 	'settings'     => 'blog_archive_transparent',
-	'label'       => __( 'Transparent Header', 'flatsome-admin' ),
+	'label'       => __( 'Transparent Header', 'magicpi-admin' ),
 	'section'     => 'blog-layout',
 	'default'     => 0,
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'radio-image',
 	'settings'     => 'blog_layout',
-	'label'       => __( 'Blog Sidebar', 'flatsome-admin' ),
+	'label'       => __( 'Blog Sidebar', 'magicpi-admin' ),
 	'section'     => 'blog-layout',
 	'default'     => 'right-sidebar',
 	'transport'	  => $transport,
@@ -39,27 +39,27 @@ Flatsome_Option::add_field( 'option',  array(
 ));
 
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'checkbox',
 	'settings'     => 'blog_layout_divider',
-	'label'       => __( 'Enable Sidebar Divider', 'flatsome-admin' ),
+	'label'       => __( 'Enable Sidebar Divider', 'magicpi-admin' ),
 	'section'     => 'blog-layout',
 	'transport'	  => $transport,
 	'default'     => 1,
 ));
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'     => 'checkbox',
 	'settings' => 'blog_sticky_sidebar',
-	'label'    => __( 'Sticky sidebar', 'flatsome-admin' ) . ' (NEW)',
+	'label'    => __( 'Sticky sidebar', 'magicpi-admin' ) . ' (NEW)',
 	'section'  => 'blog-layout',
 	'default'  => 0,
 ) );
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'radio-image',
 	'settings'     => 'blog_style',
-	'label'       => __( 'Posts Layout', 'flatsome-admin' ),
+	'label'       => __( 'Posts Layout', 'magicpi-admin' ),
 	'section'     => 'blog-layout',
 	'default'     => 'normal',
 	'choices'     => array(
@@ -71,15 +71,15 @@ Flatsome_Option::add_field( 'option',  array(
 	),
 ));
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'radio-buttonset',
 	'settings'        => 'blog_style_type',
-	'label'           => __( 'Posts Layout Type', 'flatsome-admin' ),
+	'label'           => __( 'Posts Layout Type', 'magicpi-admin' ),
 	'section'         => 'blog-layout',
 	'default'         => 'masonry',
 	'choices'         => array(
-		'row'     => __( 'Row', 'flatsome-admin' ),
-		'masonry' => __( 'Masonry', 'flatsome-admin' ),
+		'row'     => __( 'Row', 'magicpi-admin' ),
+		'masonry' => __( 'Masonry', 'magicpi-admin' ),
 	),
 	'active_callback' => array(
 		array(
@@ -90,20 +90,20 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'checkbox',
 	'settings'     => 'blog_show_excerpt',
 	'transport'	  => $transport,
-	'label'       => __( 'Show Excerpts Only', 'flatsome-admin' ),
-	'help'        => __( 'Show Excerpts only of the Blog posts. You can manually add a Read More link by adding a More Tag to the Post Content.', 'flatsome-admin' ),
+	'label'       => __( 'Show Excerpts Only', 'magicpi-admin' ),
+	'help'        => __( 'Show Excerpts only of the Blog posts. You can manually add a Read More link by adding a More Tag to the Post Content.', 'magicpi-admin' ),
 	'section'     => 'blog-layout',
 	'default'     => 1,
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 'type'        => 'color-alpha',
 'settings'     => 'blog_bg_color',
-'label'       => __( 'Blog Background Color', 'flatsome-admin' ),
+'label'       => __( 'Blog Background Color', 'magicpi-admin' ),
 'section'     => 'blog-layout',
 'default'     => '',
 'transport' => 'postMessage',
@@ -117,10 +117,10 @@ Flatsome_Option::add_field( 'option',  array(
 ));
 
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'slider',
 	'settings'     => 'blog_posts_depth',
-	'label'       => __( 'Depth', 'flatsome-admin' ),
+	'label'       => __( 'Depth', 'magicpi-admin' ),
 	'section'     => 'blog-layout',
 	'default'     => 0,
 	'choices'     => array(
@@ -131,10 +131,10 @@ Flatsome_Option::add_field( 'option',  array(
 	'transport' => $transport
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'slider',
 	'settings'     => 'blog_posts_depth_hover',
-	'label'       => __( 'Depth :hover', 'flatsome-admin' ),
+	'label'       => __( 'Depth :hover', 'magicpi-admin' ),
 	'section'     => 'blog-layout',
 	'default'     => 0,
 	'choices'     => array(
@@ -146,19 +146,19 @@ Flatsome_Option::add_field( 'option',  array(
 ));
 
 
-Flatsome_Option::add_field( '', array(
+Magicpi_Option::add_field( '', array(
     'type'        => 'custom',
     'settings' => 'custom_title_post_layout',
-    'label'       => __( '', 'flatsome-admin' ),
+    'label'       => __( '', 'magicpi-admin' ),
 	'section'     => 'blog-layout',
     'default'     => '<div class="options-title-divider">Post layout</div>',
 ) );
 
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'radio-image',
 	'settings'     => 'blog_posts_header_style',
-	'label'       => __( 'Posts Title Style', 'flatsome-admin' ),
+	'label'       => __( 'Posts Title Style', 'magicpi-admin' ),
 	'section'     => 'blog-layout',
 	'active_callback'    => array(
 		array(
@@ -174,10 +174,10 @@ Flatsome_Option::add_field( 'option',  array(
 	),
 ));
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'radio-image',
 	'settings'     => 'blog_posts_title_align',
-	'label'       => __( 'Posts Title Align', 'flatsome-admin' ),
+	'label'       => __( 'Posts Title Align', 'magicpi-admin' ),
 	'section'     => 'blog-layout',
 	'default'     => 'center',
 	'choices'     => array(

@@ -3,10 +3,10 @@
  * Handles the woocommerce product box structure
  *
  * @author  UX Themes
- * @package Flatsome/WooCommerce
+ * @package Magicpi/WooCommerce
  */
 
-if ( ! function_exists( 'flatsome_sale_flash' ) ) {
+if ( ! function_exists( 'magicpi_sale_flash' ) ) {
 	/**
 	 * Add Extra Sale Flash Bubbles
 	 *
@@ -17,7 +17,7 @@ if ( ! function_exists( 'flatsome_sale_flash' ) ) {
 	 *
 	 * @return string
 	 */
-	function flatsome_sale_flash( $text, $post, $_product, $badge_style ) {
+	function magicpi_sale_flash( $text, $post, $_product, $badge_style ) {
 		global $wc_cpdf;
 
 		if ( ! is_a( $wc_cpdf, 'WC_Product_Data_Fields' ) ) {
@@ -26,7 +26,7 @@ if ( ! function_exists( 'flatsome_sale_flash' ) ) {
 
 		if ( $wc_cpdf->get_value( get_the_ID(), '_bubble_new' ) ) {
 
-			$bubble_text = $wc_cpdf->get_value( get_the_ID(), '_bubble_text' ) ? $wc_cpdf->get_value( get_the_ID(), '_bubble_text' ) : __( 'New', 'flatsome' );
+			$bubble_text = $wc_cpdf->get_value( get_the_ID(), '_bubble_text' ) ? $wc_cpdf->get_value( get_the_ID(), '_bubble_text' ) : __( 'New', 'magicpi' );
 
 			// Extra Product bubbles.
 			$text .= '<div class="badge callout badge-' . $badge_style . '"><div class="badge-inner callout-new-bg is-small new-bubble">' . $bubble_text . '</div></div>';
@@ -35,14 +35,14 @@ if ( ! function_exists( 'flatsome_sale_flash' ) ) {
 		return $text;
 	}
 }
-add_filter( 'flatsome_product_labels', 'flatsome_sale_flash', 10, 4 );
+add_filter( 'magicpi_product_labels', 'magicpi_sale_flash', 10, 4 );
 
 
-if ( ! function_exists( 'flatsome_woocommerce_get_alt_product_thumbnail' ) ) {
+if ( ! function_exists( 'magicpi_woocommerce_get_alt_product_thumbnail' ) ) {
 	/**
 	 * Get Hover image for WooCommerce Grid
 	 */
-	function flatsome_woocommerce_get_alt_product_thumbnail() {
+	function magicpi_woocommerce_get_alt_product_thumbnail() {
 		$hover_style = get_theme_mod( 'product_hover', 'fade_in_back' );
 
 		if ( $hover_style !== 'fade_in_back' && $hover_style !== 'zoom_in' ) {
@@ -64,7 +64,7 @@ if ( ! function_exists( 'flatsome_woocommerce_get_alt_product_thumbnail' ) ) {
 					continue;
 				}
 				$loop ++;
-				echo apply_filters( 'flatsome_woocommerce_get_alt_product_thumbnail',
+				echo apply_filters( 'magicpi_woocommerce_get_alt_product_thumbnail',
 					wp_get_attachment_image( $attachment_id, 'woocommerce_thumbnail', false, array( 'class' => $class ) ) );
 				if ( $loop == 1 ) {
 					break;
@@ -73,7 +73,7 @@ if ( ! function_exists( 'flatsome_woocommerce_get_alt_product_thumbnail' ) ) {
 		}
 	}
 }
-add_action( 'flatsome_woocommerce_shop_loop_images', 'flatsome_woocommerce_get_alt_product_thumbnail', 11 );
+add_action( 'magicpi_woocommerce_shop_loop_images', 'magicpi_woocommerce_get_alt_product_thumbnail', 11 );
 
 if ( ! function_exists( 'woocommerce_template_loop_product_title' ) ) {
 	/**
@@ -84,12 +84,12 @@ if ( ! function_exists( 'woocommerce_template_loop_product_title' ) ) {
 	}
 }
 
-if ( ! function_exists( 'flatsome_woocommerce_shop_loop_category' ) ) {
+if ( ! function_exists( 'magicpi_woocommerce_shop_loop_category' ) ) {
 	/**
 	 * Add and/or Remove Categories
 	 */
-	function flatsome_woocommerce_shop_loop_category() {
-		if ( ! flatsome_option( 'product_box_category' ) ) {
+	function magicpi_woocommerce_shop_loop_category() {
+		if ( ! magicpi_option( 'product_box_category' ) ) {
 			return;
 		} ?>
 		<p class="category uppercase is-smaller no-text-overflow product-cat op-7">
@@ -100,48 +100,48 @@ if ( ! function_exists( 'flatsome_woocommerce_shop_loop_category' ) ) {
 
 			if ( $product_cats ) {
 				list( $first_part ) = explode( '\n', $product_cats );
-				echo esc_html( apply_filters( 'flatsome_woocommerce_shop_loop_category', $first_part, $product ) );
+				echo esc_html( apply_filters( 'magicpi_woocommerce_shop_loop_category', $first_part, $product ) );
 			}
 			?>
 		</p>
 	<?php
 	}
 }
-add_action( 'woocommerce_shop_loop_item_title', 'flatsome_woocommerce_shop_loop_category', 0 );
+add_action( 'woocommerce_shop_loop_item_title', 'magicpi_woocommerce_shop_loop_category', 0 );
 
-if ( ! function_exists( 'flatsome_woocommerce_shop_loop_ratings' ) ) {
+if ( ! function_exists( 'magicpi_woocommerce_shop_loop_ratings' ) ) {
 	/**
 	 * Add and/or Remove Ratings
 	 */
-	function flatsome_woocommerce_shop_loop_ratings() {
+	function magicpi_woocommerce_shop_loop_ratings() {
 		// Switch ratings position when grid 3 is chosen.
-		if ( 'grid3' === flatsome_option( 'grid_style' ) && ! get_theme_mod( 'disable_reviews' ) ) {
+		if ( 'grid3' === magicpi_option( 'grid_style' ) && ! get_theme_mod( 'disable_reviews' ) ) {
 			remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
 			add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_rating' );
 		}
 		// Remove ratings.
-		if ( flatsome_option( 'product_box_rating' ) ) {
+		if ( magicpi_option( 'product_box_rating' ) ) {
 			return;
 		}
 		remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
 		remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_rating' );
 	}
 }
-add_action( 'woocommerce_shop_loop_item_title', 'flatsome_woocommerce_shop_loop_ratings', 0 );
+add_action( 'woocommerce_shop_loop_item_title', 'magicpi_woocommerce_shop_loop_ratings', 0 );
 
 
 /* Remove and add Product image */
 remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
-add_action( 'flatsome_woocommerce_shop_loop_images', 'woocommerce_template_loop_product_thumbnail', 10 );
+add_action( 'magicpi_woocommerce_shop_loop_images', 'woocommerce_template_loop_product_thumbnail', 10 );
 
 /* Remove Default Add To cart button from Grid */
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
 
-if ( ! function_exists( 'flatsome_product_box_actions_add_to_cart' ) ) {
+if ( ! function_exists( 'magicpi_product_box_actions_add_to_cart' ) ) {
 	/**
 	 * Add 'Add to cart' icon
 	 */
-	function flatsome_product_box_actions_add_to_cart() {
+	function magicpi_product_box_actions_add_to_cart() {
 		// Check if active.
 		if ( get_theme_mod( 'add_to_cart_icon' ) !== 'show' ) {
 			return;
@@ -149,20 +149,20 @@ if ( ! function_exists( 'flatsome_product_box_actions_add_to_cart' ) ) {
 		woocommerce_template_loop_add_to_cart();
 	}
 }
-add_action( 'flatsome_product_box_actions', 'flatsome_product_box_actions_add_to_cart', 1 );
+add_action( 'magicpi_product_box_actions', 'magicpi_product_box_actions_add_to_cart', 1 );
 
-if ( ! function_exists( 'flatsome_woocommerce_shop_loop_button' ) ) {
+if ( ! function_exists( 'magicpi_woocommerce_shop_loop_button' ) ) {
 	/**
 	 * Add 'Add to Cart' After
 	 */
-	function flatsome_woocommerce_shop_loop_button() {
+	function magicpi_woocommerce_shop_loop_button() {
 		if ( get_theme_mod( 'add_to_cart_icon' ) !== 'button' ) {
 			return;
 		}
 		woocommerce_template_loop_add_to_cart();
 	}
 }
-add_action( 'flatsome_product_box_after', 'flatsome_woocommerce_shop_loop_button', 100 );
+add_action( 'magicpi_product_box_after', 'magicpi_woocommerce_shop_loop_button', 100 );
 
 /**
  * Add and remove classes depending on add_to_cart_icon type.
@@ -172,9 +172,9 @@ add_action( 'flatsome_product_box_after', 'flatsome_woocommerce_shop_loop_button
  *
  * @return array
  */
-function flatsome_woocommerce_loop_add_to_cart_args( $args, $product ) {
+function magicpi_woocommerce_loop_add_to_cart_args( $args, $product ) {
 
-	if ( ! doing_action( 'flatsome_product_box_actions' ) && ! doing_action( 'flatsome_product_box_after' ) ) {
+	if ( ! doing_action( 'magicpi_product_box_actions' ) && ! doing_action( 'magicpi_product_box_after' ) ) {
 		return $args;
 	}
 
@@ -197,7 +197,7 @@ function flatsome_woocommerce_loop_add_to_cart_args( $args, $product ) {
 	return $args;
 }
 
-add_filter( 'woocommerce_loop_add_to_cart_args', 'flatsome_woocommerce_loop_add_to_cart_args', 5, 2 );
+add_filter( 'woocommerce_loop_add_to_cart_args', 'magicpi_woocommerce_loop_add_to_cart_args', 5, 2 );
 
 /**
  * Change button sprintf format depending on add_to_cart_icon type.
@@ -208,9 +208,9 @@ add_filter( 'woocommerce_loop_add_to_cart_args', 'flatsome_woocommerce_loop_add_
  *
  * @return string
  */
-function flatsome_woocommerce_loop_add_to_cart_link( $link, $product, $args ) {
+function magicpi_woocommerce_loop_add_to_cart_link( $link, $product, $args ) {
 
-	if ( ! doing_action( 'flatsome_product_box_actions' ) && ! doing_action( 'flatsome_product_box_after' ) ) {
+	if ( ! doing_action( 'magicpi_product_box_actions' ) && ! doing_action( 'magicpi_product_box_after' ) ) {
 		return $link;
 	}
 
@@ -229,14 +229,14 @@ function flatsome_woocommerce_loop_add_to_cart_link( $link, $product, $args ) {
 	return $link;
 }
 
-add_filter( 'woocommerce_loop_add_to_cart_link', 'flatsome_woocommerce_loop_add_to_cart_link', 5, 3 );
+add_filter( 'woocommerce_loop_add_to_cart_link', 'magicpi_woocommerce_loop_add_to_cart_link', 5, 3 );
 
-if ( ! function_exists( 'flatsome_woocommerce_shop_loop_excerpt' ) ) {
+if ( ! function_exists( 'magicpi_woocommerce_shop_loop_excerpt' ) ) {
 	/**
 	 * Add Product Short description
 	 */
-	function flatsome_woocommerce_shop_loop_excerpt() {
-		if ( ! flatsome_option( 'short_description_in_grid' ) ) {
+	function magicpi_woocommerce_shop_loop_excerpt() {
+		if ( ! magicpi_option( 'short_description_in_grid' ) ) {
 			return;
 		}
 		?>
@@ -246,15 +246,15 @@ if ( ! function_exists( 'flatsome_woocommerce_shop_loop_excerpt' ) ) {
 		<?php
 	}
 }
-add_action( 'flatsome_product_box_after', 'flatsome_woocommerce_shop_loop_excerpt', 20 );
+add_action( 'magicpi_product_box_after', 'magicpi_woocommerce_shop_loop_excerpt', 20 );
 
-if ( ! function_exists( 'flatsome_product_box_class' ) ) {
+if ( ! function_exists( 'magicpi_product_box_class' ) ) {
 	/**
 	 * Add Classes to product box
 	 *
 	 * @return null/string
 	 */
-	function flatsome_product_box_class() {
+	function magicpi_product_box_class() {
 		$classes             = array();
 		$category_grid_style = get_theme_mod( 'category_grid_style', 'grid');
 
@@ -268,14 +268,14 @@ if ( ! function_exists( 'flatsome_product_box_class' ) ) {
 	}
 }
 
-if ( ! function_exists( 'flatsome_product_box_image_class' ) ) {
+if ( ! function_exists( 'magicpi_product_box_image_class' ) ) {
 	/**
 	 * Add Classes to product image box
 	 *
 	 * @return null/string
 	 */
-	function flatsome_product_box_image_class() {
-		$hover_style = flatsome_option( 'product_hover' );
+	function magicpi_product_box_image_class() {
+		$hover_style = magicpi_option( 'product_hover' );
 		if ( $hover_style == 'fade_in_back' && $hover_style == 'zoom_in' ) {
 			return null;
 		}
@@ -288,27 +288,27 @@ if ( ! function_exists( 'flatsome_product_box_image_class' ) ) {
 	}
 }
 
-if ( ! function_exists( 'flatsome_product_box_actions_class' ) ) {
+if ( ! function_exists( 'magicpi_product_box_actions_class' ) ) {
 	/**
 	 * Add Classes to product actions
 	 *
 	 * @return string
 	 */
-	function flatsome_product_box_actions_class() {
+	function magicpi_product_box_actions_class() {
 		return 'grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover';
 	}
 }
 
-if ( ! function_exists( 'flatsome_product_box_text_class' ) ) {
+if ( ! function_exists( 'magicpi_product_box_text_class' ) ) {
 	/**
 	 * Add classes to product text box
 	 *
 	 * @return string
 	 */
-	function flatsome_product_box_text_class() {
+	function magicpi_product_box_text_class() {
 		$classes = array( 'box-text-products' );
 
-		$grid_style = flatsome_option( 'grid_style' );
+		$grid_style = magicpi_option( 'grid_style' );
 
 		if ( $grid_style == 'grid2' ) {
 			$classes[] = 'text-center grid-style-2';

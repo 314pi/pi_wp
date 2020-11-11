@@ -16,9 +16,9 @@
 			<div class="product-info">
 				<div class="row">
 					<div class="large-7 col">
-						<div class="entry-summary <?php flatsome_product_summary_classes();?>">
+						<div class="entry-summary <?php magicpi_product_summary_classes();?>">
 							<?php
-								 flatsome_breadcrumb();
+								 magicpi_breadcrumb();
 								 woocommerce_template_single_title();
 								 woocommerce_template_single_rating();
 								 woocommerce_template_single_excerpt();
@@ -30,20 +30,20 @@
 						</div>
 					</div>
 					<div class="large-5 col">
-						<div class="is-well add-to-cart-wrapper <?php flatsome_product_summary_classes( false, false, true );?>">
+						<div class="is-well add-to-cart-wrapper <?php magicpi_product_summary_classes( false, false, true );?>">
 							<?php
 
-								if(!flatsome_option('catalog_mode')){
+								if(!magicpi_option('catalog_mode')){
 									woocommerce_template_single_price();
-									flatsome_before_add_to_cart_html();
+									magicpi_before_add_to_cart_html();
 									woocommerce_template_single_add_to_cart();
-									flatsome_after_add_to_cart_html();
+									magicpi_after_add_to_cart_html();
 								} else {
-									if(flatsome_option('catalog_mode_prices')){
+									if(magicpi_option('catalog_mode_prices')){
 										woocommerce_template_single_price();
 									}
 									echo '<div class="catalog-product-text pb relative">';
-								    echo do_shortcode(flatsome_option('catalog_mode_product'));
+								    echo do_shortcode(magicpi_option('catalog_mode_product'));
 								    echo '</div>';
 								}
 								woocommerce_template_single_meta();

@@ -2,7 +2,7 @@
 /**
  * Registers the `ux_stack` shortcode.
  *
- * @package flatsome
+ * @package magicpi
  */
 
 /**
@@ -14,7 +14,7 @@
  *
  * @return string
  */
-function flatsome_render_ux_stack_shortcode( $atts, $content, $tag ) {
+function magicpi_render_ux_stack_shortcode( $atts, $content, $tag ) {
 	$atts = shortcode_atts(
 		array(
 			'visibility'     => '',
@@ -84,13 +84,13 @@ function flatsome_render_ux_stack_shortcode( $atts, $content, $tag ) {
 
 	return ob_get_clean();
 }
-add_shortcode( 'ux_stack', 'flatsome_render_ux_stack_shortcode' );
-add_shortcode( 'ux_stack_inner', 'flatsome_render_ux_stack_shortcode' );
-add_shortcode( 'ux_stack_inner_1', 'flatsome_render_ux_stack_shortcode' );
-add_shortcode( 'ux_stack_inner_2', 'flatsome_render_ux_stack_shortcode' );
-add_shortcode( 'ux_stack_inner_4', 'flatsome_render_ux_stack_shortcode' );
-add_shortcode( 'ux_stack_inner_5', 'flatsome_render_ux_stack_shortcode' );
-add_shortcode( 'ux_stack_inner_6', 'flatsome_render_ux_stack_shortcode' );
-add_shortcode( 'ux_stack_inner_7', 'flatsome_render_ux_stack_shortcode' );
-add_shortcode( 'ux_stack_inner_8', 'flatsome_render_ux_stack_shortcode' );
-add_shortcode( 'ux_stack_inner_9', 'flatsome_render_ux_stack_shortcode' );
+add_shortcode( 'ux_stack', 'magicpi_render_ux_stack_shortcode' );
+add_shortcode( 'ux_stack_inner', 'magicpi_render_ux_stack_shortcode' );
+add_shortcode( 'ux_stack_inner_1', 'magicpi_render_ux_stack_shortcode' );
+add_shortcode( 'ux_stack_inner_2', 'magicpi_render_ux_stack_shortcode' );
+add_shortcode( 'ux_stack_inner_4', 'magicpi_render_ux_stack_shortcode' );
+add_shortcode( 'ux_stack_inner_5', 'magicpi_render_ux_stack_shortcode' );
+add_shortcode( 'ux_stack_inner_6', 'magicpi_render_ux_stack_shortcode' );
+add_shortcode( 'ux_stack_inner_7', 'magicpi_render_ux_stack_shortcode' );
+add_shortcode( 'ux_stack_inner_8', 'magicpi_render_ux_stack_shortcode' );
+add_shortcode( 'ux_stack_inner_9', 'magicpi_render_ux_stack_shortcode' );

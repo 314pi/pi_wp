@@ -1,8 +1,8 @@
 <?php
 
-// Set Default Flatsome Options
-if(!function_exists('flatsome_defaults')){
-  function flatsome_defaults($option) {
+// Set Default Magicpi Options
+if(!function_exists('magicpi_defaults')){
+  function magicpi_defaults($option) {
     $df = array(
       // Blog
       'blog_layout' => 'right-sidebar',
@@ -36,7 +36,7 @@ if(!function_exists('flatsome_defaults')){
       'blog_archive_title' => 1,
       'wishlist_icon' => 'heart',
       // Top bar
-      'flatsome_lightbox' => 1,
+      'magicpi_lightbox' => 1,
       'nav_style_top' => 'divided',
       'topbar_left' => '<strong class="uppercase">Add anything here or just remove it...</strong>',
       'account_login_style' => 'lightbox',
@@ -44,7 +44,7 @@ if(!function_exists('flatsome_defaults')){
       'social_icons_style' => 'outline',
       'nav_uppercase' => 1,
       'blog_badge_style' => 'outline',
-      'flatsome_portfolio' => 1,
+      'magicpi_portfolio' => 1,
       'topbar_right' => '',
       'breadcrumb_size' => 'large',
       'product_hover' => 'fade_in_back',

@@ -2,8 +2,8 @@
 # This file is distributed under the http://themeforest.net/licenses.
 msgid ""
 msgstr ""
-"Project-Id-Version: Flatsome 3.12.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/flatsome\n"
+"Project-Id-Version: Magicpi 3.12.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/magicpi\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -12,14 +12,14 @@ msgstr ""
 "POT-Creation-Date: 2020-07-06T11:38:21+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
-"X-Domain: flatsome\n"
+"X-Domain: magicpi\n"
 
 #. Theme Name of the theme
-msgid "Flatsome"
+msgid "Magicpi"
 msgstr ""
 
 #. Theme URI of the theme
-msgid "http://flatsome.uxthemes.com/"
+msgid "http://magicpi.uxthemes.com/"
 msgstr ""
 
 #. Description of the theme
@@ -109,7 +109,7 @@ msgid "Edit with UX Builder"
 msgstr ""
 
 #: inc/admin/options/gdpr/options-cookies.php:98
-#: inc/extensions/flatsome-cookie-notice/flatsome-cookie-notice.php:39
+#: inc/extensions/magicpi-cookie-notice/magicpi-cookie-notice.php:39
 msgid "This site uses cookies to improve your browse experience. By browsing this website, you agree to our use of cookies."
 msgstr ""
 
@@ -171,25 +171,25 @@ msgstr ""
 msgid "Custom product layout"
 msgstr ""
 
-#: inc/extensions/flatsome-cookie-notice/flatsome-cookie-notice.php:50
+#: inc/extensions/magicpi-cookie-notice/magicpi-cookie-notice.php:50
 msgctxt "cookie notice"
 msgid "More info"
 msgstr ""
 
-#: inc/extensions/flatsome-cookie-notice/flatsome-cookie-notice.php:60
+#: inc/extensions/magicpi-cookie-notice/magicpi-cookie-notice.php:60
 msgctxt "cookie notice"
 msgid "Accept"
 msgstr ""
 
-#: inc/extensions/flatsome-infinite-scroll/templates/button.php:2
+#: inc/extensions/magicpi-infinite-scroll/templates/button.php:2
 msgid "View more"
 msgstr ""
 
-#: inc/extensions/flatsome-live-search/flatsome-live-search.php:198
+#: inc/extensions/magicpi-live-search/magicpi-live-search.php:198
 msgid "No matches found"
 msgstr ""
 
-#: inc/extensions/flatsome-wc-quick-view/flatsome-quick-view.php:15
+#: inc/extensions/magicpi-wc-quick-view/magicpi-quick-view.php:15
 msgid "Quick View"
 msgstr ""
 
@@ -397,7 +397,7 @@ msgid "A widget that displays a Block "
 msgstr ""
 
 #: inc/widgets/widget-blocks.php:21
-msgid "Flatsome Blocks"
+msgid "Magicpi Blocks"
 msgstr ""
 
 #: inc/widgets/widget-blocks.php:85
@@ -414,7 +414,7 @@ msgid "A widget that displays recent posts "
 msgstr ""
 
 #: inc/widgets/widget-recent-posts.php:22
-msgid "Flatsome Recent Posts"
+msgid "Magicpi Recent Posts"
 msgstr ""
 
 #: inc/widgets/widget-recent-posts.php:49

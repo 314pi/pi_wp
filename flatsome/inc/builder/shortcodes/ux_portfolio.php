@@ -146,10 +146,10 @@ add_ux_builder_shortcode( 'ux_portfolio', array(
    'name' => __( 'Portfolio' ),
    'category' => __( 'Content' ),
    'wrap' => true,
-   'thumbnail' =>  flatsome_ux_builder_thumbnail( 'portfolio' ),
+   'thumbnail' =>  magicpi_ux_builder_thumbnail( 'portfolio' ),
     'scripts' => array(
-        'flatsome-masonry-js' => get_template_directory_uri() .'/assets/libs/packery.pkgd.min.js',
-        'flatsome-isotope-js' => get_template_directory_uri() .'/assets/libs/isotope.pkgd.min.js',
+        'magicpi-masonry-js' => get_template_directory_uri() .'/assets/libs/packery.pkgd.min.js',
+        'magicpi-isotope-js' => get_template_directory_uri() .'/assets/libs/isotope.pkgd.min.js',
     ),
    'presets' => array(
         array(

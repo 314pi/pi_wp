@@ -1,6 +1,6 @@
 <?php 
 // [message_box]
-function flatsome_message_box($atts, $content = null) {
+function magicpi_message_box($atts, $content = null) {
 	extract(shortcode_atts(array(
         'bg'  => '',
         'class' => '',
@@ -18,7 +18,7 @@ function flatsome_message_box($atts, $content = null) {
   if( $visibility ) $classes[] = $visibility;
 
   if($bg) {
-    $bg = flatsome_get_image_url($bg);
+    $bg = magicpi_get_image_url($bg);
   }
 
   if($text_color == 'dark') $classes[] = 'dark';
@@ -40,6 +40,6 @@ function flatsome_message_box($atts, $content = null) {
 	return '<div class="'.implode(' ', $classes).'" '.get_shortcode_inline_css($css_args).'><div class="message-box-bg-image bg-fill fill" '.get_shortcode_inline_css($css_bg).'></div><div class="message-box-bg-overlay bg-fill fill" '.get_shortcode_inline_css($css_bg_overlay).'></div><div class="container relative"><div class="inner last-reset">'.do_shortcode($content).'</div></div></div>';
 }
 
-add_shortcode("message_box", "flatsome_message_box");
+add_shortcode("message_box", "magicpi_message_box");
 
 

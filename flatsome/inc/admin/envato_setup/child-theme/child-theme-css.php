@@ -1,8 +1,8 @@
 /*
 Theme Name: <?php echo $new_theme_title, "\n"; ?>
-Description: This is a child theme for Flatsome Theme
+Description: This is a child theme for Magicpi Theme
 Author: UX Themes
-Template: flatsome
+Template: magicpi
 Version: 3.0
 */
 

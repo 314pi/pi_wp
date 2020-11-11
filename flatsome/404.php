@@ -4,11 +4,11 @@
  *
  * @link    https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package flatsome
+ * @package magicpi
  */
 
 get_header(); ?>
-<?php do_action( 'flatsome_before_404' ); ?>
+<?php do_action( 'magicpi_before_404' ); ?>
 <?php
 if ( get_theme_mod( '404_block' ) ) :
 	echo do_shortcode( '[block id="' . get_theme_mod( '404_block' ) . '"]' );
@@ -21,10 +21,10 @@ else :
 					<div class="col medium-3"><span class="header-font" style="font-size: 6em; font-weight: bold; opacity: .3">404</span></div>
 					<div class="col medium-9">
 						<header class="page-title">
-							<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'flatsome' ); ?></h1>
+							<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'magicpi' ); ?></h1>
 						</header>
 						<div class="page-content">
-							<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'flatsome' ); ?></p>
+							<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'magicpi' ); ?></p>
 							<?php get_search_form(); ?>
 						</div>
 					</div>
@@ -33,5 +33,5 @@ else :
 		</main>
 	</div>
 <?php endif; ?>
-<?php do_action( 'flatsome_after_404' ); ?>
+<?php do_action( 'magicpi_after_404' ); ?>
 <?php get_footer(); ?>

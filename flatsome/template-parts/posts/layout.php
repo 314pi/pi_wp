@@ -1,5 +1,5 @@
 <?php
-	do_action('flatsome_before_blog');
+	do_action('magicpi_before_blog');
 ?>
 
 <?php if(!is_single() && get_theme_mod('blog_featured', '') == 'top'){ get_template_part('template-parts/posts/featured-posts'); } ?>
@@ -21,4 +21,4 @@
 
 </div>
 
-<?php do_action('flatsome_after_blog');
+<?php do_action('magicpi_after_blog');

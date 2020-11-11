@@ -1,5 +1,5 @@
 <div class="row">
-	<?php if(!flatsome_option('portfolio_title')) { ?>
+	<?php if(!magicpi_option('portfolio_title')) { ?>
 		<div class="large-4 col col-divided pb-0">
 
 				<div class="featured_item_cats breadcrumbs pt-0">
@@ -22,7 +22,7 @@
 			<?php echo strip_tags (get_the_term_list( get_the_ID(), 'featured_item_tag', '', ' / ', '' )); ?>
 		</div>
 	    <?php } ?>
-	    <?php if(flatsome_option('portfolio_title') =='featured') { ?>
+	    <?php if(magicpi_option('portfolio_title') =='featured') { ?>
 			<div class="portfolio-share">
 				<?php echo do_shortcode('[share]')?>
 			</div>

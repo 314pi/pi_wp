@@ -74,7 +74,7 @@ class AjaxManager {
       'post_type' => 'attachment',
       'post_status' => 'inherit',
       'meta_query' => array(
-        array( 'key' => '_flatsome_studio_id', 'value' => $id, 'compare' => '=' )
+        array( 'key' => '_magicpi_studio_id', 'value' => $id, 'compare' => '=' )
       )
     ) );
 
@@ -91,14 +91,14 @@ class AjaxManager {
 
     if ( is_wp_error( $file['tmp_name'] ) ) {
       @unlink( $file['tmp_name'] );
-      return new \WP_Error( 'flatsome', 'Could not download image from Flatsome Studio.' );
+      return new \WP_Error( 'magicpi', 'Could not download image from Magicpi Studio.' );
     }
 
     // 3. Add image to media library.
     $attachment_id = media_handle_sideload( $file, 0 );
     $attach_data = wp_generate_attachment_metadata( $attachment_id,  get_attached_file( $attachment_id ) );
     wp_update_attachment_metadata( $attachment_id,  $attach_data );
-    update_post_meta( $attachment_id, '_flatsome_studio_id', $id );
+    update_post_meta( $attachment_id, '_magicpi_studio_id', $id );
 
     // 4. Return local ID and URL.
     return wp_send_json_success( array(

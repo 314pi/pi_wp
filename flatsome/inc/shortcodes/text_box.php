@@ -1,6 +1,6 @@
 <?php
 
-function flatsome_text_box( $atts, $content = null ){
+function magicpi_text_box( $atts, $content = null ){
 
   $atts = shortcode_atts( array(
     'id' => 'text-box-'.rand(),
@@ -69,8 +69,8 @@ function flatsome_text_box( $atts, $content = null ){
     if($visibility) $classes[] = $visibility;
 
     // Set positions
-    $classes[] = flatsome_position_classes( 'x', $position_x, $position_x__sm, $position_x__md );
-    $classes[] = flatsome_position_classes( 'y', $position_y, $position_y__sm, $position_y__md );
+    $classes[] = magicpi_position_classes( 'x', $position_x, $position_x__sm, $position_x__md );
+    $classes[] = magicpi_position_classes( 'y', $position_y, $position_y__sm, $position_y__md );
 
     $classes_inner = array();
 
@@ -97,7 +97,7 @@ function flatsome_text_box( $atts, $content = null ){
            <div class="text <?php echo $classes_inner; ?>">
               <?php require( __DIR__ . '/commons/border.php' ) ;?>
               <div class="<?php echo $classes_text; ?>">
-                  <?php echo flatsome_contentfix($content); ?>
+                  <?php echo magicpi_contentfix($content); ?>
               </div>
            </div>
        <?php if($animate) echo '</div>'; ?>
@@ -152,4 +152,4 @@ function flatsome_text_box( $atts, $content = null ){
   ob_end_clean();
   return $content;
 }
-add_shortcode('text_box', 'flatsome_text_box');
+add_shortcode('text_box', 'magicpi_text_box');

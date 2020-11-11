@@ -9,7 +9,7 @@
 		<taxonomy translate="0">featured_item_tag</taxonomy>
 	</taxonomies>
 	<admin-texts>
-		<key name="theme_mods_flatsome">
+		<key name="theme_mods_magicpi">
 			<key name="404_block"/>
 			<key name="blog_after_post" />
 			<key name="blog_header" />

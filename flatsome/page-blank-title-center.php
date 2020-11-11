@@ -5,7 +5,7 @@ Template name: Page - Container - Center Title
 get_header();
 ?>
 
-<?php do_action( 'flatsome_before_page' ); ?>
+<?php do_action( 'magicpi_before_page' ); ?>
 
 <div class="row page-wrapper">
 <div id="content" class="large-12 col" role="main">
@@ -30,6 +30,6 @@ get_header();
 </div>
 </div>
 
-<?php do_action( 'flatsome_after_page' ); ?>
+<?php do_action( 'magicpi_after_page' ); ?>
 
 <?php get_footer(); ?>

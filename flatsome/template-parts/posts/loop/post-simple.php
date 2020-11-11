@@ -13,14 +13,14 @@
 					<?php
 					$excerpt      = get_the_excerpt();
 					$excerpt_more = apply_filters( 'excerpt_more', ' [...]' );
-					echo flatsome_string_limit_words( $excerpt, 15 ) . $excerpt_more;
+					echo magicpi_string_limit_words( $excerpt, 15 ) . $excerpt_more;
 					?>
 				</p>
 			<?php } ?>
 			<p class="from_the_blog_comments uppercase xxsmall">
 				<?php
 				$comments_number = get_comments_number( get_the_ID() );
-				printf( _n( '%1$s Comment', '%1$s Comments', $comments_number, 'flatsome' ),
+				printf( _n( '%1$s Comment', '%1$s Comments', $comments_number, 'magicpi' ),
 					number_format_i18n( $comments_number )
 				);
 				?>

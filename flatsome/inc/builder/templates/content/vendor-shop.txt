@@ -136,7 +136,7 @@
 [text_box width="40" width__sm="60"]
 
 <h3 class="uppercase"><strong>Become a Vendor</strong></h3>
-<p class="lead">Want to sell on Flatsome Vendor? We're looking for shop to join us.</p>
+<p class="lead">Want to sell on Magicpi Vendor? We're looking for shop to join us.</p>
 [button text="Learn More" color="white" style="outline" radius="99"]
 
 [button text="Apply Now" color="white" radius="99"]

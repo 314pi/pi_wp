@@ -1,7 +1,7 @@
 <?php
 
 // Fallbacks
-function flatsome_add_fallbacks () {
+function magicpi_add_fallbacks () {
 
   $ie_css = get_template_directory_uri() .'/assets/css/ie-fallback.css';
 
@@ -13,4 +13,4 @@ function flatsome_add_fallbacks () {
   echo '<script src="'.get_template_directory_uri() .'/assets/libs/ie-flexibility.js"></script>';
   echo '<![endif]-->';
 }
-add_action('wp_head', 'flatsome_add_fallbacks');
+add_action('wp_head', 'magicpi_add_fallbacks');

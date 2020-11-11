@@ -2,7 +2,7 @@
 /**
  * Quick View
  *
- * @package Flatsome
+ * @package Magicpi
  */
 
 defined( 'ABSPATH' ) || exit;

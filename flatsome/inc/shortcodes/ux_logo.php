@@ -54,7 +54,7 @@ function ux_logo( $atts, $content = null ){
     // Set inner tag
     $inner_tag = $link ? 'a' : 'div';
 
-    $content = '<div class="'.implode(' ', $classes).'" style="max-width: 100%!important; width: '.$width.'!important"><'.$inner_tag.' class="ux-logo-link block image-'.$hover.'" title="'.$title.'"' . flatsome_parse_target_rel( $link_atts ) . 'href="'.$link.'" style="padding: '.$padding.';"><img src="'.$org_img.'" title="'.$title.'" alt="'.$title.'" class="ux-logo-image block" style="height:'.$height.'px;" /></'.$inner_tag.'></div>';
+    $content = '<div class="'.implode(' ', $classes).'" style="max-width: 100%!important; width: '.$width.'!important"><'.$inner_tag.' class="ux-logo-link block image-'.$hover.'" title="'.$title.'"' . magicpi_parse_target_rel( $link_atts ) . 'href="'.$link.'" style="padding: '.$padding.';"><img src="'.$org_img.'" title="'.$title.'" alt="'.$title.'" class="ux-logo-image block" style="height:'.$height.'px;" /></'.$inner_tag.'></div>';
 
     return $content;
 }

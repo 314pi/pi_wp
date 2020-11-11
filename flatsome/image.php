@@ -2,7 +2,7 @@
 /**
  * The template for displaying image attachments.
  *
- * @package flatsome
+ * @package magicpi
  */
 
 get_header();
@@ -23,7 +23,7 @@ get_header();
 								<?php
 									$metadata = wp_get_attachment_metadata();
 									if ( $metadata ) {					
-										printf( __( 'Published <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>', 'flatsome' ),
+										printf( __( 'Published <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>', 'magicpi' ),
 											esc_attr( get_the_date( 'c' ) ),
 											esc_html( get_the_date() ),
 											wp_get_attachment_url(),
@@ -35,7 +35,7 @@ get_header();
 										);
 									}
 								?>
-								<?php edit_post_link( __( 'Edit', 'flatsome' ), '<span class="sep"> | </span> <span class="edit-link">', '</span>' ); ?>
+								<?php edit_post_link( __( 'Edit', 'magicpi' ), '<span class="sep"> | </span> <span class="edit-link">', '</span>' ); ?>
 							</div>
 						</header>
 
@@ -76,7 +76,7 @@ get_header();
 									?>
 
 									<a href="<?php echo $next_attachment_url; ?>" title="<?php the_title_attribute(); ?>" rel="attachment"><?php
-										$attachment_size = apply_filters( 'flatsome_attachment_size', array( 1200, 1200 ) ); // Filterable image size.
+										$attachment_size = apply_filters( 'magicpi_attachment_size', array( 1200, 1200 ) ); // Filterable image size.
 										echo wp_get_attachment_image( $post->ID, $attachment_size );
 									?></a>
 								</div>
@@ -97,21 +97,21 @@ get_header();
 
 						<footer class="entry-meta">
 							<?php if ( comments_open() && pings_open() ) : // Comments and trackbacks open ?>
-								<?php printf( __( '<a class="comment-link" href="#respond" title="Post a comment">Post a comment</a> or leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'flatsome' ), get_trackback_url() ); ?>
+								<?php printf( __( '<a class="comment-link" href="#respond" title="Post a comment">Post a comment</a> or leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'magicpi' ), get_trackback_url() ); ?>
 							<?php elseif ( ! comments_open() && pings_open() ) : // Only trackbacks open ?>
-								<?php printf( __( 'Comments are closed, but you can leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'flatsome' ), get_trackback_url() ); ?>
+								<?php printf( __( 'Comments are closed, but you can leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'magicpi' ), get_trackback_url() ); ?>
 							<?php elseif ( comments_open() && ! pings_open() ) : // Only comments open ?>
-								<?php _e( 'Trackbacks are closed, but you can <a class="comment-link" href="#respond" title="Post a comment">post a comment</a>.', 'flatsome' ); ?>
+								<?php _e( 'Trackbacks are closed, but you can <a class="comment-link" href="#respond" title="Post a comment">post a comment</a>.', 'magicpi' ); ?>
 							<?php elseif ( ! comments_open() && ! pings_open() ) : // Comments and trackbacks closed ?>
-								<?php _e( 'Both comments and trackbacks are currently closed.', 'flatsome' ); ?>
+								<?php _e( 'Both comments and trackbacks are currently closed.', 'magicpi' ); ?>
 							<?php endif; ?>
-							<?php edit_post_link( __( 'Edit', 'flatsome' ), ' <span class="edit-link">', '</span>' ); ?>
+							<?php edit_post_link( __( 'Edit', 'magicpi' ), ' <span class="edit-link">', '</span>' ); ?>
 						</footer>
 
 						
 							<nav role="navigation" id="image-navigation" class="navigation-image">
-								<div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'flatsome' ) ); ?></div>
-								<div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'flatsome' ) ); ?></div>
+								<div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'magicpi' ) ); ?></div>
+								<div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'magicpi' ) ); ?></div>
 							</nav>
 					</article>
 

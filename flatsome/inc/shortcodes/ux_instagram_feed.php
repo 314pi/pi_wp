@@ -45,7 +45,7 @@ function ux_instagram_feed( $atts, $content = null ) {
 			$hashtag = substr( $username, 1 );
 		}
 
-		$media_array = flatsome_instagram_get_feed( $username, $hashtag, $hashtag_media );
+		$media_array = magicpi_instagram_get_feed( $username, $hashtag, $hashtag_media );
 
 		if ( is_wp_error( $media_array ) ) {
 
@@ -75,7 +75,7 @@ function ux_instagram_feed( $atts, $content = null ) {
 			$repeater['depth_hover']         = $depth_hover;
 
 			// Filters for custom classes.
-			get_flatsome_repeater_start( $repeater );
+			get_magicpi_repeater_start( $repeater );
 
 			foreach ( $media_array as $item ) {
 				echo '<div class="col"><div class="col-inner">';
@@ -93,7 +93,7 @@ function ux_instagram_feed( $atts, $content = null ) {
 				<div class="img has-hover no-overflow">
 					<div class="dark instagram-image-container image-<?php echo $image_hover; ?> instagram-image-type--<?php echo $item['type']; ?>">
 						<a href="<?php echo $item['link']; ?>" target="_blank" rel="noopener noreferrer" class="plain">
-							<?php echo flatsome_get_image( $image_url, false, $caption ); ?>
+							<?php echo magicpi_get_image( $image_url, false, $caption ); ?>
 							<?php if ( $image_overlay ) { ?>
 								<div class="overlay" style="background-color: <?php echo $image_overlay; ?>"></div>
 							<?php } ?>
@@ -107,14 +107,14 @@ function ux_instagram_feed( $atts, $content = null ) {
 				echo '</div></div>';
 			}
 
-			get_flatsome_repeater_end( $repeater );
+			get_magicpi_repeater_end( $repeater );
 		}
 	}
 
 	if ( $link != '' ) {
 		?>
 		<a class="plain uppercase" href="<?php echo trailingslashit( '//instagram.com/' . esc_attr( trim( $username ) ) ); ?>" rel="me"
-			 target="<?php echo esc_attr( $target ); ?>"><?php echo get_flatsome_icon( 'icon-instagram' ); ?><?php echo wp_kses_post( $link ); ?></a>
+			 target="<?php echo esc_attr( $target ); ?>"><?php echo get_magicpi_icon( 'icon-instagram' ); ?><?php echo wp_kses_post( $link ); ?></a>
 		<?php
 	}
 
@@ -128,8 +128,8 @@ function ux_instagram_feed( $atts, $content = null ) {
 
 add_shortcode( 'ux_instagram_feed', 'ux_instagram_feed' );
 
-function flatsome_instagram_get_feed( $username, $hashtag, $hashtag_media ) {
-	$accounts         = flatsome_facebook_accounts();
+function magicpi_instagram_get_feed( $username, $hashtag, $hashtag_media ) {
+	$accounts         = magicpi_facebook_accounts();
 	$username         = strtolower( $username );
 	$username         = str_replace( '@', '', $username );
 	$account          = array_key_exists( $username, $accounts ) ? $accounts[ $username ] : false;
@@ -143,15 +143,15 @@ function flatsome_instagram_get_feed( $username, $hashtag, $hashtag_media ) {
 	}
 
 	if ( $account ) {
-		$instagram = flatsome_instagram_account_feed( $username, $account, $hashtag, $hashtag_media );
+		$instagram = magicpi_instagram_account_feed( $username, $account, $hashtag, $hashtag_media );
 	} else {
-		$instagram = flatsome_instagram_scrape_html( $username, $hashtag );
+		$instagram = magicpi_instagram_scrape_html( $username, $hashtag );
 	}
 
 	if ( is_wp_error( $instagram ) ) {
 		return $instagram;
 	} else if ( empty( $instagram ) ) {
-		return new WP_Error( 'no_images', esc_html__( 'Instagram did not return any images.', 'flatsome-admin' ) );
+		return new WP_Error( 'no_images', esc_html__( 'Instagram did not return any images.', 'magicpi-admin' ) );
 	}
 
 	// Do not set an empty transient, helps catching private or empty accounts.
@@ -161,16 +161,16 @@ function flatsome_instagram_get_feed( $username, $hashtag, $hashtag_media ) {
 	return $instagram;
 }
 
-function flatsome_instagram_account_feed( $username, $account, $hashtag = '', $hashtag_media = 'top' ) {
+function magicpi_instagram_account_feed( $username, $account, $hashtag = '', $hashtag_media = 'top' ) {
 	$id           = $account['id'];
 	$access_token = $account['access_token'];
 	$results      = array();
 	$instagram    = array();
 
 	if ( $hashtag ) {
-		$results = flatsome_instagram_get_hashtag_media( $hashtag, $hashtag_media, $id, $access_token );
+		$results = magicpi_instagram_get_hashtag_media( $hashtag, $hashtag_media, $id, $access_token );
 	} else {
-		$results = flatsome_instagram_get_media( $id, $access_token );
+		$results = magicpi_instagram_get_media( $id, $access_token );
 	}
 
 	if ( is_wp_error( $results ) ) {
@@ -182,7 +182,7 @@ function flatsome_instagram_account_feed( $username, $account, $hashtag = '', $h
 	foreach ( $results['data'] as $item ) {
 		$caption = ! empty( $item['caption'] )
 			? wp_kses( $item['caption'], array() )
-			: __( 'Instagram Image', 'flatsome-admin' );
+			: __( 'Instagram Image', 'magicpi-admin' );
 
 		$timestamp = array_key_exists( 'timestamp', $item )
 			? $item['timestamp']
@@ -209,13 +209,13 @@ function flatsome_instagram_account_feed( $username, $account, $hashtag = '', $h
 	return $instagram;
 }
 
-function flatsome_instagram_get_media( $id, $access_token ) {
+function magicpi_instagram_get_media( $id, $access_token ) {
 	$fields    = 'timestamp,caption,media_type,media_url,thumbnail_url,like_count,comments_count,permalink';
 	$url       = "https://graph.facebook.com/v4.0/$id/media?fields=$fields&access_token=$access_token";
 	$response  = wp_remote_get( $url );
 
 	if ( is_wp_error( $response ) ) {
-		return new WP_Error( 'site_down', __( 'Unable to communicate with Instagram.', 'flatsome-admin' ) );
+		return new WP_Error( 'site_down', __( 'Unable to communicate with Instagram.', 'magicpi-admin' ) );
 	} else {
 		$body = json_decode( $response['body'], true );
 
@@ -227,7 +227,7 @@ function flatsome_instagram_get_media( $id, $access_token ) {
 	}
 }
 
-function flatsome_instagram_get_hashtag_id( $hashtag, $user_id, $access_token ) {
+function magicpi_instagram_get_hashtag_id( $hashtag, $user_id, $access_token ) {
 	if ( substr( $hashtag, 0, 1 ) === '#' ) {
 		$hashtag = substr( $hashtag, 1 );
 	}
@@ -236,7 +236,7 @@ function flatsome_instagram_get_hashtag_id( $hashtag, $user_id, $access_token ) 
 	$response = wp_remote_get( $url );
 
 	if ( is_wp_error( $response ) ) {
-		return new WP_Error( 'site_down', __( 'Unable to communicate with Instagram.', 'flatsome-admin' ) );
+		return new WP_Error( 'site_down', __( 'Unable to communicate with Instagram.', 'magicpi-admin' ) );
 	} else {
 		$body = json_decode( $response['body'], true );
 
@@ -248,8 +248,8 @@ function flatsome_instagram_get_hashtag_id( $hashtag, $user_id, $access_token ) 
 	}
 }
 
-function flatsome_instagram_get_hashtag_media( $name, $type, $user_id, $access_token ) {
-	$hashtag = flatsome_instagram_get_hashtag_id( $name, $user_id, $access_token );
+function magicpi_instagram_get_hashtag_media( $name, $type, $user_id, $access_token ) {
+	$hashtag = magicpi_instagram_get_hashtag_id( $name, $user_id, $access_token );
 
 	if ( is_wp_error( $hashtag ) ) {
 		return $hashtag;
@@ -262,7 +262,7 @@ function flatsome_instagram_get_hashtag_media( $name, $type, $user_id, $access_t
 	$response = wp_remote_get( $url );
 
 	if ( is_wp_error( $response ) ) {
-		return new WP_Error( 'site_down', __( 'Unable to communicate with Instagram.', 'flatsome-admin' ) );
+		return new WP_Error( 'site_down', __( 'Unable to communicate with Instagram.', 'magicpi-admin' ) );
 	} else {
 		$body = json_decode( $response['body'], true );
 
@@ -274,17 +274,17 @@ function flatsome_instagram_get_hashtag_media( $name, $type, $user_id, $access_t
 	}
 }
 
-function flatsome_instagram_scrape_html( $username, $hashtag ) {
+function magicpi_instagram_scrape_html( $username, $hashtag ) {
 	$req_param = ( $hashtag ) ? 'explore/tags/' . $hashtag : trim( $username );
 	$remote    = wp_remote_get( 'https://instagram.com/' . $req_param );
 	$instagram = array();
 
 	if ( is_wp_error( $remote ) ) {
-		return new WP_Error( 'site_down', esc_html__( 'Unable to communicate with Instagram.', 'flatsome-admin' ) );
+		return new WP_Error( 'site_down', esc_html__( 'Unable to communicate with Instagram.', 'magicpi-admin' ) );
 	}
 
 	if ( 200 != wp_remote_retrieve_response_code( $remote ) ) {
-		return new WP_Error( 'invalid_response', esc_html__( 'Instagram did not return a 200.', 'flatsome-admin' ) );
+		return new WP_Error( 'invalid_response', esc_html__( 'Instagram did not return a 200.', 'magicpi-admin' ) );
 	}
 
 	$shards      = explode( 'window._sharedData = ', $remote['body'] );
@@ -292,7 +292,7 @@ function flatsome_instagram_scrape_html( $username, $hashtag ) {
 	$insta_array = json_decode( $insta_json[0], true );
 
 	if ( ! $insta_array ) {
-		return new WP_Error( 'bad_json', esc_html__( 'Instagram has returned invalid data.', 'flatsome-admin' ) );
+		return new WP_Error( 'bad_json', esc_html__( 'Instagram has returned invalid data.', 'magicpi-admin' ) );
 	}
 
 	if ( isset( $insta_array['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['edges'] ) ) {
@@ -300,11 +300,11 @@ function flatsome_instagram_scrape_html( $username, $hashtag ) {
 	} elseif ( $hashtag && isset( $insta_array['entry_data']['TagPage'][0]['graphql']['hashtag']['edge_hashtag_to_media']['edges'] ) ) {
 		$edges = $insta_array['entry_data']['TagPage'][0]['graphql']['hashtag']['edge_hashtag_to_media']['edges'];
 	} else {
-		return new WP_Error( 'bad_json_2', esc_html__( 'Instagram has returned invalid data.', 'flatsome-admin' ) );
+		return new WP_Error( 'bad_json_2', esc_html__( 'Instagram has returned invalid data.', 'magicpi-admin' ) );
 	}
 
 	if ( ! is_array( $edges ) ) {
-		return new WP_Error( 'bad_array', esc_html__( 'Instagram has returned invalid data.', 'flatsome-admin' ) );
+		return new WP_Error( 'bad_array', esc_html__( 'Instagram has returned invalid data.', 'magicpi-admin' ) );
 	}
 
 	foreach ( $edges as $edge ) {
@@ -326,7 +326,7 @@ function flatsome_instagram_scrape_html( $username, $hashtag ) {
 			$type = 'image';
 		}
 
-		$caption = __( 'Instagram Image', 'flatsome-admin' );
+		$caption = __( 'Instagram Image', 'magicpi-admin' );
 		if ( ! empty( $edge['node']['edge_media_to_caption']['edges'][0]['node']['text'] ) ) {
 			$caption = wp_kses( $edge['node']['edge_media_to_caption']['edges'][0]['node']['text'], array() );
 		}

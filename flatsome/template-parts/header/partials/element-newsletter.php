@@ -6,7 +6,7 @@ $title      = get_theme_mod( 'header_newsletter_title', 'Sign up for Newsletter'
 $newsletter_block = get_theme_mod( 'header_newsletter_block' );
 if ( ! $newsletter_block ) {
 	$sub_title = get_theme_mod( 'header_newsletter_sub_title', 'Signup for our newsletter to get notified about sales and new products. Add any text here or remove it.' );
-	$bg        = do_shortcode( get_theme_mod( 'header_newsletter_bg', flatsome_dummy_image() ) );
+	$bg        = do_shortcode( get_theme_mod( 'header_newsletter_bg', magicpi_dummy_image() ) );
 	$height    = get_theme_mod( 'header_newsletter_height', '500px' );
 }
 $auto_open  = get_theme_mod( 'header_newsletter_auto_open', false );
@@ -23,7 +23,7 @@ $behavior .= ' version="' . $version . '"';
 <li class="header-newsletter-item has-icon">
 
 <?php if($icon_style && $icon_style !== 'plain') echo '<div class="header-button">'; ?>
-<a href="#header-newsletter-signup" class="tooltip <?php if($icon_style) echo get_flatsome_icon_class($icon_style, 'small'); ?>"
+<a href="#header-newsletter-signup" class="tooltip <?php if($icon_style) echo get_magicpi_icon_class($icon_style, 'small'); ?>"
   title="<?php echo $title; ?>">
 
   <?php if($icon_style) { ?>

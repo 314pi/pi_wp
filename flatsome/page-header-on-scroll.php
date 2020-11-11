@@ -5,7 +5,7 @@ Template name: Page - Full Width - Header on Scroll
 */
 get_header(); ?>
 
-<?php do_action( 'flatsome_before_page' ); ?>
+<?php do_action( 'magicpi_before_page' ); ?>
 
 <div id="content" role="main">
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -15,6 +15,6 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 </div>
 
-<?php do_action( 'flatsome_after_page' ); ?>
+<?php do_action( 'magicpi_after_page' ); ?>
 
 <?php get_footer(); ?>

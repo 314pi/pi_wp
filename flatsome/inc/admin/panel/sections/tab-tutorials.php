@@ -3,7 +3,7 @@
  * Tab Tutorials
  */
 ?>
-<div id="tab-tutorials" class="col two-col panel flatsome-panel">
+<div id="tab-tutorials" class="col two-col panel magicpi-panel">
 
 	<div class="cols">
 		<div class="inner-panel">

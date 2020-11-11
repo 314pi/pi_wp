@@ -1,6 +1,6 @@
 // Customizer Reset
 jQuery(function ($) {
-    $button = jQuery('#flatsome-customizer-reset');
+    $button = jQuery('#magicpi-customizer-reset');
     
     $button.on('click', function (event) {
         event.preventDefault();
@@ -8,10 +8,10 @@ jQuery(function ($) {
         var data = {
             wp_customize: 'on',
             action: 'customizer_reset',
-            nonce: _FlatsomeCustomizerReset.nonce.reset
+            nonce: _MagicpiCustomizerReset.nonce.reset
         };
 
-        var r = confirm(_FlatsomeCustomizerReset.confirm);
+        var r = confirm(_MagicpiCustomizerReset.confirm);
 
         if (!r) return;
 

@@ -5,7 +5,7 @@ add_ux_builder_shortcode( 'logo',
 		'name'              => __( 'Logo' ),
 		'category'          => __( 'Content' ),
 		'toolbar_thumbnail' => 'img',
-		'thumbnail'         => flatsome_ux_builder_thumbnail( 'logo' ),
+		'thumbnail'         => magicpi_ux_builder_thumbnail( 'logo' ),
 		'inline'            => true,
 		'wrap'              => false,
 		'presets'           => array(

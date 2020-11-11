@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Flatsome Theme\n"
+"Project-Id-Version: Magicpi Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-22T09:12:40+00:00\n"
 "PO-Revision-Date: 2020-04-26 14:35-0300\n"
@@ -14,12 +14,12 @@ msgstr ""
 "X-Generator: Poedit 2.3\n"
 
 #. Theme Name of the theme
-msgid "Flatsome"
-msgstr "Flatsome"
+msgid "Magicpi"
+msgstr "Magicpi"
 
 #. Theme URI of the theme
-msgid "http://flatsome.uxthemes.com/"
-msgstr "http://flatsome.uxthemes.com/"
+msgid "http://magicpi.uxthemes.com/"
+msgstr "http://magicpi.uxthemes.com/"
 
 #. Description of the theme
 msgid "Multi-Purpose Responsive WooCommerce Theme"
@@ -146,15 +146,15 @@ msgstr "Etiquetas de envío en caja"
 msgid "Show shipping estimate destination"
 msgstr "Mostrar destino estimado del envío"
 
-#: inc/extensions/flatsome-infinite-scroll/templates/button.php:2
+#: inc/extensions/magicpi-infinite-scroll/templates/button.php:2
 msgid "View more"
 msgstr "Ver más"
 
-#: inc/extensions/flatsome-live-search/flatsome-live-search.php:198
+#: inc/extensions/magicpi-live-search/magicpi-live-search.php:198
 msgid "No matches found"
 msgstr "No se encontraron resultados"
 
-#: inc/extensions/flatsome-wc-quick-view/flatsome-quick-view.php:15
+#: inc/extensions/magicpi-wc-quick-view/magicpi-quick-view.php:15
 msgid "Quick View"
 msgstr "Vista rápida"
 
@@ -360,8 +360,8 @@ msgid "A widget that displays a Block "
 msgstr "Un widget que muestra un bloque"
 
 #: inc/widgets/widget-blocks.php:21
-msgid "Flatsome Blocks"
-msgstr "Bloques de Flatsome"
+msgid "Magicpi Blocks"
+msgstr "Bloques de Magicpi"
 
 #: inc/widgets/widget-blocks.php:85 inc/widgets/widget-recent-posts.php:129
 msgid "Title:"
@@ -376,8 +376,8 @@ msgid "A widget that displays recent posts "
 msgstr "Un widget que muestra las entradas recientes"
 
 #: inc/widgets/widget-recent-posts.php:22
-msgid "Flatsome Recent Posts"
-msgstr "Entradas recientes de Flatsome"
+msgid "Magicpi Recent Posts"
+msgstr "Entradas recientes de Magicpi"
 
 #: inc/widgets/widget-recent-posts.php:49
 msgid "Recent Posts"

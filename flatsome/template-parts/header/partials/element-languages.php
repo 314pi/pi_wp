@@ -30,9 +30,9 @@ if ( function_exists( 'pll_the_languages' ) ) {
 	<a href="#">
 		<?php echo $current_lang; ?>
 		<?php echo $flag; ?>
-		<?php echo get_flatsome_icon( 'icon-angle-down' ); ?>
+		<?php echo get_magicpi_icon( 'icon-angle-down' ); ?>
 	</a>
-	<ul class="nav-dropdown <?php flatsome_dropdown_classes(); ?>">
+	<ul class="nav-dropdown <?php magicpi_dropdown_classes(); ?>">
 		<?php
 		// Polylang elseif WMPL.
 		if ( $languages && function_exists( 'pll_the_languages' ) ) {

@@ -13,6 +13,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $cols = esc_attr( wc_get_loop_prop( 'columns' ) );
 ?>
-<div class="products <?php echo flatsome_product_row_classes( $cols ); ?>">
+<div class="products <?php echo magicpi_product_row_classes( $cols ); ?>">
 <?php
 

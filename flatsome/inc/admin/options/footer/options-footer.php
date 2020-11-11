@@ -3,11 +3,11 @@
  * Header panel.
  */
 
-Flatsome_Option::add_section( 'footer', array(
-	'title' => __( 'Footer', 'flatsome-admin' ),
+Magicpi_Option::add_section( 'footer', array(
+	'title' => __( 'Footer', 'magicpi-admin' ),
 ) );
 
-Flatsome_Option::add_field( '', array(
+Magicpi_Option::add_field( '', array(
 	'type'     => 'custom',
 	'settings' => 'custom_title_custom_footer',
 	'label'    => '',
@@ -15,12 +15,12 @@ Flatsome_Option::add_field( '', array(
 	'default'  => '<div class="options-title-divider"  style="margin-bottom:15px">Custom Footer</div>',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'        => 'select',
 	'settings'    => 'footer_block',
-	'label'       => __( 'Custom Footer Block', 'flatsome-admin' ),
+	'label'       => __( 'Custom Footer Block', 'magicpi-admin' ),
 	'section'     => 'footer',
-	'description' => __( 'You can replace the Footer with a Custom Block that you can edit in the Page Builder.', 'flatsome-admin' ),
+	'description' => __( 'You can replace the Footer with a Custom Block that you can edit in the Page Builder.', 'magicpi-admin' ),
 	'default'     => false,
 	'choices'     => $blocks,
 ) );
@@ -29,7 +29,7 @@ $hide_on_custom_footer_block = array(
 	array( 'setting' => 'footer_block', 'operator' => '==', 'value' => false ),
 );
 
-Flatsome_Option::add_field( '', array(
+Magicpi_Option::add_field( '', array(
 	'type'            => 'custom',
 	'settings'        => 'custom_html_footer_widgets',
 	'label'           => '',
@@ -38,7 +38,7 @@ Flatsome_Option::add_field( '', array(
 	'default'         => '<div class="options-title-divider" style="margin-bottom:15px">Widgets</div><p>Click the button to go to Footer Widgets</p><div><button style="margin-bottom:15px" class="button button-primary" data-to-panel="widgets">Edit Footer Widgets</button></div>',
 ) );
 
-Flatsome_Option::add_field( '', array(
+Magicpi_Option::add_field( '', array(
 	'type'            => 'custom',
 	'settings'        => 'custom_title_footer_1',
 	'label'           => '',
@@ -47,37 +47,37 @@ Flatsome_Option::add_field( '', array(
 	'default'         => '<div class="options-title-divider">Footer 1</div>',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'checkbox',
 	'settings'        => 'footer_1',
 	'active_callback' => $hide_on_custom_footer_block,
 	'transport'       => $transport,
-	'label'           => __( 'Enable Footer 1', 'flatsome-admin' ),
+	'label'           => __( 'Enable Footer 1', 'magicpi-admin' ),
 	'section'         => 'footer',
 	'default'         => 1,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'radio-buttonset',
 	'settings'        => 'footer_1_columns',
-	'label'           => __( 'Columns', 'flatsome-admin' ),
+	'label'           => __( 'Columns', 'magicpi-admin' ),
 	'section'         => 'footer',
 	'active_callback' => $hide_on_custom_footer_block,
 	'default'         => '4',
 	'transport'       => $transport,
 	'choices'         => array(
-		'6' => __( '6', 'flatsome-admin' ),
-		'4' => __( '4', 'flatsome-admin' ),
-		'3' => __( '3', 'flatsome-admin' ),
-		'2' => __( '2', 'flatsome-admin' ),
-		'1' => __( '1', 'flatsome-admin' ),
+		'6' => __( '6', 'magicpi-admin' ),
+		'4' => __( '4', 'magicpi-admin' ),
+		'3' => __( '3', 'magicpi-admin' ),
+		'2' => __( '2', 'magicpi-admin' ),
+		'1' => __( '1', 'magicpi-admin' ),
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'radio-image',
 	'settings'        => 'footer_1_color',
-	'label'           => __( 'Text color', 'flatsome-admin' ),
+	'label'           => __( 'Text color', 'magicpi-admin' ),
 	'active_callback' => $hide_on_custom_footer_block,
 	'section'         => 'footer',
 	'default'         => 'light',
@@ -88,28 +88,28 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'color-alpha',
 	'alpha'           => true,
 	'settings'        => 'footer_1_bg_color',
-	'label'           => __( 'Background Color', 'flatsome-admin' ),
+	'label'           => __( 'Background Color', 'magicpi-admin' ),
 	'section'         => 'footer',
 	'default'         => '#fff',
 	'transport'       => $transport,
 	'active_callback' => $hide_on_custom_footer_block,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'image',
 	'settings'        => 'footer_1_bg_image',
-	'label'           => __( 'Background Image', 'flatsome-admin' ),
+	'label'           => __( 'Background Image', 'magicpi-admin' ),
 	'section'         => 'footer',
 	'default'         => '',
 	'transport'       => $transport,
 	'active_callback' => $hide_on_custom_footer_block,
 ) );
 
-Flatsome_Option::add_field( '', array(
+Magicpi_Option::add_field( '', array(
 	'type'            => 'custom',
 	'settings'        => 'custom_title_footer_2',
 	'label'           => '',
@@ -118,37 +118,37 @@ Flatsome_Option::add_field( '', array(
 	'active_callback' => $hide_on_custom_footer_block,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'checkbox',
 	'settings'        => 'footer_2',
 	'transport'       => $transport,
 	'active_callback' => $hide_on_custom_footer_block,
-	'label'           => __( 'Enable Footer 2', 'flatsome-admin' ),
+	'label'           => __( 'Enable Footer 2', 'magicpi-admin' ),
 	'section'         => 'footer',
 	'default'         => 1,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'radio-buttonset',
 	'settings'        => 'footer_2_columns',
-	'label'           => __( 'Columns', 'flatsome-admin' ),
+	'label'           => __( 'Columns', 'magicpi-admin' ),
 	'section'         => 'footer',
 	'default'         => '4',
 	'transport'       => $transport,
 	'choices'         => array(
-		'6' => __( '6', 'flatsome-admin' ),
-		'4' => __( '4', 'flatsome-admin' ),
-		'3' => __( '3', 'flatsome-admin' ),
-		'2' => __( '2', 'flatsome-admin' ),
-		'1' => __( '1', 'flatsome-admin' ),
+		'6' => __( '6', 'magicpi-admin' ),
+		'4' => __( '4', 'magicpi-admin' ),
+		'3' => __( '3', 'magicpi-admin' ),
+		'2' => __( '2', 'magicpi-admin' ),
+		'1' => __( '1', 'magicpi-admin' ),
 	),
 	'active_callback' => $hide_on_custom_footer_block,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'radio-image',
 	'settings'        => 'footer_2_color',
-	'label'           => __( 'Text color', 'flatsome-admin' ),
+	'label'           => __( 'Text color', 'magicpi-admin' ),
 	'section'         => 'footer',
 	'default'         => 'dark',
 	'transport'       => $transport,
@@ -159,28 +159,28 @@ Flatsome_Option::add_field( 'option', array(
 	'active_callback' => $hide_on_custom_footer_block,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'color-alpha',
 	'alpha'           => true,
 	'settings'        => 'footer_2_bg_color',
-	'label'           => __( 'Background Color', 'flatsome-admin' ),
+	'label'           => __( 'Background Color', 'magicpi-admin' ),
 	'section'         => 'footer',
 	'default'         => '#777',
 	'transport'       => $transport,
 	'active_callback' => $hide_on_custom_footer_block,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'image',
 	'settings'        => 'footer_2_bg_image',
-	'label'           => __( 'Background Image', 'flatsome-admin' ),
+	'label'           => __( 'Background Image', 'magicpi-admin' ),
 	'section'         => 'footer',
 	'default'         => '',
 	'transport'       => $transport,
 	'active_callback' => $hide_on_custom_footer_block,
 ) );
 
-Flatsome_Option::add_field( '', array(
+Magicpi_Option::add_field( '', array(
 	'type'     => 'custom',
 	'settings' => 'custom_title_footer_absolute',
 	'label'    => '',
@@ -188,10 +188,10 @@ Flatsome_Option::add_field( '', array(
 	'default'  => '<div class="options-title-divider">Absolute Footer</div>',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'radio-image',
 	'settings'  => 'footer_bottom_text',
-	'label'     => __( 'Text color', 'flatsome-admin' ),
+	'label'     => __( 'Text color', 'magicpi-admin' ),
 	'section'   => 'footer',
 	'default'   => 'dark',
 	'transport' => $transport,
@@ -201,48 +201,48 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'radio-buttonset',
 	'settings'  => 'footer_bottom_align',
-	'label'     => __( 'Align', 'flatsome-admin' ),
+	'label'     => __( 'Align', 'magicpi-admin' ),
 	'section'   => 'footer',
 	'default'   => '',
 	'transport' => $transport,
 	'choices'   => array(
-		''       => __( 'Left/Right', 'flatsome-admin' ),
-		'center' => __( 'Center', 'flatsome-admin' ),
+		''       => __( 'Left/Right', 'magicpi-admin' ),
+		'center' => __( 'Center', 'magicpi-admin' ),
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'color-alpha',
 	'alpha'     => true,
 	'settings'  => 'footer_bottom_color',
-	'label'     => __( 'Background Color', 'flatsome-admin' ),
+	'label'     => __( 'Background Color', 'magicpi-admin' ),
 	'section'   => 'footer',
 	'default'   => '',
 	'transport' => $transport,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'              => 'textarea',
 	'settings'          => 'footer_left_text',
-	'label'             => __( 'Bottom Text - Primary', 'flatsome-admin' ),
-	'description'       => __( 'Add Any HTML or Shortcode here...', 'flatsome-admin' ),
+	'label'             => __( 'Bottom Text - Primary', 'magicpi-admin' ),
+	'description'       => __( 'Add Any HTML or Shortcode here...', 'magicpi-admin' ),
 	'section'           => 'footer',
 	'transport'         => $transport,
-	'sanitize_callback' => 'flatsome_custom_sanitize',
+	'sanitize_callback' => 'magicpi_custom_sanitize',
 	'default'           => 'Copyright [ux_current_year] &copy; <strong>UX Themes</strong>',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'              => 'textarea',
 	'settings'          => 'footer_right_text',
-	'label'             => __( 'Bottom Text - Secondary', 'flatsome-admin' ),
-	'description'       => __( 'Add Any HTML or Shortcode here...', 'flatsome-admin' ),
+	'label'             => __( 'Bottom Text - Secondary', 'magicpi-admin' ),
+	'description'       => __( 'Add Any HTML or Shortcode here...', 'magicpi-admin' ),
 	'section'           => 'footer',
 	'transport'         => $transport,
-	'sanitize_callback' => 'flatsome_custom_sanitize',
+	'sanitize_callback' => 'magicpi_custom_sanitize',
 	'default'           => '',
 ) );
 
@@ -250,7 +250,7 @@ $hide_off_back_to_top = array(
 	array( 'setting' => 'back_to_top', 'operator' => '==', 'value' => true ),
 );
 
-Flatsome_Option::add_field( '', array(
+Magicpi_Option::add_field( '', array(
 	'type'            => 'custom',
 	'settings'        => 'back_to_top_button_title',
 	'label'           => '',
@@ -258,18 +258,18 @@ Flatsome_Option::add_field( '', array(
 	'default'         => '<div class="options-title-divider">Back To Top Button</div>',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'checkbox',
 	'settings'  => 'back_to_top',
-	'label'     => __( 'Enable Back To Top Button', 'flatsome-admin' ),
+	'label'     => __( 'Enable Back To Top Button', 'magicpi-admin' ),
 	'section'   => 'footer',
 	'default'   => 1,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'radio-image',
 	'settings'        => 'back_to_top_shape',
-	'label'           => __( 'Button Shape', 'flatsome-admin' ),
+	'label'           => __( 'Button Shape', 'magicpi-admin' ),
 	'section'         => 'footer',
 	'transport'       => $transport,
 	'default'         => 'circle',
@@ -280,31 +280,31 @@ Flatsome_Option::add_field( 'option', array(
 	'active_callback' => $hide_off_back_to_top,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'radio-buttonset',
 	'settings'        => 'back_to_top_position',
-	'label'           => __( 'Position', 'flatsome-admin' ),
+	'label'           => __( 'Position', 'magicpi-admin' ),
 	'section'         => 'footer',
 	'transport'       => $transport,
 	'default'         => 'right',
 	'choices'         => array(
-		'left'  => __( 'Left', 'flatsome-admin' ),
-		'right' => __( 'Right', 'flatsome-admin' ),
+		'left'  => __( 'Left', 'magicpi-admin' ),
+		'right' => __( 'Right', 'magicpi-admin' ),
 	),
 	'active_callback' => $hide_off_back_to_top,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'checkbox',
 	'settings'        => 'back_to_top_mobile',
-	'label'           => __( 'Show on Mobile', 'flatsome-admin' ),
+	'label'           => __( 'Show on Mobile', 'magicpi-admin' ),
 	'section'         => 'footer',
 	'transport'       => $transport,
 	'default'         => 0,
 	'active_callback' => $hide_off_back_to_top,
 ) );
 
-Flatsome_Option::add_field( '', array(
+Magicpi_Option::add_field( '', array(
 	'type'            => 'custom',
 	'settings'        => 'custom_title_footer_html',
 	'label'           => '',
@@ -313,31 +313,31 @@ Flatsome_Option::add_field( '', array(
 	'default'         => '<div class="options-title-divider">Footer HTML</div>',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'              => 'textarea',
 	'settings'          => 'html_before_footer',
-	'label'             => __( 'HTML before footer', 'flatsome-admin' ),
-	'description'       => __( 'Add Any HTML or Shortcode here...', 'flatsome-admin' ),
+	'label'             => __( 'HTML before footer', 'magicpi-admin' ),
+	'description'       => __( 'Add Any HTML or Shortcode here...', 'magicpi-admin' ),
 	'section'           => 'footer',
 	'transport'         => $transport,
 	'active_callback'   => $hide_on_custom_footer_block,
-	'sanitize_callback' => 'flatsome_custom_sanitize',
+	'sanitize_callback' => 'magicpi_custom_sanitize',
 	'default'           => '',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'              => 'textarea',
 	'settings'          => 'html_after_footer',
-	'label'             => __( 'HTML after footer', 'flatsome-admin' ),
-	'description'       => __( 'Add Any HTML or Shortcode here...', 'flatsome-admin' ),
+	'label'             => __( 'HTML after footer', 'magicpi-admin' ),
+	'description'       => __( 'Add Any HTML or Shortcode here...', 'magicpi-admin' ),
 	'section'           => 'footer',
 	'transport'         => $transport,
 	'active_callback'   => $hide_on_custom_footer_block,
-	'sanitize_callback' => 'flatsome_custom_sanitize',
+	'sanitize_callback' => 'magicpi_custom_sanitize',
 	'default'           => '',
 ) );
 
-function flatsome_refresh_footer_partials( WP_Customize_Manager $wp_customize ) {
+function magicpi_refresh_footer_partials( WP_Customize_Manager $wp_customize ) {
 
 	// Abort if selective refresh is not available.
 	if ( ! isset( $wp_customize->selective_refresh ) ) {
@@ -365,7 +365,7 @@ function flatsome_refresh_footer_partials( WP_Customize_Manager $wp_customize ) 
 		'selector'        => '.copyright-footer',
 		'settings'        => array( 'footer_left_text' ),
 		'render_callback' => function () {
-			return do_shortcode( flatsome_option( 'footer_left_text' ) );
+			return do_shortcode( magicpi_option( 'footer_left_text' ) );
 		},
 	) );
 
@@ -373,7 +373,7 @@ function flatsome_refresh_footer_partials( WP_Customize_Manager $wp_customize ) 
 		'selector'        => '.footer-secondary .footer-text',
 		'settings'        => array( 'footer_right_text' ),
 		'render_callback' => function () {
-			return do_shortcode( flatsome_option( 'footer_right_text' ) );
+			return do_shortcode( magicpi_option( 'footer_right_text' ) );
 		},
 	) );
 
@@ -392,10 +392,10 @@ function flatsome_refresh_footer_partials( WP_Customize_Manager $wp_customize ) 
 		'container_inclusive' => true,
 		'settings'            => array( 'footer_1_bg_image', 'footer_2_bg_image' ),
 		'render_callback'     => function () {
-			flatsome_custom_css();
+			magicpi_custom_css();
 		},
 	) );
 
 }
 
-add_action( 'customize_register', 'flatsome_refresh_footer_partials' );
+add_action( 'customize_register', 'magicpi_refresh_footer_partials' );

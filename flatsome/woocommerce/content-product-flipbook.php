@@ -9,7 +9,7 @@
  * @version     1.6.4
  */
 
-global $product, $woocommerce_loop, $flatsome_opt;
+global $product, $woocommerce_loop, $magicpi_opt;
 
 /* PRODUCT QUICK VIEW HOOKS */
 add_action( 'woocommerce_single_product_flipbook_summary', 'woocommerce_template_single_price', 10 );

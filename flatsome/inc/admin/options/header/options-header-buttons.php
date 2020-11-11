@@ -1,127 +1,127 @@
 <?php
 
-Flatsome_Option::add_section( 'header_buttons',
+Magicpi_Option::add_section( 'header_buttons',
 	array(
-		'title' => __( 'Buttons', 'flatsome-admin' ),
+		'title' => __( 'Buttons', 'magicpi-admin' ),
 		'panel' => 'header',
 	)
 );
 
-Flatsome_Option::add_field( '',
+Magicpi_Option::add_field( '',
 	array(
 		'type'     => 'custom',
 		'settings' => 'custom_title_button_1',
-		'label'    => __( '', 'flatsome-admin' ),
+		'label'    => __( '', 'magicpi-admin' ),
 		'section'  => 'header_buttons',
 		'default'  => '<div class="options-title-divider">Button 1</div>',
 	)
 );
 
-Flatsome_Option::add_field( 'option',
+Magicpi_Option::add_field( 'option',
 	array(
 		'type'      => 'text',
 		'settings'  => 'header_button_1',
 		'transport' => $transport,
 		'default'   => 'Button 1',
-		'label'     => __( 'Text', 'flatsome-admin' ),
+		'label'     => __( 'Text', 'magicpi-admin' ),
 		'section'   => 'header_buttons',
 	)
 );
 
-Flatsome_Option::add_field( 'option',
+Magicpi_Option::add_field( 'option',
 	array(
 		'type'        => 'text',
 		'settings'    => 'header_button_1_link',
 		'transport'   => $transport,
 		'default'     => '',
-		'label'       => __( 'Link', 'flatsome-admin' ),
+		'label'       => __( 'Link', 'magicpi-admin' ),
 		'section'     => 'header_buttons',
 		'description' => $smart_links,
 	)
 );
 
-Flatsome_Option::add_field( 'option',
+Magicpi_Option::add_field( 'option',
 	array(
 		'type'      => 'select',
 		'settings'  => 'header_button_1_link_target',
 		'transport' => $transport,
-		'label'     => __( 'Target', 'flatsome-admin' ),
+		'label'     => __( 'Target', 'magicpi-admin' ),
 		'section'   => 'header_buttons',
 		'default'   => '_self',
 		'choices'   => array(
-			'_self'  => __( 'Same window', 'flatsome-admin' ),
-			'_blank' => __( 'New window', 'flatsome-admin' ),
+			'_self'  => __( 'Same window', 'magicpi-admin' ),
+			'_blank' => __( 'New window', 'magicpi-admin' ),
 		),
 	)
 );
 
-Flatsome_Option::add_field( 'option',
+Magicpi_Option::add_field( 'option',
 	array(
 		'type'        => 'text',
 		'settings'    => 'header_button_1_link_rel',
 		'transport'   => $transport,
 		'default'     => '',
-		'label'       => __( 'Rel', 'flatsome-admin' ),
+		'label'       => __( 'Rel', 'magicpi-admin' ),
 		'section'     => 'header_buttons',
 	)
 );
 
-Flatsome_Option::add_field( 'option',
+Magicpi_Option::add_field( 'option',
 	array(
 		'type'      => 'text',
 		'settings'  => 'header_button_1_radius',
 		'transport' => $transport,
 		'default'   => '99px',
-		'label'     => __( 'Radius', 'flatsome-admin' ),
+		'label'     => __( 'Radius', 'magicpi-admin' ),
 		'section'   => 'header_buttons',
 	)
 );
 
-Flatsome_Option::add_field( 'option',
+Magicpi_Option::add_field( 'option',
 	array(
 		'type'      => 'radio-buttonset',
 		'settings'  => 'header_button_1_color',
 		'transport' => $transport,
-		'label'     => __( 'Color', 'flatsome-admin' ),
+		'label'     => __( 'Color', 'magicpi-admin' ),
 		'section'   => 'header_buttons',
 		'default'   => 'primary',
 		'choices'   => array(
-			'plain'     => __( 'Plain', 'flatsome-admin' ),
-			'primary'   => __( 'Primary', 'flatsome-admin' ),
-			'secondary' => __( 'Secondary', 'flatsome-admin' ),
-			'success'   => __( 'Success', 'flatsome-admin' ),
-			'alert'     => __( 'Alert', 'flatsome-admin' ),
+			'plain'     => __( 'Plain', 'magicpi-admin' ),
+			'primary'   => __( 'Primary', 'magicpi-admin' ),
+			'secondary' => __( 'Secondary', 'magicpi-admin' ),
+			'success'   => __( 'Success', 'magicpi-admin' ),
+			'alert'     => __( 'Alert', 'magicpi-admin' ),
 		),
 	)
 );
 
-Flatsome_Option::add_field( 'option',
+Magicpi_Option::add_field( 'option',
 	array(
 		'type'      => 'radio-buttonset',
 		'settings'  => 'header_button_1_style',
 		'transport' => $transport,
-		'label'     => __( 'Style', 'flatsome-admin' ),
+		'label'     => __( 'Style', 'magicpi-admin' ),
 		'section'   => 'header_buttons',
 		'choices'   => $button_styles,
 	)
 );
 
-Flatsome_Option::add_field( 'option',
+Magicpi_Option::add_field( 'option',
 	array(
 		'type'      => 'radio-buttonset',
 		'settings'  => 'header_button_1_size',
 		'transport' => $transport,
-		'label'     => __( 'Size', 'flatsome-admin' ),
+		'label'     => __( 'Size', 'magicpi-admin' ),
 		'section'   => 'header_buttons',
 		'choices'   => $nav_sizes,
 	)
 );
 
-Flatsome_Option::add_field( 'option',
+Magicpi_Option::add_field( 'option',
 	array(
 		'type'      => 'slider',
 		'settings'  => 'header_button_1_depth',
-		'label'     => __( 'Depth', 'flatsome-admin' ),
+		'label'     => __( 'Depth', 'magicpi-admin' ),
 		'section'   => 'header_buttons',
 		'default'   => 0,
 		'choices'   => array(
@@ -133,11 +133,11 @@ Flatsome_Option::add_field( 'option',
 	)
 );
 
-Flatsome_Option::add_field( 'option',
+Magicpi_Option::add_field( 'option',
 	array(
 		'type'      => 'slider',
 		'settings'  => 'header_button_1_depth_hover',
-		'label'     => __( 'Depth:hover', 'flatsome-admin' ),
+		'label'     => __( 'Depth:hover', 'magicpi-admin' ),
 		'section'   => 'header_buttons',
 		'default'   => 0,
 		'choices'   => array(
@@ -149,122 +149,122 @@ Flatsome_Option::add_field( 'option',
 	)
 );
 
-Flatsome_Option::add_field( '',
+Magicpi_Option::add_field( '',
 	array(
 		'type'     => 'custom',
 		'settings' => 'custom_title_button_2',
-		'label'    => __( '', 'flatsome-admin' ),
+		'label'    => __( '', 'magicpi-admin' ),
 		'section'  => 'header_buttons',
 		'default'  => '<div class="options-title-divider">Button 2</div>',
 	)
 );
 
-Flatsome_Option::add_field( 'option',
+Magicpi_Option::add_field( 'option',
 	array(
 		'type'      => 'text',
 		'settings'  => 'header_button_2',
 		'transport' => $transport,
 		'default'   => 'Button 2',
-		'label'     => __( 'Text', 'flatsome-admin' ),
+		'label'     => __( 'Text', 'magicpi-admin' ),
 		'section'   => 'header_buttons',
 	)
 );
 
-Flatsome_Option::add_field( 'option',
+Magicpi_Option::add_field( 'option',
 	array(
 		'type'        => 'text',
 		'settings'    => 'header_button_2_link',
 		'transport'   => $transport,
 		'default'     => '',
-		'label'       => __( 'Link', 'flatsome-admin' ),
+		'label'       => __( 'Link', 'magicpi-admin' ),
 		'section'     => 'header_buttons',
 		'description' => $smart_links,
 	)
 );
 
-Flatsome_Option::add_field( 'option',
+Magicpi_Option::add_field( 'option',
 	array(
 		'type'      => 'select',
 		'settings'  => 'header_button_2_link_target',
 		'transport' => $transport,
-		'label'     => __( 'Target', 'flatsome-admin' ),
+		'label'     => __( 'Target', 'magicpi-admin' ),
 		'section'   => 'header_buttons',
 		'default'   => '_self',
 		'choices'   => array(
-			'_self'  => __( 'Same window', 'flatsome-admin' ),
-			'_blank' => __( 'New window', 'flatsome-admin' ),
+			'_self'  => __( 'Same window', 'magicpi-admin' ),
+			'_blank' => __( 'New window', 'magicpi-admin' ),
 		),
 	)
 );
 
-Flatsome_Option::add_field( 'option',
+Magicpi_Option::add_field( 'option',
 	array(
 		'type'        => 'text',
 		'settings'    => 'header_button_2_link_rel',
 		'transport'   => $transport,
 		'default'     => '',
-		'label'       => __( 'Rel', 'flatsome-admin' ),
+		'label'       => __( 'Rel', 'magicpi-admin' ),
 		'section'     => 'header_buttons',
 	)
 );
 
-Flatsome_Option::add_field( 'option',
+Magicpi_Option::add_field( 'option',
 	array(
 		'type'      => 'text',
 		'settings'  => 'header_button_2_radius',
 		'transport' => $transport,
 		'default'   => '99px',
-		'label'     => __( 'Radius', 'flatsome-admin' ),
+		'label'     => __( 'Radius', 'magicpi-admin' ),
 		'section'   => 'header_buttons',
 	)
 );
 
-Flatsome_Option::add_field( 'option',
+Magicpi_Option::add_field( 'option',
 	array(
 		'type'      => 'radio-buttonset',
 		'settings'  => 'header_button_2_color',
 		'transport' => $transport,
-		'label'     => __( 'Color', 'flatsome-admin' ),
+		'label'     => __( 'Color', 'magicpi-admin' ),
 		'section'   => 'header_buttons',
 		'default'   => 'secondary',
 		'choices'   => array(
-			'plain'     => __( 'Plain', 'flatsome-admin' ),
-			'primary'   => __( 'Primary', 'flatsome-admin' ),
-			'secondary' => __( 'Secondary', 'flatsome-admin' ),
-			'success'   => __( 'Success', 'flatsome-admin' ),
-			'alert'     => __( 'Alert', 'flatsome-admin' ),
+			'plain'     => __( 'Plain', 'magicpi-admin' ),
+			'primary'   => __( 'Primary', 'magicpi-admin' ),
+			'secondary' => __( 'Secondary', 'magicpi-admin' ),
+			'success'   => __( 'Success', 'magicpi-admin' ),
+			'alert'     => __( 'Alert', 'magicpi-admin' ),
 		),
 	)
 );
 
-Flatsome_Option::add_field( 'option',
+Magicpi_Option::add_field( 'option',
 	array(
 		'type'      => 'radio-buttonset',
 		'settings'  => 'header_button_2_style',
 		'transport' => $transport,
-		'label'     => __( 'Style', 'flatsome-admin' ),
+		'label'     => __( 'Style', 'magicpi-admin' ),
 		'section'   => 'header_buttons',
 		'default'   => 'outline',
 		'choices'   => $button_styles,
 	)
 );
 
-Flatsome_Option::add_field( 'option',
+Magicpi_Option::add_field( 'option',
 	array(
 		'type'      => 'radio-buttonset',
 		'settings'  => 'header_button_2_size',
 		'transport' => $transport,
-		'label'     => __( 'Size', 'flatsome-admin' ),
+		'label'     => __( 'Size', 'magicpi-admin' ),
 		'section'   => 'header_buttons',
 		'choices'   => $nav_sizes,
 	)
 );
 
-Flatsome_Option::add_field( 'option',
+Magicpi_Option::add_field( 'option',
 	array(
 		'type'      => 'slider',
 		'settings'  => 'header_button_2_depth',
-		'label'     => __( 'Depth', 'flatsome-admin' ),
+		'label'     => __( 'Depth', 'magicpi-admin' ),
 		'section'   => 'header_buttons',
 		'default'   => 0,
 		'choices'   => array(
@@ -276,11 +276,11 @@ Flatsome_Option::add_field( 'option',
 	)
 );
 
-Flatsome_Option::add_field( 'option',
+Magicpi_Option::add_field( 'option',
 	array(
 		'type'      => 'slider',
 		'settings'  => 'header_button_2_depth_hover',
-		'label'     => __( 'Depth:hover', 'flatsome-admin' ),
+		'label'     => __( 'Depth:hover', 'magicpi-admin' ),
 		'section'   => 'header_buttons',
 		'default'   => 0,
 		'choices'   => array(
@@ -292,7 +292,7 @@ Flatsome_Option::add_field( 'option',
 	)
 );
 
-function flatsome_refresh_header_buttons_partials( WP_Customize_Manager $wp_customize ) {
+function magicpi_refresh_header_buttons_partials( WP_Customize_Manager $wp_customize ) {
 	// Abort if selective refresh is not available.
 	if ( ! isset( $wp_customize->selective_refresh ) ) {
 		return;
@@ -340,4 +340,4 @@ function flatsome_refresh_header_buttons_partials( WP_Customize_Manager $wp_cust
 
 }
 
-add_action( 'customize_register', 'flatsome_refresh_header_buttons_partials' );
+add_action( 'customize_register', 'magicpi_refresh_header_buttons_partials' );

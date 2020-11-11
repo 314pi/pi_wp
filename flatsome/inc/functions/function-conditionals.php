@@ -1,9 +1,9 @@
 <?php
 /**
- * Flatsome Conditional Functions
+ * Magicpi Conditional Functions
  *
  * @author   UX Themes
- * @package  Flatsome/Functions
+ * @package  Magicpi/Functions
  */
 
 if ( ! function_exists( 'is_nextend_facebook_login' ) ) {
@@ -58,7 +58,7 @@ if ( ! function_exists( 'is_woocommerce_activated' ) ) {
 
 if ( ! function_exists( 'is_portfolio_activated' ) ) {
 	/**
-	 * Returns "1" if Flatsome Portfolio option is enabled
+	 * Returns "1" if Magicpi Portfolio option is enabled
 	 *
 	 * @return string
 	 */

@@ -14,7 +14,7 @@ jQuery(document).ready(function ($) {
 
          var append = $(this).find('.live-search-results');
          var search_categories = $(this).find('.search_categories');
-         var serviceUrl = flatsomeVars.ajaxurl + '?action=flatsome_ajax_search_products';
+         var serviceUrl = magicpiVars.ajaxurl + '?action=magicpi_ajax_search_products';
          var product_cat = '';
 
         if (search_categories.length && search_categories.val() !== '') {
@@ -59,11 +59,11 @@ jQuery(document).ready(function ($) {
 
                     if( search_categories.val() != '' ) {
                         searchForm.setOptions({
-                            serviceUrl:  flatsomeVars.ajaxurl + '?action=flatsome_ajax_search_products&product_cat=' + search_categories.val()
+                            serviceUrl:  magicpiVars.ajaxurl + '?action=magicpi_ajax_search_products&product_cat=' + search_categories.val()
                         });
                     } else{
                         searchForm.setOptions({
-                            serviceUrl:  flatsomeVars.ajaxurl + '?action=flatsome_ajax_search_products'
+                            serviceUrl:  magicpiVars.ajaxurl + '?action=magicpi_ajax_search_products'
                         });
                     }
 

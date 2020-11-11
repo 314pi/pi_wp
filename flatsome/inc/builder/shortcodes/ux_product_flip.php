@@ -52,7 +52,7 @@ add_ux_builder_shortcode( 'ux_product_flip', array(
     'name' => 'Flip Book',
     'category' => __( 'Shop' ),
     'priority' => 4,
-    'thumbnail' =>  flatsome_ux_builder_thumbnail( 'product_flipbook' ),
+    'thumbnail' =>  magicpi_ux_builder_thumbnail( 'product_flipbook' ),
     'wrap' => false,
    'presets' => array(
         array(

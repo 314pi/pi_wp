@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Flatsome v2.0\n"
+"Project-Id-Version: Magicpi v2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: Wed Oct 07 2015 20:01:56 GMT+0330 (Iran Standard Time)\n"
@@ -405,15 +405,15 @@ msgstr "Shortcode\n"
 #: ../inc/admin/welcome-screen/welcome-screen.php:47
 #, php-format
 msgid ""
-"Thanks for choosing Flatsome! You can read hints and tips on how get the "
+"Thanks for choosing Magicpi! You can read hints and tips on how get the "
 "most out of your new theme on the %swelcome screen%s."
 msgstr ""
-"با تشکر از انتخاب پوسته Flatsome.شما می توانید تکات و راهنمایی های پوسته "
+"با تشکر از انتخاب پوسته Magicpi.شما می توانید تکات و راهنمایی های پوسته "
 "جدید خود را اینتجا ببیدید %swelcome screen%s"
 
 #: ../inc/admin/welcome-screen/welcome-screen.php:48
-msgid "Get started with flatsome"
-msgstr "شروع کار با پوسته Flatsome"
+msgid "Get started with magicpi"
+msgstr "شروع کار با پوسته Magicpi"
 
 #: ../inc/admin/welcome-screen/sections/intro.php:14
 msgid ""
@@ -730,12 +730,12 @@ msgid "Getting Started"
 msgstr "شروع"
 
 #: ../inc/admin/welcome-screen/sections/tabs.php:3
-msgid "Customize Flatsome"
-msgstr "سفارشی سازی Flatsome"
+msgid "Customize Magicpi"
+msgstr "سفارشی سازی Magicpi"
 
 #: ../inc/admin/welcome-screen/sections/tabs.php:4
-msgid "Flatsome Plugins"
-msgstr "افزونه های Flatsome"
+msgid "Magicpi Plugins"
+msgstr "افزونه های Magicpi"
 
 #: ../inc/admin/welcome-screen/sections/getting-started.php:15
 msgid "Using Storefront"
@@ -916,8 +916,8 @@ msgid "A widget that displays recent posts "
 msgstr "A widget that displays recent posts \n"
 
 #: ../inc/widgets/recent-posts.php:22
-msgid "Flatsome Recent Posts"
-msgstr "Flatsome Recent Posts\n"
+msgid "Magicpi Recent Posts"
+msgstr "Magicpi Recent Posts\n"
 
 #: ../inc/widgets/recent-posts.php:43
 msgid "Recent Posts"
@@ -1423,7 +1423,7 @@ msgstr "همه نصب ها به پایان رسیده."
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "در حال نصب افزونه %1$s (%2$d/%3$d)\n"
 
-#: ../inc/extensions/ux-builder/flatsome-builder.php:28
+#: ../inc/extensions/ux-builder/magicpi-builder.php:28
 msgid "Page Builder"
 msgstr "صفحه ساز"
 
@@ -1622,12 +1622,12 @@ msgid "Sort by price: high to low"
 msgstr "مرتب سازی بر اساس هزینه: زیاد به کم"
 
 #. Name of the theme
-msgid "Flatsome"
-msgstr "Flatsome"
+msgid "Magicpi"
+msgstr "Magicpi"
 
 #. Theme URI of the theme
-msgid "http://flatsome.uxthemes.com/"
-msgstr "http://flatsome.uxthemes.com/\n"
+msgid "http://magicpi.uxthemes.com/"
+msgstr "http://magicpi.uxthemes.com/\n"
 
 #. Description of the theme
 msgid "Flat Responsive WooCommerce theme"

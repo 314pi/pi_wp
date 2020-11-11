@@ -38,12 +38,12 @@ $rtl = 'false';
 if(is_rtl()) $rtl = 'true';
 
 ?>
-<?php do_action( 'flatsome_before_product_images' ); ?>
+<?php do_action( 'magicpi_before_product_images' ); ?>
 
 <div class="product-images slider-wrapper relative mb-half has-hover <?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?> " data-columns="<?php echo esc_attr( $columns ); ?>">
 	<div class="absolute left right">
 		<div class="container relative">
-			<?php do_action( 'flatsome_sale_flash' ); ?>
+			<?php do_action( 'magicpi_sale_flash' ); ?>
 		</div>
 	</div>
 
@@ -64,7 +64,7 @@ if(is_rtl()) $rtl = 'true';
 		<?php
 
     if ( $product->get_image_id() ) {
-      $html  = flatsome_wc_get_gallery_image_html( $post_thumbnail_id, true, 'full' );
+      $html  = magicpi_wc_get_gallery_image_html( $post_thumbnail_id, true, 'full' );
     } else {
       $html  = '<div class="woocommerce-product-gallery__image--placeholder">';
       $html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ), esc_html__( 'Awaiting product image', 'woocommerce' ) );
@@ -82,11 +82,11 @@ if(is_rtl()) $rtl = 'true';
 	<div class="absolute bottom left right">
 		<div class="container relative image-tools">
 			<div class="image-tools absolute bottom right z-3">
-				<?php do_action( 'flatsome_product_image_tools_bottom' ); ?>
-				<?php do_action( 'flatsome_product_image_tools_top' ); ?>
+				<?php do_action( 'magicpi_product_image_tools_bottom' ); ?>
+				<?php do_action( 'magicpi_product_image_tools_top' ); ?>
 			</div>
 		</div>
 	</div>
 
 </div>
-<?php do_action( 'flatsome_after_product_images' ); ?>
+<?php do_action( 'magicpi_after_product_images' ); ?>

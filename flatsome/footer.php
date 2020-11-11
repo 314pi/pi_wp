@@ -2,17 +2,17 @@
 /**
  * The template for displaying the footer.
  *
- * @package flatsome
+ * @package magicpi
  */
 
-global $flatsome_opt;
+global $magicpi_opt;
 ?>
 
 </main>
 
 <footer id="footer" class="footer-wrapper">
 
-	<?php do_action('flatsome_footer'); ?>
+	<?php do_action('magicpi_footer'); ?>
 
 </footer>
 

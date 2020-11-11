@@ -67,9 +67,9 @@ function ux_gallery($atts) {
         if($style !== 'shade') $style = 'overlay';
         $columns = null;
         $current_grid = 0;
-        $grid = flatsome_get_grid($grid);
+        $grid = magicpi_get_grid($grid);
         $grid_total = count($grid);
-        flatsome_get_grid_height($grid_height, $_id);
+        magicpi_get_grid_height($grid_height, $_id);
       }
       if($type == 'slider-full'){
         $columns = null;
@@ -111,7 +111,7 @@ function ux_gallery($atts) {
             array( 'attribute' => 'padding', 'value' => $text_padding ),
       );
 
-	if ( $is_multi_gallery = get_theme_mod( 'flatsome_lightbox_multi_gallery' ) ) {
+	if ( $is_multi_gallery = get_theme_mod( 'magicpi_lightbox_multi_gallery' ) ) {
 		$classes[] = 'lightbox-multi-gallery';
 	}
 
@@ -147,7 +147,7 @@ function ux_gallery($atts) {
       }
 
 
-      get_flatsome_repeater_start($repater);
+      get_magicpi_repeater_start($repater);
 
       foreach ( $attachments as $id => $attachment ) {
 
@@ -221,7 +221,7 @@ function ux_gallery($atts) {
          <?php
     } // Loop
 
-    get_flatsome_repeater_end($repater);
+    get_magicpi_repeater_end($repater);
 
     $content = ob_get_contents();
     ob_end_clean();

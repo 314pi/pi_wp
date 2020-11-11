@@ -1,6 +1,6 @@
 <?php
 // [ux_banner]
-function flatsome_ux_banner( $atts, $content = null ){
+function magicpi_ux_banner( $atts, $content = null ){
 
 	extract( shortcode_atts( array(
 		'_id'                => 'banner-' . rand(),
@@ -87,7 +87,7 @@ function flatsome_ux_banner( $atts, $content = null ){
    if($sticky) $classes[] = 'sticky-section';
 
    /* Banner Effects */
-   if($effect) wp_enqueue_style( 'flatsome-effects');
+   if($effect) wp_enqueue_style( 'magicpi-effects');
 
     /* Old bg fallback */
     $atts['bg_color'] = $bg_color;
@@ -100,7 +100,7 @@ function flatsome_ux_banner( $atts, $content = null ){
     if ( $video_sound == '0' ) $video_sound = 'false';
 
     if($bg_overlay && strpos($bg_overlay,'#') !== false){
-      $atts['bg_overlay'] = flatsome_hex2rgba($bg_overlay,'0.15');
+      $atts['bg_overlay'] = magicpi_hex2rgba($bg_overlay,'0.15');
     }
 
    /* Full height banner */
@@ -118,7 +118,7 @@ function flatsome_ux_banner( $atts, $content = null ){
    $start_link = "";
    $end_link = "";
 
-   if($link) {$start_link = '<a class="fill" href="'.$link.'"' . flatsome_parse_target_rel( $link_atts ) . '>'; $end_link = '</a>';};
+   if($link) {$start_link = '<a class="fill" href="'.$link.'"' . magicpi_parse_target_rel( $link_atts ) . '>'; $end_link = '</a>';};
 
    /* Parallax  */
    if($parallax){
@@ -147,8 +147,8 @@ function flatsome_ux_banner( $atts, $content = null ){
             <?php echo $start_link; ?><div class="fill banner-link"></div><?php echo $end_link; ?>
             <?php
             // Get Layers
-            if (!get_theme_mod('flatsome_fallback', 1) || (has_shortcode( $content, 'text_box' ) || has_shortcode( $content, 'ux_hotspot' ) || has_shortcode( $content, 'ux_image' ))) {
-              echo flatsome_contentfix($content);
+            if (!get_theme_mod('magicpi_fallback', 1) || (has_shortcode( $content, 'text_box' ) || has_shortcode( $content, 'ux_hotspot' ) || has_shortcode( $content, 'ux_image' ))) {
+              echo magicpi_contentfix($content);
             } else {
               $x = '50'; $y = '50';
               if($text_pos !== 'center'){
@@ -163,7 +163,7 @@ function flatsome_ux_banner( $atts, $content = null ){
               if($text_bg && !$padding) $padding = '30px 30px 30px 30px';
               $depth = '';
               if($text_bg) $depth = '1';
-              echo flatsome_contentfix('[text_box text_align="'.$text_align.'" parallax="'.$parallax_text.'" animate="'.$animation.'" depth="'.$depth.'" padding="'.$padding.'" bg="'.$text_bg.'" text_color="'.$text_color.'" width="'.intval($text_width).'" width__sm="60%" position_y="'.$y.'" position_x="'.$x.'"]'.$content.'[/text_box]');
+              echo magicpi_contentfix('[text_box text_align="'.$text_align.'" parallax="'.$parallax_text.'" animate="'.$animation.'" depth="'.$depth.'" padding="'.$padding.'" bg="'.$text_bg.'" text_color="'.$text_color.'" width="'.intval($text_width).'" width__sm="60%" position_y="'.$y.'" position_x="'.$x.'"]'.$content.'[/text_box]');
             } ?>
         </div>
       </div>
@@ -171,7 +171,7 @@ function flatsome_ux_banner( $atts, $content = null ){
       <?php
        // Add invisible image if height is not set.
       if(!$height) { ?>
-        <div class="height-fix is-invisible"><?php if($bg) echo flatsome_get_image($bg, $bg_size, $alt, true); ?></div>
+        <div class="height-fix is-invisible"><?php if($bg) echo magicpi_get_image($bg, $bg_size, $alt, true); ?></div>
       <?php } ?>
       <?php
         // Get custom CSS
@@ -207,4 +207,4 @@ function flatsome_ux_banner( $atts, $content = null ){
   ob_end_clean();
   return $content;
 }
-add_shortcode('ux_banner', 'flatsome_ux_banner');
+add_shortcode('ux_banner', 'magicpi_ux_banner');

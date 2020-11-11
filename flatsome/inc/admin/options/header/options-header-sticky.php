@@ -2,18 +2,18 @@
 /**
  * Header Sticky
  *
- * @package Flatsome/Admin/Options/Header
+ * @package Magicpi/Admin/Options/Header
  */
 
-Flatsome_Option::add_section( 'header_sticky', array(
-	'title' => __( 'Sticky Header', 'flatsome-admin' ),
+Magicpi_Option::add_section( 'header_sticky', array(
+	'title' => __( 'Sticky Header', 'magicpi-admin' ),
 	'panel' => 'header',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'slider',
 	'settings'  => 'header_height_sticky',
-	'label'     => __( 'Header Height on Sticky', 'flatsome-admin' ),
+	'label'     => __( 'Header Height on Sticky', 'magicpi-admin' ),
 	'section'   => 'header_sticky',
 	'transport' => $transport,
 	'default'   => 70,
@@ -24,10 +24,10 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'slider',
 	'settings'  => 'sticky_logo_padding',
-	'label'     => __( 'Sticky Logo Padding', 'flatsome-admin' ),
+	'label'     => __( 'Sticky Logo Padding', 'magicpi-admin' ),
 	'section'   => 'header_sticky',
 	'default'   => 0,
 	'choices'   => array(
@@ -38,10 +38,10 @@ Flatsome_Option::add_field( 'option', array(
 	'transport' => 'postMessage',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'slider',
 	'settings'  => 'nav_height_sticky',
-	'label'     => __( 'Nav Height on Sticky', 'flatsome-admin' ),
+	'label'     => __( 'Nav Height on Sticky', 'magicpi-admin' ),
 	'section'   => 'header_sticky',
 	'default'   => '',
 	'choices'   => array(
@@ -52,55 +52,55 @@ Flatsome_Option::add_field( 'option', array(
 	'transport' => 'postMessage',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'     => 'checkbox',
 	'settings' => 'topbar_sticky',
-	'label'    => __( 'Top Bar - Sticky on Scroll', 'flatsome-admin' ),
+	'label'    => __( 'Top Bar - Sticky on Scroll', 'magicpi-admin' ),
 	'section'  => 'header_sticky',
 	'default'  => 0,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'     => 'checkbox',
 	'settings' => 'header_sticky',
-	'label'    => __( 'Header Main - Sticky on Scroll', 'flatsome-admin' ),
+	'label'    => __( 'Header Main - Sticky on Scroll', 'magicpi-admin' ),
 	'section'  => 'header_sticky',
 	'default'  => 1,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'     => 'checkbox',
 	'settings' => 'bottombar_sticky',
-	'label'    => __( 'Header Bottom - Sticky on Scroll', 'flatsome-admin' ),
+	'label'    => __( 'Header Bottom - Sticky on Scroll', 'magicpi-admin' ),
 	'section'  => 'header_sticky',
 	'default'  => 1,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'     => 'select',
 	'settings' => 'sticky_style',
-	'label'    => __( 'Sticky Style', 'flatsome-admin' ),
+	'label'    => __( 'Sticky Style', 'magicpi-admin' ),
 	'section'  => 'header_sticky',
 	'default'  => 'jump',
 	'choices'  => array(
-		'jump'   => __( 'Jump Down', 'flatsome-admin' ),
-		'fade'   => __( 'Fade', 'flatsome-admin' ),
-		'shrink' => __( 'Shrink', 'flatsome-admin' ),
+		'jump'   => __( 'Jump Down', 'magicpi-admin' ),
+		'fade'   => __( 'Fade', 'magicpi-admin' ),
+		'shrink' => __( 'Shrink', 'magicpi-admin' ),
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'     => 'checkbox',
 	'settings' => 'sticky_hide_on_scroll',
-	'label'    => __( 'Hide sticky when scrolling down', 'flatsome-admin' ),
+	'label'    => __( 'Hide sticky when scrolling down', 'magicpi-admin' ),
 	'section'  => 'header_sticky',
 	'default'  => 0,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'      => 'image',
 	'settings'  => 'site_logo_sticky',
-	'label'     => __( 'Custom Sticky Logo', 'flatsome-admin' ),
+	'label'     => __( 'Custom Sticky Logo', 'magicpi-admin' ),
 	'section'   => 'header_sticky',
 	'transport' => $transport,
 	'default'   => '',

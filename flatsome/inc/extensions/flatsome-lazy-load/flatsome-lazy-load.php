@@ -17,9 +17,9 @@ class FL_LazyLoad_Images {
     add_filter( 'the_content', array( __CLASS__, 'add_image_placeholders' ), 9999 );
     add_filter( 'post_thumbnail_html', array( __CLASS__, 'add_image_placeholders' ), 11 );
     add_filter( 'get_avatar', array( __CLASS__, 'add_image_placeholders' ), 11 );
-    add_filter( 'flatsome_woocommerce_get_alt_product_thumbnail', array( __CLASS__, 'add_image_placeholders' ), 11 );
-    add_filter( 'flatsome_lazy_load_images', array( __CLASS__, 'add_image_placeholders' ), 9999 );
-    add_filter( 'flatsome_woocommerce_single_product_extra_images', array( __CLASS__, 'add_image_placeholders' ), 9999 );
+    add_filter( 'magicpi_woocommerce_get_alt_product_thumbnail', array( __CLASS__, 'add_image_placeholders' ), 11 );
+    add_filter( 'magicpi_lazy_load_images', array( __CLASS__, 'add_image_placeholders' ), 9999 );
+    add_filter( 'magicpi_woocommerce_single_product_extra_images', array( __CLASS__, 'add_image_placeholders' ), 9999 );
     add_filter( 'woocommerce_single_product_image_thumbnail_html', array( __CLASS__, 'add_image_placeholders' ), 9999 );
     add_filter( 'woocommerce_product_get_image', array( __CLASS__, 'add_image_placeholders' ), 9999 );
   }
@@ -31,9 +31,9 @@ class FL_LazyLoad_Images {
     $version = $theme->get( 'Version' );
 
     wp_enqueue_script(
-      'flatsome-lazy',
-      $extensions_uri . '/flatsome-lazy-load/flatsome-lazy-load.js',
-      array( 'flatsome-js' ),
+      'magicpi-lazy',
+      $extensions_uri . '/magicpi-lazy-load/magicpi-lazy-load.js',
+      array( 'magicpi-js' ),
       $version,
       true
     );
@@ -135,13 +135,13 @@ add_action( 'init', array( 'FL_LazyLoad_Images', 'init' ) );
  * WooCommerce category thumbnails don't have a filter.
  * Remove the original action and add a custom.
  */
-function flatsome_woocommerce_subcategory_thumbnail( $category ) {
+function magicpi_woocommerce_subcategory_thumbnail( $category ) {
   ob_start();
   woocommerce_subcategory_thumbnail( $category );
   $thumbnail = ob_get_clean();
   echo FL_LazyLoad_Images::add_image_placeholders( $thumbnail );
 }
 remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
-add_action( 'woocommerce_before_subcategory_title', 'flatsome_woocommerce_subcategory_thumbnail', 10 );
+add_action( 'woocommerce_before_subcategory_title', 'magicpi_woocommerce_subcategory_thumbnail', 10 );
 
 endif;

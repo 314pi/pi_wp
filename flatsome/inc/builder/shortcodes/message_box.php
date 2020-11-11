@@ -4,8 +4,8 @@ add_ux_builder_shortcode( 'message_box', array(
     'name' => __( 'Message Box' ),
     'type' => 'container',
     'category' => __( 'Content' ),
-    'thumbnail' =>  flatsome_ux_builder_thumbnail( 'message_box' ),
-    'template' => flatsome_ux_builder_template( 'message_box.html' ),
+    'thumbnail' =>  magicpi_ux_builder_thumbnail( 'message_box' ),
+    'template' => magicpi_ux_builder_template( 'message_box.html' ),
      'presets' => array(
         array(
             'name' => __( 'Default' ),

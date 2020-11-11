@@ -3,8 +3,8 @@
 add_ux_builder_shortcode( 'divider', array(
     'name' => __( 'Divider' ),
     'category' => __( 'Content' ),
-    'template' => flatsome_ux_builder_template( 'divider.html' ),
-    'thumbnail' =>  flatsome_ux_builder_thumbnail( 'divider' ),
+    'template' => magicpi_ux_builder_template( 'divider.html' ),
+    'thumbnail' =>  magicpi_ux_builder_thumbnail( 'divider' ),
     'options' => array(
         'align' => array(
             'type' => 'radio-buttons',

@@ -4,7 +4,7 @@
  */
 
 ?>
-<div id="tab-activate" class="col cols panel flatsome-panel">
+<div id="tab-activate" class="col cols panel magicpi-panel">
 	<div class="inner-panel">
 		<h3>Theme Purchase code</h3>
 		<?php
@@ -35,7 +35,7 @@
         echo '<div class="notice-warning notice-alt"><p>' . esc_html__( 'Purchase code removed.' ) . '</p></div>';
       } else {
         //this means a valid purchase code is present and no errors were found
-       echo '<div class="notice-success notice-alt notice-large" style="margin-bottom:15px!important">' . __( 'Your <strong>purchase code is valid</strong>. Thank you! Enjoy Flatsome Theme and automatic updates.' ) . '</div>';
+       echo '<div class="notice-success notice-alt notice-large" style="margin-bottom:15px!important">' . __( 'Your <strong>purchase code is valid</strong>. Thank you! Enjoy Magicpi Theme and automatic updates.' ) . '</div>';
       }
     }
 
@@ -71,9 +71,9 @@
       </form>';
   	}
 ?>
-  <small style="padding-top: 10px; margin-top: 15px; opacity: .8; display: block; border-top: 1px solid #eee;">A purchase code (license) is only valid for <strong>One Domain</strong>. Are you using this theme on a new domain? Purchase a <a href="//bit.ly/buy-flatsome" target="_blank">new license here</a> to get a new purchase code. To remove a purchase code simply remove the code and click update.</small>
+  <small style="padding-top: 10px; margin-top: 15px; opacity: .8; display: block; border-top: 1px solid #eee;">A purchase code (license) is only valid for <strong>One Domain</strong>. Are you using this theme on a new domain? Purchase a <a href="//bit.ly/buy-magicpi" target="_blank">new license here</a> to get a new purchase code. To remove a purchase code simply remove the code and click update.</small>
 	</div>
-  <?php if(flatsome_is_theme_enabled()){ ?>
+  <?php if(magicpi_is_theme_enabled()){ ?>
 	<div class="inner-panel">
   <?php
 
@@ -84,8 +84,8 @@
     $support_message = '<span style="color:green">Active</span>';
 
     // If support expired
-    if ( flatsome_is_support_expired( $slug ) ) {
-	    $support_message = flatsome_is_invalid_support_time( $support_ends ) ? '<strong style="color:orange;">Invalid (please try to re-update)</strong>' : '<strong style="color:red;">Expired</strong>';
+    if ( magicpi_is_support_expired( $slug ) ) {
+	    $support_message = magicpi_is_invalid_support_time( $support_ends ) ? '<strong style="color:orange;">Invalid (please try to re-update)</strong>' : '<strong style="color:red;">Expired</strong>';
     }
 
     // Buyer
@@ -102,7 +102,7 @@
       </tr>
       <tr>
         <td>
-          <?php if(flatsome_is_support_expired($slug)){ ?>
+          <?php if(magicpi_is_support_expired($slug)){ ?>
             <strong>Support ended</strong>
           <?php } else { ?>
             <strong>Support ends</strong>
@@ -120,8 +120,8 @@
       </tr>
       </tbody>
     </table>
-    <?php if(flatsome_is_support_expired($slug)){ ?>
-        <a target="_blank" href="//bit.ly/flatsome3" class="button button-warning" style="color:red; margin-top: 15px;">+ Extend Support time</a>
+    <?php if(magicpi_is_support_expired($slug)){ ?>
+        <a target="_blank" href="//bit.ly/magicpi3" class="button button-warning" style="color:red; margin-top: 15px;">+ Extend Support time</a>
         <br><small style="margin-top:10px;opacity: .6;display: block;">Try click the Update button on the left if you have already extended support</small>
     <?php } ?>
 	</div>

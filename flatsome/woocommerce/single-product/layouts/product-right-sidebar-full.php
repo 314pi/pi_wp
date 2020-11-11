@@ -1,7 +1,7 @@
 <div class="row content-row row-divided row-large row-reverse">
-	<div id="product-sidebar" class="col large-3 hide-for-medium shop-sidebar <?php flatsome_sidebar_classes(); ?>">
+	<div id="product-sidebar" class="col large-3 hide-for-medium shop-sidebar <?php magicpi_sidebar_classes(); ?>">
 		<?php
-			do_action('flatsome_before_product_sidebar');
+			do_action('magicpi_before_product_sidebar');
 			/**
 			 * woocommerce_sidebar hook
 			 *
@@ -18,7 +18,7 @@
 	<div class="col large-9">
 		<div class="product-main">
 		<div class="row">
-			<div class="large-<?php echo flatsome_option('product_image_width'); ?> col">
+			<div class="large-<?php echo magicpi_option('product_image_width'); ?> col">
 				<?php
 				/**
 				 * woocommerce_before_single_product_summary hook
@@ -32,7 +32,7 @@
 			</div>
 
 
-			<div class="product-info summary entry-summary col col-fit <?php flatsome_product_summary_classes();?>">
+			<div class="product-info summary entry-summary col col-fit <?php magicpi_product_summary_classes();?>">
 				<?php
 					/**
 					 * woocommerce_single_product_summary hook

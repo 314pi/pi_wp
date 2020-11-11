@@ -3,7 +3,7 @@
 <div class="product-main">
 	<div class="row content-row mb-0">
 
-		<div class="product-gallery col large-<?php echo flatsome_option('product_image_width'); ?>">
+		<div class="product-gallery col large-<?php echo magicpi_option('product_image_width'); ?>">
 		<?php
 			/**
 			 * woocommerce_before_single_product_summary hook
@@ -14,7 +14,7 @@
 		?>
 		</div>
 
-		<div class="product-info summary col-fit col entry-summary <?php flatsome_product_summary_classes();?>">
+		<div class="product-info summary col-fit col entry-summary <?php magicpi_product_summary_classes();?>">
 			<?php
 				/**
 				 * woocommerce_single_product_summary hook
@@ -35,7 +35,7 @@
 
 		<div id="product-sidebar" class="col large-2 hide-for-medium product-sidebar-small">
 			<?php
-				do_action('flatsome_before_product_sidebar');
+				do_action('magicpi_before_product_sidebar');
 				/**
 				 * woocommerce_sidebar hook
 				 *

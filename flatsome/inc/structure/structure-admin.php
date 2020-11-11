@@ -2,8 +2,8 @@
 
 /* Add Custom WP Editor CSS */
 
-if(!function_exists('flatsome_editor_style')) {
-  function flatsome_editor_style($url) {
+if(!function_exists('magicpi_editor_style')) {
+  function magicpi_editor_style($url) {
     if ( !empty($url) )
       $url .= ',';
     // Change the path here if using sub-directory
@@ -11,42 +11,42 @@ if(!function_exists('flatsome_editor_style')) {
     return $url;
   }
 }
-add_filter('mce_css', 'flatsome_editor_style');
+add_filter('mce_css', 'magicpi_editor_style');
 
 
 /* Extra Editor Styles (add extra styles to the content editor box) */
-if(!function_exists('flatsome_mce_buttons_2')) {
-  function flatsome_mce_buttons_2( $buttons ) {
+if(!function_exists('magicpi_mce_buttons_2')) {
+  function magicpi_mce_buttons_2( $buttons ) {
       array_unshift( $buttons, 'styleselect' );
       return $buttons;
   }
 }
-add_filter( 'mce_buttons', 'flatsome_mce_buttons_2' );
+add_filter( 'mce_buttons', 'magicpi_mce_buttons_2' );
 
 
 // Customize mce editor font sizes
-if ( ! function_exists( 'flatsome_editor_text_sizes' ) ) {
-  function flatsome_editor_text_sizes( $initArray ){
+if ( ! function_exists( 'magicpi_editor_text_sizes' ) ) {
+  function magicpi_editor_text_sizes( $initArray ){
     $initArray['fontsize_formats'] = "75% 80% 85% 90% 95% 100% 105% 110% 115% 120% 130% 140% 150% 160% 170% 180% 190% 200% 250% 300% 350% 400% 450% 500%";
     return $initArray;
   }
 }
-add_filter( 'tiny_mce_before_init', 'flatsome_editor_text_sizes' );
+add_filter( 'tiny_mce_before_init', 'magicpi_editor_text_sizes' );
 
 
 // Enable font size & font family selects in the editor
-if ( ! function_exists( 'flatsome_font_buttons' ) ) {
-  function flatsome_font_buttons( $buttons ) {
+if ( ! function_exists( 'magicpi_font_buttons' ) ) {
+  function magicpi_font_buttons( $buttons ) {
     //array_splice( $buttons, 2, 0, 'fontselect' ); // Add Font Select
     array_splice( $buttons, 5, 0, 'backcolor' ); // Add Font Size Select
     array_splice( $buttons, 2, 0, 'fontsizeselect' ); // Add Font Size Select
     return $buttons;
   }
 }
-add_filter( 'mce_buttons_2', 'flatsome_font_buttons');
+add_filter( 'mce_buttons_2', 'magicpi_font_buttons');
 
 
-function flatsome_formats_before_init( $settings ) {
+function magicpi_formats_before_init( $settings ) {
 
     $style_formats = array(
 
@@ -474,19 +474,19 @@ function flatsome_formats_before_init( $settings ) {
         ),
     );
 
-    $style_formats = apply_filters( 'flatsome_text_formats', $style_formats );
+    $style_formats = apply_filters( 'magicpi_text_formats', $style_formats );
     $settings['style_formats'] = json_encode( $style_formats );
 
     return $settings;
 
 }
-add_filter( 'tiny_mce_before_init', 'flatsome_formats_before_init' );
+add_filter( 'tiny_mce_before_init', 'magicpi_formats_before_init' );
 
 
 /* Extra Editor Colors */
-if ( ! function_exists( 'flatsome_text_colors' ) ) {
-  function flatsome_text_colors( $init ) {
-    global $flatsome_opt;
+if ( ! function_exists( 'magicpi_text_colors' ) ) {
+  function magicpi_text_colors( $init ) {
+    global $magicpi_opt;
     $default_colours = '
         "000000", "Black",        "993300", "Burnt orange", "333300", "Dark olive",   "003300", "Dark green",   "003366", "Dark azure",   "000080", "Navy Blue",      "333399", "Indigo",       "333333", "Very dark gray",
         "800000", "Maroon",       "FF6600", "Orange",       "808000", "Olive",        "008000", "Green",        "008080", "Teal",         "0000FF", "Blue",           "666699", "Grayish blue", "808080", "Gray",
@@ -501,23 +501,23 @@ if ( ! function_exists( 'flatsome_text_colors' ) ) {
     return $init;
   }
 }
-add_filter('tiny_mce_before_init', 'flatsome_text_colors');
+add_filter('tiny_mce_before_init', 'magicpi_text_colors');
 
 
 /* Enable SVG upload */
-function flatsome_enable_svg( $mimes ){
+function magicpi_enable_svg( $mimes ){
   // enable svg for super users.
   if(current_user_can('manage_options')){
       $mimes['svg'] = 'image/svg+xml';
   }
   return $mimes;
 }
-add_filter( 'upload_mimes', 'flatsome_enable_svg' );
+add_filter( 'upload_mimes', 'magicpi_enable_svg' );
 
 
-function flatsome_enable_font_upload( $mimes ){
+function magicpi_enable_font_upload( $mimes ){
   $mimes['ttf'] = 'application/octet-stream';
   $mimes['otf'] = 'font/opentype';
   return $mimes;
 }
-add_filter( 'upload_mimes', 'flatsome_enable_font_upload' );
+add_filter( 'upload_mimes', 'magicpi_enable_font_upload' );

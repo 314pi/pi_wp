@@ -4,7 +4,7 @@ add_ux_builder_shortcode( 'ux_price_table', array(
   'type' => 'container',
   'name' => __( 'Price Table' ),
   'category' => __( 'Content' ),
-  'thumbnail' => flatsome_ux_builder_thumbnail( 'price_table' ),
+  'thumbnail' => magicpi_ux_builder_thumbnail( 'price_table' ),
   'allow' => array('text','bullet_item','button'),
   'wrap' => false,
   'presets' => array(

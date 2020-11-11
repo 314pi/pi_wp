@@ -66,12 +66,12 @@ add_action( 'manage_blocks_posts_custom_column', 'my_manage_blocks_columns', 10,
  *
  * @return bool
  */
-function flatsome_blocks_disable_gutenberg( $use_block_editor, $post_type ) {
+function magicpi_blocks_disable_gutenberg( $use_block_editor, $post_type ) {
 	return $post_type === 'blocks' ? false : $use_block_editor;
 }
 
-add_filter( 'use_block_editor_for_post_type', 'flatsome_blocks_disable_gutenberg', 10, 2 );
-add_filter( 'gutenberg_can_edit_post_type', 'flatsome_blocks_disable_gutenberg', 10, 2 );
+add_filter( 'use_block_editor_for_post_type', 'magicpi_blocks_disable_gutenberg', 10, 2 );
+add_filter( 'gutenberg_can_edit_post_type', 'magicpi_blocks_disable_gutenberg', 10, 2 );
 
 
 /**
@@ -130,7 +130,7 @@ function block_shortcode( $atts, $content = null ) {
 
 	if ( is_home() ) $post = get_post( get_option('page_for_posts') );
 
-	if ( $post_id = flatsome_get_block_id( $id ) ) {
+	if ( $post_id = magicpi_get_block_id( $id ) ) {
 		$the_post = get_post( $post_id, OBJECT, 'display' );
 		$html     = isset( $the_post ) ? $the_post->post_content : '';
 

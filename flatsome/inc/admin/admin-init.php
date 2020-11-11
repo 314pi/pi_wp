@@ -1,9 +1,9 @@
 <?php
 /**
- * Flatsome Admin Engine Room.
+ * Magicpi Admin Engine Room.
  * This is where all Admin Functions run
  *
- * @package flatsome
+ * @package magicpi
  */
 
 

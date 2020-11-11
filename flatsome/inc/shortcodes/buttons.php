@@ -49,8 +49,8 @@ function button_shortcode( $atts, $content = null ) {
 	}
 
 	$attributes = array();
-	$icon_left  = $icon && $icon_pos == 'left' ? get_flatsome_icon( $icon ) : '';
-	$icon_right = $icon && $icon_pos !== 'left' ? get_flatsome_icon( $icon ) : '';
+	$icon_left  = $icon && $icon_pos == 'left' ? get_magicpi_icon( $icon ) : '';
+	$icon_right = $icon && $icon_pos !== 'left' ? get_magicpi_icon( $icon ) : '';
 
 	// Add Button Classes.
 	$classes   = array();
@@ -97,7 +97,7 @@ function button_shortcode( $atts, $content = null ) {
 	}
 	if ( $link ) {
 		// Smart links.
-		$link               = flatsome_smart_links( $link );
+		$link               = magicpi_smart_links( $link );
 		$attributes['href'] = $link;
 		if ( $target ) {
 			$attributes['target'] = $target;
@@ -126,10 +126,10 @@ function button_shortcode( $atts, $content = null ) {
 	) );
 
 	$attributes['class'] = $classes;
-	$attributes          = flatsome_html_atts( $attributes );
+	$attributes          = magicpi_html_atts( $attributes );
 
 	// Template is located in template-parts/shortcodes.
-	return flatsome_template( 'shortcodes/button', get_defined_vars() );
+	return magicpi_template( 'shortcodes/button', get_defined_vars() );
 }
 
 add_shortcode( 'button', 'button_shortcode' );
@@ -147,7 +147,7 @@ function facebook_login_shortcode( $atts, $content = null ) {
 	$facebook_url = add_query_arg( array( 'loginSocial' => 'facebook' ), wp_login_url() );
 	?>
 	<a href="<?php echo esc_url( $facebook_url ); ?>" class="button <?php echo esc_attr( $size ); ?> facebook-button" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="facebook" data-popupwidth="475" data-popupheight="175">
-		<?php echo get_flatsome_icon( 'icon-facebook' ); ?>
+		<?php echo get_magicpi_icon( 'icon-facebook' ); ?>
 		<?php echo $text; ?>
 	</a>
 	<?php
@@ -204,7 +204,7 @@ function ux_video_button( $atts, $content = null ) {
 		$size = 'style="font-size:' . $size . '%"';
 	}
 
-	return '<div class="video-button-wrapper" ' . $size . '><a href="' . $video . '" class="button open-video icon circle is-outline is-xlarge">' . get_flatsome_icon( 'icon-play', '1.5em' ) . '</a></div>';
+	return '<div class="video-button-wrapper" ' . $size . '><a href="' . $video . '" class="button open-video icon circle is-outline is-xlarge">' . get_magicpi_icon( 'icon-play', '1.5em' ) . '</a></div>';
 }
 
 add_shortcode( 'video_button', 'ux_video_button' );

@@ -1,4 +1,4 @@
-<?php get_template_part('template-parts/portfolio/portfolio-title', flatsome_option('portfolio_title')); ?>
+<?php get_template_part('template-parts/portfolio/portfolio-title', magicpi_option('portfolio_title')); ?>
 
 <div class="portfolio-top">
 	<div id="portfolio-content" role="main" class="page-wrapper">

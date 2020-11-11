@@ -3,7 +3,7 @@
 add_action( 'widgets_init', 'ux_blocks_widget' );
 
 function ux_blocks_widget() {
-	register_widget( 'Flatsome_UX_Blocks_Widget' );
+	register_widget( 'Magicpi_UX_Blocks_Widget' );
 }
 
 /**
@@ -11,14 +11,14 @@ function ux_blocks_widget() {
  *
  * @since 2.8.0
  */
-class Flatsome_UX_Blocks_Widget extends WP_Widget {
+class Magicpi_UX_Blocks_Widget extends WP_Widget {
 
 	function __construct() {
-		$widget_ops = array( 'classname' => 'block_widget', 'description' => __('A widget that displays a Block ', 'flatsome'), 'customize_selective_refresh' => true);
+		$widget_ops = array( 'classname' => 'block_widget', 'description' => __('A widget that displays a Block ', 'magicpi'), 'customize_selective_refresh' => true);
 
 		$control_ops = array('id_base' => 'block_widget' );
 
-		parent::__construct( 'block_widget', __('Flatsome Blocks', 'flatsome'), $widget_ops, $control_ops );
+		parent::__construct( 'block_widget', __('Magicpi Blocks', 'magicpi'), $widget_ops, $control_ops );
 	}
 
 	function widget($args, $instance) {
@@ -71,7 +71,7 @@ class Flatsome_UX_Blocks_Widget extends WP_Widget {
 
 		$blocks = array(false => '-- None --');
 
-		$posts = flatsome_get_post_type_items('blocks');
+		$posts = magicpi_get_post_type_items('blocks');
 		if($posts){
 		  foreach ($posts as $value) {
 		    $blocks[$value->post_name] = $value->post_title;
@@ -82,10 +82,10 @@ class Flatsome_UX_Blocks_Widget extends WP_Widget {
 		$instance['block'] = isset( $instance['block'] ) ? esc_attr( $instance['block'] ) : '';
 
 ?>
-		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'flatsome' ); ?></label>
+		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'magicpi' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></p>
 
-		<p><label for="<?php echo $this->get_field_id( 'block' ); ?>"><?php _e( 'Block:', 'flatsome' ); ?></label>
+		<p><label for="<?php echo $this->get_field_id( 'block' ); ?>"><?php _e( 'Block:', 'magicpi' ); ?></label>
 		<select class="widefat" name="<?php echo $this->get_field_name( 'block' ); ?>" id="<?php echo $this->get_field_id( 'block' ); ?>">
 		<?php foreach ($blocks as $key => $value) {
  		   echo '<option '.selected( $instance['block'], $key).' value="'.$key.'">'.$value.'</option>';

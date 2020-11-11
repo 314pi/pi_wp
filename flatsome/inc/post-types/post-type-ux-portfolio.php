@@ -80,16 +80,16 @@ class Featured_Item_Post_Type {
 	 */
 	protected function register_post_type() {
 		$labels = array(
-			'name'               => __( 'Portfolio', 'flatsome-admin' ),
-			'singular_name'      => __( 'Portfolio', 'flatsome-admin' ),
-			'add_new'            => __( 'Add New', 'flatsome-admin' ),
-			'add_new_item'       => __( 'Add New', 'flatsome-admin' ),
-			'edit_item'          => __( 'Edit Portfolio', 'flatsome-admin' ),
-			'new_item'           => __( 'Add New Portfolio', 'flatsome-admin' ),
-			'view_item'          => __( 'View Portfolio', 'flatsome-admin' ),
-			'search_items'       => __( 'Search Portfolio', 'flatsome-admin' ),
-			'not_found'          => __( 'No items found', 'flatsome-admin' ),
-			'not_found_in_trash' => __( 'No items found in trash', 'flatsome-admin' ),
+			'name'               => __( 'Portfolio', 'magicpi-admin' ),
+			'singular_name'      => __( 'Portfolio', 'magicpi-admin' ),
+			'add_new'            => __( 'Add New', 'magicpi-admin' ),
+			'add_new_item'       => __( 'Add New', 'magicpi-admin' ),
+			'edit_item'          => __( 'Edit Portfolio', 'magicpi-admin' ),
+			'new_item'           => __( 'Add New Portfolio', 'magicpi-admin' ),
+			'view_item'          => __( 'View Portfolio', 'magicpi-admin' ),
+			'search_items'       => __( 'Search Portfolio', 'magicpi-admin' ),
+			'not_found'          => __( 'No items found', 'magicpi-admin' ),
+			'not_found_in_trash' => __( 'No items found in trash', 'magicpi-admin' ),
 		);
 
 		$args = array(
@@ -126,22 +126,22 @@ class Featured_Item_Post_Type {
 	 */
 	protected function register_taxonomy_tag() {
 		$labels = array(
-			'name'                       => __( 'Tags', 'flatsome-admin' ),
-			'singular_name'              => __( 'Tag', 'flatsome-admin' ),
-			'menu_name'                  => __( 'Tags', 'flatsome-admin' ),
-			'edit_item'                  => __( 'Edit Tag', 'flatsome-admin' ),
-			'update_item'                => __( 'Update Tag', 'flatsome-admin' ),
-			'add_new_item'               => __( 'Add New Tag', 'flatsome-admin' ),
-			'new_item_name'              => __( 'New  Tag Name', 'flatsome-admin' ),
-			'parent_item'                => __( 'Parent Tag', 'flatsome-admin' ),
-			'parent_item_colon'          => __( 'Parent Tag:', 'flatsome-admin' ),
-			'all_items'                  => __( 'All Tags', 'flatsome-admin' ),
-			'search_items'               => __( 'Search  Tags', 'flatsome-admin' ),
-			'popular_items'              => __( 'Popular Tags', 'flatsome-admin' ),
-			'separate_items_with_commas' => __( 'Separate tags with commas', 'flatsome-admin' ),
-			'add_or_remove_items'        => __( 'Add or remove tags', 'flatsome-admin' ),
-			'choose_from_most_used'      => __( 'Choose from the most used tags', 'flatsome-admin' ),
-			'not_found'                  => __( 'No  tags found.', 'flatsome-admin' ),
+			'name'                       => __( 'Tags', 'magicpi-admin' ),
+			'singular_name'              => __( 'Tag', 'magicpi-admin' ),
+			'menu_name'                  => __( 'Tags', 'magicpi-admin' ),
+			'edit_item'                  => __( 'Edit Tag', 'magicpi-admin' ),
+			'update_item'                => __( 'Update Tag', 'magicpi-admin' ),
+			'add_new_item'               => __( 'Add New Tag', 'magicpi-admin' ),
+			'new_item_name'              => __( 'New  Tag Name', 'magicpi-admin' ),
+			'parent_item'                => __( 'Parent Tag', 'magicpi-admin' ),
+			'parent_item_colon'          => __( 'Parent Tag:', 'magicpi-admin' ),
+			'all_items'                  => __( 'All Tags', 'magicpi-admin' ),
+			'search_items'               => __( 'Search  Tags', 'magicpi-admin' ),
+			'popular_items'              => __( 'Popular Tags', 'magicpi-admin' ),
+			'separate_items_with_commas' => __( 'Separate tags with commas', 'magicpi-admin' ),
+			'add_or_remove_items'        => __( 'Add or remove tags', 'magicpi-admin' ),
+			'choose_from_most_used'      => __( 'Choose from the most used tags', 'magicpi-admin' ),
+			'not_found'                  => __( 'No  tags found.', 'magicpi-admin' ),
 		);
 
 		$args = array(
@@ -171,22 +171,22 @@ class Featured_Item_Post_Type {
 
 
 		$labels = array(
-			'name'                       => __( 'Categories', 'flatsome-admin' ),
-			'singular_name'              => __( 'Category', 'flatsome-admin' ),
-			'menu_name'                  => __( 'Categories', 'flatsome-admin' ),
-			'edit_item'                  => __( 'Edit Category', 'flatsome-admin' ),
-			'update_item'                => __( 'Update Category', 'flatsome-admin' ),
-			'add_new_item'               => __( 'Add New Category', 'flatsome-admin' ),
-			'new_item_name'              => __( 'New Category Name', 'flatsome-admin' ),
-			'parent_item'                => __( 'Parent Category', 'flatsome-admin' ),
-			'parent_item_colon'          => __( 'Parent Category:', 'flatsome-admin' ),
-			'all_items'                  => __( 'All Categories', 'flatsome-admin' ),
-			'search_items'               => __( 'Search Categories', 'flatsome-admin' ),
-			'popular_items'              => __( 'Popular Categories', 'flatsome-admin' ),
-			'separate_items_with_commas' => __( 'Separate categories with commas', 'flatsome-admin' ),
-			'add_or_remove_items'        => __( 'Add or remove categories', 'flatsome-admin' ),
-			'choose_from_most_used'      => __( 'Choose from the most used categories', 'flatsome-admin' ),
-			'not_found'                  => __( 'No categories found.', 'flatsome-admin' ),
+			'name'                       => __( 'Categories', 'magicpi-admin' ),
+			'singular_name'              => __( 'Category', 'magicpi-admin' ),
+			'menu_name'                  => __( 'Categories', 'magicpi-admin' ),
+			'edit_item'                  => __( 'Edit Category', 'magicpi-admin' ),
+			'update_item'                => __( 'Update Category', 'magicpi-admin' ),
+			'add_new_item'               => __( 'Add New Category', 'magicpi-admin' ),
+			'new_item_name'              => __( 'New Category Name', 'magicpi-admin' ),
+			'parent_item'                => __( 'Parent Category', 'magicpi-admin' ),
+			'parent_item_colon'          => __( 'Parent Category:', 'magicpi-admin' ),
+			'all_items'                  => __( 'All Categories', 'magicpi-admin' ),
+			'search_items'               => __( 'Search Categories', 'magicpi-admin' ),
+			'popular_items'              => __( 'Popular Categories', 'magicpi-admin' ),
+			'separate_items_with_commas' => __( 'Separate categories with commas', 'magicpi-admin' ),
+			'add_or_remove_items'        => __( 'Add or remove categories', 'magicpi-admin' ),
+			'choose_from_most_used'      => __( 'Choose from the most used categories', 'magicpi-admin' ),
+			'not_found'                  => __( 'No categories found.', 'magicpi-admin' ),
 		);
 
 		$args = array(
@@ -204,10 +204,10 @@ class Featured_Item_Post_Type {
 
 		register_taxonomy( 'featured_item_category', array( 'featured_item' ), $args );
 
-		if(flatsome_option('featured_items_page')){
+		if(magicpi_option('featured_items_page')){
 			add_action( 'wp_loaded', 'add_ux_featured_item_permastructure' );
 			function add_ux_featured_item_permastructure() {
-				$items_link = flatsome_option('featured_items_page');
+				$items_link = magicpi_option('featured_items_page');
 				add_permastruct( 'featured_item_category',  $items_link.'/%featured_item_category%', false );
 				add_permastruct( 'featured_item', $items_link.'/%featured_item_category%/%featured_item%', false );
 			}
@@ -288,7 +288,7 @@ class Featured_Item_Post_Type {
 	 * @return array Amended columns.
 	 */
 	public function add_thumbnail_column( $columns ) {
-		$column_thumbnail = array( 'thumbnail' => __( 'Thumbnail', 'flatsome-admin' ) );
+		$column_thumbnail = array( 'thumbnail' => __( 'Thumbnail', 'magicpi-admin' ) );
 		return array_slice( $columns, 0, 2, true ) + $column_thumbnail + array_slice( $columns, 1, null, true );
 	}
 

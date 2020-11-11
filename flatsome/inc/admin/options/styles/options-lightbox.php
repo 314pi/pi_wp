@@ -1,35 +1,35 @@
 <?php
 
-Flatsome_Option::add_section( 'lightbox', array(
-	'title' => __( 'Image Lightbox', 'flatsome-admin' ),
+Magicpi_Option::add_section( 'lightbox', array(
+	'title' => __( 'Image Lightbox', 'magicpi-admin' ),
 	'panel' => 'style',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'     => 'checkbox',
-	'settings' => 'flatsome_lightbox',
-	'label'    => __( 'Enable Flatsome Lightbox', 'flatsome-admin' ),
+	'settings' => 'magicpi_lightbox',
+	'label'    => __( 'Enable Magicpi Lightbox', 'magicpi-admin' ),
 	'section'  => 'lightbox',
 	'default'  => 1,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'color',
-	'settings'        => 'flatsome_lightbox_bg',
-	'label'           => __( 'Lightbox background color', 'flatsome-admin' ),
+	'settings'        => 'magicpi_lightbox_bg',
+	'label'           => __( 'Lightbox background color', 'magicpi-admin' ),
 	'section'         => 'lightbox',
 	'transport'       => $transport,
 	'default'         => '',
 	'active_callback' => array(
 		array(
-			'setting'  => 'flatsome_lightbox',
+			'setting'  => 'magicpi_lightbox',
 			'operator' => '==',
 			'value'    => true,
 		),
 	),
 ) );
 
-Flatsome_Option::add_field( '', array(
+Magicpi_Option::add_field( '', array(
 	'type'            => 'custom',
 	'settings'        => 'custom_lightbox_gallery_layout',
 	'label'           => '',
@@ -37,23 +37,23 @@ Flatsome_Option::add_field( '', array(
 	'default'         => '<div class="options-title-divider">Gallery</div>',
 	'active_callback' => array(
 		array(
-			'setting'  => 'flatsome_lightbox',
+			'setting'  => 'magicpi_lightbox',
 			'operator' => '==',
 			'value'    => true,
 		),
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'            => 'checkbox',
-	'settings'        => 'flatsome_lightbox_multi_gallery',
-	'label'           => __( 'Use multiple galleries on a page', 'flatsome-admin' ),
-	'description'     => __( 'When enabled, lightbox galleries on a page are treated separately, else combined in one gallery.', 'flatsome-admin' ),
+	'settings'        => 'magicpi_lightbox_multi_gallery',
+	'label'           => __( 'Use multiple galleries on a page', 'magicpi-admin' ),
+	'description'     => __( 'When enabled, lightbox galleries on a page are treated separately, else combined in one gallery.', 'magicpi-admin' ),
 	'section'         => 'lightbox',
 	'default'         => 0,
 	'active_callback' => array(
 		array(
-			'setting'  => 'flatsome_lightbox',
+			'setting'  => 'magicpi_lightbox',
 			'operator' => '==',
 			'value'    => true,
 		),

@@ -48,7 +48,7 @@ if ( $related_products ) : ?>
 		<?php endif; ?>
 
 
-	<?php get_flatsome_repeater_start( $repater ); ?>
+	<?php get_magicpi_repeater_start( $repater ); ?>
 
 		<?php foreach ( $related_products as $related_product ) : ?>
 
@@ -62,7 +62,7 @@ if ( $related_products ) : ?>
 
 		<?php endforeach; ?>
 
-		<?php get_flatsome_repeater_end( $repater ); ?>
+		<?php get_magicpi_repeater_end( $repater ); ?>
 
 	</div>
 

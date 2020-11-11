@@ -1,6 +1,6 @@
 <?php
 
-// Flatsome Products
+// Magicpi Products
 function ux_products($atts, $content = null, $tag) {
 	$sliderrandomid = rand();
 
@@ -80,7 +80,7 @@ function ux_products($atts, $content = null, $tag) {
 	// Stop if visibility is hidden
   if($visibility == 'hidden') return;
 
-	$items                             = flatsome_ux_product_box_items();
+	$items                             = magicpi_ux_product_box_items();
 	$items['cat']['show']              = $show_cat;
 	$items['title']['show']            = $show_title;
 	$items['rating']['show']           = $show_rating;
@@ -88,7 +88,7 @@ function ux_products($atts, $content = null, $tag) {
 	$items['add_to_cart']['show']      = $show_add_to_cart;
 	$items['add_to_cart_icon']['show'] = $show_add_to_cart;
 	$items['quick_view']['show']       = $show_quick_view;
-	$items                             = flatsome_box_item_toggle_start( $items );
+	$items                             = magicpi_box_item_toggle_start( $items );
 
 	ob_start();
 
@@ -148,9 +148,9 @@ function ux_products($atts, $content = null, $tag) {
 	  if($style !== 'shade') $style = 'overlay';
 	  $columns = 0;
 	  $current_grid = 0;
-	  $grid = flatsome_get_grid($grid);
+	  $grid = magicpi_get_grid($grid);
 	  $grid_total = count($grid);
-	  flatsome_get_grid_height($grid_height, $_id);
+	  magicpi_get_grid_height($grid_height, $_id);
 	}
 
 	// Fix image size
@@ -222,7 +222,7 @@ function ux_products($atts, $content = null, $tag) {
 	$repater['depth'] = $depth;
 	$repater['depth_hover'] = $depth_hover;
 
-	get_flatsome_repeater_start($repater);
+	get_magicpi_repeater_start($repater);
 
 	?>
 	<?php
@@ -291,7 +291,7 @@ function ux_products($atts, $content = null, $tag) {
 								<div class="<?php echo implode(' ', $classes_image); ?>" <?php echo get_shortcode_inline_css($css_image_height); ?>>
 									<a href="<?php echo get_the_permalink(); ?>">
 										<?php
-											if($back_image) flatsome_woocommerce_get_alt_product_thumbnail($image_size);
+											if($back_image) magicpi_woocommerce_get_alt_product_thumbnail($image_size);
 											echo woocommerce_get_product_thumbnail($image_size);
 										?>
 									</a>
@@ -299,11 +299,11 @@ function ux_products($atts, $content = null, $tag) {
 									 <?php if($style == 'shade'){ ?><div class="shade"></div><?php } ?>
 								</div>
 								<div class="image-tools top right show-on-hover">
-									<?php do_action('flatsome_product_box_tools_top'); ?>
+									<?php do_action('magicpi_product_box_tools_top'); ?>
 								</div>
 								<?php if($style !== 'shade' && $style !== 'overlay') { ?>
-									<div class="image-tools <?php echo flatsome_product_box_actions_class(); ?>">
-										<?php  do_action('flatsome_product_box_actions'); ?>
+									<div class="image-tools <?php echo magicpi_product_box_actions_class(); ?>">
+										<?php  do_action('magicpi_product_box_actions'); ?>
 									</div>
 								<?php } ?>
 								<?php if($out_of_stock) { ?><div class="out-of-stock-label"><?php _e( 'Out of stock', 'woocommerce' ); ?></div><?php }?>
@@ -323,11 +323,11 @@ function ux_products($atts, $content = null, $tag) {
 
 									if($style == 'shade' || $style == 'overlay') {
 									echo '<div class="overlay-tools">';
-										do_action('flatsome_product_box_actions');
+										do_action('magicpi_product_box_actions');
 									echo '</div>';
 									}
 
-									do_action( 'flatsome_product_box_after' );
+									do_action( 'magicpi_product_box_after' );
 
 								?>
 							</div>
@@ -341,8 +341,8 @@ function ux_products($atts, $content = null, $tag) {
 	        endif;
 	        wp_reset_query();
 
-	get_flatsome_repeater_end($repater);
-	flatsome_box_item_toggle_end( $items );
+	get_magicpi_repeater_end($repater);
+	magicpi_box_item_toggle_end( $items );
 
 	$content = ob_get_contents();
 	ob_end_clean();

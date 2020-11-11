@@ -3,9 +3,9 @@
 <?php if ( is_user_logged_in() ) { ?>
 
 <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="account-link account-login" title="<?php _e('My account', 'woocommerce'); ?>">
-  <?php if(flatsome_option('account_icon') == 'icon'){
-    echo get_flatsome_icon('icon-user');
-    } else if(flatsome_option('account_icon') == 'avatar'){
+  <?php if(magicpi_option('account_icon') == 'icon'){
+    echo get_magicpi_icon('icon-user');
+    } else if(magicpi_option('account_icon') == 'avatar'){
     echo '<i class="image-icon circle">'.get_avatar(get_current_user_id()).'</i>';
     }
   ?>
@@ -18,7 +18,7 @@
 <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>"
     class="nav-top-link nav-top-not-logged-in">
   <?php
-    if(flatsome_option('account_icon') == 'icon' || flatsome_option('account_icon') == 'avatar'){ echo get_flatsome_icon('icon-user');
+    if(magicpi_option('account_icon') == 'icon' || magicpi_option('account_icon') == 'avatar'){ echo get_magicpi_icon('icon-user');
     }
   ?>
   <span class="header-account-title">

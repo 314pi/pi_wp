@@ -1,4 +1,4 @@
-/* global flatsome_infinite_scroll, Packery, ga */
+/* global magicpi_infinite_scroll, Packery, ga */
 jQuery(document).ready(function () {
   var container = jQuery('.shop-container .products')
   var paginationNext = '.woocommerce-pagination li a.next'
@@ -8,8 +8,8 @@ jQuery(document).ready(function () {
   }
 
   var viewMoreButton = jQuery('button.view-more-button.products-archive')
-  var byButton = flatsome_infinite_scroll.type === 'button'
-  var isMasonry = flatsome_infinite_scroll.list_style === 'masonry'
+  var byButton = magicpi_infinite_scroll.type === 'button'
+  var isMasonry = magicpi_infinite_scroll.list_style === 'masonry'
   // Set packery instance as outlayer when masonry is set.
   var outlayer = isMasonry ? Packery.data(container[0]) : false
 
@@ -20,10 +20,10 @@ jQuery(document).ready(function () {
     status: '.page-load-status',
     hideNav: '.archive .woocommerce-pagination',
     button: '.view-more-button',
-    history: flatsome_infinite_scroll.history,
+    history: magicpi_infinite_scroll.history,
     debug: false,
     outlayer: outlayer,
-    scrollThreshold: parseInt(flatsome_infinite_scroll.scroll_threshold)
+    scrollThreshold: parseInt(magicpi_infinite_scroll.scroll_threshold)
   })
 
   if (byButton) {
@@ -35,7 +35,7 @@ jQuery(document).ready(function () {
   }
 
   $container.on('load.infiniteScroll', function (event, response, path) {
-    flatsomeInfiniteScroll.attachBehaviors(response)
+    magicpiInfiniteScroll.attachBehaviors(response)
   })
 
   $container.on('request.infiniteScroll', function (event, path) {
@@ -55,8 +55,8 @@ jQuery(document).ready(function () {
     // Trigger resize for product box equalizer.
     window.dispatchEvent(new Event('resize'))
 
-    Flatsome.attach('lazy-load-images', container)
-    flatsomeInfiniteScroll.animateNewItems(items)
+    Magicpi.attach('lazy-load-images', container)
+    magicpiInfiniteScroll.animateNewItems(items)
 
     if (isMasonry) {
       setTimeout(function () {
@@ -74,16 +74,16 @@ jQuery(document).ready(function () {
     }
   })
 
-  var flatsomeInfiniteScroll = {
+  var magicpiInfiniteScroll = {
     attachBehaviors: function (response) {
-      Flatsome.attach('quick-view', response)
-      Flatsome.attach('tooltips', response)
-      Flatsome.attach('add-qty', response)
-      Flatsome.attach('wishlist', response)
+      Magicpi.attach('quick-view', response)
+      Magicpi.attach('tooltips', response)
+      Magicpi.attach('add-qty', response)
+      Magicpi.attach('wishlist', response)
     },
     animateNewItems: function (items) {
       if (isMasonry) return
-      jQuery(items).hide().fadeIn(parseInt(flatsome_infinite_scroll.fade_in_duration))
+      jQuery(items).hide().fadeIn(parseInt(magicpi_infinite_scroll.fade_in_duration))
     }
   }
 })

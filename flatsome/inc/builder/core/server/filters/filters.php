@@ -10,7 +10,7 @@
 add_filter( 'ux_builder_preprocess_array_content', function (  $content, $tag, $options ) {
 
   // Don't run if old content support is disabled.
-  if(!get_theme_mod('flatsome_fallback', 1)) return $content;
+  if(!get_theme_mod('magicpi_fallback', 1)) return $content;
 
   // Convert old product shortcodes
   $prod_shortcodes = array('/ux_latest_products/', '/ux_bestseller_products/','/ux_featured_products/', '/ux_sale_products/','/product_lookbook/','/ux_custom_products/','/products_pinterest_style/');
@@ -34,7 +34,7 @@ add_filter( 'ux_builder_preprocess_array_content', function (  $content, $tag, $
       $pattern = get_shortcode_regex();
       $columns = 0;
       $current_grid = 0;
-      $grid = flatsome_get_grid($options['grid']);
+      $grid = magicpi_get_grid($options['grid']);
       $grid_total = count($grid);
       if (preg_match_all( '/'. $pattern .'/s', $content, $matches )
           && array_key_exists( 2, $matches )
@@ -101,7 +101,7 @@ add_filter( 'ux_builder_preprocess_array_content', function (  $content, $tag, $
 add_filter( 'ux_builder_preprocess_array_options', function ( $options, $tag ) {
 
   // Don't run if old content support is disabled.
-  if(!get_theme_mod('flatsome_fallback', 1)) return $options;
+  if(!get_theme_mod('magicpi_fallback', 1)) return $options;
 
   // Fix Old titles
   if ($tag == 'ux_banner_grid' && isset( $options['height'] ) ){

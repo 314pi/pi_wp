@@ -14,7 +14,7 @@
 	// Height.
 	$height = get_theme_mod( 'portfolio_height', 0 ) ? get_theme_mod( 'portfolio_height', 0 ) : '';
 
-	echo flatsome_apply_shortcode( 'ux_portfolio', array(
+	echo magicpi_apply_shortcode( 'ux_portfolio', array(
 		'image_height' => $height,
 		'filter'       => $filter,
 		'filter_nav'   => $filter_nav,

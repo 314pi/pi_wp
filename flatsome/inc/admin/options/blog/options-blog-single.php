@@ -1,14 +1,14 @@
 <?php
 
-Flatsome_Option::add_section( 'blog-single', array(
-	'title' => __( 'Blog Single Post', 'flatsome-admin' ),
+Magicpi_Option::add_section( 'blog-single', array(
+	'title' => __( 'Blog Single Post', 'magicpi-admin' ),
 	'panel' => 'blog',
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'     => 'radio-image',
 	'settings' => 'blog_post_layout',
-	'label'    => __( 'Blog Post Single Layout', 'flatsome-admin' ),
+	'label'    => __( 'Blog Post Single Layout', 'magicpi-admin' ),
 	'section'  => 'blog-single',
 	'default'  => 'right-sidebar',
 	'choices'  => array(
@@ -18,10 +18,10 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'     => 'radio-image',
 	'settings' => 'blog_post_style',
-	'label'    => __( 'Title Layout', 'flatsome-admin' ),
+	'label'    => __( 'Title Layout', 'magicpi-admin' ),
 	'section'  => 'blog-single',
 	'default'  => 'default',
 	'choices'  => array(
@@ -31,68 +31,68 @@ Flatsome_Option::add_field( 'option', array(
 	),
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'     => 'checkbox',
 	'settings' => 'blog_single_transparent',
-	'label'    => __( 'Transparent Header', 'flatsome-admin' ),
+	'label'    => __( 'Transparent Header', 'magicpi-admin' ),
 	'section'  => 'blog-single',
 	'default'  => 0,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'     => 'checkbox',
 	'settings' => 'blog_single_header_meta',
-	'label'    => __( 'Enable Header Meta', 'flatsome-admin' ),
+	'label'    => __( 'Enable Header Meta', 'magicpi-admin' ),
 	'section'  => 'blog-single',
 	'default'  => 1,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'     => 'checkbox',
 	'settings' => 'blog_single_featured_image',
-	'label'    => __( 'Enable Featured Image', 'flatsome-admin' ),
+	'label'    => __( 'Enable Featured Image', 'magicpi-admin' ),
 	'section'  => 'blog-single',
 	'default'  => 1,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'     => 'checkbox',
 	'settings' => 'blog_share',
-	'label'    => __( 'Enable Share Icons', 'flatsome-admin' ),
+	'label'    => __( 'Enable Share Icons', 'magicpi-admin' ),
 	'section'  => 'blog-single',
 	'default'  => 1,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'     => 'checkbox',
 	'settings' => 'blog_single_footer_meta',
-	'label'    => __( 'Enable Footer Meta', 'flatsome-admin' ),
+	'label'    => __( 'Enable Footer Meta', 'magicpi-admin' ),
 	'section'  => 'blog-single',
 	'default'  => 1,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'     => 'checkbox',
 	'settings' => 'blog_author_box',
-	'label'    => __( 'Enable Blog Author Box', 'flatsome-admin' ),
+	'label'    => __( 'Enable Blog Author Box', 'magicpi-admin' ),
 	'section'  => 'blog-single',
 	'default'  => 1,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'     => 'checkbox',
 	'settings' => 'blog_single_next_prev_nav',
-	'label'    => __( 'Enable Next/Prev Navigation', 'flatsome-admin' ),
+	'label'    => __( 'Enable Next/Prev Navigation', 'magicpi-admin' ),
 	'section'  => 'blog-single',
 	'default'  => 1,
 ) );
 
-Flatsome_Option::add_field( 'option', array(
+Magicpi_Option::add_field( 'option', array(
 	'type'              => 'textarea',
 	'settings'          => 'blog_after_post',
-	'label'             => __( 'HTML after blog posts', 'flatsome-admin' ),
+	'label'             => __( 'HTML after blog posts', 'magicpi-admin' ),
 	'section'           => 'blog-single',
 	'description'       => 'Enter HTML or shortcodes that will be visible after blog posts. (Before comment box). Shortcodes are allowed',
-	'sanitize_callback' => 'flatsome_custom_sanitize',
+	'sanitize_callback' => 'magicpi_custom_sanitize',
 	'default'           => '',
 ) );

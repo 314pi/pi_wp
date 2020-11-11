@@ -3,7 +3,7 @@
 /**
  * Add Button to Grid Tools
  */
-function flatsome_lightbox_button() {
+function magicpi_lightbox_button() {
 	if ( get_theme_mod( 'disable_quick_view', 0 ) ) {
 		return;
 	}
@@ -12,10 +12,10 @@ function flatsome_lightbox_button() {
 	wp_enqueue_script( 'wc-add-to-cart-variation' );
 
 	global $product;
-	echo '  <a class="quick-view" data-prod="' . $product->get_id() . '" href="#quick-view">' . __( 'Quick View', 'flatsome' ) . '</a>';
+	echo '  <a class="quick-view" data-prod="' . $product->get_id() . '" href="#quick-view">' . __( 'Quick View', 'magicpi' ) . '</a>';
 }
 
-add_action( 'flatsome_product_box_actions', 'flatsome_lightbox_button', 50 );
+add_action( 'magicpi_product_box_actions', 'magicpi_lightbox_button', 50 );
 
 /* Add stuff to lightbox */
 add_action( 'woocommerce_single_product_lightbox_summary', 'woocommerce_template_single_price', 10 );
@@ -30,7 +30,7 @@ if ( get_theme_mod( 'product_info_meta', 1 ) ) {
 /**
  * Quick View Output
  */
-function flatsome_quickview() {
+function magicpi_quickview() {
 	global $post, $product;
 	$prod_id = $_POST["product"];
 	$post    = get_post( $prod_id );
@@ -47,5 +47,5 @@ function flatsome_quickview() {
 	die();
 }
 
-add_action( 'wp_ajax_flatsome_quickview', 'flatsome_quickview' );
-add_action( 'wp_ajax_nopriv_flatsome_quickview', 'flatsome_quickview' );
+add_action( 'wp_ajax_magicpi_quickview', 'magicpi_quickview' );
+add_action( 'wp_ajax_nopriv_magicpi_quickview', 'magicpi_quickview' );

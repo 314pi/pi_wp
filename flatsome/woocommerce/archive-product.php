@@ -20,10 +20,10 @@ defined( 'ABSPATH' ) || exit;
 get_header( 'shop' );
 
 // Add Custom Shop Content if set
-if(is_shop() && flatsome_option('html_shop_page_content') && ! $wp_query->is_search() && $wp_query->query_vars['paged'] < 1 ){
-   	echo do_shortcode('<div class="shop-page-content">'.flatsome_option('html_shop_page_content').'</div>');
+if(is_shop() && magicpi_option('html_shop_page_content') && ! $wp_query->is_search() && $wp_query->query_vars['paged'] < 1 ){
+   	echo do_shortcode('<div class="shop-page-content">'.magicpi_option('html_shop_page_content').'</div>');
 } else {
-	wc_get_template_part( 'layouts/category', flatsome_option( 'category_sidebar' ) );
+	wc_get_template_part( 'layouts/category', magicpi_option( 'category_sidebar' ) );
 }
 
 get_footer( 'shop' );

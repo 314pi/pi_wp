@@ -11,14 +11,14 @@ return array(
 	),
 	array(
 		'title' => 'Primary',
-		'value' => get_theme_mod( 'color_primary', Flatsome_Default::COLOR_PRIMARY ),
+		'value' => get_theme_mod( 'color_primary', Magicpi_Default::COLOR_PRIMARY ),
 	),
 	array(
 		'title' => 'Secondary',
-		'value' => get_theme_mod( 'color_secondary', Flatsome_Default::COLOR_SECONDARY ),
+		'value' => get_theme_mod( 'color_secondary', Magicpi_Default::COLOR_SECONDARY ),
 	),
 	array(
 		'title' => 'Success',
-		'value' => get_theme_mod( 'color_success', Flatsome_Default::COLOR_SUCCESS ),
+		'value' => get_theme_mod( 'color_success', Magicpi_Default::COLOR_SUCCESS ),
 	),
 );

@@ -1,4 +1,4 @@
-Flatsome.behavior('wishlist', {
+Magicpi.behavior('wishlist', {
   attach: function (context) {
     jQuery('.wishlist-button', context).each(function (index, element) {
       'use strict'
@@ -22,7 +22,7 @@ Flatsome.behavior('wishlist', {
 })
 
 jQuery(document).ready(function () {
-  var flatsomeAddToWishlist = function () {
+  var magicpiAddToWishlist = function () {
     jQuery('.wishlist-button').removeClass('loading')
     jQuery('.wishlist-button').addClass('wishlist-added')
 
@@ -34,7 +34,7 @@ jQuery(document).ready(function () {
 
       },
       data: {
-        action: 'flatsome_update_wishlist_count',
+        action: 'magicpi_update_wishlist_count',
       },
       success: function (data) {
         jQuery('i.wishlist-icon').addClass('added')
@@ -56,5 +56,5 @@ jQuery(document).ready(function () {
     })
   }
 
-  jQuery('body').on('added_to_wishlist removed_from_wishlist', flatsomeAddToWishlist)
+  jQuery('body').on('added_to_wishlist removed_from_wishlist', magicpiAddToWishlist)
 })

@@ -1,8 +1,8 @@
 <?php
 /**
- * Flatsome Admin Panel
+ * Magicpi Admin Panel
  */
-class Flatsome_Admin {
+class Magicpi_Admin {
 
 	/**
 	 * Constructor
@@ -10,8 +10,8 @@ class Flatsome_Admin {
 	 */
 	public function __construct() {
 
-		add_action( 'admin_menu', array( $this, 'flatsome_panel_register_menu' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'flatsome_panel_style' ) );
+		add_action( 'admin_menu', array( $this, 'magicpi_panel_register_menu' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'magicpi_panel_style' ) );
 	
 	} // end constructor
 
@@ -21,9 +21,9 @@ class Flatsome_Admin {
 	 * @return void
 	 * @since  1.4.4
 	 */
-	public function flatsome_panel_style() {
-		global $flatsome_version;
-		wp_enqueue_style( 'flatsome-panel-css', get_template_directory_uri() . '/inc/admin/panel/panel.css', $flatsome_version );
+	public function magicpi_panel_style() {
+		global $magicpi_version;
+		wp_enqueue_style( 'magicpi-panel-css', get_template_directory_uri() . '/inc/admin/panel/panel.css', $magicpi_version );
 	}
 
 	/**
@@ -31,33 +31,33 @@ class Flatsome_Admin {
 	 * @see  add_theme_page()
 	 * @since 1.0.0
 	 */
-	public function flatsome_panel_register_menu() {
-		$url = admin_url().'admin.php?page=flatsome-panel';
+	public function magicpi_panel_register_menu() {
+		$url = admin_url().'admin.php?page=magicpi-panel';
 
-		add_menu_page( 'Welcome to Flatsome', 'Flatsome', 'manage_options', 'flatsome-panel', array( $this, 'flatsome_panel_welcome' ), get_template_directory_uri().'/assets/img/logo-icon.svg', '2');
+		add_menu_page( 'Welcome to Magicpi', 'Magicpi', 'manage_options', 'magicpi-panel', array( $this, 'magicpi_panel_welcome' ), get_template_directory_uri().'/assets/img/logo-icon.svg', '2');
 		
-		add_submenu_page('flatsome-panel', 'Theme License', 'Theme License', 'manage_options', 'admin.php?page=flatsome-panel' );
+		add_submenu_page('magicpi-panel', 'Theme License', 'Theme License', 'manage_options', 'admin.php?page=magicpi-panel' );
 
-		//add_submenu_page('flatsome-panel', 'Getting Started', 'Getting Started', 'manage_options', 'flatsome-panel-getting-started', array( $this, 'flatsome_panel_getting_started') );
+		//add_submenu_page('magicpi-panel', 'Getting Started', 'Getting Started', 'manage_options', 'magicpi-panel-getting-started', array( $this, 'magicpi_panel_getting_started') );
 
-		//add_submenu_page('flatsome-panel', 'Tutorials', 'Tutorials', 'manage_options', 'flatsome-panel-tutorials', array( $this, 'flatsome_panel_tutorials') );
+		//add_submenu_page('magicpi-panel', 'Tutorials', 'Tutorials', 'manage_options', 'magicpi-panel-tutorials', array( $this, 'magicpi_panel_tutorials') );
 
-		add_submenu_page('flatsome-panel', 'Help & Guides', 'Help & Guides', 'manage_options', 'flatsome-panel-support', array( $this, 'flatsome_panel_support') );
+		add_submenu_page('magicpi-panel', 'Help & Guides', 'Help & Guides', 'manage_options', 'magicpi-panel-support', array( $this, 'magicpi_panel_support') );
 
-		//add_submenu_page('flatsome-panel', 'Plugins', 'Plugins', 'manage_options', 'flatsome-panel-plugins', array( $this, 'flatsome_panel_plugins') );
+		//add_submenu_page('magicpi-panel', 'Plugins', 'Plugins', 'manage_options', 'magicpi-panel-plugins', array( $this, 'magicpi_panel_plugins') );
 
-		add_submenu_page('flatsome-panel', 'Change log', 'Change log', 'manage_options', 'flatsome-panel-changelog', array( $this, 'flatsome_panel_changelog') );
+		add_submenu_page('magicpi-panel', 'Change log', 'Change log', 'manage_options', 'magicpi-panel-changelog', array( $this, 'magicpi_panel_changelog') );
 
-	    add_submenu_page('flatsome-panel', '', 'Theme Options', 'manage_options', 'customize.php' );
+	    add_submenu_page('magicpi-panel', '', 'Theme Options', 'manage_options', 'customize.php' );
 	}
 
 	/**
 	 * The welcome screen
 	 * @since 1.0.0
 	 */
-	public function flatsome_panel_welcome() {
+	public function magicpi_panel_welcome() {
 		?>
-		<div class="flatsome-panel">
+		<div class="magicpi-panel">
 			<div class="wrap about-wrap">
 				<?php require_once( get_template_directory() . '/inc/admin/panel/sections/top.php' ); ?>
 				<?php require_once( get_template_directory() . '/inc/admin/panel/sections/tab-activate.php' ); ?>
@@ -66,9 +66,9 @@ class Flatsome_Admin {
 		<?php
 	}
 
-	public function flatsome_panel_getting_started() {
+	public function magicpi_panel_getting_started() {
 		?>
-		<div class="flatsome-panel">
+		<div class="magicpi-panel">
 			<div class="wrap about-wrap">
 				<?php require_once( get_template_directory() . '/inc/admin/panel/sections/top.php' ); ?>
 				<?php require_once( get_template_directory() . '/inc/admin/panel/sections/tab-guide.php' ); ?>
@@ -77,9 +77,9 @@ class Flatsome_Admin {
 		<?php
 	}
 
-	public function flatsome_panel_tutorials() {
+	public function magicpi_panel_tutorials() {
 		?>
-		<div class="flatsome-panel">
+		<div class="magicpi-panel">
 			<div class="wrap about-wrap">
 				<?php require_once( get_template_directory() . '/inc/admin/panel/sections/top.php' ); ?>
 				<?php require_once( get_template_directory() . '/inc/admin/panel/sections/tab-tutorials.php' ); ?>
@@ -88,9 +88,9 @@ class Flatsome_Admin {
 		<?php
 	}
 
-	/*public function flatsome_panel_plugins() {
+	/*public function magicpi_panel_plugins() {
 		?>
-		<div class="flatsome-panel">
+		<div class="magicpi-panel">
 			<div class="wrap about-wrap">
 				<?php require_once( get_template_directory() . '/inc/admin/panel/sections/top.php' ); ?>
 				<?php require_once( get_template_directory() . '/inc/admin/panel/sections/tab-plugins.php' ); ?>
@@ -99,9 +99,9 @@ class Flatsome_Admin {
 		<?php
 	} */
 
-	public function flatsome_panel_support() {
+	public function magicpi_panel_support() {
 		?>
-		<div class="flatsome-panel">
+		<div class="magicpi-panel">
 			<div class="wrap about-wrap">
 				<?php require_once( get_template_directory() . '/inc/admin/panel/sections/top.php' ); ?>
 				<?php require_once( get_template_directory() . '/inc/admin/panel/sections/tab-support.php' ); ?>
@@ -110,9 +110,9 @@ class Flatsome_Admin {
 		<?php
 	}
 
-	public function flatsome_panel_changelog() {
+	public function magicpi_panel_changelog() {
 		?>
-		<div class="flatsome-panel">
+		<div class="magicpi-panel">
 			<div class="wrap about-wrap">
 				<?php require_once( get_template_directory() . '/inc/admin/panel/sections/top.php' ); ?>
 				<?php require_once( get_template_directory() . '/inc/admin/panel/sections/tab-changelog.php' ); ?>
@@ -123,4 +123,4 @@ class Flatsome_Admin {
 
 }
 
-$GLOBALS['Flatsome_Admin'] = new Flatsome_Admin();
+$GLOBALS['Magicpi_Admin'] = new Magicpi_Admin();

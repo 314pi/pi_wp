@@ -40,8 +40,8 @@ TWEAK: Improved layout option controls.
 
 Change: Removed "WooSidebars" from included plugins.
 
-DEV: New flatsome_product_block filter.
-DEV: New flatsome_before_single_product_custom action.
+DEV: New magicpi_product_block filter.
+DEV: New magicpi_before_single_product_custom action.
 
 --- 3.11.3 ---
 FIXED: Custom portfolio archive page title and template selection.
@@ -175,7 +175,7 @@ FIXED: Image alt attribute on sticky add to cart thumbnail.
 FIXED: Payment icons shortcode link attribute.
 FIXED: 'Call us' translation string.
 
-DEV: Added missing flatsome_after_page hook on page-blank-title-center template.
+DEV: Added missing magicpi_after_page hook on page-blank-title-center template.
 DEV: Added support for wp_body_open hook.
 
 --- 3.9.0 ---
@@ -220,10 +220,10 @@ TWEAK: Improved accessibility on various elements.
 TWEAK: Viewport is now scalable on mobile devices.
 TWEAK: Removed Google+ functionality.
 
-DEV: New flatsome_payment_icons filter.
-DEV: New flatsome_viewport_meta filter.
-DEV: New flatsome_lightbox_close_button filter.
-DEV: New flatsome_lightbox_close_btn_inside filter.
+DEV: New magicpi_payment_icons filter.
+DEV: New magicpi_viewport_meta filter.
+DEV: New magicpi_lightbox_close_button filter.
+DEV: New magicpi_lightbox_close_btn_inside filter.
 
 Note: Performance related options can now be found under the Advanced → Performance tab.
 Note: Minimum required WooCommerce version 3.3.0.
@@ -325,7 +325,7 @@ TWEAK: "Blocks" are renamed to "UX Blocks".
 FIXED: Outdated WooCommerce 3.5.1 files.
 FIXED: Various CSS errors with new sticky add to cart.
 FIXED: Vertical tab content padding in RTL.
-FIXED: Backward compatibility for deprecated get_flatsome_breadcrumbs().
+FIXED: Backward compatibility for deprecated get_magicpi_breadcrumbs().
 
 --- 3.7.0 ---
 NEW: WooCommerce 3.5 compatibility.
@@ -389,7 +389,7 @@ TWEAK: Improved WPML configuration.
 --- 3.6.1 ---
 FIXED: Scroll to position when height changes in the page occur.
 FIXED: Accordion scroll position after opening section on mobile devices.
-FIXED: JS error: Flatsome is not defined, in some cases on auto cart refresh.
+FIXED: JS error: Magicpi is not defined, in some cases on auto cart refresh.
 FIXED: Disable featured image on single posts removed image on listings also.
 FIXED: Sidebar category filter revealed itself on the page after opening.
 FIXED: Portfolio element: text background color did not affect live site.
@@ -439,7 +439,7 @@ FIXED: Floating label checkout RTL alignment.
 FIXED: Mute on section video background.
 FIXED: Pages element responsive column setting.
 FIXED: Various CSS improvements.
-FIXED: Fixed responsive layout for most Flatsome Studio blocks.
+FIXED: Fixed responsive layout for most Magicpi Studio blocks.
 
 TWEAK: Option to have different layouts on cart and checkout
 TWEAK: Footer options per page now also reflects on the Footer replacement block.
@@ -448,7 +448,7 @@ TWEAK: Merged Checkout options into the new WooCommerce Checkout customizer.
 TWEAK: Extra check to prevent front-end block edit tooltip showing (logged in user caching).
 TWEAK: Infinite Scroll auto stack and better content reveal placement.
 
-DEV: Added hook 'flatsome_custom_product_single_product_hooks' to add own custom hooks.
+DEV: Added hook 'magicpi_custom_product_single_product_hooks' to add own custom hooks.
 
 --- 3.5.3 ---
 FIXED: Instagram has returned invalid data (due Instagram API change).
@@ -546,7 +546,7 @@ UPDATED: German translation (Follow).
 FIXED: UX Builder - Row backgrounds rendered white when no background was set in preview.
 FIXED: Product wide gallery style image sizes.
 FIXED: SKU didn't update in Quick View for variation SKU's.
-FIXED: Fixed WooCommerce 3.2 compatibility in Flatsome 2 (Old version)
+FIXED: Fixed WooCommerce 3.2 compatibility in Magicpi 2 (Old version)
 
 --- 3.4.1 ---
 Maintenance Update!
@@ -577,7 +577,7 @@ DEV: Added 3 new custom hooks for custom product page.
 DEV: Added hook 'excerpt_more' to change [...] on blog excerpts.
 
 --- 3.4.0 ---
-NEW: Release of Flatsome Studio (Beta). Hundreds of pre-made sections and pages for UX Builder.
+NEW: Release of Magicpi Studio (Beta). Hundreds of pre-made sections and pages for UX Builder.
 NEW: Custom Product Page editor! Create custom product page layouts by using UX Builder.
 NEW: Option to force equal image heights on category pages and set desired height.
 NEW: Option to choose sale bubble % output format.
@@ -689,7 +689,7 @@ FIXED: Various CSS bugs.
 FIXED: Klarna Payment Icon.
 FIXED: Make sure new products is visible in live search.
 
---- 2.9.9 (Old Flatsome) --- 
+--- 2.9.9 (Old Magicpi) --- 
 Fixed: Outdated WooCommerce 3.0.3 files
 Fixed: Images did not change when changing variations.
 
@@ -765,7 +765,7 @@ FIXED: Problems with My Account links.
 
 --- 3.2.5 ---
 NEW: Option to set Visibility to hidden to temporary disable elements in UX Builder.
-NEW: Option to Lazy Load Flatsome Icons (Fixes the "data:application/x-font-ttfAAAAAwAAAAAAAAAAAAA" optimize error from Pingdom)
+NEW: Option to Lazy Load Magicpi Icons (Fixes the "data:application/x-font-ttfAAAAAwAAAAAAAAAAAAA" optimize error from Pingdom)
 NEW: Product List element added to UX Builder (Same style as Product Widgets.)
 
 FIXED: Various PHP 7+ error notices.
@@ -786,7 +786,7 @@ Changed: Category filter button moved to template file (woocommerce/loop/filter-
 Changed: Product page filter button moved to template file (woocommerce/single-product/filter-button.php)
 Changed: Continue Shopping button moved to template file (woocommerce/cart/continue-shopping.php)
 Changed: product-searchform.php moved into "woocommerce" folder.
-Changed: Moved Flatsome Icons css to assets/css/fl-icons.css
+Changed: Moved Magicpi Icons css to assets/css/fl-icons.css
 
 --- 3.2.2 ---
 FIXED: Cleaner Customizer for WordPress 4.7
@@ -849,7 +849,7 @@ FIXED: Bugs with Countdown styling.
 FIXED: Bugs with Portfolio list.
 FIXED: Better compatibility with WP Rocket.
 FIXED: Various mobile styling issues.
-FIXED: Option to disable Flatsome 2.0 content fallback. (Better speed). Disable in Advanced > Global Settings.
+FIXED: Option to disable Magicpi 2.0 content fallback. (Better speed). Disable in Advanced > Global Settings.
 
 --- 3.1.5 ---
 BUILDER: Changed style on discard and apply button to prevent confusion with save.
@@ -870,7 +870,7 @@ FIXED: Problems with Ultimate Member plugin.
 FIXED: Various CSS bugs.
 
 NEW: YouTube added to Team member.
-NEW: New hooks - flatsome_before_breadcrumb, flatsome_after_breadcrumb.
+NEW: New hooks - magicpi_before_breadcrumb, magicpi_after_breadcrumb.
 
 --- 3.1.4.1 ---
 FIXED: Bugs when saving Theme Options.
@@ -921,7 +921,7 @@ FIXED: Follow icons in footer.
 --- 3.0.30 ---
 NEW: Single Page Navigation templates (Use together with Scroll To Shortcode).
 NEW: Option to remove Portfolio completely.
-NEW: Search documentation live from Flatsome > Help & Guides.
+NEW: Search documentation live from Magicpi > Help & Guides.
 NEW: Option to remove purchase code (Just remove code and click update).
 NEW: Option to set Column background colors from Row element.
 NEW: Option to set Lowercase on buttons.
@@ -987,7 +987,7 @@ FIXED: Updated demo content.
 FIXED: Old content wrapped in [row] was hidden.
 
 --- 3.0 (06.09.16) ---
-NEW: Created our own minimal Flatsome CSS Framework.
+NEW: Created our own minimal Magicpi CSS Framework.
 NEW: Completely re-written theme. Over 50% smaller CSS file, but tons of new features.
 NEW: New incredible Front-End Page Builder. (UX Page Builder).
 NEW: New Option Panel using Customizer. Preview changes live.
@@ -1036,14 +1036,14 @@ NEW: Option to center Absolute Footer.
 NEW: Video Element. Embed responsive YouTube videos etc.
 NEW: Optimisation options added to Advanced options.
 NEW: Enable / Disable lazy load of banners and section backgrounds.
-NEW: Added "Tutorials" tab to Flatsome Panel.
+NEW: Added "Tutorials" tab to Magicpi Panel.
 NEW: Change global default page templates. (Can be overridden pr page).
 NEW: Change width of Product Image Gallery on product page.
 NEW: Option to change how many product pr row on Tablets.
 NEW: Option to Center content in Top Bar.
 NEW: Option to set custom Sale bubble text.
 NEW: Many new product image hover styles. Zoom, Zoom Fade, Blur ++.
-NEW: Option to use Default WooCommerce Zoom (PrettyPhoto) instead of Flatsome Lightbox.
+NEW: Option to use Default WooCommerce Zoom (PrettyPhoto) instead of Magicpi Lightbox.
 NEW: Option for Google+ login on Account.
 NEW: Improved My Account Page Template.
 NEW: Newsletter Header element.
@@ -1220,7 +1220,7 @@ FIXED: Bugs with duplicated header elements in the Header builder.
 FIXED: Various CSS bugs.
 FIXED: Problems with Tabs and no product description.
 FIXED: Problems with Catalog Mode and prices.
-FIXED: Improved "Getting Start" tab in Flatsome Panel.
+FIXED: Improved "Getting Start" tab in Magicpi Panel.
 FIXED: Various Optimisation.
 FIXED: Bugs with vertical product page gallery and too many thumbnails.
 FIXED: Various Builder bugs.
@@ -1235,7 +1235,7 @@ NEW: Enable / Disable lazy load of banners and section backgrounds.
 NEW: Added default WooCommerce product shortcodes.
 NEW: Option to add scale share shortcode.
 NEW: "Pause on Hover" and "Draggable" added to slider options.
-NEW: Added "Tutorials" tab to Flatsome Panel. (Work in progress).
+NEW: Added "Tutorials" tab to Magicpi Panel. (Work in progress).
 FIXED: Accordion product tab style.
 FIXED: Disable Arrows for sliders.
 FIXED: Correct color helpers in Page Builder.
@@ -1269,7 +1269,7 @@ FIXED: Various HTML errors.
 FIXED: Various JS errors.
 
 Updated: Full Product templates now uses shop sidebar as default if no product sidebar widgets are empty.
-Updated: Restructure of flatsome panel.
+Updated: Restructure of magicpi panel.
 
 --- BETA 3.0.13 ---
 NEW: Added page templates to UX Builder. Quickly add pre-made templates to new pages.
@@ -1292,7 +1292,7 @@ FIXED: Various JS Bugs.
 
 --- BETA 3.0.10 ---
 NEW: Delete and duplicate elements from sidebar in UX Builder.
-Changed: New default primary color for Flatsome 3.0.0
+Changed: New default primary color for Magicpi 3.0.0
 NEW: New parallax script (Work in progress).
 
 Improved: Header builder layout.
@@ -1308,7 +1308,7 @@ FIXED: Maintenance bugs.
 
 --- BETA 3.0.09 ---
 NEW: Video Element. Embed responsive YouTube videos etc.
-NEW: Enable / disable Theme plugins from Flatsome Panel.
+NEW: Enable / disable Theme plugins from Magicpi Panel.
 
 Changed: Removed line height option from Text Box. Can be added in the text editor instead in the 'Format' menu.
 Changed: Icon labels are now default primary color.
@@ -1335,7 +1335,7 @@ FIXED: Issues with star rating.
 FIXED: Improved Header Builder design.
 FIXED: Top bar background color if custom color is set.
 FIXED: Center align absolute footer.
-FIXED: Correct Theme Version in Flatsome Panel.
+FIXED: Correct Theme Version in Magicpi Panel.
 FIXED: Scrollbar visible before slider is loaded.
 FIXED: Portfolio Image height can now be set.
 FIXED: Better placement of big dropdowns.
@@ -1508,7 +1508,7 @@ FIXED: Slider CSS glitches
 FIXED: Improved content formatting.
 FIXED: Banner BG color
 FIXED: Bugs with 'Enable Coupon on Checkout'.
-FIXED: Flatsome Page Builder is now disabled if Visual Composer is active.
+FIXED: Magicpi Page Builder is now disabled if Visual Composer is active.
 FIXED: Various spelling mistakes.
 
 
@@ -1678,7 +1678,7 @@ NEW OPTION: Boxed and Framed product grid style.
 NEW OPTION: Pinterest/Masonry Product grid option.
 NEW OPTION: Add HMTL or Shortcodes after a Blog post.
 
-NEW: Flatsome Child Theme now has a custom function file.
+NEW: Magicpi Child Theme now has a custom function file.
 
 FIXED: Cart total in header is now correct.
 FIXED: Animation glitch on animated banners.
@@ -1697,7 +1697,7 @@ NEW OPTION: Change color of "New" bubble in Theme Options > Style and Colors.
 NEW OPTION: Insert shortcode snippets into the page builder.
 
 IMPROVED: Cleaner Theme Option panel + Theme Option dropdown for quick access.
-IMPROVED: Flatsome Page Builder
+IMPROVED: Magicpi Page Builder
 IMPROVED: Various CSS improvements.
 IMPROVED: Products sliders on mobile and tablets.
 
@@ -1731,10 +1731,10 @@ NEW: Set max number of related products.
 FIX: Various CSS bugs reported by users.
 FIX: Various CSS improvements.
 FIX: Product image slider on Android.
-FIX: Flatsome Builder improvements.
+FIX: Magicpi Builder improvements.
 
 --- 2.0 ---
-NEW: Flatsome Page Builder added (BETA)
+NEW: Magicpi Page Builder added (BETA)
 NEW: Enable minified CSS and JavaScript in Theme Options for better speed. 
 NEW: New Awesome alternative focused Checkout template.
 NEW: SVG icons can be added to [featured_box]. Add any icon you find here: https://icomoon.io/
@@ -1921,7 +1921,7 @@ FIX: Sharing wishlists now works.
 FIX: Fixed long white space on product pages on iPhones.
 FIX: Crashing and freezing on Andriod phones.
 FIX: Issues and better styling for Pinterest Blog style.
-FIX: Small fix to Flatsome Recent Comments widget.
+FIX: Small fix to Magicpi Recent Comments widget.
 FIX: [lightbox] shortcode now works on Safari and Firefox.
 FIX: Only logged in users can now share wishlist.
 FIX: Video banner/slider now works for firefox.
@@ -1976,7 +1976,7 @@ NEW: Light/dark main content text option.
 NEW: Change background color of main content. 
 NEW: Change products per row in product grid
 NEW: Change products per page in Theme Option.
-NEW: Flatsome Upsell Widget (Add to product page sidebar etc).
+NEW: Magicpi Upsell Widget (Add to product page sidebar etc).
 NEW: Added arrows to product thumbnail slider if there is more than 4 thumbnails.
 NEW: Added "target" tag to [button].
 

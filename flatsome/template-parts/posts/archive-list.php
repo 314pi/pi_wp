@@ -10,7 +10,7 @@
 ?>
 
 	<?php
-	echo flatsome_apply_shortcode( 'blog_posts', array(
+	echo magicpi_apply_shortcode( 'blog_posts', array(
 		'type'        => 'row',
 		'image_width' => '40',
 		'depth'       => get_theme_mod( 'blog_posts_depth', 0 ),
@@ -23,7 +23,7 @@
 	) );
 	?>
 
-<?php flatsome_posts_pagination(); ?>
+<?php magicpi_posts_pagination(); ?>
 
 <?php else : ?>
 

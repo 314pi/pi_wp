@@ -2,7 +2,7 @@
 /**
  * Continue Shopping Button
  *
- * @package Flatsome/WooCommerce/Templates
+ * @package Magicpi/WooCommerce/Templates
  */
 
 defined( 'ABSPATH' ) || exit; ?>

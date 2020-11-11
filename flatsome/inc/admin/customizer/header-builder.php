@@ -1,7 +1,7 @@
 <?php
 
 /* Add Header builder */
-function flatsome_customizer_header_builder(){
+function magicpi_customizer_header_builder(){
     global $nav_elements;
     ?>
     <div class="header-builder">
@@ -118,4 +118,4 @@ function flatsome_customizer_header_builder(){
     </div>
     <?php
 }
-add_action('customize_controls_print_footer_scripts', 'flatsome_customizer_header_builder');
+add_action('customize_controls_print_footer_scripts', 'magicpi_customizer_header_builder');

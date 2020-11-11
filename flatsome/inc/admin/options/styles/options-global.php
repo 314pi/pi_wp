@@ -1,16 +1,16 @@
 <?php
 
 
-Flatsome_Option::add_section( 'global-styles', array(
-	'title'       => __( 'Global Styles', 'flatsome-admin' ),
+Magicpi_Option::add_section( 'global-styles', array(
+	'title'       => __( 'Global Styles', 'magicpi-admin' ),
 	'panel'       => 'style',
 ) );
 
 
-Flatsome_Option::add_field( 'option',  array(
+Magicpi_Option::add_field( 'option',  array(
 	'type'        => 'text',
 	'settings'     => 'button_radius',
-	'label'       => __( 'Default Button Radius', 'flatsome-admin' ),
+	'label'       => __( 'Default Button Radius', 'magicpi-admin' ),
 	'section'     => 'global-styles',
 	'transport'   => $transport,
 	'default'     => '',

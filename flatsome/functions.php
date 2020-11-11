@@ -1,8 +1,8 @@
 <?php
 /**
- * Flatsome functions and definitions
+ * Magicpi functions and definitions
  *
- * @package flatsome
+ * @package magicpi
  */
 
 require get_template_directory() . '/inc/init.php';

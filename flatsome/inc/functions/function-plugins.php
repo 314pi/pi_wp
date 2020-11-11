@@ -1,18 +1,18 @@
 <?php
 /**
- * Flatsome Included Plugins
+ * Magicpi Included Plugins
  *
  * @author   UX Themes
- * @package  Flatsome/Functions
+ * @package  Magicpi/Functions
  */
 
 require get_template_directory() . '/inc/classes/class-tgm-plugin-activation.php';
-add_action( 'tgmpa_register', 'flatsome_register_required_plugins' );
+add_action( 'tgmpa_register', 'magicpi_register_required_plugins' );
 
 /**
  * Calls tgmpa() with $plugins & $config arrays
  */
-function flatsome_register_required_plugins() {
+function magicpi_register_required_plugins() {
 
 	/**
 	 * Array of plugin arrays. Required keys are name and slug.

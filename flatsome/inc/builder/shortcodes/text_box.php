@@ -4,8 +4,8 @@ add_ux_builder_shortcode( 'text_box', array(
     'type' => 'container',
     'name' => __( 'Text Box' ),
     'category' => __( 'Content' ),
-    'template' => flatsome_ux_builder_template( 'text_box.html' ),
-    'thumbnail' => flatsome_ux_builder_thumbnail( 'text_box' ),
+    'template' => magicpi_ux_builder_template( 'text_box.html' ),
+    'thumbnail' => magicpi_ux_builder_thumbnail( 'text_box' ),
     'require' => 'ux_banner',
     'allow' => array(
       'ux_breadcrumbs',

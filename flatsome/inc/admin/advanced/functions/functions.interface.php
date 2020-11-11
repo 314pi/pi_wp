@@ -55,7 +55,7 @@ function optionsframework_admin_init()
  */
 function optionsframework_add_admin() {
 	
-    $of_page =  add_submenu_page('flatsome-panel', '', 'Advanced', 'edit_theme_options', 'optionsframework', 'optionsframework_options_page');
+    $of_page =  add_submenu_page('magicpi-panel', '', 'Advanced', 'edit_theme_options', 'optionsframework', 'optionsframework_options_page');
 
 	// Add framework functionaily to the head individually
 	add_action("admin_print_scripts-$of_page", 'of_load_only');

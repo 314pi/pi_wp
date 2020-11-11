@@ -89,9 +89,9 @@ function ux_pages($atts) {
         if($style !== 'shade') $style = 'overlay';
         $columns = 0;
         $current_grid = 0;
-        $grid = flatsome_get_grid($grid);
+        $grid = magicpi_get_grid($grid);
         $grid_total = count($grid);
-        flatsome_get_grid_height($grid_height, $_id);
+        magicpi_get_grid_height($grid_height, $_id);
       }
 
       // Add Animations
@@ -152,7 +152,7 @@ function ux_pages($atts) {
       $repater['depth'] = $depth;
       $repater['depth_hover'] = $depth_hover;
 
-      get_flatsome_repeater_start($repater);
+      get_magicpi_repeater_start($repater);
 
       foreach (  $childpages as $page ) {
 

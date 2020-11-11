@@ -2,7 +2,7 @@
 /**
  * Shop category filter button template
  *
- * @package flatsome
+ * @package magicpi
  */
 
 $layout = get_theme_mod( 'category_sidebar', 'left-sidebar' );

@@ -22,7 +22,7 @@ function ux_tabgroup( $params, $content = null, $tag ) {
 		$type = 'vertical';
 	}
 
-	$content = flatsome_contentfix($content);
+	$content = magicpi_contentfix($content);
 
 	$wrapper_class[] = 'tabbed-content';
 	if ( $class ) $wrapper_class[] = $class;
@@ -42,10 +42,10 @@ function ux_tabgroup( $params, $content = null, $tag ) {
 	if( is_array( $GLOBALS['tabs'] )){
 
 		foreach( $GLOBALS['tabs'] as $key => $tab ){
-			if($tab['title']) $id = flatsome_to_dashed($tab['title']);
+			if($tab['title']) $id = magicpi_to_dashed($tab['title']);
 			$active = $key == 0 ? ' active' : ''; // Set first tab active by default.
 			$tabs[] = '<li class="tab'.$active.' has-icon"><a href="#tab_'.$id.'"><span>'.$tab['title'].'</span></a></li>';
-			$panes[] = '<div class="panel'.$active.' entry-content" id="tab_'.$id.'">'.flatsome_contentfix($tab['content']).'</div>';
+			$panes[] = '<div class="panel'.$active.' entry-content" id="tab_'.$id.'">'.magicpi_contentfix($tab['content']).'</div>';
 			$i++;
 		}
 			if($title) $title = '<h4 class="uppercase text-'.$align.'">'.$title.'</h4>';

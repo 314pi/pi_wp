@@ -1,6 +1,6 @@
 <?php
 
-function flatsome_product_summary_fix(){
+function magicpi_product_summary_fix(){
   if(is_product()){
     if(!get_theme_mod('product_info_meta', 1)){
       remove_action('woocommerce_single_product_summary','woocommerce_template_single_meta',40);
@@ -10,10 +10,10 @@ function flatsome_product_summary_fix(){
     }
   }
 }
-add_action('wp_head','flatsome_product_summary_fix', 9999);
+add_action('wp_head','magicpi_product_summary_fix', 9999);
 
 // Product summary classes
-function flatsome_product_summary_classes( $main = true, $align = true, $form = true ) {
+function magicpi_product_summary_classes( $main = true, $align = true, $form = true ) {
 	$classes = $main ? array( 'product-summary' ) : array();
 	if ( $align && get_theme_mod( 'product_info_align' ) ) {
 		$classes[] = 'text-' . get_theme_mod( 'product_info_align', 'left' );
@@ -24,54 +24,54 @@ function flatsome_product_summary_classes( $main = true, $align = true, $form = 
 	echo implode( ' ', $classes );
 }
 
-function flatsome_product_upsell_sidebar(){
+function magicpi_product_upsell_sidebar(){
   // Product Upsell
     if(get_theme_mod('product_upsell','sidebar') == 'sidebar') {
         remove_action( 'woocommerce_after_single_product_summary' , 'woocommerce_upsell_display', 15);
-        add_action('flatsome_before_product_sidebar','woocommerce_upsell_display', 2);
+        add_action('magicpi_before_product_sidebar','woocommerce_upsell_display', 2);
     }
     else if(get_theme_mod('product_upsell', 'sidebar') == 'disabled') {
         remove_action( 'woocommerce_after_single_product_summary' , 'woocommerce_upsell_display', 15);
     }
 }
-add_action('flatsome_before_product_sidebar','flatsome_product_upsell_sidebar', 1);
+add_action('magicpi_before_product_sidebar','magicpi_product_upsell_sidebar', 1);
 
 /* Add Share to product description */
-if(!function_exists('flatsome_product_share')) {
-  function flatsome_product_share() {
+if(!function_exists('magicpi_product_share')) {
+  function magicpi_product_share() {
       echo do_shortcode('[share]');
   }
 }
-add_action( 'woocommerce_share', 'flatsome_product_share',  10 );
+add_action( 'woocommerce_share', 'magicpi_product_share',  10 );
 
 
 /* Remove Product Description Heading */
-function flatsome_remove_product_description_heading($heading){
+function magicpi_remove_product_description_heading($heading){
 
      return $heading = '';
 }
-add_filter('woocommerce_product_description_heading','flatsome_remove_product_description_heading');
+add_filter('woocommerce_product_description_heading','magicpi_remove_product_description_heading');
 
 
 /* Remove Additional Product Information Heading */
-function flatsome_remove_product_information_heading($heading){
+function magicpi_remove_product_information_heading($heading){
      return $heading = '';
 }
-add_filter('woocommerce_product_additional_information_heading','flatsome_remove_product_information_heading');
+add_filter('woocommerce_product_additional_information_heading','magicpi_remove_product_information_heading');
 
 // Move Sale Flash to another hook
 remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash',10);
-add_action('flatsome_sale_flash','woocommerce_show_product_sale_flash',10);
+add_action('magicpi_sale_flash','woocommerce_show_product_sale_flash',10);
 
 
 // Add Product Video Button
-if(!function_exists('flatsome_product_video_button')){
-function flatsome_product_video_button(){
+if(!function_exists('magicpi_product_video_button')){
+function magicpi_product_video_button(){
   global $wc_cpdf;
        // Add Product Video
       if($wc_cpdf->get_value(get_the_ID(), '_product_video')){ ?>
-      <a class="button is-outline circle icon button product-video-popup tip-top" href="<?php echo $wc_cpdf->get_value(get_the_ID(), '_product_video'); ?>" title="<?php echo __( 'Video', 'flatsome' ); ?>">
-            <?php echo get_flatsome_icon('icon-play'); ?>
+      <a class="button is-outline circle icon button product-video-popup tip-top" href="<?php echo $wc_cpdf->get_value(get_the_ID(), '_product_video'); ?>" title="<?php echo __( 'Video', 'magicpi' ); ?>">
+            <?php echo get_magicpi_icon('icon-play'); ?>
       </a>
       <style>
        <?php
@@ -95,48 +95,48 @@ function flatsome_product_video_button(){
       <?php }
   }
 }
-add_action('flatsome_product_image_tools_bottom','flatsome_product_video_button', 1);
+add_action('magicpi_product_image_tools_bottom','magicpi_product_video_button', 1);
 
 
 // Product Image Lightbox
-function flatsome_product_lightbox_button(){
+function magicpi_product_lightbox_button(){
    if(get_theme_mod('product_lightbox', 'default') !== 'disabled') { ?>
-    <a href="#product-zoom" class="zoom-button button is-outline circle icon tooltip hide-for-small" title="<?php echo __( 'Zoom', 'flatsome' ); ?>">
-      <?php echo get_flatsome_icon('icon-expand'); ?>
+    <a href="#product-zoom" class="zoom-button button is-outline circle icon tooltip hide-for-small" title="<?php echo __( 'Zoom', 'magicpi' ); ?>">
+      <?php echo get_magicpi_icon('icon-expand'); ?>
     </a>
  <?php }
 }
-add_action('flatsome_product_image_tools_bottom','flatsome_product_lightbox_button', 2);
+add_action('magicpi_product_image_tools_bottom','magicpi_product_lightbox_button', 2);
 
 
 // Add Product Body Classes
-function flatsome_product_body_classes( $classes ) {
+function magicpi_product_body_classes( $classes ) {
 
     // Add Frame Class for Posts
-    if(is_product() && get_theme_mod('product_lightbox', 'default') == 'flatsome'){
+    if(is_product() && get_theme_mod('product_lightbox', 'default') == 'magicpi'){
        $classes[] = 'has-lightbox';
     }
 
     return $classes;
 }
-add_filter( 'body_class', 'flatsome_product_body_classes' );
+add_filter( 'body_class', 'magicpi_product_body_classes' );
 
 
-function flatsome_product_video_tab(){
+function magicpi_product_video_tab(){
    global $wc_cpdf;
    echo do_shortcode('[ux_video url="'.$wc_cpdf->get_value(get_the_ID(), '_product_video').'"]');
 }
 
 // Custom Product Tabs
-function flatsome_custom_product_tabs( $tabs ) {
+function magicpi_custom_product_tabs( $tabs ) {
   global $wc_cpdf;
 
     // Product video Tab
   if($wc_cpdf->get_value(get_the_ID(), '_product_video_placement') == 'tab'){
       $tabs['ux_video_tab'] = array(
-        'title'   => __('Video','flatsome'),
+        'title'   => __('Video','magicpi'),
         'priority'  => 10,
-        'callback'  => 'flatsome_product_video_tab'
+        'callback'  => 'magicpi_product_video_tab'
       );
   }
 
@@ -145,7 +145,7 @@ function flatsome_custom_product_tabs( $tabs ) {
     $tabs['ux_custom_tab'] = array(
       'title'   =>  $wc_cpdf->get_value(get_the_ID(), '_custom_tab_title'),
       'priority'  => 40,
-      'callback'  => 'flatsome_custom_tab_content'
+      'callback'  => 'magicpi_custom_tab_content'
     );
   }
 
@@ -154,7 +154,7 @@ function flatsome_custom_product_tabs( $tabs ) {
       $tabs['ux_global_tab'] = array(
         'title'   => get_theme_mod('tab_title'),
         'priority'  => 50,
-        'callback'  => 'flatsome_global_tab_content'
+        'callback'  => 'magicpi_global_tab_content'
       );
   }
 
@@ -164,21 +164,21 @@ function flatsome_custom_product_tabs( $tabs ) {
   return $tabs;
 }
 
-add_filter( 'woocommerce_product_tabs', 'flatsome_custom_product_tabs' );
+add_filter( 'woocommerce_product_tabs', 'magicpi_custom_product_tabs' );
 
-function flatsome_custom_tab_content() {
+function magicpi_custom_tab_content() {
   // The new tab content
   global $wc_cpdf;
   echo do_shortcode($wc_cpdf->get_value(get_the_ID(), '_custom_tab'));
 }
 
-function flatsome_global_tab_content() {
+function magicpi_global_tab_content() {
   // The new tab content
   echo do_shortcode(get_theme_mod('tab_content'));
 }
 
 
-function flatsome_product_tabs_classes(){
+function magicpi_product_tabs_classes(){
     $classes = array('nav','nav-uppercase');
     $tab_style = get_theme_mod('product_display','tabs');
     if($tab_style == 'tabs' || !$tab_style){
@@ -201,46 +201,46 @@ function flatsome_product_tabs_classes(){
 
 
 // Add Custom HTML Blocks
-function flatsome_before_add_to_cart_html(){
+function magicpi_before_add_to_cart_html(){
     echo do_shortcode(get_theme_mod('html_before_add_to_cart'));
 }
-add_action( 'woocommerce_single_product_summary', 'flatsome_before_add_to_cart_html', 20);
+add_action( 'woocommerce_single_product_summary', 'magicpi_before_add_to_cart_html', 20);
 
 
 // Add HTML after Add to Cart button
-function flatsome_after_add_to_cart_html(){
+function magicpi_after_add_to_cart_html(){
     echo do_shortcode(get_theme_mod('html_after_add_to_cart'));
 }
-add_action( 'woocommerce_single_product_summary', 'flatsome_after_add_to_cart_html', 30);
+add_action( 'woocommerce_single_product_summary', 'magicpi_after_add_to_cart_html', 30);
 
 
 // Add Custom HTML to top of product page
-function flatsome_product_top_content(){
+function magicpi_product_top_content(){
   global $wc_cpdf;
   if($wc_cpdf->get_value(get_the_ID(), '_top_content')){
     echo do_shortcode($wc_cpdf->get_value(get_the_ID(), '_top_content'));
   }
 }
 
-add_action('flatsome_before_product_page','flatsome_product_top_content', 10);
+add_action('magicpi_before_product_page','magicpi_product_top_content', 10);
 
 // Add Custom HTML to bottom of product page
-function flatsome_product_bottom_content(){
+function magicpi_product_bottom_content(){
   global $wc_cpdf;
   if($wc_cpdf->get_value(get_the_ID(), '_bottom_content')){
     echo do_shortcode($wc_cpdf->get_value(get_the_ID(), '_bottom_content'));
   }
 }
-add_action('flatsome_after_product_page','flatsome_product_bottom_content', 10);
+add_action('magicpi_after_product_page','magicpi_product_bottom_content', 10);
 
-function flatsome_related_products_args( $args ) {
+function magicpi_related_products_args( $args ) {
   $args['posts_per_page'] = get_theme_mod('max_related_products', 8);
   return $args;
 }
-add_filter( 'woocommerce_output_related_products_args', 'flatsome_related_products_args' );
+add_filter( 'woocommerce_output_related_products_args', 'magicpi_related_products_args' );
 
 
-function flatsome_sticky_add_to_cart_before() {
+function magicpi_sticky_add_to_cart_before() {
 	if ( ! is_product() || ! get_theme_mod( 'product_sticky_cart', 0 ) ) {
 		return;
 	}
@@ -263,10 +263,10 @@ function flatsome_sticky_add_to_cart_before() {
 	echo '</div>';
 }
 
-add_action( 'woocommerce_before_add_to_cart_button', 'flatsome_sticky_add_to_cart_before', -100 );
+add_action( 'woocommerce_before_add_to_cart_button', 'magicpi_sticky_add_to_cart_before', -100 );
 
 
-function flatsome_sticky_add_to_cart_after() {
+function magicpi_sticky_add_to_cart_after() {
 	if ( ! is_product() || ! get_theme_mod( 'product_sticky_cart', 0 ) ) {
 		return;
 	}
@@ -275,4 +275,4 @@ function flatsome_sticky_add_to_cart_after() {
 	echo '</div>';
 }
 
-add_action( 'woocommerce_after_add_to_cart_button', 'flatsome_sticky_add_to_cart_after', 100 );
+add_action( 'woocommerce_after_add_to_cart_button', 'magicpi_sticky_add_to_cart_after', 100 );

@@ -1,12 +1,12 @@
 <?php
 
 // Register scripts
-function flatsome_countdown_shortcode_scripts() {
-    wp_register_style( 'flatsome-countdown-style', get_template_directory_uri() . '/inc/shortcodes/ux_countdown/ux-countdown.css', 'flatsome-style');
-    wp_register_script( 'flatsome-countdown-script', get_template_directory_uri() . '/inc/shortcodes/ux_countdown/countdown-script-min.js', 'flatsome-countdown-script');
-    wp_register_script( 'flatsome-countdown-theme-js', get_template_directory_uri() . '/inc/shortcodes/ux_countdown/ux-countdown.js', 'flatsome-js', '3.2.6', true);
+function magicpi_countdown_shortcode_scripts() {
+    wp_register_style( 'magicpi-countdown-style', get_template_directory_uri() . '/inc/shortcodes/ux_countdown/ux-countdown.css', 'magicpi-style');
+    wp_register_script( 'magicpi-countdown-script', get_template_directory_uri() . '/inc/shortcodes/ux_countdown/countdown-script-min.js', 'magicpi-countdown-script');
+    wp_register_script( 'magicpi-countdown-theme-js', get_template_directory_uri() . '/inc/shortcodes/ux_countdown/ux-countdown.js', 'magicpi-js', '3.2.6', true);
 }
-add_action( 'wp_enqueue_scripts', 'flatsome_countdown_shortcode_scripts' );
+add_action( 'wp_enqueue_scripts', 'magicpi_countdown_shortcode_scripts' );
 
 // Register Shortcode
 function ux_countdown_shortcode( $atts ){
@@ -38,9 +38,9 @@ function ux_countdown_shortcode( $atts ){
 
     ), $atts ) );
 
-    wp_enqueue_style('flatsome-countdown-style');
-    wp_enqueue_script('flatsome-countdown-script');
-    wp_enqueue_script('flatsome-countdown-theme-js');
+    wp_enqueue_style('magicpi-countdown-style');
+    wp_enqueue_script('magicpi-countdown-script');
+    wp_enqueue_script('magicpi-countdown-theme-js');
 
     $date = $year.'/'.$month.'/'.$day;
 
@@ -51,7 +51,7 @@ function ux_countdown_shortcode( $atts ){
 
     if($color == 'primary' && !isset($bg_color)){
       $color = false;
-      $atts['bg_color'] = get_theme_mod('color_primary', Flatsome_Default::COLOR_PRIMARY );
+      $atts['bg_color'] = get_theme_mod('color_primary', Magicpi_Default::COLOR_PRIMARY );
     }
 
     $args = array(

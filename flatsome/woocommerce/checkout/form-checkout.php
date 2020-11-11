@@ -53,7 +53,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 }
 
 // Social login.
-if ( flatsome_option( 'facebook_login_checkout' ) && get_option( 'woocommerce_enable_myaccount_registration' ) == 'yes' && ! is_user_logged_in() ) {
+if ( magicpi_option( 'facebook_login_checkout' ) && get_option( 'woocommerce_enable_myaccount_registration' ) == 'yes' && ! is_user_logged_in() ) {
 	wc_get_template( 'checkout/social-login.php' );
 }
 ?>
@@ -83,7 +83,7 @@ if ( flatsome_option( 'facebook_login_checkout' ) && get_option( 'woocommerce_en
 		</div>
 
 		<div class="large-5 col">
-			<?php flatsome_sticky_column_open( 'checkout_sticky_sidebar' ); ?>
+			<?php magicpi_sticky_column_open( 'checkout_sticky_sidebar' ); ?>
 
 					<div class="col-inner <?php echo esc_attr( $sidebar_classes ); ?>">
 						<div class="checkout-sidebar sm-touch-scroll">
@@ -99,7 +99,7 @@ if ( flatsome_option( 'facebook_login_checkout' ) && get_option( 'woocommerce_en
 						</div>
 					</div>
 
-			<?php flatsome_sticky_column_close( 'checkout_sticky_sidebar' ); ?>
+			<?php magicpi_sticky_column_close( 'checkout_sticky_sidebar' ); ?>
 		</div>
 
 	</div>

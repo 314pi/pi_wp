@@ -1,19 +1,19 @@
 <?php
 
 /**
- * Get Flatsome option
+ * Get Magicpi option
  *
  * @deprecated in favor of get_theme_mod()
  *
  * @return string
  */
-function flatsome_option($option) {
+function magicpi_option($option) {
 	// Get options
-	return get_theme_mod( $option, flatsome_defaults($option) );
+	return get_theme_mod( $option, magicpi_defaults($option) );
 }
 
-if(!function_exists('flatsome_dummy_image')) {
-  function flatsome_dummy_image() {
+if(!function_exists('magicpi_dummy_image')) {
+  function magicpi_dummy_image() {
     return get_template_directory_uri().'/assets/img/missing.jpg';
   }
 }
@@ -29,24 +29,24 @@ if( ! function_exists('fl_woocommerce_version_check') ){
 }
 
 /* Get Site URL shortcode */
-if( ! function_exists( 'flatsome_site_path' ) ) {
-  function flatsome_site_path(){
+if( ! function_exists( 'magicpi_site_path' ) ) {
+  function magicpi_site_path(){
     return site_url();
   }
 }
-add_shortcode('site_url', 'flatsome_site_path');
-add_shortcode('site_url_secure', 'flatsome_site_path');
+add_shortcode('site_url', 'magicpi_site_path');
+add_shortcode('site_url_secure', 'magicpi_site_path');
 
 
 /* Get Year */
-if( ! function_exists( 'flatsome_show_current_year' ) ) {
-  function flatsome_show_current_year(){
+if( ! function_exists( 'magicpi_show_current_year' ) ) {
+  function magicpi_show_current_year(){
       return date('Y');
   }
 }
-add_shortcode('ux_current_year', 'flatsome_show_current_year');
+add_shortcode('ux_current_year', 'magicpi_show_current_year');
 
-function flatsome_get_post_type_items($post_type, $args_extended=array()) {
+function magicpi_get_post_type_items($post_type, $args_extended=array()) {
   global $post;
   $old_post = $post;
   $return = false;
@@ -81,7 +81,7 @@ function flatsome_get_post_type_items($post_type, $args_extended=array()) {
   return $return;
 }
 
-function flatsome_is_request( $type ) {
+function magicpi_is_request( $type ) {
   switch ( $type ) {
     case 'admin' :
       return is_admin();
@@ -92,17 +92,17 @@ function flatsome_is_request( $type ) {
   }
 }
 
-function flatsome_api_url() {
-  $api_url = 'https://flatsome-api.netlify.com';
+function magicpi_api_url() {
+  $api_url = 'https://magicpi-api.netlify.com';
 
-  if ( defined( 'FLATSOME_API_URL' ) && FLATSOME_API_URL ) {
-    $api_url = FLATSOME_API_URL;
+  if ( defined( 'MAGICPI_API_URL' ) && MAGICPI_API_URL ) {
+    $api_url = MAGICPI_API_URL;
   }
 
   return $api_url;
 }
 
-function flatsome_facebook_accounts() {
+function magicpi_facebook_accounts() {
   $theme_mod = get_theme_mod( 'facebook_accounts', array() );
 
   return array_filter( $theme_mod, function ( $account ) {
@@ -111,7 +111,7 @@ function flatsome_facebook_accounts() {
 }
 
 // Get block id by ID or slug.
-function flatsome_get_block_id( $post_id ) {
+function magicpi_get_block_id( $post_id ) {
   global $wpdb;
 
   if ( empty ( $post_id ) ) {
@@ -152,7 +152,7 @@ function flatsome_get_block_id( $post_id ) {
  *
  * @return array|false List of blocks matching defaults or `$args`.
  */
-function flatsome_get_block_list_by_id( $args = '' ) {
+function magicpi_get_block_list_by_id( $args = '' ) {
 
 	$defaults = array(
 		'option_none' => '',
@@ -165,7 +165,7 @@ function flatsome_get_block_list_by_id( $args = '' ) {
 	if ( $parsed_args['option_none'] ) {
 		$blocks = array( 0 => $parsed_args['option_none'] );
 	}
-	$posts = flatsome_get_post_type_items( 'blocks' );
+	$posts = magicpi_get_post_type_items( 'blocks' );
 	if ( $posts ) {
 		foreach ( $posts as $value ) {
 			$blocks[ $value->ID ] = $value->post_title;
@@ -184,7 +184,7 @@ function flatsome_get_block_list_by_id( $args = '' ) {
  *
  * @return bool|string If a shortcode tag doesn't exist => false, if exists => the result of the shortcode.
  */
-function flatsome_apply_shortcode( $tag, $atts = array(), $content = null ) {
+function magicpi_apply_shortcode( $tag, $atts = array(), $content = null ) {
 
 	global $shortcode_tags;
 

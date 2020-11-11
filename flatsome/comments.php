@@ -7,7 +7,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package flatsome
+ * @package magicpi
  */
 
 /*
@@ -20,7 +20,7 @@ if ( post_password_required() ) {
 }
 ?>
 
-<?php do_action('flatsome_before_comments'); ?>
+<?php do_action('magicpi_before_comments'); ?>
 
 <div id="comments" class="comments-area">
 
@@ -30,7 +30,7 @@ if ( post_password_required() ) {
 		<h3 class="comments-title uppercase">
 			<?php
 				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'flatsome' ) ),
+					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'magicpi' ) ),
 					number_format_i18n( get_comments_number() ),
 					'<span>' . get_the_title() . '</span>'
 				);
@@ -39,16 +39,16 @@ if ( post_password_required() ) {
 
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( array( 'callback' => 'flatsome_comment' ) );
+				wp_list_comments( array( 'callback' => 'magicpi_comment' ) );
 			?>
 		</ol>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'flatsome' ); ?></h2>
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'magicpi' ); ?></h2>
 			<div class="nav-links nex-prev-nav">
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'flatsome' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'flatsome' ) ); ?></div>
+				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'magicpi' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'magicpi' ) ); ?></div>
 			</div>
 		</nav>
 		<?php endif; // Check for comment navigation. ?>
@@ -59,7 +59,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'flatsome' ); ?></p>
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'magicpi' ); ?></p>
 	<?php endif; ?>
 
 	<?php comment_form(); ?>

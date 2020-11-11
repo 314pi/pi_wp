@@ -11,6 +11,6 @@ return array(
 	),
 	array(
 		'title' => 'Primary',
-		'value' => get_theme_mod( 'color_primary', Flatsome_Default::COLOR_PRIMARY ),
+		'value' => get_theme_mod( 'color_primary', Magicpi_Default::COLOR_PRIMARY ),
 	),
 );

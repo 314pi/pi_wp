@@ -47,7 +47,7 @@ if ( $upsells ) : ?>
   			<?php _e( 'You may also like&hellip;', 'woocommerce' ) ?>
   		</h3>
 
-			<?php get_flatsome_repeater_start($repater); ?>
+			<?php get_magicpi_repeater_start($repater); ?>
 
       <?php foreach ( $upsells as $upsell ) : ?>
 
@@ -60,7 +60,7 @@ if ( $upsells ) : ?>
 
       <?php endforeach; ?>
 
-			<?php get_flatsome_repeater_end($repater); ?>
+			<?php get_magicpi_repeater_end($repater); ?>
 
 	</div>
   <?php } else { ?>

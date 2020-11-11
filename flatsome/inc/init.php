@@ -1,18 +1,18 @@
 <?php
 /**
- * Flatsome Engine Room.
+ * Magicpi Engine Room.
  * This is where all Theme Functions runs.
  *
- * @package flatsome
+ * @package magicpi
  */
 
 
 /**
  * Require Classes
  */
-require get_template_directory() . '/inc/classes/class-flatsome-default.php';
-require get_template_directory() . '/inc/classes/class-flatsome-options.php';
-require get_template_directory() . '/inc/classes/class-flatsome-upgrade.php';
+require get_template_directory() . '/inc/classes/class-magicpi-default.php';
+require get_template_directory() . '/inc/classes/class-magicpi-options.php';
+require get_template_directory() . '/inc/classes/class-magicpi-upgrade.php';
 
 /**
  * Setup.
@@ -70,7 +70,7 @@ if(is_admin()){
 }
 
 /**
- * Flatsome Shortcodes.
+ * Magicpi Shortcodes.
  */
 
 require get_template_directory() . '/inc/shortcodes/row.php';
@@ -154,7 +154,7 @@ if ( is_woocommerce_activated() ) {
 
 
 /**
- * Flatsome Theme Widgets
+ * Magicpi Theme Widgets
  */
 require get_template_directory() . '/inc/widgets/widget-recent-posts.php';
 require get_template_directory() . '/inc/widgets/widget-blocks.php';

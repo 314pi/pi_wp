@@ -24,12 +24,12 @@ function ux_payment_icons( $atts ) {
 		'rel'    => array( $rel ),
 	);
 
-	$link_start = $link ? '<a href="' . esc_url( $link ) . '"' . flatsome_parse_target_rel( $link_atts ) . '>' : '';
+	$link_start = $link ? '<a href="' . esc_url( $link ) . '"' . magicpi_parse_target_rel( $link_atts ) . '>' : '';
 	$link_end   = $link ? '</a>' : '';
 
 	// Get custom icons if set.
 	if ( ! empty( $custom ) ) {
-		return do_shortcode( '<div class="' . $classes . '">' . $link_start . flatsome_get_image( $custom ) . $link_end . '</div>' );
+		return do_shortcode( '<div class="' . $classes . '">' . $link_start . magicpi_get_image( $custom ) . $link_end . '</div>' );
 	} elseif ( empty( $icons ) ) {
 		return false;
 	}

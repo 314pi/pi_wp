@@ -2,7 +2,7 @@
 
 		<div class="col large-9">
 		<?php
-		do_action('flatsome_products_before');
+		do_action('magicpi_products_before');
 
 		/**
 		* Hook: woocommerce_before_main_content.
@@ -75,11 +75,11 @@
 
 		<?php
 		/**
-		 * Hook: flatsome_products_after.
+		 * Hook: magicpi_products_after.
 		 *
-		 * @hooked flatsome_products_footer_content - 10
+		 * @hooked magicpi_products_footer_content - 10
 		 */
-		do_action( 'flatsome_products_after' );
+		do_action( 'magicpi_products_after' );
 		/**
 		 * Hook: woocommerce_after_main_content.
 		 *
@@ -90,14 +90,14 @@
 
 		</div>
 
-		<div class="large-3 col hide-for-medium <?php flatsome_sidebar_classes(); ?>">
-			<?php flatsome_sticky_column_open( 'category_sticky_sidebar' ); ?>
+		<div class="large-3 col hide-for-medium <?php magicpi_sidebar_classes(); ?>">
+			<?php magicpi_sticky_column_open( 'category_sticky_sidebar' ); ?>
 			<div id="shop-sidebar" class="sidebar-inner">
 				<?php
 				  $no_widgets_msg = '<p>You need to assign Widgets to <strong>"Shop Sidebar"</strong> in <a href="'.get_site_url().'/wp-admin/widgets.php">Appearance > Widgets</a> to show anything here</p>';
 				  if(is_active_sidebar('shop-sidebar')) { dynamic_sidebar('shop-sidebar'); } else{ echo $no_widgets_msg; }
 				?>
 			</div>
-			<?php flatsome_sticky_column_close( 'category_sticky_sidebar' ); ?>
+			<?php magicpi_sticky_column_close( 'category_sticky_sidebar' ); ?>
 		</div>
 </div>

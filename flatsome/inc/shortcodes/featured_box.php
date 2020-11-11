@@ -68,7 +68,7 @@ function featured_box( $atts, $content = null ) {
 	ob_start();
 	?>
 
-	<?php if ( $link ) echo '<a class="plain" href="' . $link . '"' . flatsome_parse_target_rel( $link_atts ) . '>'; ?>
+	<?php if ( $link ) echo '<a class="plain" href="' . $link . '"' . magicpi_parse_target_rel( $link_atts ) . '>'; ?>
 	<div class="icon-box <?php echo $classes; ?>" <?php if ( $tooltip )
 		echo 'title="' . $tooltip . '"' ?> <?php echo get_shortcode_inline_css( $css_args_out ); ?>>
 		<?php if ( $img ) { ?>
@@ -77,7 +77,7 @@ function featured_box( $atts, $content = null ) {
 			} ?>">
 				<div class="icon">
 					<div class="icon-inner" <?php echo get_shortcode_inline_css( $css_args ); ?>>
-						<?php echo flatsome_get_image( $img, $size = 'medium', $alt = $title, $inline_svg ); ?>
+						<?php echo magicpi_get_image( $img, $size = 'medium', $alt = $title, $inline_svg ); ?>
 					</div>
 				</div>
 			</div>
@@ -85,7 +85,7 @@ function featured_box( $atts, $content = null ) {
 		<div class="icon-box-text last-reset">
 			<?php if ( $title ) { ?><h5 class="uppercase"><?php echo $title; ?></h5><?php } ?>
 			<?php if ( $title_small ) { ?><h6><?php echo $title_small; ?></h6><?php } ?>
-			<?php echo flatsome_contentfix( $content ); ?>
+			<?php echo magicpi_contentfix( $content ); ?>
 		</div>
 	</div>
 	<?php if ( $link ) echo '</a>'; ?>
