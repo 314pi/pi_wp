@@ -27,7 +27,7 @@ add_option('wp_user_enable_rest_api_key_auth', 0);
 //password security
 add_option('wp_user_login_limit_password_enable', 1);
 add_option('wp_user_login_limit_password', '$\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])(?=\S*[\W])\S*$');
-add_option('wp_user_login_password_valid_message', 'Mật khẩu cần ít nhất: 1 chữ HOA, 1 chữ thường, 1 ký tự đặc biệt, 1 số và dài trên 8 ký tự');
+add_option('wp_user_login_password_valid_message', 'Password containing at least one lowercase letter,uppercase letter,special character (non-word characters),one number and at least length 8');
 /*
   Explaining $\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])(?=\S*[\W])\S*$
   $ = beginning of string

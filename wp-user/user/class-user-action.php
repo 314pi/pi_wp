@@ -68,7 +68,7 @@ if (!class_exists('wpuserAjax')) :
 
             $boolIsValidIp = SELF::validate_ip();
             if( false == $boolIsValidIp ){
-              $loginLog['message'] = $result['message'] = __('IP này đã bị chặn.', 'wpuser');
+              $loginLog['message'] = $result['message'] = __('Access Denied for your IP.', 'wpuser');
               $result['status'] = 'warning';
               $loginLog['status'] = "Failed";
               print_r(json_encode($result));
@@ -109,7 +109,7 @@ if (!class_exists('wpuserAjax')) :
                         $objUserInfo = $users[0]->data;
                         $wp_user_email_name = $objUserInfo->user_login;
                       } else if ( count($users) > 1 ) {
-                          $strErrorMsg = __(' SĐT này có nhiều tài khoản. Vui lòng đăng nhập bằng tên hoặc email. ','wpuser');
+                          $strErrorMsg = __(' Your phone number associated with multiple account. Please try login with username or email address. ','wpuser');
                       }
                     }
                     $creds['user_login'] = $wp_user_email_name;
@@ -142,7 +142,7 @@ if (!class_exists('wpuserAjax')) :
                     if (empty($wp_user_disable_signup)) {
                         $wp_user_disable_signup = 0;
                     }
-                    $loginLog['message'] = $result['message'] = __('Cấm truy nhập', 'wpuser') . " " . $wp_user_login_limit_time . " " . __('minuts', 'wpuser');
+                    $loginLog['message'] = $result['message'] = __('Access denied for', 'wpuser') . " " . $wp_user_login_limit_time . " " . __('minuts', 'wpuser');
                     $loginLog['status'] = "Failed";
                     $result['status'] = 'warning';
                     $result['wp_user_disable_signup'] = $wp_user_disable_signup;
@@ -151,7 +151,7 @@ if (!class_exists('wpuserAjax')) :
                     exit;
                 }
 
-                $attemp_msg = (!empty($confirmResponse['remaning'])) ? $confirmResponse['remaning'] . __(' lần có thể thử lại.', 'wpuser') : '';
+                $attemp_msg = (!empty($confirmResponse['remaning'])) ? $confirmResponse['remaning'] . __(' attempts remaining.', 'wpuser') : '';
             }
 
             $user = get_user_by('login', $creds['user_login']);
@@ -176,7 +176,7 @@ if (!class_exists('wpuserAjax')) :
                   $intOtpTime = get_user_meta($user->ID, 'wp_user_login_otp_validate_time', true);
                   $intCurrentTime = time();
                   if( true == empty ($intOtpTime) || $intCurrentTime > $intOtpTime ){
-                    $loginLog['message'] = $result['message'] = __('Mã OTP hết hạn.', 'wpuser');
+                    $loginLog['message'] = $result['message'] = __('Your OTP has been Expired.', 'wpuser');
                     $result['status'] = 'warning';
                     $loginLog['status'] = "Failed";
                     print_r(json_encode($result));
@@ -187,9 +187,9 @@ if (!class_exists('wpuserAjax')) :
                   if (isset($wp_user_login_limit_enable) && !empty($wp_user_login_limit_enable)) {
                       self::clearLoginAttempts($_SERVER["REMOTE_ADDR"]);
                   }
-                  $result['message'] = __('Đăng nhập thành công ! Vui lòng Refresh trang.', 'wpuser');
-                  $loginLog['message'] = __('Đăng nhập thành công', 'wpuser');
-                  $loginLog['status'] = __('Thành công', 'wpuser');
+                  $result['message'] = __('Successfully login!! Refresh Page.', 'wpuser');
+                  $loginLog['message'] = __('Successfull login', 'wpuser');
+                  $loginLog['status'] = __('Successfull', 'wpuser');
                   $result['status'] = 'success';
                   $result['location'] = get_permalink(get_option('wp_user_page'));
                   $result['wp_user_disable_signup'] = get_option('wp_user_disable_signup');
@@ -217,7 +217,7 @@ if (!class_exists('wpuserAjax')) :
                   if ( $user && wp_check_password( $creds['user_password'], $user->data->user_pass, $user->ID) ){
                             SELF::wpuser_login_otp();
                   } else {
-                    $loginLog['message'] = $result['message'] = __('Tên hoặc mật khẩu sai. ', 'wpuser') . $strErrorMsg. $attemp_msg;
+                    $loginLog['message'] = $result['message'] = __('Invalid username or password. ', 'wpuser') . $strErrorMsg. $attemp_msg;
                     $result['status'] = 'warning';
                     $loginLog['status'] = "Failed";
                     $result['wp_user_disable_signup'] = get_option('wp_user_disable_signup') ? 1 : 0;
@@ -239,9 +239,9 @@ if (!class_exists('wpuserAjax')) :
                 if (isset($wp_user_login_limit_enable) && !empty($wp_user_login_limit_enable)) {
                     self::clearLoginAttempts($_SERVER["REMOTE_ADDR"]);
                 }
-                $result['message'] = __('Đăng nhập thành công!! Refresh trang.', 'wpuser');
-                $loginLog['message'] = __('Đăng nhập thành công', 'wpuser');
-                $loginLog['status'] = __('Thành công', 'wpuser');
+                $result['message'] = __('Successfully login!! Refresh Page.', 'wpuser');
+                $loginLog['message'] = __('Successfull login', 'wpuser');
+                $loginLog['status'] = __('Successfull', 'wpuser');
                 $result['status'] = 'success';
                 $result['location'] = get_permalink(get_option('wp_user_page'));
                 $result['wp_user_disable_signup'] = get_option('wp_user_disable_signup');
@@ -268,7 +268,7 @@ if (!class_exists('wpuserAjax')) :
                      Please Activate Your Account. Before you can login, you must active your account with the link sent to your email address", 'wpuser')
                         : __("Access denied : Waiting for admin approval", 'wpuser');
                 } else {
-                    $loginLog['message'] = $result['message'] = __('Tên hoặc mật khẩu sai. ', 'wpuser') . $strErrorMsg. $attemp_msg;
+                    $loginLog['message'] = $result['message'] = __('Invalid username or password. ', 'wpuser') . $strErrorMsg. $attemp_msg;
                 }
                 $result['status'] = 'warning';
                 $loginLog['status'] = "Failed";
@@ -327,7 +327,7 @@ if (!class_exists('wpuserAjax')) :
                         $objUserInfo = $users[0]->data;
                         $wp_user_email_name = $objUserInfo->user_login;
                       } else if ( count($users) > 1 ) {
-                          $strErrorMsg = __(' SĐT này được dùng cho nhiều tài khoản. Vui lòng đăng nhập bằng email hoặc tên. ','wpuser');
+                          $strErrorMsg = __(' Your phone number associated with multiple account. Please try login with username or email address. ','wpuser');
                       }
                     }
                     $creds['user_login'] = $wp_user_email_name;
@@ -378,14 +378,14 @@ if (!class_exists('wpuserAjax')) :
                    }
 
                  } else{
-                 $error = __('Không có người dùng khớp với thông tin này', 'wpuser');
+                 $error = __('There is no user registered with provided information. Please enter valid Username or Email or Mobile', 'wpuser');
                  $result['message'] = $error;
                  $result['status'] = 'warning';
                  print_r(json_encode($result));
                  exit;
              }
 
-             $error = __('Không gửi được OTP.', 'wpuser'). $strErrorMsg ;
+             $error = __('Failed to send OTP.', 'wpuser'). $strErrorMsg ;
              $result['message'] = $error;
              $result['status'] = 'warning';
              print_r(json_encode($result));
@@ -400,7 +400,7 @@ if (!class_exists('wpuserAjax')) :
             }
             $boolIsValidIp = SELF::validate_ip();
             if( false == $boolIsValidIp ){
-              $result['message'] = __('IP này bị chặn.', 'wpuser');
+              $result['message'] = __('Access Denied for your IP.', 'wpuser');
               $result['status'] = 'warning';
               print_r(json_encode($result));
               exit;
@@ -409,11 +409,11 @@ if (!class_exists('wpuserAjax')) :
             $email = ((isset($_POST['wp_user_email'])) ? $_POST['wp_user_email'] : '');
 
             if (empty($email)) {
-                $error = __('Nhập email', 'wpuser');
+                $error = __('Enter e-mail address', 'wpuser');
             } else if (!is_email($email)) {
-                $error = __('Sai email', 'wpuser');
+                $error = __('Invalid email', 'wpuser');
             } else if (!email_exists($email)) {
-                $error = __('Không có email nào đăng ký bằng email này', 'wpuser');
+                $error = __('There is no user registered with that email address', 'wpuser');
             } else {
                 // lets generate our new password
                 $random_password = wp_generate_password(12, false);
@@ -448,12 +448,10 @@ if (!class_exists('wpuserAjax')) :
                     $headers[] = 'From: ' . $sender . ' < ' . $email . '>' . "\r\n";
 
                     $mail = wp_mail($to, $subject, $message, $headers);
-                    if ($mail) {
-                       $success = __('Vui lòng ấn nút đăng nhập. Kiểm tra email để lấy mật khẩu mới', 'wpuser');
-						$result['location'] = get_permalink(get_option('wp_user_page'));
-					}
+                    if ($mail)
+                        $success = __('Check your email address for your new password', 'wpuser');
                 } else {
-                    $error = __('Oops có gì đó sai sai', 'wpuser');
+                    $error = __('Oops something went wrong updaing your account', 'wpuser');
                 }
             }
 
@@ -470,7 +468,7 @@ if (!class_exists('wpuserAjax')) :
                 exit;
             }
 
-            $result['message'] = __('Oops có gì đó sai sai.', 'wpuser');
+            $result['message'] = __('Oops something went wrong.', 'wpuser');
             $result['status'] = 'warning';
             print_r(json_encode($result));
             die();
@@ -494,7 +492,7 @@ if (!class_exists('wpuserAjax')) :
 
             $boolIsValidIp = SELF::validate_ip();
             if( false == $boolIsValidIp ){
-              $result['message'] = __('IP này bị chặn.', 'wpuser');
+              $result['message'] = __('Access Denied for your IP.', 'wpuser');
               $result['status'] = 'warning';
               print_r(json_encode($result));
               exit;
@@ -504,7 +502,7 @@ if (!class_exists('wpuserAjax')) :
               if (!isset($_POST['wpuser_update_setting'])) {
                   $responce = array(
                       'status' => 'warning',
-                      'message' => __('Sai dữ liệu. Refresh trang.', 'wpuser')
+                      'message' => __('Invalid form data. form request came from the somewhere else not current site! Please Refresh Page.', 'wpuser')
                   );
                   print_r(json_encode($responce));
                   die;
@@ -513,7 +511,7 @@ if (!class_exists('wpuserAjax')) :
               if (!wp_verify_nonce($_POST['wpuser_update_setting'], 'wpuser-update-setting')) {
                   $responce = array(
                       'status' => 'warning',
-                      'message' => __('Sai dữ liệu. Refresh trang.', 'wpuser')
+                      'message' => __('Invalid form data. form request came from the somewhere else not current site! Please Refresh Page.', 'wpuser')
                   );
                   print_r(json_encode($responce));
                   die;
@@ -549,7 +547,7 @@ if (!class_exists('wpuserAjax')) :
                     if (!empty($_POST['user_email'])) {
                         $email = sanitize_text_field($_POST['user_email']);
                         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                            $result['message'] = __('Sai định dạng email', 'wpuser');
+                            $result['message'] = __('Invalid email format', 'wpuser');
                             $result['status'] = 'warning';
                             print_r(json_encode($result));
                             exit;
@@ -559,11 +557,11 @@ if (!class_exists('wpuserAjax')) :
 
                 if (username_exists($_POST['user_login'])) {
                     $result['status'] = 'warning';
-                    $result['message'] = __('Tên người dùng này đã có', 'wpuser');
+                    $result['message'] = __('The username is already taken', 'wpuser');
                 }
                 if (username_exists($_POST['user_email'])) {
                     $result['status'] = 'warning';
-                    $result['message'] = __('Email này đã được sử dụng để đăng ký', 'wpuser');
+                    $result['message'] = __('The email address already exists', 'wpuser');
                     print_r(json_encode($result));
                     exit;
                 }
@@ -589,7 +587,7 @@ if (!class_exists('wpuserAjax')) :
                 if( isset( $arrFieldError ) && !empty( $arrFieldError ) ){
                     $result['status'] = 'warning';
                     $result['error'] = $arrFieldError;
-                    $result['message'] = __('Điền sai thông tin', 'wpuser');
+                    $result['message'] = __('Invalid input', 'wpuser');
                     print_r( json_encode( $result ) );
                     exit;
                 }
@@ -598,7 +596,7 @@ if (!class_exists('wpuserAjax')) :
                 if (isset($wp_user_tern_and_condition) && $wp_user_tern_and_condition == 1) {
                     $wp_user_term_condition = (isset($data['wp_user_term_condition'])) ? $data['wp_user_term_condition'] : ((isset($_POST['wp_user_term_condition'])) ? $_POST['wp_user_term_condition'] : '');
                     if (!(isset($wp_user_term_condition) && !empty($wp_user_term_condition))) {
-                        $result['message'] = __('Vui lòng chấp nhận điều khoản', 'wpuser');
+                        $result['message'] = __('Please accept terms', 'wpuser');
                         $result['status'] = 'warning';
                         print_r(json_encode($result));
                         exit;
@@ -637,7 +635,7 @@ if (!class_exists('wpuserAjax')) :
                     if (!empty($_POST['user_email'])) {
                         $email = sanitize_text_field($_POST['user_email']);
                         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                            $result['message'] = __('Email chưa đúng', 'wpuser');
+                            $result['message'] = __('Invalid email format', 'wpuser');
                             $result['status'] = 'warning';
                             print_r(json_encode($result));
                             exit;
@@ -647,11 +645,11 @@ if (!class_exists('wpuserAjax')) :
 
                 if (username_exists($_POST['user_login'])) {
                     $result['status'] = 'warning';
-                    $result['message'] = __('Tên người dùng đã có', 'wpuser');
+                    $result['message'] = __('The username is already taken', 'wpuser');
                 }
                 if (username_exists($_POST['user_email'])) {
                     $result['status'] = 'warning';
-                    $result['message'] = __('Email này đã tồn tại', 'wpuser');
+                    $result['message'] = __('The email address already exists', 'wpuser');
                     print_r(json_encode($result));
                     exit;
                 }
@@ -682,7 +680,7 @@ if (!class_exists('wpuserAjax')) :
                 if (isset($wp_user_tern_and_condition) && $wp_user_tern_and_condition == 1) {
                     $wp_user_term_condition = (isset($data['wp_user_term_condition'])) ? $data['wp_user_term_condition'] : ((isset($_POST['wp_user_term_condition'])) ? $_POST['wp_user_term_condition'] : '');
                     if (!(isset($wp_user_term_condition) && !empty($wp_user_term_condition))) {
-                        $arrFieldError['message'] = __('Vui lòng chấp nhận điều khoản', 'wpuser');
+                        $arrFieldError['message'] = __('Please accept terms', 'wpuser');
                         $arrFieldError['status'] = 'warning';
                         $arrFieldError['field'] = 'wp_user_term_condition';
                     }
@@ -692,7 +690,7 @@ if (!class_exists('wpuserAjax')) :
                     $result['status'] = 'warning';
                     $result['error'] = $arrFieldError;
                     $result['error_in_forms'] = $errorInForms;
-                    $result['message'] = __('Nhập sai', 'wpuser');
+                    $result['message'] = __('Invalid input', 'wpuser');
                     print_r( json_encode( $result ) );
                     exit;
                 }
@@ -713,7 +711,7 @@ if (!class_exists('wpuserAjax')) :
                 if (isset($wp_user_email_name) && !empty($wp_user_email_name)) {
                     $username = sanitize_text_field($wp_user_email_name);
                 } else {
-                    $result['message'] = __('Bạn phải nhập tên người sử dụng', 'wpuser');
+                    $result['message'] = __('Username field is required', 'wpuser');
                     $result['status'] = 'warning';
                     print_r(json_encode($result));
                     $username = "";
@@ -723,13 +721,13 @@ if (!class_exists('wpuserAjax')) :
                 if (isset($wp_user_email) && !empty($wp_user_email)) {
                     $email = sanitize_text_field($wp_user_email);
                     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                        $result['message'] = __('Email chưa đúng', 'wpuser');
+                        $result['message'] = __('Invalid email format', 'wpuser');
                         $result['status'] = 'warning';
                         print_r(json_encode($result));
                         exit;
                     }
                 } else {
-                    $result['message'] = __('Yêu cầu điền email', 'wpuser');
+                    $result['message'] = __('Email field is required', 'wpuser');
                     $result['status'] = 'warning';
                     print_r(json_encode($result));
                     exit;
@@ -738,7 +736,7 @@ if (!class_exists('wpuserAjax')) :
                 if (isset($wp_user_password) && !empty($wp_user_password)) {
                     $password = sanitize_text_field($wp_user_password);
                 } else {
-                    $result['message'] = __('Yêu cầu điền mật khẩu', 'wpuser');
+                    $result['message'] = __('Password field is required', 'wpuser');
                     $result['status'] = 'warning';
                     print_r(json_encode($result));
                     $password = "";
@@ -751,7 +749,7 @@ if (!class_exists('wpuserAjax')) :
 
                     $re_password = sanitize_text_field($wp_user_re_password);
                     if (($password != $re_password)) {
-                        $result['message'] = __('Mật khẩu chưa khớp', 'wpuser');
+                        $result['message'] = __('Password is not match', 'wpuser');
                         $result['status'] = 'warning';
                         print_r(json_encode($result));
                         exit;
@@ -764,7 +762,7 @@ if (!class_exists('wpuserAjax')) :
                         exit;
                     }
                 } else {
-                    $result['message'] = __('Cần nhập lại mật khẩu', 'wpuser');
+                    $result['message'] = __('Retype Password field is required', 'wpuser');
                     $result['status'] = 'warning';
                     print_r(json_encode($result));
                     $re_password = "";
@@ -774,7 +772,7 @@ if (!class_exists('wpuserAjax')) :
                 if (isset($wp_user_tern_and_condition) && $wp_user_tern_and_condition == 1) {
                     $wp_user_term_condition = (isset($data['wp_user_term_condition'])) ? $data['wp_user_term_condition'] : ((isset($_POST['wp_user_term_condition'])) ? $_POST['wp_user_term_condition'] : '');
                     if (!(isset($wp_user_term_condition) && !empty($wp_user_term_condition))) {
-                        $result['message'] = __('Vui lòng chấp nhận điều khoản', 'wpuser');
+                        $result['message'] = __('Please accept terms', 'wpuser');
                         $result['status'] = 'warning';
                         print_r(json_encode($result));
                         exit;
@@ -788,12 +786,13 @@ if (!class_exists('wpuserAjax')) :
 
             if ($register_user && !is_wp_error($register_user)) {
                 if ($wp_user_default_status == 3) {
-                    $result['message'] = __('Vui lòng kích hoạt tài khoản bằng đường link trong email', 'wpuser');
+                    $result['message'] = __('Please Activate Your Account. Before you can login,
+                    you must active your account with the link sent to your email address', 'wpuser');
                     $wp_user_default_status = 2;
                 } elseif($wp_user_default_status == 2) {
-			        $result['message'] = __('Tài khoản đang đợi để xác minh', 'wpuser');
+			        $result['message'] = __('Your Accout is Pending for Admin approval', 'wpuser');
 		        } else {
-                    $result['message'] = __('Đăng ký thành công', 'wpuser');
+                    $result['message'] = __('Registration completed', 'wpuser');
                     $user_info = get_userdata($register_user);
                     if(($autologin == 1 && $wp_user_default_status == 1) || ( !is_plugin_active( 'wp-user-form-builder/userplus.php') && $wp_user_default_status == 1 ))
                         {
@@ -841,7 +840,7 @@ if (!class_exists('wpuserAjax')) :
                         'status' => 'Sucess',
                         'dir' => $uploadFileDir,
                         'url' => $uploadFileUrl.$newFileName,
-                        'message' => __('Tải lên thành công.', 'wpuser')
+                        'message' => __('File is successfully uploaded.', 'wpuser')
                     );
                     print_r(json_encode($responce));
                     die;
@@ -850,7 +849,7 @@ if (!class_exists('wpuserAjax')) :
 
             $responce = array(
                 'status' => 'warning',
-                'message' => __('Có lỗi khi tải file.', 'wpuser')
+                'message' => __('There was some error moving the file to upload.', 'wpuser')
             );
             print_r(json_encode($responce));
             die;
@@ -947,7 +946,7 @@ if (!class_exists('wpuserAjax')) :
             if (!isset($_POST['wpuser_update_setting'])) {
                 $responce = array(
                     'status' => 'warning',
-                    'message' => __('Dữ liệu bị sai. Refresh trang.', 'wpuser')
+                    'message' => __('Invalid form data. form request came from the somewhere else not current site! Please Refresh Page.', 'wpuser')
                 );
                // print_r(json_encode($responce));
               //  die;
@@ -955,7 +954,7 @@ if (!class_exists('wpuserAjax')) :
             if (!wp_verify_nonce($_POST['wpuser_update_setting'], 'wpuser-update-setting')) {
                 $responce = array(
                     'status' => 'warning',
-                    'message' => __('Sai dữ liệu. Refresh trang.', 'wpuser')
+                    'message' => __('Invalid form data. form request came from the somewhere else not current site! Please Refresh Page.', 'wpuser')
                 );
               //  print_r(json_encode($responce));
               //  die;
@@ -967,7 +966,7 @@ if (!class_exists('wpuserAjax')) :
                 $re_password = sanitize_text_field($wp_user_re_password);
                 // echo $wp_user_login_limit_password;die;
                 if (!($wp_user_password == $re_password)) {
-                    $result['message'] = __('Mật khẩu chưa khớp nhau', 'wpuser');
+                    $result['message'] = __('Password is not match', 'wpuser');
                     $result['status'] = 'warning';
                     print_r(json_encode($result));
                     exit;
@@ -979,7 +978,7 @@ if (!class_exists('wpuserAjax')) :
                     exit;
                 }
             } else if (isset($wp_user_password) && !empty($wp_user_password)) {
-                $result['message'] = __('Yêu cầu phải nhập lại mật khẩu', 'wpuser');
+                $result['message'] = __('Retype Password field is required', 'wpuser');
                 $result['status'] = 'warning';
                 print_r(json_encode($result));
                 exit;
@@ -988,7 +987,7 @@ if (!class_exists('wpuserAjax')) :
             if (isset($wp_user_email) && !empty($wp_user_email)) {
                 $email = sanitize_text_field($wp_user_email);
                 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                    $result['message'] = __('Định dạng email sai', 'wpuser');
+                    $result['message'] = __('Invalid email format', 'wpuser');
                     $result['status'] = 'warning';
                     print_r(json_encode($result));
                     exit;
@@ -1024,7 +1023,7 @@ if (!class_exists('wpuserAjax')) :
                 if (isset($wp_user_email) && !empty($wp_user_email)) {
                     $email = sanitize_text_field($wp_user_email);
                     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                        $result['message'] = __('Sai định dạng email', 'wpuser');
+                        $result['message'] = __('Invalid email format', 'wpuser');
                         $result['status'] = 'warning';
                         print_r(json_encode($result));
                         exit;
@@ -1047,7 +1046,7 @@ if (!class_exists('wpuserAjax')) :
             }
 
             if ($register_user && !is_wp_error($register_user)) {
-                $result['message'] = __('Cập nhật hồ sơ thành công', 'wpuser');
+                $result['message'] = __('Profile updated successfully', 'wpuser');
                 unset($_POST['confirm_pass']);
                 unset($_POST['wpuser_update_setting']);
                 SELF::wpuser_update_user_profile($register_user, $_POST);
@@ -1131,7 +1130,7 @@ if (!class_exists('wpuserAjax')) :
                 $result['status'] = 'warning';
                 print_r(json_encode($result));
             } else {
-                $result['message'] = __('Vui lòng Refresh trang', 'wpuser');
+                $result['message'] = __('Please Refresh Page', 'wpuser');
                 $result['status'] = 'warning';
                 print_r(json_encode($result));
             }
@@ -1147,7 +1146,7 @@ if (!class_exists('wpuserAjax')) :
             if (!isset($_POST['wpuser_update_setting'])) {
                 $responce = array(
                     'status' => 'warning',
-                    'message' => __('Dữ liệu bị sai. Refresh trang.', 'wpuser')
+                    'message' => __('Invalid form data. form request came from the somewhere else not current site! Please Refresh Page.', 'wpuser')
                 );
                 print_r(json_encode($responce));
                 die;
@@ -1155,7 +1154,7 @@ if (!class_exists('wpuserAjax')) :
             if (!wp_verify_nonce($_POST['wpuser_update_setting'], 'wpuser-update-setting')) {
                 $responce = array(
                     'status' => 'warning',
-                    'message' => __('Dữ liệu bị sai. Refresh trang.', 'wpuser')
+                    'message' => __('Invalid form data. form request came from the somewhere else not current site! Please Refresh Page.', 'wpuser')
                 );
                 print_r(json_encode($responce));
                 die;
@@ -1171,7 +1170,7 @@ if (!class_exists('wpuserAjax')) :
             if (!isset($_POST['wpuser_update_setting'])) {
                 $responce = array(
                     'status' => 'warning',
-                    'message' => __('Dữ liệu bị sai. Refresh trang.', 'wpuser')
+                    'message' => __('Invalid form data. form request came from the somewhere else not current site! Please Refresh Page.', 'wpuser')
                 );
                 print_r(json_encode($responce));
                 die;
@@ -1179,7 +1178,7 @@ if (!class_exists('wpuserAjax')) :
             if (!wp_verify_nonce($_POST['wpuser_update_setting'], 'wpuser-update-setting')) {
                 $responce = array(
                     'status' => 'warning',
-                    'message' => __('Dữ liệu bị sai. Refresh trang.', 'wpuser')
+                    'message' => __('Invalid form data. form request came from the somewhere else not current site! Please Refresh Page.', 'wpuser')
                 );
                 print_r(json_encode($responce));
                 die;
@@ -1773,7 +1772,7 @@ if (!class_exists('wpuserAjax')) :
             if (!isset($_POST['wpuser_update_setting'])) {
                 $responce = array(
                     $result['status'] = 'warning',
-                    'message' => __('Dữ liệu bị sai. Refresh trang.', 'wpuser')
+                    'message' => __('Invalid form data. form request came from the somewhere else not current site! Please Refresh Page.', 'wpuser')
                 );
                 print_r(json_encode($responce));
                 die;
@@ -1781,7 +1780,7 @@ if (!class_exists('wpuserAjax')) :
             if (!wp_verify_nonce($_POST['wpuser_update_setting'], 'wpuser-update-setting')) {
                 $responce = array(
                     $result['status'] = 'warning',
-                    'message' => __('Dữ liệu bị sai. Refresh trang.', 'wpuser')
+                    'message' => __('Invalid form data. form request came from the somewhere else not current site! Please Refresh Page.', 'wpuser')
                 );
                 print_r(json_encode($responce));
                 die;
@@ -1789,14 +1788,14 @@ if (!class_exists('wpuserAjax')) :
           }
 
             if (!isset($_POST['id']) || empty($_POST['id'])) {
-                $result['message'] = __('Đầu nhận bị sai', 'wpuser');
+                $result['message'] = __('Invalid receiver', 'wpuser');
                 $result['status'] = 'warning';
                 print_r(json_encode($result));
                 exit;
             }
 
             if (!isset($_POST['message']) || empty($_POST['message'])) {
-                $result['message'] = __('Vui lòng nhập lời nhắn', 'wpuser');
+                $result['message'] = __('Please enter message', 'wpuser');
                 $result['status'] = 'warning';
                 print_r(json_encode($result));
                 exit;
@@ -1817,13 +1816,13 @@ if (!class_exists('wpuserAjax')) :
             if (!wp_mail($to, $subject, $body, $headers)) {
                 $responce = array(
                     'status' => 'warning',
-                    'message' => __('Lỗi: Gửi email', 'wpuser')
+                    'message' => __('Error : Mail send', 'wpuser')
                 );
 
             } else {
                 $responce = array(
                     'status' => 'success',
-                    'message' => __('Gửi email thành công', 'wpuser')
+                    'message' => __('Mail send successfully', 'wpuser')
                 );
             }
 
@@ -1896,9 +1895,9 @@ if (!class_exists('wpuserAjax')) :
                                     update_user_meta($user->ID, 'wp-approve-user', 1);
                                 }
                                 delete_user_meta($user->ID, 'wp_user_login_otp');
-                                _e('Đăng nhập thành công!! Refresh trang.', 'wpuser');
-                                $loginLog['message'] = __('Đăng nhập thành công', 'wpuser');
-                                $loginLog['status'] = __('Thành công', 'wpuser');
+                                _e('Successfully login!! Refresh Page.', 'wpuser');
+                                $loginLog['message'] = __('Successfull login', 'wpuser');
+                                $loginLog['status'] = __('Successfull', 'wpuser');
                                 $result['location'] = get_permalink(get_option('wp_user_page'));
                                 $result['wp_user_disable_signup'] = get_option('wp_user_disable_signup');
                                 if( false == empty($params)){
@@ -1909,7 +1908,7 @@ if (!class_exists('wpuserAjax')) :
                                 wp_redirect($wp_user_redirect);
                                 die;
                               } else{
-                                $loginLog['message'] = $result['message'] = __('OTP sai. ', 'wpuser'). $attemp_msg;
+                                $loginLog['message'] = $result['message'] = __('Invalid OTP. ', 'wpuser'). $attemp_msg;
                                 $loginLog['status'] = "Failed";
                                 SELF::loginLog($loginLog);
                                 if (isset($wp_user_login_limit_enable) && !empty($wp_user_login_limit_enable)) {
@@ -2152,23 +2151,23 @@ if (!class_exists('wpuserAjax')) :
               update_user_meta( $args['user_id'], 'wp_user_login_otp', $intOTP );
                 $email_header_text = get_option('wp_user_email_user_register_subject');
                 $random_key = wp_generate_password(12, false);
-                $email_body_text = __('Click để Kích hoạt tài khoản ', 'wpuser');
+                $email_body_text = __('Click on following link to activate your account ', 'wpuser');
                 $activationLink = admin_url('admin-ajax.php') . '?action=wpuser_activation&key=' . $random_key . '&email=' . $to;
                 $email_body_text .= $activationLink;
                 $email_body_text .= '<div class="row">';
-                $email_body_text .= '<a type="button" href="'.$activationLink.'" class="btn btn-primary btn-flat">'.__('KÍCH HOẠT', 'wpuser').'</a>';
+                $email_body_text .= '<a type="button" href="'.$activationLink.'" class="btn btn-primary btn-flat">'.__('ACTIVATE', 'wpuser').'</a>';
                 if (get_option('wp_user_disable_login_otp_link') != 1) {
                   $login_redirect = '';
                   if(true == isset($args['email_login_redirect']) && false == empty($args['email_login_redirect'])){
                     $login_redirect = '&redirect='.$args['email_login_redirect'];
                   }
-                  $email_body_text .= ' <a class="btn btn-primary btn-flat" href="'.admin_url('admin-ajax.php') . '?action=wpuser_link_login&key=' . $random_key . '&email=' . $to.'&otp='.$intOTP.$login_redirect.'">'.__('Đăng Nhập', 'wpuser')."</a>";
+                  $email_body_text .= ' <a class="btn btn-primary btn-flat" href="'.admin_url('admin-ajax.php') . '?action=wpuser_link_login&key=' . $random_key . '&email=' . $to.'&otp='.$intOTP.$login_redirect.'">'.__('LOGIN', 'wpuser')."</a>";
                 }
                 $email_body_text .= '</div>';
                 $email_footer_text = 'You\'re receiving this email because you have register on ' . $site_url;
                 include('template_email/template_email_defualt.php');
                 update_user_meta($args['user_id'], 'wpuser_activation_key', $random_key);
-                $subject = __('Xác nhận ' . get_option('blogname') . ' account', 'wpuser');
+                $subject = __('Confirm your ' . get_option('blogname') . ' account', 'wpuser');
                 //echo $message;die;
                 if(!wp_mail($to, $subject, $message, $headers)){
                 }
@@ -2181,7 +2180,7 @@ if (!class_exists('wpuserAjax')) :
             if (!isset($_POST['wpuser_update_setting'])) {
                 $responce = array(
                     $result['status'] = 'warning',
-                    'message' => __('Dữ liệu sai. Refresh trang..', 'wpuser')
+                    'message' => __('Invalid form data. form request came from the somewhere else not current site! Please Refresh Page.', 'wpuser')
                 );
                 print_r(json_encode($responce));
                 die;
@@ -2189,7 +2188,7 @@ if (!class_exists('wpuserAjax')) :
             if (!wp_verify_nonce($_POST['wpuser_update_setting'], 'wpuser-update-setting')) {
                 $responce = array(
                     $result['status'] = 'warning',
-                    'message' => __('Dữ liệu sai. Refresh trang..', 'wpuser')
+                    'message' => __('Invalid form data. form request came from the somewhere else not current site! Please Refresh Page.', 'wpuser')
                 );
                 print_r(json_encode($responce));
                 die;
@@ -2208,7 +2207,7 @@ if (!class_exists('wpuserAjax')) :
             if (!isset($_POST['wpuser_update_setting'])) {
                 $responce = array(
                     $result['status'] = 'warning',
-                    'message' => __('Dữ liệu sai. Refresh trang.', 'wpuser')
+                    'message' => __('Invalid form data. form request came from the somewhere else not current site! Please Refresh Page.', 'wpuser')
                 );
                 print_r(json_encode($responce));
                 die;
@@ -2216,14 +2215,14 @@ if (!class_exists('wpuserAjax')) :
             if (!wp_verify_nonce($_POST['wpuser_update_setting'], 'wpuser-update-setting')) {
                 $responce = array(
                     $result['status'] = 'warning',
-                    'message' => __('Dữ liệu sai. Refresh trang.', 'wpuser')
+                    'message' => __('Invalid form data. form request came from the somewhere else not current site! Please Refresh Page.', 'wpuser')
                 );
                 print_r(json_encode($responce));
                 die;
             }
 
             if (!isset($_POST['id']) || empty($_POST['id'])) {
-                $result['message'] = __('Đầu nhận bị sai', 'wpuser');
+                $result['message'] = __('Invalid receiver', 'wpuser');
                 $result['status'] = 'warning';
                 print_r(json_encode($result));
                 exit;
@@ -2247,7 +2246,7 @@ if (!class_exists('wpuserAjax')) :
             if (!isset($_POST['wpuser_update_setting'])) {
                 $responce = array(
                     $result['status'] = 'warning',
-                    'message' => __('Dữ liệu sai. Refresh trang.', 'wpuser')
+                    'message' => __('Invalid form data. form request came from the somewhere else not current site! Please Refresh Page.', 'wpuser')
                 );
                 print_r(json_encode($responce));
                 die;
@@ -2255,14 +2254,14 @@ if (!class_exists('wpuserAjax')) :
             if (!wp_verify_nonce($_POST['wpuser_update_setting'], 'wpuser-update-setting')) {
                 $responce = array(
                     $result['status'] = 'warning',
-                    'message' => __('Dữ liệu sai. Refresh trang.', 'wpuser')
+                    'message' => __('Invalid form data. form request came from the somewhere else not current site! Please Refresh Page.', 'wpuser')
                 );
                 print_r(json_encode($responce));
                 die;
             }
 
             if (!isset($_POST['id'])) {
-                $result['message'] = __('Đầu nhận bị sai', 'wpuser');
+                $result['message'] = __('Invalid receiver', 'wpuser');
                 $result['status'] = 'warning';
                 print_r(json_encode($result));
                 exit;

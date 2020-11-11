@@ -192,7 +192,6 @@ $("#wpuser_login_otp<?php echo $form_id ?>").click(function () {
                 $("#wpuser_forgot_form<?php echo $form_id ?>")[0].reset();
             }
             $('#wpuser_errordiv_forgot<?php echo $form_id ?>').show();
-			window.location.href = '/dang-nhap/';
             $("#loader_action").hide();
         },
         type: 'POST'
