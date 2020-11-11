@@ -8,17 +8,17 @@ $wp_user_options_signin_form = array(
         'is_required' => 1,
         'icon' => 'fa-user',
         'default_value' => '',
-        'placeholder' => __('Enter Username or Email or Mobile Number', 'wpuser'),
+        'placeholder' => __('Nhap ten hoac email hoac SDT', 'wpuser'),
     ),
     array(
         'type' => 'password',
         'meta_key' => 'wp_user_password',
-        'label' => __('Password', 'wpuser'),
+        'label' => __('Mat Khau', 'wpuser'),
         'description' => '',
         'is_required' => 0,
         'icon' => 'fa-lock',
         'default_value' => '',
-        'placeholder' => __('Enter Password', 'wpuser'),
+        'placeholder' => __('Nhap MK', 'wpuser'),
     ),
 );
 
@@ -31,7 +31,7 @@ $wp_user_options_signup_form = array(
         'is_required' => 1,
         'icon' => 'fa-user',
         'default_value' => '',
-        'placeholder' => __('Enter Username', 'wpuser'),
+        'placeholder' => __('Nhap MK', 'wpuser'),
     ),
     array(
         'type' => 'text',
@@ -41,7 +41,7 @@ $wp_user_options_signup_form = array(
         'is_required' => 1,
         'icon' => 'fa-envelope',
         'default_value' => '',
-        'placeholder' => __('Enter Email', 'wpuser'),
+        'placeholder' => __('Nhap Email', 'wpuser'),
     ),
     array(
         'type' => 'password',
@@ -51,7 +51,7 @@ $wp_user_options_signup_form = array(
         'is_required' => 1,
         'icon' => 'fa-lock',
         'default_value' => '',
-        'placeholder' => __('Enter Password', 'wpuser'),
+        'placeholder' => __('Nhap MK', 'wpuser'),
     ),
     array(
         'type' => 'password',
@@ -61,7 +61,7 @@ $wp_user_options_signup_form = array(
         'is_required' => 1,
         'icon' => 'fa-log-in',
         'default_value' => '',
-        'placeholder' => __('Confirm Password', 'wpuser'),
+        'placeholder' => __('Xac nhan MK', 'wpuser'),
     ),
 );
 
@@ -101,7 +101,7 @@ $wp_user_options_my_profile_form = array(
         'is_required' => 0,
         'icon' => 'fa-user',
         'default_value' => '',
-        'placeholder' => __('Enter First Name', 'wpuser'),
+        'placeholder' => __('Nhap ho', 'wpuser'),
         'weight_val' => 15,
     ),
     array(
@@ -112,7 +112,7 @@ $wp_user_options_my_profile_form = array(
         'is_required' => 0,
         'icon' => 'fa-user',
         'default_value' => '',
-        'placeholder' => __('Enter Last Name', 'wpuser'),
+        'placeholder' => __('Nhap ten', 'wpuser'),
         'weight_val' => 15,
     ),
     array(
@@ -123,7 +123,7 @@ $wp_user_options_my_profile_form = array(
         'is_required' => 1,
         'icon' => 'fa-envelope',
         'default_value' => '',
-        'placeholder' => __('Enter Email', 'wpuser'),
+        'placeholder' => __('Nhap Email', 'wpuser'),
         'weight_val' => 30,
     ),
     array(
@@ -134,7 +134,7 @@ $wp_user_options_my_profile_form = array(
         'is_required' => 0,
         'icon' => 'fa-globe',
         'default_value' => '',
-        'placeholder' => __('Enter URL', 'wpuser'),
+        'placeholder' => __('Nhap URL', 'wpuser'),
         'weight_val' => 10,
     ),
     array(
@@ -145,17 +145,17 @@ $wp_user_options_my_profile_form = array(
         'is_required' => 0,
         'icon' => 'fa-lock',
         'default_value' => '',
-        'placeholder' => __('Enter Password', 'wpuser'),
+        'placeholder' => __('Nhap MK', 'wpuser'),
     ),
     array(
         'type' => 'password',
         'meta_key' => 'confirm_pass',
-        'label' => __('Confirm Password', 'wpuser'),
+        'label' => __('Xac nhan MK', 'wpuser'),
         'description' => '',
         'is_required' => 0,
         'icon' => 'fa-log-in',
         'default_value' => '',
-        'placeholder' => __('Confirm Password', 'wpuser'),
+        'placeholder' => __('Xac nhan MK', 'wpuser'),
     ),
     array(
         'type' => 'textarea',
@@ -165,7 +165,7 @@ $wp_user_options_my_profile_form = array(
         'is_required' => 0,
         'icon' => 'fa-log-in',
         'default_value' => '',
-        'placeholder' => __('Description', 'wpuser'),
+        'placeholder' => __('Mo ta', 'wpuser'),
         'weight_val' => 10,
     ),
 );

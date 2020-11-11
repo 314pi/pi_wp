@@ -355,7 +355,7 @@ class profileController
                 }
                 if (isset($array['add_confirm_password_field']) && $array['add_confirm_password_field'] && is_user_logged_in()) {
                     $field .= "<div class='userplus-clear'></div>";
-                    $field .= "<label for='confirm_pass'>" . __('Confirm Password', 'wpuser') . "</label>";
+                    $field .= "<label for='confirm_pass'>" . __('Xac nhan MK', 'wpuser') . "</label>";
                     $field .= "<input type='password' class='form-control' name='confirm_pass' id='confirm_pass' autocomplete='off' data-is_required=1 />";
                 }
                 break;
